@@ -16,10 +16,23 @@
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
          background:var(--bg);color:#eee;line-height:1.5;}
-    header{min-height:70vh;display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover no-repeat;
-            position:relative;padding:2rem;}
-    .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+    header{
+      min-height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover no-repeat;
+      position:relative;
+      padding:2rem;
+    }
+    .hero{
+      max-width:1100px;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 380px;
+      gap:2rem;
+      align-items:center
+    }
     .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:2px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -36,13 +49,8 @@
     .bio .text h2{margin-bottom:.6rem}
     .tracks iframe{width:100%;height:300px;border:0;border-radius:10px}
 
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;}
-
-    video{border-radius:10px;margin-top:1rem;max-width:100%;}
-
-    footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
-    footer img{max-width:100px;height:auto;margin-top:10px;display:block;margin-left:auto;margin-right:auto;}
+    footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem; position:relative;}
+    footer img{max-width:60px;height:auto;margin-top:10px; display:block; margin:0 auto;}
 
     @media (max-width:880px){.hero{grid-template-columns:1fr;}.bio{grid-template-columns:1fr} .portrait img{height:300px}}
   </style>
@@ -63,7 +71,7 @@
       </div>
 
       <div class="card portrait" aria-hidden="true">
-        <img src="logo.png" alt="ROS DJ portrait">
+        <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
       </div>
     </div>
   </header>
@@ -115,37 +123,11 @@
       </div>
     </section>
 
-    <!-- Video Section -->
-    <section id="video" class="card">
-      <h2>Videos</h2>
-      <p style="color:var(--muted);margin-bottom:1rem">Check out my latest videos!</p>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="card">
       <h2>Contact</h2>
       <p>Want to collaborate? Reach out!</p>
       <p>Email: <a href="mailto:r.dabizha@icloud.com" style="color: #ff5500; text-decoration: none;">r.dabizha@icloud.com</a></p>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="card">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <!-- Add your images here -->
-        <img src="ROSDJ1.jpg" alt="ROS DJ gallery image">
-        <img src="ROSDJ2.jpg" alt="ROS DJ gallery image">
-        <img src="ROSDJ3.jpg" alt="ROS DJ gallery image">
-      </div>
     </section>
   </main>
 
