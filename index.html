@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,12 +34,15 @@
     section{margin-bottom:2rem}
     .bio{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
     .bio .text h2{margin-bottom:.6rem}
-    .tracks iframe{width:100%;height:120px;border:0;border-radius:10px}
+    .tracks iframe{width:100%;height:300px;border:0;border-radius:10px}
 
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
     .gallery img{width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;}
 
+    video{border-radius:10px;margin-top:1rem;max-width:100%;}
+
     footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
+    footer img{max-width:100px;height:auto;margin-top:10px;display:block;margin-left:auto;margin-right:auto;}
 
     @media (max-width:880px){.hero{grid-template-columns:1fr;}.bio{grid-template-columns:1fr} .portrait img{height:300px}}
   </style>
@@ -55,6 +57,7 @@
           <a class="btn" href="#music">Listen</a>
           <a class="btn ghost" href="#contact">Contact</a>
           <a class="btn" href="#gallery">Gallery</a>
+          <a class="btn" href="#video">Video</a>
         </div>
         <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">
           Based in Madrid (Spain) — Born March 10, 1999.
@@ -62,13 +65,13 @@
       </div>
 
       <div class="card portrait" aria-hidden="true">
-        <!-- Main portrait; replace file if needed -->
         <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
       </div>
     </div>
   </header>
 
   <main>
+    <!-- About Section -->
     <section id="about" class="card">
       <div class="bio">
         <div class="text">
@@ -85,68 +88,72 @@
         <div>
           <h3 style="margin-bottom:.6rem">Socials & Links</h3>
           <div style="display:flex;flex-direction:column;gap:.5rem">
-            <!-- Replace # with actual links -->
-<a class="btn" href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener">SoundCloud</a>
-<a class="btn" href="https://www.instagram.com/rosthedj" target="_blank" rel="noopener">Instagram</a>
-<a class="btn" href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn" href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener">SoundCloud</a>
+            <a class="btn" href="https://www.instagram.com/rosthedj" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener">YouTube</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Music Section -->
     <section id="music" class="card">
       <h2 style="margin-bottom:.6rem">Music</h2>
       <p style="color:var(--muted);margin-bottom:1rem">Embed your mixes here — examples below. Replace iframe src with your SoundCloud/Spotify embed links.</p>
       <div class="tracks" style="display:grid;gap:12px">
-        <!-- Placeholder embeds: replace with your actual embed links -->
-        <!-- SoundCloud Playlist Embed -->
-<iframe 
-    width="100%" 
-    height="300" 
-    scrolling="no" 
-    frameborder="no" 
-    allow="autoplay" 
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2084390145&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-</iframe>
+        <iframe 
+            width="100%" 
+            height="300" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2084390145&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
 
-<div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
-    <a href="https://soundcloud.com/rosthedj" title="ROS DJ" target="_blank" style="color: #cccccc; text-decoration: none;">ROS DJ</a> · 
-    <a href="https://soundcloud.com/rosthedj/sets/r-dabizha-playlist" title="Etapa de Potencia by R. Dabizha" target="_blank" style="color: #cccccc; text-decoration: none;">Etapa de Potencia by R. Dabizha</a>
-</div>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/rosthedj" title="ROS DJ" target="_blank" style="color: #cccccc; text-decoration: none;">ROS DJ</a> · 
+            <a href="https://soundcloud.com/rosthedj/sets/r-dabizha-playlist" title="Etapa de Potencia by R. Dabizha" target="_blank" style="color: #cccccc; text-decoration: none;">Etapa de Potencia by R. Dabizha</a>
+        </div>
       </div>
     </section>
 
-    
+    <!-- Video Section -->
+    <section id="video" class="card">
+      <h2>Videos</h2>
+      <p style="color:var(--muted);margin-bottom:1rem">Check out my latest videos!</p>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
     <!-- Contact Section -->
-<section id="contact" style="padding: 50px 20px; background-color: #111; color: #fff; text-align: center;">
-  <h2>Contact</h2>
-  <p>Want to collaborate? Reach out!</p>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Want to collaborate? Reach out!</p>
+      <p>Email: <a href="mailto:r.dabizha@icloud.com" style="color: #ff5500; text-decoration: none;">r.dabizha@icloud.com</a></p>
+    </section>
 
-  <!-- Email link -->
-  <p>Email: <a href="mailto:r.dabizha@icloud.com" style="color: #ff5500; text-decoration: none;">mail</a></p>
-
-  <!-- Social links -->
-  <div style="margin-top: 20px;">
-    <a class="btn" href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener" style="margin: 5px;">SoundCloud</a>
-    <a class="btn" href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener" style="margin: 5px;">Instagram</a>
-  </div>
-
-  <!-- Optional contact form -->
-  <!--
-  <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top: 30px;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding:10px; margin:5px; width: 80%;">
-    <input type="email" name="email" placeholder="Your Email" required style="padding:10px; margin:5px; width: 80%;">
-    <textarea name="message" placeholder="Your Message" required style="padding:10px; margin:5px; width: 80%; height:100px;"></textarea>
-    <button type="submit" style="padding:10px 20px; background:#ff5500; border:none; color:#fff; cursor:pointer;">Send</button>
-  </form>
-  -->
-</section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="card">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <!-- Add your images here -->
+        <img src="ROSDJ1.jpg" alt="ROS DJ gallery image">
+        <img src="ROSDJ2.jpg" alt="ROS DJ gallery image">
+        <img src="ROSDJ3.jpg" alt="ROS DJ gallery image">
+      </div>
     </section>
   </main>
 
   <footer>
-    <div>© ROS DJ — · Organic/Melodic House</div>
+    <div>© ROS DJ — Organic/Melodic House</div>
+    <img src="images/logo.png" alt="ROS DJ Logo">
   </footer>
 </body>
 </html>
