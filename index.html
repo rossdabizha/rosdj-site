@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ROS DJ — Portfolio</title>
+  <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostislav Dabizha.">
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#0f0f0f;
+      --accent:#ff2d55;
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+         background:var(--bg);color:#eee;line-height:1.5;}
+    header{min-height:70vh;display:flex;align-items:center;justify-content:center;
+            background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover no-repeat;
+            position:relative;padding:2rem;}
+    .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+    .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:2px;margin-bottom:.4rem}
+    .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
+    .actions{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600}
+    .btn.ghost{background:var(--glass);}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+           border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:14px;}
+    .portrait{height:100%;display:flex;align-items:center;justify-content:center}
+    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(30%);}
+
+    main{max-width:1100px;margin:2rem auto;padding:0 1rem;}
+    section{margin-bottom:2rem}
+    .bio{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
+    .bio .text h2{margin-bottom:.6rem}
+    .tracks iframe{width:100%;height:120px;border:0;border-radius:10px}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;}
+
+    footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
+
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.bio{grid-template-columns:1fr} .portrait img{height:300px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero" role="banner">
+      <div class="brand">
+        <h1>ROS DJ</h1>
+        <p class="lead">Organic House — Ukrainian DJ &amp; producer. Deep, melodic, atmospheric sets by Rostislav Dabizha.</p>
+        <div class="actions">
+          <a class="btn" href="#music">Listen</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+          <a class="btn" href="#gallery">Gallery</a>
+        </div>
+        <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">
+          Based in Spain 🇪🇸 — Born March 10, 1999. Specializes in immersive Organic House journeys.
+        </p>
+      </div>
+
+      <div class="card portrait" aria-hidden="true">
+        <!-- Main portrait; replace file if needed -->
+        <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="card">
+      <div class="bio">
+        <div class="text">
+          <h2>About ROS DJ</h2>
+          <p>
+            <strong>Rostislav Dabizha</strong> — Ukrainian DJ and music producer born March 10, 1999.
+            ROS DJ crafts deep, melodic and atmospheric Organic House sets that guide listeners through immersive soundscapes.
+            Since the beginning of the war in Ukraine, he relocated to Spain and continues to captivate audiences with a unique track selection and mixing style.
+          </p>
+          <p style="color:var(--muted);margin-top:.6rem;font-size:.95rem">
+            Genres: Organic House · Deep House · Melodic
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:.6rem">Socials & Links</h3>
+          <div style="display:flex;flex-direction:column;gap:.5rem">
+            <!-- Replace # with actual links -->
+            <a class="btn" href="#" target="_blank" rel="noopener">SoundCloud</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">Spotify</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="card">
+      <h2 style="margin-bottom:.6rem">Music</h2>
+      <p style="color:var(--muted);margin-bottom:1rem">Embed your mixes here — examples below. Replace iframe src with your SoundCloud/Spotify embed links.</p>
+      <div class="tracks" style="display:grid;gap:12px">
+        <!-- Placeholder embeds: replace with your actual embed links -->
+        <iframe title="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/"></iframe>
+        <iframe title="spotify-embed" src="https://open.spotify.com/embed/artist/"></iframe>
+      </div>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2 style="margin-bottom:.6rem">Gallery</h2>
+      <div class="gallery">
+        <!-- Using the provided images; add more as needed -->
+        <img src="DJROS.jpg" alt="rosdj photo 1">
+        <img src="ROSDJ.jpeg" alt="rosdj photo 2">
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2 style="margin-bottom:.6rem">Contact</h2>
+      <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:info@rosdj.es" style="color:var(--accent);text-decoration:none">info@rosdj.es</a></p>
+      <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© ROS DJ — Rostislav Dabizha · Organic House</div>
+  </footer>
+</body>
+</html>
