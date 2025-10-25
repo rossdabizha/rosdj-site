@@ -14,16 +14,20 @@
     --glass: rgba(255,255,255,0.03);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-       background:var(--bg);color:#eee;line-height:1.5;}
-  a{transition: 0.3s;}
+  body{
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background:var(--bg);
+    color:#eee;
+    line-height:1.5;
+  }
+  a{transition:0.3s;}
   a:hover{opacity:0.8;}
   header{
     min-height:70vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover no-repeat;
+    background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('DJROS.jpg') center/cover no-repeat;
     position:relative;
     padding:2rem;
   }
@@ -60,8 +64,8 @@
     color:#fff;
     text-decoration:none;
     font-weight:600;
-    position: relative;
-    overflow: hidden;
+    position:relative;
+    overflow:hidden;
   }
   .btn::after{
     content:"";
@@ -75,18 +79,22 @@
     transform:scaleX(0);
     transform-origin:left;
     transition:0.3s;
-    opacity:0.2;
+    opacity:0.25;
   }
-  .btn:hover::after{
-    transform:scaleX(1);
+  .btn:hover::after{transform:scaleX(1);}
+  .btn span{position:relative;z-index:1;}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    padding:1.5rem;
+    border-radius:14px;
   }
-  .btn span{
-    position: relative;
-    z-index:1;
+  .portrait{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-         border:1px solid rgba(255,255,255,0.04);padding:1.5rem;border-radius:14px;}
-  .portrait{height:100%;display:flex;align-items:center;justify-content:center}
   .portrait img{
     width:100%;
     height:auto;
@@ -96,29 +104,50 @@
     filter:grayscale(20%) brightness(0.9);
     transition:0.3s;
   }
-  .portrait img:hover{
-    filter:grayscale(0%) brightness(1);
-  }
-
+  .portrait img:hover{filter:grayscale(0%) brightness(1);}
   main{max-width:1100px;margin:2rem auto;padding:0 1rem;}
-  section{margin-bottom:3rem}
-  .bio{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+  section{margin-bottom:3rem;}
+  .bio{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    align-items:center;
+  }
   .bio .text h2{margin-bottom:.6rem;font-size:1.8rem;}
-  .tracks iframe{width:100%;height:300px;border:0;border-radius:12px}
-
-  .social-icons{display:flex;gap:10px;margin-top:10px;}
-  .social-icons a{display:inline-block;width:40px;height:40px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;text-align:center;line-height:40px;color:#fff;font-size:1.2rem;}
-  .social-icons a:hover{background:var(--accent);color:#fff;}
-
-  footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem;}
-
+  .tracks iframe{width:100%;border:0;border-radius:12px;}
+  .social-icons{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+  }
+  .social-icons a{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:50%;
+    text-align:center;
+    line-height:40px;
+    color:#fff;
+    font-size:1.2rem;
+  }
+  .social-icons a:hover{
+    background:var(--accent);
+    color:#fff;
+  }
+  footer{
+    text-align:center;
+    padding:2rem 1rem;
+    color:var(--muted);
+    font-size:.95rem;
+  }
   @media (max-width:880px){
     .hero{grid-template-columns:1fr;}
     .bio{grid-template-columns:1fr;}
     .portrait img{height:300px;}
   }
 </style>
-<!-- Іконки соцмереж -->
+<!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -142,44 +171,64 @@
   </header>
 
   <main>
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="card">
       <div class="bio">
         <div class="text">
           <h2>About ROS DJ</h2>
-          <p>
-            <strong>Rostislav Dabizha</strong> — Ukrainian DJ and music producer born March 10, 1999.
-            ROS DJ crafts deep, melodic and atmospheric Organic House sets that guide listeners through immersive soundscapes.
-            Since the beginning of the war in Ukraine, he relocated to Spain and continues to captivate audiences with a unique track selection and mixing style.
-          </p>
-          <p style="color:var(--muted);margin-top:.6rem;font-size:.95rem">
+          <p><strong>Rostislav Dabizha</strong> — Ukrainian DJ and music producer born March 10, 1999.
+          ROS DJ crafts deep, melodic and atmospheric Organic House sets that guide listeners through immersive soundscapes.
+          Since the beginning of the war in Ukraine, he relocated to Spain and continues to captivate audiences with a unique track selection and mixing style.</p>
+          <p style="color:var(--muted);margin-top:.6rem;font-size:.95rem;">
             Genres: Organic House · Deep House · Melodic
           </p>
         </div>
         <div>
           <h3 style="margin-bottom:.6rem">Socials & Links</h3>
           <div class="social-icons">
-            <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://www.instagram.com/rosthedj" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/rosthedj" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://www.instagram.com/rosthedj" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@rosthedj" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Music Section -->
+    <!-- Music -->
     <section id="music" class="card">
-      <h2 style="margin-bottom:.6rem">ORGANIC</h2>
-      <div class="tracks" style="display:grid;gap:12px">
+      <h2 style="margin-bottom:1rem;">MUSIC</h2>
+      <div class="tracks" style="display:grid;gap:20px;">
+        <!-- SoundCloud Embed -->
         <iframe 
-            width="100%" 
-            height="300" 
-            scrolling="no" 
-            frameborder="no" 
-            allow="autoplay" 
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2084390145&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+          width="100%" 
+          height="300" 
+          scrolling="no" 
+          frameborder="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2084390145&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
         </iframe>
 
-        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
-            <a href="https://soundcloud.com/rosthedj" title="ROS DJ" target="_blank" style="color: #cccccc; text-decoration: none;">ROS DJ</a> · 
-            <a href="https://soundcloud.com/rosthed
+        <!-- Mixcloud Embed -->
+        <iframe 
+          width="100%" 
+          height="200" 
+          src="https://player.mixcloud.com/widget/iframe/?feed=%2Frosthedj%2F" 
+          frameborder="0" 
+          allow="autoplay">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card" style="text-align:center;">
+      <h2>Contact</h2>
+      <p style="color:var(--muted);margin-bottom:1rem;">Want to collaborate or book ROS DJ?</p>
+      <p>Email: <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none;">r.dabizha@icloud.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© ROS DJ — Organic & Melodic House</div>
+  </footer>
+</body>
+</html>
