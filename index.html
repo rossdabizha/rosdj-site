@@ -2038,6 +2038,16 @@
 </style>
 </head>
 <body>
+  <!-- Language Splash Screen -->
+  <div id="langSplash" style="position:fixed;inset:0;z-index:9999;background:rgba(20,20,20,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.4s;">
+    <h2 style="color:#fff;font-size:2rem;margin-bottom:2.5rem;letter-spacing:1px;">Оберіть мову / Choose language</h2>
+    <div style="display:flex;gap:2rem;">
+      <button class="lang-splash-btn" data-lang="ua">UA</button>
+      <button class="lang-splash-btn" data-lang="en">EN</button>
+      <button class="lang-splash-btn" data-lang="es">ES</button>
+    </div>
+  </div>
+
   <!-- Fixed Navigation -->
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
@@ -2053,7 +2063,14 @@
   </nav>
 
   <!-- Language Selector -->
-  <div class="language-selector">
+  <div class="language-selector" id="footerLang" style="display:none;position:fixed;bottom:18px;right:18px;z-index:1002;box-shadow:0 2px 12px rgba(0,0,0,0.18);background:rgba(20,20,20,0.88);border-radius:50%;padding:0.7rem;cursor:pointer;transition:background 0.22s;">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+</div>
+<div id="footerLangMenu" style="display:none;position:fixed;bottom:60px;right:18px;z-index:1003;background:rgba(30,30,30,0.97);border-radius:14px;padding:0.8rem 1.2rem;box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+  <button class="lang-btn" data-lang="ua">UA</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
     <button class="lang-btn" data-lang="ua">UA</button>
     <button class="lang-btn active" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="es">ES</button>
@@ -2808,8 +2825,52 @@
       // Initial call
       updateActiveNav();
       
+      // Splash-screen language selection
+      const splash = document.getElementById('langSplash');
+      const footerLang = document.getElementById('footerLang');
+      const footerLangMenu = document.getElementById('footerLangMenu');
+      let hasLang = localStorage.getItem('selectedLanguage');
+      if (!hasLang) {
+        document.body.style.overflow = 'hidden';
+        splash.style.display = 'flex';
+      } else {
+        splash.style.display = 'none';
+        footerLang.style.display = 'block';
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('.lang-splash-btn').forEach(btn => {
+        btn.onclick = () => {
+          const lang = btn.getAttribute('data-lang');
+          localStorage.setItem('selectedLanguage', lang);
+          updateLanguage(lang);
+          splash.style.opacity = 0;
+          setTimeout(()=>{
+            splash.style.display = 'none';
+            footerLang.style.display = 'block';
+            document.body.style.overflow = '';
+          }, 350);
+        };
+      });
+      // Footer language selector
+      footerLang.onclick = () => {
+        footerLangMenu.style.display = footerLangMenu.style.display === 'block' ? 'none' : 'block';
+      };
+      footerLangMenu.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.onclick = () => {
+          const lang = btn.getAttribute('data-lang');
+          localStorage.setItem('selectedLanguage', lang);
+          updateLanguage(lang);
+          footerLangMenu.style.display = 'none';
+        };
+      });
+      // Закрити меню при кліку поза ним
+      document.addEventListener('click', (e) => {
+        if (!footerLang.contains(e.target) && !footerLangMenu.contains(e.target)) {
+          footerLangMenu.style.display = 'none';
+        }
+      });
       // Initialize language
-      updateLanguage(currentLang);
+      updateLanguage(localStorage.getItem('selectedLanguage') || currentLang);
     });
   </script>
 </body>
