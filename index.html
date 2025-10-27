@@ -6,7 +6,7 @@
   <title>ROS DJ | Ukrainian DJ & Producer - Organic House Music</title>
   <meta name="description" content="ROS DJ (Rostyslav Dabizha) - Professional Ukrainian DJ and producer creating immersive Organic House, Deep House & Melodic experiences. Available for worldwide bookings.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#ff2d55">
+  <meta name="theme-color" content="#0066ff">
   <link rel="preload" as="image" href="DJROS.jpg">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -57,36 +57,48 @@
   
   <style>
     :root{
-      --bg:#0a0a0a;
-      --card:#111111;
-      --accent:#ff2d55;
-      --accent-light:#ff4466;
-      --text:#ffffff;
-      --text-secondary:#b0b0b0;
-      --muted:#666666;
-      --glass: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.1);
+      --bg-primary: #000000;
+      --bg-secondary: #0a0a0a;
+      --bg-card: rgba(255,255,255,0.02);
+      --accent: #1a1a1a;
+      --accent-hover: #2a2a2a;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --text-muted: #666666;
+      --border: rgba(255,255,255,0.05);
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+      --shadow-accent: 0 20px 40px -10px rgba(255,255,255,0.1);
+      --glow: 0 0 20px rgba(255,255,255,0.1);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{
-      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-weight: 400;
+      padding-top: 80px;
     }
 
     /* Modern Navigation */
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:1000;
-      background:rgba(10,10,10,0.95);
-      backdrop-filter:blur(20px);
-      border-bottom:1px solid var(--border);
-      padding:1rem 2rem;
+    .navbar{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .navbar.scrolled{
+      background: rgba(0, 0, 0, 0.98);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
     }
     .nav-container{
       max-width:1400px;
@@ -96,11 +108,27 @@
       justify-content:space-between;
     }
     .logo{
-      font-size:1.5rem;
-      font-weight:900;
-      color:var(--accent);
-      text-decoration:none;
-      letter-spacing:-0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .logo img{
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .logo:hover{
+      color: var(--text-secondary);
+      transform: scale(1.05);
     }
     .nav-menu{
       display:flex;
@@ -135,28 +163,91 @@
       width:100%;
     }
     .nav-cta{
-      background:var(--accent);
-      color:white;
-      padding:0.7rem 1.5rem;
-      border-radius:25px;
-      text-decoration:none;
-      font-weight:600;
-      transition:all 0.3s;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
     }
+
+    .nav-cta::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .nav-cta:hover::before{
+      left: 100%;
+    }
+
     .nav-cta:hover{
-      background:var(--accent-light);
-      transform:translateY(-2px);
-      box-shadow:0 10px 25px rgba(255,45,85,0.3);
+      background: linear-gradient(135deg, var(--accent-hover), #333333);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
 
     /* Mobile Menu */
+    .nav-actions{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .language-switcher{
+      display: flex;
+      gap: 0.25rem;
+      background: var(--bg-card);
+      padding: 0.25rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .lang-btn{
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover{
+      color: var(--text-primary);
+      background: var(--glass);
+    }
+
+    .lang-btn.active{
+      background: var(--accent);
+      color: white;
+      box-shadow: var(--glow);
+    }
+
     .mobile-menu-toggle{
-      display:none;
-      background:none;
-      border:none;
-      color:var(--text);
-      font-size:1.5rem;
-      cursor:pointer;
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover{
+      color: var(--text-secondary);
     }
 
     /* Hero Section */
@@ -166,19 +257,19 @@
       align-items:center;
       justify-content:center;
       position:relative;
-      background:linear-gradient(135deg, rgba(10,10,10,0.9), rgba(255,45,85,0.1)),
+      background:linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,102,255,0.1)),
                   url('DJROS.jpg') center/cover;
       background-attachment:fixed;
       overflow:hidden;
     }
     .hero::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:radial-gradient(circle at 20% 50%, rgba(255,45,85,0.2) 0%, transparent 50%);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(0,102,255,0.2) 0%, transparent 50%);
     }
     .hero-content{
       text-align:center;
@@ -301,6 +392,109 @@
       display:block;
     }
 
+    /* DJ Tools Section */
+    .dj-tools-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .tool-card{
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover::before{
+      transform: scaleX(1);
+    }
+
+    .tool-card:hover{
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .tool-card h3{
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .tool-card p{
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .camelot-info,
+    .bpm-info,
+    .in-kay-info{
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 1.5rem;
+    }
+
+    .camelot-info h4,
+    .bpm-info h4,
+    .in-kay-info h4{
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .camelot-info ul,
+    .bpm-info ul,
+    .in-kay-info ul{
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .camelot-info li,
+    .bpm-info li,
+    .in-kay-info li{
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .camelot-info li::before,
+    .bpm-info li::before,
+    .in-kay-info li::before{
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .in-kay-info .btn{
+      margin-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+
     /* Music Section */
     .music-grid{
       display:grid;
@@ -417,42 +611,105 @@
 
     /* Footer */
     footer{
-      background:var(--card);
-      border-top:1px solid var(--border);
-      padding:3rem 2rem 2rem;
-      text-align:center;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    footer::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer{
+      0%, 100%{ opacity: 0.3; }
+      50%{ opacity: 1; }
+    }
+
     .footer-content{
-      max-width:1400px;
-      margin:0 auto;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
+
     .social-links{
-      display:flex;
-      justify-content:center;
-      gap:1rem;
-      margin-bottom:2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
+
     .social-link{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      background:var(--glass);
-      border:1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--text-secondary);
-      text-decoration:none;
-      transition:all 0.3s;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+
+    .social-link::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .social-link:hover::before{
+      width: 100%;
+      height: 100%;
+    }
+
     .social-link:hover{
-      background:var(--accent);
-      color:white;
-      transform:translateY(-3px);
+      color: white;
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+      border-color: var(--accent);
     }
+
+    .social-link svg{
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-link:hover svg{
+      transform: scale(1.2);
+    }
+
     .footer-text{
-      color:var(--text-secondary);
-      margin-bottom:1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-text:hover{
+      color: var(--text-primary);
     }
 
     /* Responsive */
@@ -526,14 +783,25 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">ROS DJ</a>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="ROS DJ Logo">
+        ROS DJ
+      </a>
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#dj-tools" class="nav-link">DJ Tools</a></li>
         <li><a href="#music" class="nav-link">Music</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Book Now</a>
+      <div class="nav-actions">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="#contact" class="nav-cta">Book Now</a>
+      </div>
       <button class="mobile-menu-toggle">☰</button>
     </div>
   </nav>
@@ -563,6 +831,51 @@
       </div>
       <div class="about-image">
         <img src="DJROS.jpg" alt="ROS DJ - Rostyslav Dabizha">
+      </div>
+    </div>
+  </section>
+
+  <!-- DJ Tools Section -->
+  <section id="dj-tools" class="section">
+    <h2 class="section-title">DJ Tools</h2>
+    <p class="section-subtitle">Essential tools for harmonic mixing and professional DJ performance</p>
+    <div class="dj-tools-grid">
+      <div class="tool-card">
+        <h3>🎵 Camelot Wheel</h3>
+        <p>The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.</p>
+        <div class="camelot-info">
+          <h4>Key Compatibility:</h4>
+          <ul>
+            <li><strong>Same number:</strong> Perfect mix</li>
+            <li><strong>±1 number:</strong> Energy change</li>
+            <li><strong>Same letter:</strong> Relative minor/major</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>🎧 BPM Analysis</h3>
+        <p>Understanding BPM (Beats Per Minute) is crucial for creating seamless transitions. Match tempos or use creative tempo changes to enhance your DJ sets.</p>
+        <div class="bpm-info">
+          <h4>Organic House Range:</h4>
+          <ul>
+            <li><strong>Deep:</strong> 110-122 BPM</li>
+            <li><strong>Melodic:</strong> 118-124 BPM</li>
+            <li><strong>Progressive:</strong> 122-128 BPM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>🎹 In-Kay Key Detection</h3>
+        <p>Professional key detection tool for DJs and producers. In-Kay helps you identify musical keys, find compatible tracks, and create harmonic mixes with precision. Essential for modern electronic music production.</p>
+        <div class="in-kay-info">
+          <h4>Features:</h4>
+          <ul>
+            <li><strong>Accurate Detection:</strong> Advanced algorithm analysis</li>
+            <li><strong>Multiple Formats:</strong> MP3, WAV, FLAC support</li>
+            <li><strong>Export Options:</strong> Camelot & Musical notation</li>
+          </ul>
+          <a href="in-kay.pages" class="btn btn-primary" target="_blank">Open In-Kay</a>
+        </div>
       </div>
     </div>
   </section>
@@ -644,17 +957,441 @@
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="https://soundcloud.com/rosthedj" class="social-link" target="_blank" title="SoundCloud">🎵</a>
-        <a href="https://www.instagram.com/rosthedj/" class="social-link" target="_blank" title="Instagram">📷</a>
-        <a href="https://www.youtube.com/@rosthedj" class="social-link" target="_blank" title="YouTube">🎬</a>
-        <a href="https://www.mixcloud.com/rosthedj/" class="social-link" target="_blank" title="Mixcloud">🎧</a>
+        <a href="https://soundcloud.com/rosthedj" class="social-link" target="_blank" title="SoundCloud">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.5 10a4 4 0 0 1 4 4h-9a3 3 0 0 1-3-3 3 3 0 0 1 3-3c.9 0 1.7.4 2.3 1.1A4.98 4.98 0 0 1 17.5 10zM2 14h1V9H2v5zm2 0h1V8H4v6zm2 0h1V7H6v7zm2 0h1V6H8v8z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/rosthedj/" class="social-link" target="_blank" title="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@rosthedj" class="social-link" target="_blank" title="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23 7.5s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C17.5 4 12 4 12 4h0s-5.5 0-8.1.3c-.4 0-1.3.1-2.1.9C1.2 5.9 1 7.5 1 7.5S.8 9.3.8 11v2c0 1.7.2 3.5.2 3.5s.2 1.6.8 2.3c.8.8 1.8.8 2.2.9C6.6 20 12 20 12 20s5.5 0 8.1-.3c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.3.8-2.3S23.2 14.7 23.2 13V11c0-1.7-.2-3.5-.2-3.5zM9.8 14.6V8.9l5.7 2.9-5.7 2.8z"/>
+          </svg>
+        </a>
+        <a href="https://www.mixcloud.com/rosthedj/" class="social-link" target="_blank" title="Mixcloud">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.5 12.5a3.5 3.5 0 1 1-3.4-4.2 5.5 5.5 0 1 0-9.6 4.5 3.2 3.2 0 1 1 0 1.4 7 7 0 1 1 12.6-5.7 3.5 3.5 0 0 1 .4 4z"/>
+          </svg>
+        </a>
       </div>
       <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
-      <p class="footer-text">Crafted with ❤️ by Rostyslav Dabizha</p>
     </div>
   </footer>
 
   <script>
+    // Language translations
+    const translations = {
+      en: {
+        nav: {
+          about: "About",
+          djTools: "DJ Tools",
+          music: "Music",
+          gallery: "Gallery",
+          contact: "Contact",
+          bookNow: "Book Now"
+        },
+        hero: {
+          subtitle: "ORGANIC • MELODIC • HOUSE",
+          listenNow: "Listen Now",
+          bookDJ: "Book DJ"
+        },
+        about: {
+          title: "About ROS DJ",
+          subtitle: "Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets",
+          content1: "Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.",
+          genres: "Genres: Organic House · Deep House · Melodic House",
+          based: "Based: Spain | Available: Worldwide Bookings"
+        },
+        djTools: {
+          title: "DJ Tools",
+          subtitle: "Essential tools for harmonic mixing and professional DJ performance",
+          camelot: {
+            title: " Camelot Wheel",
+            content: "The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.",
+            compatibility: "Key Compatibility:",
+            sameNumber: "Same number: Perfect mix",
+            plusMinus: "±1 number: Energy change",
+            sameLetter: "Same letter: Relative minor/major"
+          },
+          bpm: {
+            title: " BPM Analysis",
+            content: "Understanding BPM (Beats Per Minute) is crucial for creating seamless transitions. Match tempos or use creative tempo changes to enhance your DJ sets.",
+            range: "Organic House Range:",
+            deep: "Deep: 110-122 BPM",
+            melodic: "Melodic: 118-124 BPM",
+            progressive: "Progressive: 122-128 BPM"
+          },
+          inKay: {
+            title: " In-Kay Key Detection",
+            content: "Professional key detection tool for DJs and producers. In-Kay helps you identify musical keys, find compatible tracks, and create harmonic mixes with precision. Essential for modern electronic music production.",
+            features: "Features:",
+            accurate: "Accurate Detection: Advanced algorithm analysis",
+            formats: "Multiple Formats: MP3, WAV, FLAC support",
+            export: "Export Options: Camelot & Musical notation",
+            tryButton: "Open In-Kay"
+          }
+        },
+        music: {
+          title: "Music",
+          subtitle: "Experience my sound across different platforms",
+          soundcloud: {
+            title: "SoundCloud",
+            content: "Latest mixes and productions with deep, melodic organic house vibes",
+            action: "Listen"
+          },
+          mixcloud: {
+            title: "Mixcloud",
+            content: "Full DJ sets and podcasts showcasing my musical journey",
+            action: "Stream"
+          },
+          youtube: {
+            title: "YouTube",
+            content: "Live performances, studio sessions, and exclusive content",
+            action: "Watch"
+          }
+        },
+        gallery: {
+          title: "Gallery",
+          subtitle: "Behind the scenes and live performances",
+          performance1: {
+            title: "Live Performance",
+            content: "Captivating the crowd with organic house vibes"
+          },
+          performance2: {
+            title: "Behind the Decks",
+            content: "Crafting the perfect musical journey"
+          }
+        },
+        contact: {
+          title: "Get In Touch",
+          subtitle: "Available for bookings, collaborations, and press inquiries",
+          email: {
+            title: " Email",
+            content: "For bookings and inquiries"
+          },
+          location: {
+            title: " Location",
+            content1: "Based in Spain",
+            content2: "Available for worldwide bookings"
+          },
+          genres: {
+            title: " Genres",
+            content1: "Organic House",
+            content2: "Deep House & Melodic"
+          }
+        }
+      },
+      ua: {
+        nav: {
+          about: "",
+          djTools: "DJ ",
+          music: "Музика",
+          gallery: "Галерея",
+          contact: "Контакти",
+          bookNow: "Замовити"
+        },
+        hero: {
+          subtitle: "ORGANIC • MELODIC • HOUSE",
+          listenNow: "Слухати",
+          bookDJ: "Замовити DJ"
+        },
+        about: {
+          title: "Про ROS DJ",
+          subtitle: "Створюю захоплюючі музичні подорожі через глибокі, мелодійні та атмосферні organic house сети",
+          content1: "Професійний український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House & Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію унікальним підбором треків та стилем мікшування.",
+          genres: "Жанри: Organic House · Deep House · Melodic House",
+          based: "Базуюся: Іспанія | Доступний: Замовлення по всьому світу"
+        },
+        djTools: {
+          title: "DJ Інструменти",
+          subtitle: "Необхідні інструменти для гармонійного мікшування та професійних DJ виступів",
+          camelot: {
+            title: "🎵 Колесо Камелота",
+            content: "Колесо Камелота є незамінним для гармонійного мікшування в DJ сетах. Воно допомагає DJ міксувати треки в одній тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом всього виступу.",
+            compatibility: "Сумісність ключів:",
+            sameNumber: "Однаковий номер: Ідеальний мікс",
+            plusMinus: "±1 номер: Зміна енергії",
+            sameLetter: "Однакова літера: Відносна мінор/мажор"
+          },
+          bpm: {
+            title: "🎧 BPM Аналіз",
+            content: "Розуміння BPM (ударів за хвилину) є важливим для створення безшовних переходів. Підбирайте темп або використовуйте креативні зміни темпу для покращення ваших DJ сетів.",
+            range: "Organic House діапазон:",
+            deep: "Deep: 110-122 BPM",
+            melodic: "Melodic: 118-124 BPM",
+            progressive: "Progressive: 122-128 BPM"
+          },
+          inKay: {
+            title: "🎹 In-Kay Визначення Тональності",
+            content: "Професійний інструмент для визначення тональності для DJ та продюсерів. In-Kay допомагає ідентифікувати музичні ключі, знаходити сумісні треки та створювати гармонійні мікси з точністю. Незамінний для сучасної електронної музичної продакшн.",
+            features: "Функції:",
+            accurate: "Точне визначення: Аналіз за допомогою просунутих алгоритмів",
+            formats: "Кілька форматів: Підтримка MP3, WAV, FLAC",
+            export: "Опції експорту: Нотація Камелота та Музична",
+            tryButton: "Відкрити In-Kay"
+          }
+        },
+        music: {
+          title: "Музика",
+          subtitle: "Насолоджуйтесь моїм звуком на різних платформах",
+          soundcloud: {
+            title: "SoundCloud",
+            content: "Останні мікси та продакшн з глибокими, мелодійними organic house вайбами",
+            action: "Слухати"
+          },
+          mixcloud: {
+            title: "Mixcloud",
+            content: "Повні DJ сети та подкасти, що демонструють мою музичну подорож",
+            action: "Стрім"
+          },
+          youtube: {
+            title: "YouTube",
+            content: "Живі виступи, студійні сесії та ексклюзивний контент",
+            action: "Дивитись"
+          }
+        },
+        gallery: {
+          title: "Галерея",
+          subtitle: "За лаштунками та живі виступи",
+          performance1: {
+            title: "Живий виступ",
+            content: "Захоплюю натовп organic house вайбами"
+          },
+          performance2: {
+            title: "За пультом",
+            content: "Створюю ідеальну музичну подорож"
+          }
+        },
+        contact: {
+          title: "Зв'язок",
+          subtitle: "Доступний для замовлень, співпраці та преси",
+          email: {
+            title: " Email",
+            content: "Для замовлень та запитань"
+          },
+          location: {
+            title: " Локація",
+            content1: "Базуюся в Іспанії",
+            content2: "Доступний для замовлень по всьому світу"
+          },
+          genres: {
+            title: " Жанри",
+            content1: "Organic House",
+            content2: "Deep House & Melodic"
+          }
+        }
+      },
+      es: {
+        nav: {
+          about: "Sobre mí",
+          djTools: "Herramientas DJ",
+          music: "Música",
+          gallery: "Galería",
+          contact: "Contacto",
+          bookNow: "Reservar"
+        },
+        hero: {
+          subtitle: "ORGANIC • MELODIC • HOUSE",
+          listenNow: "Escuchar",
+          bookDJ: "Reservar DJ"
+        },
+        about: {
+          title: "Sobre ROS DJ",
+          subtitle: "Creando viajes musicales inmersivos a través de sets profundos, melódicos y atmosféricos de organic house",
+          content1: "DJ y productor musical ucraniano profesional especializado en Organic House, Deep House & Melodic. Desde el inicio de la guerra en Ucrania, me trasladé a España y continúo cautivando audiencias en todo el mundo con una selección única de tracks y estilo de mezcla.",
+          genres: "Géneros: Organic House · Deep House · Melodic House",
+          based: "Basado: España | Disponible: Reservas mundiales"
+        },
+        djTools: {
+          title: "Herramientas DJ",
+          subtitle: "Herramientas esenciales para mezcla armónica y actuaciones profesionales de DJ",
+          camelot: {
+            title: "🎵 Rueda Camelot",
+            content: "La Rueda Camelot es esencial para la mezcla armónica en sets de DJ. Ayuda a los DJs a mezclar tracks en la misma clave o claves compatibles, creando transiciones suaves y manteniendo el flujo musical durante toda la actuación.",
+            compatibility: "Compatibilidad de claves:",
+            sameNumber: "Mismo número: Mezcla perfecta",
+            plusMinus: "±1 número: Cambio de energía",
+            sameLetter: "Misma letra: Relativo menor/mayor"
+          },
+          bpm: {
+            title: "🎧 Análisis BPM",
+            content: "Entender los BPM (Beats Per Minute) es crucial para crear transiciones sin fisuras. Combina tempos o usa cambios creativos de tempo para mejorar tus sets de DJ.",
+            range: "Rango Organic House:",
+            deep: "Deep: 110-122 BPM",
+            melodic: "Melodic: 118-124 BPM",
+            progressive: "Progressive: 122-128 BPM"
+          },
+          inKay: {
+            title: "🎹 Detección de Clave In-Kay",
+            content: "Herramienta profesional de detección de claves para DJs y productores. In-Kay te ayuda a identificar claves musicales, encontrar tracks compatibles y crear mezclas armónicas con precisión. Esencial para la producción musical electrónica moderna.",
+            features: "Características:",
+            accurate: "Detección Precisa: Análisis de algoritmos avanzados",
+            formats: "Múltiples Formatos: Soporte MP3, WAV, FLAC",
+            export: "Opciones de Exportación: Notación Camelot y Musical",
+            tryButton: "Abrir In-Kay"
+          }
+        },
+        music: {
+          title: "Música",
+          subtitle: "Experimenta mi sonido en diferentes plataformas",
+          soundcloud: {
+            title: "SoundCloud",
+            content: "Últimos mixes y producciones con vibraciones profundas y melódicas de organic house",
+            action: "Escuchar"
+          },
+          mixcloud: {
+            title: "Mixcloud",
+            content: "Sets completos de DJ y podcasts mostrando mi viaje musical",
+            action: "Stream"
+          },
+          youtube: {
+            title: "YouTube",
+            content: "Actuaciones en vivo, sesiones de estudio y contenido exclusivo",
+            action: "Ver"
+          }
+        },
+        gallery: {
+          title: "Galería",
+          subtitle: "Detrás de cámaras y actuaciones en vivo",
+          performance1: {
+            title: "Actuación en Vivo",
+            content: "Cautivando a la audiencia con vibraciones de organic house"
+          },
+          performance2: {
+            title: "Detrás de los Decks",
+            content: "Creando el viaje musical perfecto"
+          }
+        },
+        contact: {
+          title: "Contacto",
+          subtitle: "Disponible para reservas, colaboraciones y prensa",
+          email: {
+            title: " Email",
+            content: "Para reservas e consultas"
+          },
+          location: {
+            title: " Ubicación",
+            content1: "Basado en España",
+            content2: "Disponible para reservas mundiales"
+          },
+          genres: {
+            title: " Géneros",
+            content1: "Organic House",
+            content2: "Deep House & Melodic"
+          }
+        }
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'en';
+
+    // Update language function
+    function updateLanguage(lang) {
+      const t = translations[lang];
+      
+      // Update navigation
+      document.querySelector('a[href="#about"]').textContent = t.nav.about;
+      document.querySelector('a[href="#dj-tools"]').textContent = t.nav.djTools;
+      document.querySelector('a[href="#music"]').textContent = t.nav.music;
+      document.querySelector('a[href="#gallery"]').textContent = t.nav.gallery;
+      document.querySelector('a[href="#contact"]').textContent = t.nav.contact;
+      document.querySelector('.nav-cta').textContent = t.nav.bookNow;
+      
+      // Update hero
+      document.querySelector('.hero-subtitle').textContent = t.hero.subtitle;
+      document.querySelector('.hero-cta .btn-primary').textContent = t.hero.listenNow;
+      document.querySelector('.hero-cta .btn-secondary').textContent = t.hero.bookDJ;
+      
+      // Update about section
+      document.querySelector('#about .section-title').textContent = t.about.title;
+      document.querySelector('#about .section-subtitle').textContent = t.about.subtitle;
+      document.querySelector('#about .about-content p').textContent = t.about.content1;
+      document.querySelector('#about .about-content p:nth-of-type(2)').innerHTML = `<strong>${t.about.genres}</strong>`;
+      document.querySelector('#about .about-content p:nth-of-type(3)').innerHTML = `<strong>${t.about.based}</strong>`;
+      
+      // Update DJ Tools section
+      document.querySelector('#dj-tools .section-title').textContent = t.djTools.title;
+      document.querySelector('#dj-tools .section-subtitle').textContent = t.djTools.subtitle;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) h3').textContent = t.djTools.camelot.title;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) p').textContent = t.djTools.camelot.content;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) h4').textContent = t.djTools.camelot.compatibility;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) li:nth-child(1)').innerHTML = `<strong>${t.djTools.camelot.sameNumber}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) li:nth-child(2)').innerHTML = `<strong>${t.djTools.camelot.plusMinus}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(1) li:nth-child(3)').innerHTML = `<strong>${t.djTools.camelot.sameLetter}</strong>`;
+      
+      document.querySelector('#dj-tools .tool-card:nth-child(2) h3').textContent = t.djTools.bpm.title;
+      document.querySelector('#dj-tools .tool-card:nth-child(2) p').textContent = t.djTools.bpm.content;
+      document.querySelector('#dj-tools .tool-card:nth-child(2) h4').textContent = t.djTools.bpm.range;
+      document.querySelector('#dj-tools .tool-card:nth-child(2) li:nth-child(1)').innerHTML = `<strong>${t.djTools.bpm.deep}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(2) li:nth-child(2)').innerHTML = `<strong>${t.djTools.bpm.melodic}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(2) li:nth-child(3)').innerHTML = `<strong>${t.djTools.bpm.progressive}</strong>`;
+      
+      document.querySelector('#dj-tools .tool-card:nth-child(3) h3').textContent = t.djTools.inKay.title;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) p').textContent = t.djTools.inKay.content;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) h4').textContent = t.djTools.inKay.features;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) li:nth-child(1)').innerHTML = `<strong>${t.djTools.inKay.accurate}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) li:nth-child(2)').innerHTML = `<strong>${t.djTools.inKay.formats}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) li:nth-child(3)').innerHTML = `<strong>${t.djTools.inKay.export}</strong>`;
+      document.querySelector('#dj-tools .tool-card:nth-child(3) .btn').textContent = t.djTools.inKay.tryButton;
+      
+      // Update music section
+      document.querySelector('#music .section-title').textContent = t.music.title;
+      document.querySelector('#music .section-subtitle').textContent = t.music.subtitle;
+      document.querySelector('#music .music-card:nth-child(1) h3').textContent = t.music.soundcloud.title;
+      document.querySelector('#music .music-card:nth-child(1) p').textContent = t.music.soundcloud.content;
+      document.querySelector('#music .music-card:nth-child(1) .btn').textContent = t.music.soundcloud.action;
+      
+      document.querySelector('#music .music-card:nth-child(2) h3').textContent = t.music.mixcloud.title;
+      document.querySelector('#music .music-card:nth-child(2) p').textContent = t.music.mixcloud.content;
+      document.querySelector('#music .music-card:nth-child(2) .btn').textContent = t.music.mixcloud.action;
+      
+      document.querySelector('#music .music-card:nth-child(3) h3').textContent = t.music.youtube.title;
+      document.querySelector('#music .music-card:nth-child(3) p').textContent = t.music.youtube.content;
+      document.querySelector('#music .music-card:nth-child(3) .btn').textContent = t.music.youtube.action;
+      
+      // Update gallery section
+      document.querySelector('#gallery .section-title').textContent = t.gallery.title;
+      document.querySelector('#gallery .section-subtitle').textContent = t.gallery.subtitle;
+      document.querySelector('#gallery .gallery-item:nth-child(1) .gallery-overlay h3').textContent = t.gallery.performance1.title;
+      document.querySelector('#gallery .gallery-item:nth-child(1) .gallery-overlay p').textContent = t.gallery.performance1.content;
+      document.querySelector('#gallery .gallery-item:nth-child(2) .gallery-overlay h3').textContent = t.gallery.performance2.title;
+      document.querySelector('#gallery .gallery-item:nth-child(2) .gallery-overlay p').textContent = t.gallery.performance2.content;
+      
+      // Update contact section
+      document.querySelector('#contact .section-title').textContent = t.contact.title;
+      document.querySelector('#contact .section-subtitle').textContent = t.contact.subtitle;
+      document.querySelector('#contact .contact-item:nth-child(1) h3').textContent = t.contact.email.title;
+      document.querySelector('#contact .contact-item:nth-child(1) p').textContent = t.contact.email.content;
+      document.querySelector('#contact .contact-item:nth-child(2) h3').textContent = t.contact.location.title;
+      document.querySelector('#contact .contact-item:nth-child(2) p:nth-of-type(1)').textContent = t.contact.location.content1;
+      document.querySelector('#contact .contact-item:nth-child(2) p:nth-of-type(2)').textContent = t.contact.location.content2;
+      document.querySelector('#contact .contact-item:nth-child(3) h3').textContent = t.contact.genres.title;
+      document.querySelector('#contact .contact-item:nth-child(3) p:nth-of-type(1)').textContent = t.contact.genres.content1;
+      document.querySelector('#contact .contact-item:nth-child(3) p:nth-of-type(2)').textContent = t.contact.genres.content2;
+      
+      // Update language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Save to localStorage
+      localStorage.setItem('language', lang);
+    }
+
+    // Language switcher event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateLanguage(btn.dataset.lang);
+      });
+    });
+
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
