@@ -42,66 +42,41 @@
     .topbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,.4));backdrop-filter:saturate(140%) blur(6px);border-top:1px solid rgba(255,255,255,0.06)}
     .brandmark{display:flex;align-items:center;gap:.6rem}
     .socials{display:flex;gap:.4rem}
-    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);transform:translateZ(0)}
-    .icon-btn:hover{border-color:rgba(255,255,255,0.22);transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,45,85,0.3);background:rgba(255,45,85,0.1)}
-    .icon-btn:active{transform:translateY(0)}
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent}
+    .icon-btn:hover{border-color:rgba(255,255,255,0.22);background:transparent}
+    .icon-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600}
+    .btn:hover{border-color:var(--accent);color:var(--accent)}
+    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
 
     /* Header (hybrid) */
     header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.85))}
-    header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0;transform:scale(1.1);transition:transform 10s ease-out}
-    header:hover::after{transform:scale(1.15)}
+    header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0}
     .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
     .hero .content{padding:2rem 1.2rem}
-    .hero h1{font-size:clamp(2.5rem,7vw,3.8rem);line-height:1.1;font-weight:900;letter-spacing:.6px;margin:0;color:#e6e9ef;text-shadow:0 3px 15px rgba(0,0,0,.8);animation:fadeInUp 1s ease-out}
-    .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92;text-shadow:0 1px 8px rgba(0,0,0,.5);animation:fadeInUp 1s ease-out 0.2s both}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero h1{font-size:clamp(2.5rem,7vw,3.8rem);line-height:1.1;font-weight:900;letter-spacing:.6px;margin:0;color:#e6e9ef}
+    .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92}
     @media (max-width:640px){ header{min-height:72vh} header::after{background-position:50% 25%} }
 
     main{max-width:1100px;margin:2.5rem auto;padding:0 1.2rem}
     section{margin-bottom:2.2rem}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-           border:1px solid rgba(255,255,255,0.06);padding:1.1rem;border-radius:16px;backdrop-filter:saturate(140%) blur(6px);transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform:translateZ(0)}
-    .card:hover{transform:translateY(-4px);border-color:rgba(255,45,85,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(255,45,85,0.1)}
+           border:1px solid rgba(255,255,255,0.06);padding:1.1rem;border-radius:16px;backdrop-filter:saturate(140%) blur(6px)}
 
     h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem}
 
-    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(30%);transition:all 0.5s ease}
-    .portrait:hover img{filter:grayscale(0%);transform:scale(1.02)}
-
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden}
-    .btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,45,85,0.3), transparent);transition:left 0.5s}
-    .btn:hover::before{left:100%}
-    .btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 10px 20px rgba(255,45,85,0.2)}
-    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .btn.ghost{background:var(--glass)}
-    .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(0%)}
 
     /* Loading screen */
-    .loading-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.8s ease}
+    .loading-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
     .loading-screen.fade-out{opacity:0;pointer-events:none}
-    .loader{width:60px;height:60px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    /* Entrance animations */
-    .fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
-    .fade-in.visible{opacity:1;transform:translateY(0)}
-    .fade-in-delay-1{transition-delay:0.2s}
-    .fade-in-delay-2{transition-delay:0.4s}
-    .fade-in-delay-3{transition-delay:0.6s}
-    .slide-in-left{opacity:0;transform:translateX(-50px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
-    .slide-in-left.visible{opacity:1;transform:translateX(0)}
-    .slide-in-right{opacity:0;transform:translateX(50px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
-    .slide-in-right.visible{opacity:1;transform:translateX(0)}
-    .scale-in{opacity:0;transform:scale(0.8);transition:all 0.6s cubic-bezier(0.4, 0, 0.2, 1)}
-    .scale-in.visible{opacity:1;transform:scale(1)}
+    .loader{width:60px;height:60px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--accent);border-radius:50%}
 
     footer{text-align:center;padding:2rem 1rem 3.6rem;color:var(--muted);font-size:.95rem}
 
     /* Gallery */
-    .gallery-item{transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);transform:translateZ(0)}
-    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-    .gallery-item:hover img{transform:scale(1.05)}
     .gallery-item:hover .gallery-overlay{opacity:1}
   </style>
 </head>
@@ -115,9 +90,9 @@
       <strong>ROS DJ</strong>
     </div>
     <div class="language-switcher" style="display:flex;gap:.3rem">
-      <button class="lang-btn" data-lang="en" onclick="updateLanguage('en')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">EN</button>
-      <button class="lang-btn" data-lang="ua" onclick="updateLanguage('ua')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">UA</button>
-      <button class="lang-btn" data-lang="es" onclick="updateLanguage('es')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">ES</button>
+      <button class="lang-btn" data-lang="en" onclick="updateLanguage('en')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">EN</button>
+      <button class="lang-btn" data-lang="ua" onclick="updateLanguage('ua')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">UA</button>
+      <button class="lang-btn" data-lang="es" onclick="updateLanguage('es')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">ES</button>
     </div>
     <nav class="socials" aria-label="Social links">
       <a class="icon-btn" href="https://soundcloud.com/rosthedj" target="_blank" aria-label="SoundCloud" rel="noopener">
@@ -138,16 +113,16 @@
   <header>
     <div class="hero" role="banner">
       <div class="content">
-        <h1 class="fade-in">DJ ROS</h1>
-        <div class="subline fade-in fade-in-delay-1">ORGANIC • MELODIC • HOUSE</div>
+        <h1>DJ ROS</h1>
+        <div class="subline">ORGANIC • MELODIC • HOUSE</div>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="about" class="card fade-in fade-in-delay-2">
+    <section id="about" class="card">
       <div class="bio" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center">
-        <div class="text slide-in-left">
+        <div class="text">
           <h2>About ROS DJ</h2>
           <p>
             <strong>Rostyslav Dabizha</strong> — Ukrainian DJ and music producer.
@@ -158,7 +133,7 @@
             Genres: Organic House · Deep House · Melodic
           </p>
         </div>
-        <div class="slide-in-right">
+        <div>
           <div class="card portrait" aria-hidden="true" style="margin-bottom:1rem">
             <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
           </div>
@@ -181,7 +156,7 @@
       </div>
     </section>
 
-    <section id="gallery" class="card fade-in fade-in-delay-3">
+    <section id="gallery" class="card">
       <h2>Gallery</h2>
       <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin-top:1.5rem">
         <div class="gallery-item" style="position:relative;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
@@ -205,7 +180,7 @@
       </div>
     </section>
 
-    <section id="dj-tools" class="card fade-in fade-in-delay-3">
+    <section id="dj-tools" class="card">
       <h2>DJ Tools</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center">
         <div>
@@ -231,14 +206,14 @@
       </div>
     </section>
 
-    <section id="contact" class="card fade-in">
+    <section id="contact" class="card">
       <h2 style="margin-bottom:.6rem">Contact</h2>
       <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a></p>
       <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
     </section>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <div> ROS DJ — Rostyslav Dabizha · Organic House</div>
   </footer>
   <script>
@@ -324,30 +299,9 @@
       localStorage.setItem('language', lang);
     }
 
-    // Initialize language and animations
+    // Initialize language
     document.addEventListener('DOMContentLoaded', () => {
       updateLanguage(currentLang);
-      
-      // Trigger entrance animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
-        observer.observe(el);
-      });
-      
-      // Immediate animations for hero section
-      setTimeout(() => {
-        const heroH1 = document.querySelector('.hero h1');
-        const heroSubline = document.querySelector('.hero .subline');
-        if (heroH1) heroH1.classList.add('visible');
-        if (heroSubline) heroSubline.classList.add('visible');
-      }, 100);
     });
   </script>
 </body>
