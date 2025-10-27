@@ -36,9 +36,9 @@
     #loader.is-running{animation:loadbar 1.6s ease-out infinite}
     #loader.is-complete{animation:none;width:100%;opacity:0;transition:opacity .4s ease .15s}
     @keyframes loadbar{0%{width:0}60%{width:82%}100%{width:88%}}
-    header{min-height:100vh;display:flex;align-items:flex-end;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.62), rgba(0,0,0,0.84)), url('DJROS.jpg') 50% 30%/cover no-repeat;
-            position:relative;padding:2rem;overflow:hidden}
+    header{min-height:68vh;display:flex;align-items:flex-end;justify-content:center;
+            background:linear-gradient(180deg, rgba(0,0,0,0.48), rgba(0,0,0,0.66)), url('DJROS.jpg') 50% 35%/cover no-repeat;
+            position:relative;padding:1.2rem;overflow:hidden}
     header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%);
                    filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none;z-index:0}
     .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.28}
@@ -112,7 +112,7 @@
     .topbar.show{opacity:1;transform:none}
     @keyframes floatGlow{0%{transform:translate3d(-2%, -2%,0) scale(1)}50%{transform:translate3d(2%, 2%,0) scale(1.05)}100%{transform:translate3d(-2%, -2%,0) scale(1)}}
     @keyframes sheen{0%{opacity:.0;transform:skewX(-20deg) translateX(-120%)}15%{opacity:.5}100%{opacity:0;transform:skewX(-20deg) translateX(220%)}}
-    @media (max-width:640px){.particles{display:none}}
+    @media (max-width:640px){.particles{display:none} header{min-height:82vh; background-position:50% 25%; padding:1rem}}
     @media (prefers-reduced-motion: reduce){
       *{transition:none !important;animation:none !important}
     }
