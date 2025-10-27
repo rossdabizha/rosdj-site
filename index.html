@@ -290,9 +290,16 @@
     document.addEventListener('DOMContentLoaded', () => {
       updateLanguage(currentLang);
       
-      // Hide loading screen after 1.5s
+      // Hide loading screen after 1.5s and remove it completely
       setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('fade-out');
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) {
+          loadingScreen.classList.add('fade-out');
+          // Completely remove after fade animation
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 800);
+        }
         
         // Trigger entrance animations
         const observer = new IntersectionObserver((entries) => {
@@ -309,8 +316,10 @@
         
         // Immediate animations for hero section
         setTimeout(() => {
-          document.querySelector('.hero h1').classList.add('visible');
-          document.querySelector('.hero .subline').classList.add('visible');
+          const heroH1 = document.querySelector('.hero h1');
+          const heroSubline = document.querySelector('.hero .subline');
+          if (heroH1) heroH1.classList.add('visible');
+          if (heroSubline) heroSubline.classList.add('visible');
         }, 100);
         
       }, 1500);
