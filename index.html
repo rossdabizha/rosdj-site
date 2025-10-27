@@ -38,13 +38,17 @@
     @keyframes loadbar{0%{width:0}60%{width:82%}100%{width:88%}}
     /* Hybrid header */
     header{min-height:70vh;display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.72)), url('DJROS.jpg') 50% 30%/cover no-repeat;
+            background:linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.72));
             position:relative;overflow:hidden}
+    header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0;
+                  transform:scale(1) translateZ(0);will-change:transform;animation:kenburns 28s ease-in-out infinite alternate}
     .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
     .hero .content{padding:2rem 1.2rem}
     .hero h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.12;font-weight:900;letter-spacing:.5px;margin:0;color:#e6e9ef;text-shadow:0 2px 12px rgba(0,0,0,.6)}
     .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-    @media (max-width:640px){ header{min-height:72vh;background-position:50% 25%} }
+    @media (max-width:640px){ header{min-height:72vh} header::after{background-position:50% 25%} }
+    @keyframes kenburns{0%{transform:scale(1) translate3d(0,0,0)}100%{transform:scale(1.06) translate3d(0,-6px,0)}}
+    @media (prefers-reduced-motion: reduce){ header::after{animation:none} }
     .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:1.5px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -146,7 +150,7 @@
   <header>
     <div class="hero" role="banner">
       <div class="content">
-        <h1>DJ ROS (Rostyslav Dabizha)</h1>
+        <h1>DJ ROS</h1>
         <div class="subline">ORGANIC • MELODIC • HOUSE</div>
       </div>
     </div>
@@ -156,9 +160,9 @@
     <section id="about" class="card reveal reveal-left">
       <div class="bio">
         <div class="text">
-          <h2>About ROS DJ</h2>
+          <h2>DJ ROS</h2>
           <p>
-            <strong>Rostislav Dabizha</strong> — Ukrainian DJ and music producer born March 10, 1999.
+          — Ukrainian DJ and music producer born in Ukraine.
             ROS DJ crafts deep, melodic and atmospheric Organic House sets that guide listeners through immersive soundscapes.
             Since the beginning of the war in Ukraine, he relocated to Spain and continues to captivate audiences with a unique track selection and mixing style.
           </p>
@@ -192,7 +196,7 @@
 
     <section id="contact" class="card reveal reveal-right">
       <h2 style="margin-bottom:.6rem">Contact</h2>
-      <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:info@rosdj.es" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a></p>
+      <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a></p>
       <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
     </section>
   </main>
@@ -214,26 +218,3 @@
     // (Header parallax removed)
 
     // (Header particles removed)
-
-    // (Topbar observer removed — topbar always visible)
-
-    // Initial page reveal
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const run = ()=>{
-        const loader = document.getElementById('loader');
-        if(reduce.matches){ document.body.classList.add('is-ready'); if(loader){loader.classList.remove('is-running');loader.classList.add('is-complete');} return; }
-        setTimeout(()=>{
-          document.body.classList.add('is-ready');
-          if(loader){loader.classList.remove('is-running');loader.classList.add('is-complete');}
-        }, 150);
-      };
-      if(document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', run);
-      } else { run(); }
-    })();
-
-    // (Gallery lightbox removed — no gallery section in current layout)
-  </script>
-</body>
-</html>
