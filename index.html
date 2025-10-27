@@ -1,52 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ROS DJ | Ukrainian DJ & Producer - Organic House Music</title>
-  <meta name="description" content="ROS DJ (Rostyslav Dabizha) - Professional Ukrainian DJ and producer creating immersive Organic House, Deep House & Melodic experiences. Available for worldwide bookings.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0066ff">
-  <link rel="preload" as="image" href="DJROS.jpg">
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROS DJ - Professional Organic House DJ | Rostyslav Dabizha</title>
+  <meta name="description" content="Professional Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings. Listen to latest mixes and tracks.">
+  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Organic House, Deep House, Melodic House, Ukrainian DJ, Spain DJ, electronic music, DJ sets, mixes">
+  <meta name="author" content="Rostyslav Dabizha">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="en, ua, es">
+  <meta name="theme-color" content="#1a1a1a">
   
-  <!-- SEO Meta Tags -->
-  <meta property="og:title" content="ROS DJ | Ukrainian DJ & Producer">
-  <meta property="og:description" content="Experience deep, melodic Organic House sets by ROS DJ. Professional Ukrainian DJ & producer available for worldwide bookings.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+  <link rel="shortcut icon" href="logo.png">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="DJROS.jpg">
-  <meta property="og:image:alt" content="ROS DJ performing live - Rostyslav Dabizha">
-  <meta property="og:url" content="https://rosthedj.com">
+  <meta property="og:url" content="https://rosdj.com/">
+  <meta property="og:title" content="ROS DJ - Professional Organic House DJ">
+  <meta property="og:description" content="Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta property="og:image" content="https://rosdj.com/DJROS.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ROS DJ">
+  <meta property="og:locale" content="en_US">
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ROS DJ | Ukrainian DJ & Producer">
-  <meta name="twitter:description" content="Professional Ukrainian DJ creating immersive Organic House experiences.">
-  <meta name="twitter:image" content="DJROS.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://rosdj.com/">
+  <meta property="twitter:title" content="ROS DJ - Professional Organic House DJ">
+  <meta property="twitter:description" content="Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta property="twitter:image" content="https://rosdj.com/DJROS.jpg">
+  <meta property="twitter:creator" content="@rosthedj">
   
-  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Ukrainian DJ, Organic House, Deep House, Melodic House, DJ booking, electronic music, Spain DJ">
-  <link rel="canonical" href="https://rosthedj.com">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rosdj.com/">
   
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "ROS DJ",
-    "alternateName": "Rostyslav Dabizha",
-    "jobTitle": "DJ and Music Producer",
-    "description": "Professional Ukrainian DJ and producer specializing in Organic House, Deep House and Melodic music",
-    "url": "https://rosthedj.com",
-    "email": "r.dabizha@icloud.com",
+    "name": "Rostyslav Dabizha",
+    "alternateName": "ROS DJ",
+    "url": "https://rosdj.com",
+    "image": "https://rosdj.com/DJROS.jpg",
+    "jobTitle": "Professional DJ",
+    "description": "Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music",
+    "nationality": {
+      "@type": "Country",
+      "name": "Ukraine"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Spain"
+    },
     "sameAs": [
       "https://soundcloud.com/rosthedj",
       "https://www.instagram.com/rosthedj/",
       "https://www.youtube.com/@rosthedj",
       "https://www.mixcloud.com/rosthedj/"
     ],
-    "knowsAbout": ["Organic House", "Deep House", "Melodic House", "Electronic Music", "DJing"],
-    "nationality": "Ukrainian",
-    "basedIn": "Spain"
+    "knowsAbout": ["Organic House", "Deep House", "Melodic House", "DJ Mixing", "Music Production"],
+    "offers": {
+      "@type": "Offer",
+      "itemOffered": "DJ Services",
+      "availableAtOrFrom": {
+        "@type": "Place",
+        "addressCountry": "Worldwide"
+      }
+    }
   }
   </script>
   
@@ -108,22 +134,12 @@
       justify-content:space-between;
     }
     .logo{
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--text-primary);
       text-decoration: none;
       letter-spacing: -0.5px;
       transition: all 0.3s ease;
-    }
-
-    .logo img{
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      object-fit: cover;
     }
 
     .logo:hover{
@@ -155,7 +171,7 @@
       left:0;
       width:0;
       height:2px;
-      background:var(--accent);
+      background: #1a1a1a;
       transition:width 0.3s;
     }
     .nav-link:hover::after,
@@ -163,7 +179,7 @@
       width:100%;
     }
     .nav-cta{
-      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
       color: white;
       padding: 0.7rem 1.5rem;
       border-radius: 25px;
@@ -191,7 +207,7 @@
     }
 
     .nav-cta:hover{
-      background: linear-gradient(135deg, var(--accent-hover), #333333);
+      background: linear-gradient(135deg, #2a2a2a, #333333);
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(255,255,255,0.1);
       border-color: rgba(255,255,255,0.2);
@@ -231,7 +247,7 @@
     }
 
     .lang-btn.active{
-      background: var(--accent);
+      background: #1a1a1a;
       color: white;
       box-shadow: var(--glow);
     }
@@ -257,19 +273,8 @@
       align-items:center;
       justify-content:center;
       position:relative;
-      background:linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,102,255,0.1)),
-                  url('DJROS.jpg') center/cover;
-      background-attachment:fixed;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover;
       overflow:hidden;
-    }
-    .hero::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(0,102,255,0.2) 0%, transparent 50%);
     }
     .hero-content{
       text-align:center;
@@ -280,13 +285,13 @@
     .hero-title{
       font-size:clamp(3rem,8vw,6rem);
       font-weight:900;
+      background: linear-gradient(135deg, #ffffff, #a0a0a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom:1rem;
-      background:linear-gradient(135deg, var(--text), var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
       letter-spacing:-2px;
-      line-height:0.9;
+      line-height:1;
     }
     .hero-subtitle{
       font-size:clamp(1.2rem,3vw,1.8rem);
@@ -302,7 +307,7 @@
       flex-wrap:wrap;
     }
     .btn-primary{
-      background:var(--accent);
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
       color:white;
       padding:1rem 2rem;
       border-radius:30px;
@@ -311,11 +316,13 @@
       font-size:1.1rem;
       transition:all 0.3s;
       display:inline-block;
+      border: 1px solid var(--border);
     }
     .btn-primary:hover{
-      background:var(--accent-light);
+      background: linear-gradient(135deg, #2a2a2a, #333333);
       transform:translateY(-3px);
-      box-shadow:0 15px 35px rgba(255,45,85,0.4);
+      box-shadow:0 15px 35px rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
     .btn-secondary{
       background:transparent;
@@ -330,9 +337,10 @@
       display:inline-block;
     }
     .btn-secondary:hover{
-      border-color:var(--accent);
-      color:var(--accent);
+      background:var(--glass);
+      border-color:rgba(255,255,255,0.3);
       transform:translateY(-3px);
+      box-shadow:0 15px 35px rgba(255,255,255,0.05);
     }
 
     /* Section Styles */
@@ -346,7 +354,7 @@
       font-weight:800;
       margin-bottom:1rem;
       text-align:center;
-      background:linear-gradient(135deg, var(--text), var(--accent));
+      background:linear-gradient(135deg, #ffffff, #a0a0a0);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -417,7 +425,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -428,8 +436,8 @@
 
     .tool-card:hover{
       transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: var(--shadow-accent);
+      border-color: #1a1a1a;
+      box-shadow: 0 20px 40px -10px rgba(255,255,255,0.1);
     }
 
     .tool-card h3{
@@ -486,7 +494,7 @@
       content: '▸';
       position: absolute;
       left: 0;
-      color: var(--accent);
+      color: #1a1a1a;
     }
 
     .in-kay-info .btn{
@@ -626,7 +634,7 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
       animation: shimmer 3s ease-in-out infinite;
     }
 
@@ -672,7 +680,7 @@
       left: 50%;
       width: 0;
       height: 0;
-      background: var(--accent);
+      background: #1a1a1a;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       transition: all 0.3s ease;
@@ -688,7 +696,7 @@
       color: white;
       transform: translateY(-5px) scale(1.1);
       box-shadow: 0 10px 25px rgba(255,255,255,0.1);
-      border-color: var(--accent);
+      border-color: #1a1a1a;
     }
 
     .social-link svg{
@@ -783,10 +791,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="ROS DJ Logo">
-        ROS DJ
-      </a>
+      <a href="#" class="logo">ROS DJ</a>
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#dj-tools" class="nav-link">DJ Tools</a></li>
@@ -830,7 +835,7 @@
         <p><strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings</p>
       </div>
       <div class="about-image">
-        <img src="DJROS.jpg" alt="ROS DJ - Rostyslav Dabizha">
+        <img src="DJROS.jpg" alt="Rostyslav Dabizha - ROS DJ Professional Ukrainian DJ and Music Producer">
       </div>
     </div>
   </section>
@@ -909,21 +914,25 @@
   <!-- Gallery Section -->
   <section id="gallery" class="section">
     <h2 class="section-title">Gallery</h2>
-    <p class="section-subtitle">Behind the scenes and live performances</p>
+    <p class="section-subtitle">Moments from performances and studio sessions</p>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="ROSDJ1.JPG" alt="ROS DJ Performance 1">
-        <div class="gallery-overlay">
-          <h3>Live Performance</h3>
-          <p>Captivating the crowd with organic house vibes</p>
-        </div>
+        <img src="DJROS.jpg" alt="ROS DJ performing live at electronic music event - Organic House DJ set">
       </div>
       <div class="gallery-item">
-        <img src="ROSDJ2.JPG" alt="ROS DJ Performance 2">
-        <div class="gallery-overlay">
-          <h3>Behind the Decks</h3>
-          <p>Crafting the perfect musical journey</p>
-        </div>
+        <img src="DJROS.jpg" alt="Rostyslav Dabizha in DJ studio mixing electronic music - Professional DJ setup">
+      </div>
+      <div class="gallery-item">
+        <img src="DJROS.jpg" alt="ROS DJ live performance crowd reaction - Deep House music festival">
+      </div>
+      <div class="gallery-item">
+        <img src="DJROS.jpg" alt="Rostyslav Dabizha DJ equipment and studio setup - Professional music production">
+      </div>
+      <div class="gallery-item">
+        <img src="DJROS.jpg" alt="ROS DJ performing at nightclub - Melodic House DJ performance">
+      </div>
+      <div class="gallery-item">
+        <img src="DJROS.jpg" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist">
       </div>
     </div>
   </section>
@@ -1453,15 +1462,6 @@
     }
     
     window.addEventListener('scroll', updateActiveNav);
-    
-    // Parallax Effect for Hero
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero');
-      if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    });
 
     // Gallery Lightbox
     const galleryItems = document.querySelectorAll('.gallery-item');
