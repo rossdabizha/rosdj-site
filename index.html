@@ -1870,7 +1870,77 @@
         transition-duration: 0.01ms !important;
       }
     }
-  </style>
+  
+/* === MOBILE FIX PATCH (2025 update) === */
+@media (max-width: 768px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .page-wrapper, .pagewrapper, .seccion {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #landing .page-wrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  #logo {
+    width: 90% !important;
+    max-width: 320px !important;
+    margin: 0 auto 1rem auto;
+  }
+
+  #social-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .section-title, .section-subtitle, p, h2, h3, h4 {
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .dj-tools-grid,
+  .platforms-grid,
+  .music-stats,
+  .contact-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .tool-card, .platform-card, .stat-item, .contact-item {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-grid, .gallery-slider {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .marquee-content {
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
+  }
+}
+/* === END PATCH === */
+
+</style>
 </head>
 <body>
   <!-- Fixed Navigation -->
