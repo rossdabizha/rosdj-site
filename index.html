@@ -276,7 +276,7 @@
     
     /* Landing Section */
     #landing{
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('DJROS.jpg') center/cover;
+      background: linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.45)), url('foto.heic') center/cover;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -523,7 +523,7 @@
     
     .playlist-badge{
       display: inline-block;
-      background: linear-gradient(45deg, #ff5500, #ff7733);
+      background: linear-gradient(45deg, #d32f2f, #b71c1c);
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 25px;
@@ -547,7 +547,7 @@
       margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      background: linear-gradient(45deg, #ff5500, #52c8fa);
+      background: linear-gradient(45deg, #ff5500, #b71c1c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -581,7 +581,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #ff5500, #52c8fa);
+      background: linear-gradient(90deg, #ff5500, #b71c1c);
       animation: shimmer 3s infinite;
     }
     
@@ -636,7 +636,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #ff5500, #52c8fa);
+      background: linear-gradient(90deg, #ff5500, #b71c1c);
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -701,7 +701,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(45deg, #ff5500, #ff7733);
+      background: linear-gradient(45deg, #d32f2f, #b71c1c);
       color: white;
       padding: 0.8rem 1.5rem;
       border-radius: 25px;
@@ -744,7 +744,7 @@
       font-weight: 700;
       color: #ff5500;
       margin-bottom: 0.5rem;
-      background: linear-gradient(45deg, #ff5500, #52c8fa);
+      background: linear-gradient(45deg, #ff5500, #b71c1c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -990,6 +990,15 @@
       border-radius: 25px;
       border: 1px solid rgba(255,255,255,0.2);
     }
+    @media (max-width: 600px) {
+      .language-selector{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.85);
+        z-index: 1001;
+      }
+    }
     
     .lang-btn{
       padding: 0.5rem 1rem;
@@ -1047,7 +1056,7 @@
     
     .marquee-item{
       margin: 0 3rem;
-      background: linear-gradient(45deg, #ff5500, #52c8fa);
+      background: linear-gradient(45deg, #ff5500, #b71c1c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1968,7 +1977,7 @@
   <div id="landing" class="seccion">
     <div class="page-wrapper">
       <div id="logo">
-        <img src="logo.png" alt="ROS DJ Logo">
+        <img src="foto.heic" alt="ROS DJ Foto">
       </div>
       <div id="social-links">
         <a target="_blank" href="https://soundcloud.com/rosthedj" title="SoundCloud">
@@ -2040,6 +2049,13 @@
   </div>
 
   <!-- DJ Tools Section -->
+<!-- DAW Logos -->
+<div style="display:flex;gap:2rem;align-items:center;justify-content:center;margin:2rem 0 3rem 0;">
+  <!-- Recordbox -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="24" fill="#d32f2f"/><path d="M24 12a12 12 0 1 1 0 24a12 12 0 0 1 0-24zm0 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zm0 4a5 5 0 1 1 0 10a5 5 0 0 1 0-10z" fill="#fff"/></svg>
+  <!-- FL Studio -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><ellipse cx="24" cy="28" rx="16" ry="18" fill="#d32f2f"/><path d="M24 16c2 0 4 2 4 4v8c0 2-2 4-4 4s-4-2-4-4v-8c0-2 2-4 4-4z" fill="#fff"/><ellipse cx="24" cy="19" rx="2" ry="3" fill="#fff"/></svg>
+</div>
   <div id="dj-tools" class="seccion">
     <div class="pagewrapper">
       <h2 class="section-title" data-lang="dj-tools-title">DJ Tools</h2>
@@ -2125,9 +2141,7 @@
               <h4 data-lang="music-soundcloud">SoundCloud</h4>
               <p data-lang="music-soundcloud-desc">Latest mixes, original tracks, and exclusive content</p>
               <div class="platform-stats">
-                <span class="stat">🔥 Hot Tracks</span>
-                <span class="stat">🎧 Premium Quality</span>
-              </div>
+                                              </div>
               <a href="https://soundcloud.com/rosthedj" class="platform-btn" target="_blank">
                 <span>Listen Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2147,9 +2161,7 @@
               <h4 data-lang="music-youtube">YouTube</h4>
               <p data-lang="music-youtube-desc">Live performances, studio sessions, and exclusive content</p>
               <div class="platform-stats">
-                <span class="stat">🎥 HD Videos</span>
-                <span class="stat">📺 Live Streams</span>
-              </div>
+                                              </div>
               <a href="https://www.youtube.com/@rosthedj" class="platform-btn" target="_blank">
                 <span>Watch Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2162,16 +2174,14 @@
           <div class="platform-card mixcloud-card">
             <div class="platform-icon">
               <svg width="40" height="40" viewBox="0 0 32 32">
-                <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-2.4 22.4h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8z" fill="#52c8fa"/>
+                <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-2.4 22.4h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8z" fill="#b71c1c"/>
               </svg>
             </div>
             <div class="platform-content">
               <h4>Mixcloud</h4>
               <p>Full DJ sets and podcasts showcasing my musical journey</p>
               <div class="platform-stats">
-                <span class="stat">🎵 Full Sets</span>
-                <span class="stat">📻 Radio Shows</span>
-              </div>
+                                              </div>
               <a href="https://www.mixcloud.com/rosthedj/" class="platform-btn" target="_blank">
                 <span>Stream Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2336,23 +2346,25 @@
       <h2 class="section-title">Get In Touch</h2>
       <p class="section-subtitle">Available for bookings, collaborations, and press inquiries</p>
       <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>📧 Email</h3>
-            <p>For bookings and inquiries</p>
-            <a href="mailto:r.dabizha@icloud.com">r.dabizha@icloud.com</a>
-          </div>
-          <div class="contact-item">
-            <h3>📍 Location</h3>
-            <p>Based in Spain</p>
-            <p>Available for worldwide bookings</p>
-          </div>
-          <div class="contact-item">
-            <h3>🎵 Genres</h3>
-            <p>Organic House</p>
-            <p>Deep House & Melodic</p>
-          </div>
-        </div>
+        <div class="contact-info" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;">
+  <div class="contact-item" style="min-width:220px;max-width:280px;background:rgba(255,255,255,0.04);border-radius:14px;padding:1.5rem 1rem;box-shadow:0 2px 16px rgba(0,0,0,0.08);text-align:center;">
+    <div style="font-size:2rem;">📧</div>
+    <div style="font-weight:600;margin-bottom:0.5rem;">Email</div>
+    <a href="mailto:r.dabizha@icloud.com" style="display:inline-block;margin:0.5rem 0 0 0;padding:0.6rem 1.2rem;background:#d32f2f;color:#fff;border-radius:8px;text-decoration:none;font-weight:500;transition:background 0.2s;">r.dabizha@icloud.com</a>
+  </div>
+  <div class="contact-item" style="min-width:220px;max-width:280px;background:rgba(255,255,255,0.04);border-radius:14px;padding:1.5rem 1rem;box-shadow:0 2px 16px rgba(0,0,0,0.08);text-align:center;">
+    <div style="font-size:2rem;">📍</div>
+    <div style="font-weight:600;margin-bottom:0.5rem;">Location</div>
+    <div>Spain</div>
+    <div style="color:#b0b0b0;font-size:0.95rem;">Available worldwide</div>
+  </div>
+  <div class="contact-item" style="min-width:220px;max-width:280px;background:rgba(255,255,255,0.04);border-radius:14px;padding:1.5rem 1rem;box-shadow:0 2px 16px rgba(0,0,0,0.08);text-align:center;">
+    <div style="font-size:2rem;">🎵</div>
+    <div style="font-weight:600;margin-bottom:0.5rem;">Genres</div>
+    <div>Organic House</div>
+    <div>Deep House & Melodic</div>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -2360,21 +2372,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="social-links">
-        <a href="https://soundcloud.com/rosthedj" class="social-link" target="_blank" title="SoundCloud">
-          <img src="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2c33e1fb.ico" alt="SoundCloud" width="24" height="24">
-        </a>
-        <a href="https://www.instagram.com/rosthedj/" class="social-link" target="_blank" title="Instagram">
-          <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30nGjQp2a_.png" alt="Instagram" width="24" height="24">
-        </a>
-        <a href="https://www.youtube.com/@rosthedj" class="social-link" target="_blank" title="YouTube">
-          <img src="https://www.youtube.com/s/desktop/49d4576c/img/favicon_32x32.png" alt="YouTube" width="24" height="24">
-        </a>
-        <a href="https://www.mixcloud.com/rosthedj/" class="social-link" target="_blank" title="Mixcloud">
-          <img src="https://www.mixcloud.com/media/images/www/global/favicon-64.png" alt="Mixcloud" width="24" height="24">
-        </a>
-      </div>
-      <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
+            <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
     </div>
   </footer>
 
@@ -2484,6 +2482,53 @@
       };
 
       let currentLang = 'en';
+      // Додаємо переклад для іспанської
+      translations.es = {
+        'about-title': 'Sobre ROS DJ',
+        'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
+        'about-name': 'Rostyslav Dabizha',
+        'about-description': 'DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.',
+        'about-genres': '<strong>Géneros:</strong> Organic House · Deep House · Melodic House',
+        'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
+        'dj-tools-title': 'Herramientas de DJ',
+        'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
+        'camelot-title': '🎵 Rueda Camelot',
+        'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
+        'camelot-compatibility': 'Compatibilidad de tonalidad:',
+        'camelot-same': '<strong>Mismo número:</strong> Mezcla perfecta',
+        'camelot-energy': '<strong>±1 número:</strong> Cambio de energía',
+        'camelot-relative': '<strong>Misma letra:</strong> Menor/mayor relativo',
+        'bpm-title': '🎧 Análisis BPM',
+        'bpm-description': 'Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.',
+        'bpm-range': 'Rango de Organic House:',
+        'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
+        'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
+        'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
+        'in-kay-title': '🎹 Detección de tonalidad In-Kay',
+        'in-kay-description': 'Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.',
+        'in-kay-features': 'Funciones:',
+        'in-kay-accurate': '<strong>Detección precisa:</strong> Análisis de algoritmo avanzado',
+        'in-kay-formats': '<strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC',
+        'in-kay-export': '<strong>Opciones de exportación:</strong> Notación Camelot y musical',
+        'in-kay-button': 'Abrir In-Kay',
+        'music-title': 'Música',
+        'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
+        'playlist-title': 'ETAPA DE POTENCIA PLAYLIST DE R.DABIZHA',
+        'gallery-title': 'Galería',
+        'gallery-subtitle': 'Capturando la esencia de las actuaciones de música electrónica',
+        'gallery-live': 'Actuación en vivo',
+        'gallery-live-desc': 'Evento de música electrónica',
+        'gallery-studio': 'Sesión de estudio',
+        'gallery-studio-desc': 'Configuración profesional de DJ',
+        'gallery-festival': 'Energía del festival',
+        'gallery-festival-desc': 'Festival de música Deep House',
+        'gallery-production': 'Configuración de producción',
+        'gallery-production-desc': 'Producción musical profesional',
+        'gallery-nightclub': 'Sesión de club nocturno',
+        'gallery-nightclub-desc': 'Actuación de DJ Melodic House',
+        'gallery-decks': 'Detrás de las mesas',
+        'gallery-decks-desc': 'Artista de música electrónica'
+      };
 
       function updateLanguage(lang) {
         currentLang = lang;
@@ -2492,7 +2537,12 @@
         document.querySelectorAll('[data-lang]').forEach(element => {
           const key = element.getAttribute('data-lang');
           if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            // Якщо є HTML-розмітка — використовуємо innerHTML
+            if (translations[lang][key].includes('<')) {
+              element.innerHTML = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
           }
         });
 
