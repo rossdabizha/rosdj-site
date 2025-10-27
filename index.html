@@ -8,6 +8,7 @@
   <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostislav Dabizha.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#070707">
+  <link rel="preload" as="image" href="DJROS.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="ROSDJ.jpeg" type="image/jpeg" sizes="any">
   <link rel="apple-touch-icon" href="ROSDJ.jpeg">
@@ -35,8 +36,9 @@
             background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover no-repeat;
             position:relative;padding:2rem;overflow:hidden}
     header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(255,45,85,0.12), rgba(255,45,85,0) 60%);
-                   filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none}
-    .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+                   filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none;z-index:0}
+    .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35}
+    .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center;position:relative;z-index:2}
     .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:1.5px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -50,8 +52,8 @@
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
            border:1px solid rgba(255,255,255,0.06);padding:1.1rem;border-radius:16px;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;backdrop-filter:saturate(140%) blur(6px)}
     .card:hover{transform:translateY(-3px);box-shadow:0 12px 36px -12px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04) inset}
-    .portrait{height:100%;display:flex;align-items:center;justify-content:center}
-    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(30%);transition:filter .5s ease, transform .6s ease}
+    .portrait{height:100%;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;transition:transform .3s ease}
+    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(30%);transition:filter .5s ease, transform .6s ease;will-change:transform;aspect-ratio:3/4}
     .portrait img:hover{filter:grayscale(0%);transform:scale(1.02)}
 
     main{max-width:1100px;margin:2.5rem auto;padding:0 1.2rem;}
@@ -60,7 +62,9 @@
     .bio .text h2{margin-bottom:.6rem}
     
 
-    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem}
+    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem;position:relative;overflow:hidden}
+    .reveal.is-visible h2::after{animation:sheen 1.1s .15s ease-out 1 forwards}
+    h2::after{content:"";position:absolute;top:0;left:-20%;width:18%;height:100%;background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 100%);transform:skewX(-20deg) translateX(-120%);opacity:0.0}
 
     footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
 
@@ -69,8 +73,11 @@
 
     /* Animations */
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+    .reveal-left{transform:translateX(-16px);opacity:0}
+    .reveal-right{transform:translateX(16px);opacity:0}
     .reveal.is-visible{opacity:1;transform:none}
     @keyframes floatGlow{0%{transform:translate3d(-2%, -2%,0) scale(1)}50%{transform:translate3d(2%, 2%,0) scale(1.05)}100%{transform:translate3d(-2%, -2%,0) scale(1)}}
+    @keyframes sheen{0%{opacity:.0;transform:skewX(-20deg) translateX(-120%)}15%{opacity:.5}100%{opacity:0;transform:skewX(-20deg) translateX(220%)}}
     @media (prefers-reduced-motion: reduce){
       *{transition:none !important;animation:none !important}
     }
@@ -78,6 +85,7 @@
 </head>
 <body>
   <header>
+    <canvas class="particles" aria-hidden="true"></canvas>
     <div class="hero reveal" role="banner">
       <div class="brand">
         <h1>ROS DJ</h1>
@@ -100,7 +108,7 @@
 
 
   <main>
-    <section id="about" class="card reveal">
+    <section id="about" class="card reveal reveal-left">
       <div class="bio">
         <div class="text">
           <h2>About ROS DJ</h2>
@@ -131,7 +139,7 @@
 
 
 
-    <section id="contact" class="card reveal">
+    <section id="contact" class="card reveal reveal-right">
       <h2 style="margin-bottom:.6rem">Contact</h2>
       <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:info@rosdj.es" style="color:var(--accent);text-decoration:none">info@rosdj.es</a></p>
       <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
@@ -180,6 +188,79 @@
         requestAnimationFrame(loop);
       }
       requestAnimationFrame(loop);
+    })();
+
+    // Ambient particles in header
+    (function(){
+      const canvas = document.querySelector('.particles');
+      const header = document.querySelector('header');
+      if(!canvas || !header) return;
+      const ctx = canvas.getContext('2d');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+      let W=0,H=0, particles=[], running=false;
+      function resize(){
+        const r = header.getBoundingClientRect();
+        W = Math.max(300, Math.floor(r.width));
+        H = Math.max(200, Math.floor(r.height));
+        canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.width = W+'px'; canvas.style.height = H+'px';
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+      }
+      function rand(a,b){return a + Math.random()*(b-a)}
+      function init(){
+        particles=[];
+        const count = 24; // subtle density
+        for(let i=0;i<count;i++){
+          particles.push({x:rand(0,W), y:rand(0,H), r:rand(0.6,2.2), a:rand(0.2,0.8), vx:rand(-0.1,0.1), vy:rand(0.05,0.2)});
+        }
+      }
+      function step(){
+        if(!running || reduce.matches){ return; }
+        ctx.clearRect(0,0,W,H);
+        for(const p of particles){
+          p.x += p.vx; p.y += p.vy;
+          if(p.x < -5) p.x = W+5; if(p.x > W+5) p.x = -5;
+          if(p.y < -5) p.y = H+5; if(p.y > H+5) p.y = -5;
+          const grd = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
+          grd.addColorStop(0, `rgba(255,45,85,${0.25*p.a})`);
+          grd.addColorStop(1, 'rgba(255,45,85,0)');
+          ctx.fillStyle = grd;
+          ctx.beginPath();
+          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fill();
+        }
+        requestAnimationFrame(step);
+      }
+      function start(){ if(running || reduce.matches) return; running=true; requestAnimationFrame(step); }
+      function stop(){ running=false; }
+      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ start(); } else { stop(); } })
+      }, {threshold:0.01}) : null;
+      window.addEventListener('resize', ()=>{ resize(); init(); });
+      resize(); init();
+      if(io) io.observe(header); else start();
+    })();
+
+    // Hero tilt (brand + portrait)
+    (function(){
+      const header = document.querySelector('header');
+      const brand = document.querySelector('.brand');
+      const portrait = document.querySelector('.portrait');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(!header || !brand || !portrait) return;
+      header.addEventListener('pointermove', (e)=>{
+        if(reduce.matches) return;
+        const r = header.getBoundingClientRect();
+        const mx = (e.clientX - r.left)/r.width - 0.5;
+        const my = (e.clientY - r.top)/r.height - 0.5;
+        const rx = my * -4; const ry = mx * 6;
+        brand.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+        portrait.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      header.addEventListener('pointerleave', ()=>{
+        brand.style.transform = '';
+        portrait.style.transform = '';
+      });
     })();
   </script>
 </body>
