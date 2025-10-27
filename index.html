@@ -39,12 +39,12 @@
     .icon-btn:active{transform:translateY(0)}
 
     /* Header (hybrid) */
-    header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.72))}
+    header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.85))}
     header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0;transform:scale(1.1);transition:transform 10s ease-out}
     header:hover::after{transform:scale(1.15)}
     .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
     .hero .content{padding:2rem 1.2rem}
-    .hero h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.12;font-weight:900;letter-spacing:.5px;margin:0;color:#e6e9ef;text-shadow:0 2px 12px rgba(0,0,0,.6);animation:fadeInUp 1s ease-out}
+    .hero h1{font-size:clamp(2.5rem,7vw,3.8rem);line-height:1.1;font-weight:900;letter-spacing:.6px;margin:0;color:#e6e9ef;text-shadow:0 3px 15px rgba(0,0,0,.8);animation:fadeInUp 1s ease-out}
     .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92;text-shadow:0 1px 8px rgba(0,0,0,.5);animation:fadeInUp 1s ease-out 0.2s both}
     @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
     @media (max-width:640px){ header{min-height:72vh} header::after{background-position:50% 25%} }
@@ -66,14 +66,44 @@
     .btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 10px 20px rgba(255,45,85,0.2)}
     .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .btn.ghost{background:var(--glass)}
+    .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+    /* Loading screen */
+    .loading-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.8s ease}
+    .loading-screen.fade-out{opacity:0;pointer-events:none}
+    .loader{width:60px;height:60px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Entrance animations */
+    .fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    .fade-in-delay-1{transition-delay:0.2s}
+    .fade-in-delay-2{transition-delay:0.4s}
+    .fade-in-delay-3{transition-delay:0.6s}
+    .slide-in-left{opacity:0;transform:translateX(-50px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
+    .slide-in-left.visible{opacity:1;transform:translateX(0)}
+    .slide-in-right{opacity:0;transform:translateX(50px);transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1)}
+    .slide-in-right.visible{opacity:1;transform:translateX(0)}
+    .scale-in{opacity:0;transform:scale(0.8);transition:all 0.6s cubic-bezier(0.4, 0, 0.2, 1)}
+    .scale-in.visible{opacity:1;transform:scale(1)}
 
     footer{text-align:center;padding:2rem 1rem 3.6rem;color:var(--muted);font-size:.95rem}
   </style>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader"></div>
+  </div>
   <div class="topbar">
     <div class="brandmark">
       <strong>ROS DJ</strong>
+    </div>
+    <div class="language-switcher" style="display:flex;gap:.3rem">
+      <button class="lang-btn" data-lang="en" onclick="updateLanguage('en')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">EN</button>
+      <button class="lang-btn" data-lang="ua" onclick="updateLanguage('ua')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">UA</button>
+      <button class="lang-btn" data-lang="es" onclick="updateLanguage('es')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer;transition:all 0.2s">ES</button>
     </div>
     <nav class="socials" aria-label="Social links">
       <a class="icon-btn" href="https://soundcloud.com/rosthedj" target="_blank" aria-label="SoundCloud" rel="noopener">
@@ -94,16 +124,16 @@
   <header>
     <div class="hero" role="banner">
       <div class="content">
-        <h1>DJ ROS</h1>
-        <div class="subline">ORGANIC • MELODIC • HOUSE</div>
+        <h1 class="fade-in">DJ ROS</h1>
+        <div class="subline fade-in fade-in-delay-1">ORGANIC • MELODIC • HOUSE</div>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="about" class="card">
+    <section id="about" class="card fade-in fade-in-delay-2">
       <div class="bio" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center">
-        <div class="text">
+        <div class="text slide-in-left">
           <h2>About ROS DJ</h2>
           <p>
             <strong>Rostyslav Dabizha</strong> — Ukrainian DJ and music producer.
@@ -114,7 +144,7 @@
             Genres: Organic House · Deep House · Melodic
           </p>
         </div>
-        <div>
+        <div class="slide-in-right">
           <div class="card portrait" aria-hidden="true" style="margin-bottom:1rem">
             <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
           </div>
@@ -137,7 +167,7 @@
       </div>
     </section>
 
-    <section id="dj-tools" class="card">
+    <section id="dj-tools" class="card fade-in fade-in-delay-3">
       <h2>DJ Tools</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center">
         <div>
@@ -163,16 +193,128 @@
       </div>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact" class="card fade-in">
       <h2 style="margin-bottom:.6rem">Contact</h2>
       <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a></p>
       <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
     </section>
   </main>
 
-  <footer>
+  <footer class="fade-in">
     <div> ROS DJ — Rostyslav Dabizha · Organic House</div>
   </footer>
-  <script></script>
+  <script>
+    const translations = {
+      en: {
+        title: "ROS DJ — Ukrainian DJ",
+        about: "About ROS DJ",
+        aboutText: "<strong>Rostyslav Dabizha</strong> — Ukrainian DJ and music producer. ROS DJ crafts deep, melodic and atmospheric Organic House sets that guide listeners through immersive soundscapes. Since the beginning of the war in Ukraine, he relocated to Spain and continues to captivate audiences with a unique track selection and mixing style.",
+        genres: "Genres: Organic House · Deep House · Melodic",
+        djTools: "DJ Tools",
+        camelotWheel: "Camelot Wheel",
+        camelotText: "The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.",
+        keyCompatibility: "Key compatibility:",
+        sameNumber: "Same number = Perfect mix",
+        plusMinus: "±1 number = Energy change",
+        sameLetter: "Same letter = Relative minor/major",
+        contact: "Contact",
+        contactText: "For bookings, press or collaborations — email:",
+        socials: "Socials",
+        subline: "ORGANIC • MELODIC • HOUSE"
+      },
+      ua: {
+        title: "ROS DJ — Український DJ",
+        about: "Про ROS DJ",
+        aboutText: "<strong>Ростислав Дабіжа</strong> — Український DJ та музичний продюсер. ROS DJ створює глибокі, мелодійні та атмосферні Organic House сети, які проводять слухачів крізь захоплюючі звукові пейзажі. З початку війни в Україні він переїхав до Іспанії і продовжує захоплювати аудиторію унікальним підбором треків та стилем мікшування.",
+        genres: "Жанри: Organic House · Deep House · Melodic",
+        djTools: "DJ Інструменти",
+        camelotWheel: "Колесо Камелота",
+        camelotText: "Колесо Камелота є незамінним для гармонійного мікшування в DJ сетах. Воно допомагає DJ міксувати треки в одній тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом всього виступу.",
+        keyCompatibility: "Сумісність ключів:",
+        sameNumber: "Однаковий номер = Ідеальний мікс",
+        plusMinus: "±1 номер = Зміна енергії",
+        sameLetter: "Однакова літера = Відносна мінор/мажор",
+        contact: "Контакти",
+        contactText: "Для бронювання, преси або співпраці — email:",
+        socials: "Соціальні мережі",
+        subline: "ORGANIC • MELODIC • HOUSE"
+      },
+      es: {
+        title: "ROS DJ — DJ Ucraniano",
+        about: "Sobre ROS DJ",
+        aboutText: "<strong>Rostyslav Dabizha</strong> — DJ y productor musical ucraniano. ROS DJ crea sets de Organic House profundos, melódicos y atmosféricos que guían a los oyentes a través de paisajes sonoros inmersivos. Desde el inicio de la guerra en Ucrania, se trasladó a España y continúa cautivando audiencias con una selección única de tracks y estilo de mezcla.",
+        genres: "Géneros: Organic House · Deep House · Melodic",
+        djTools: "Herramientas DJ",
+        camelotWheel: "Rueda Camelot",
+        camelotText: "La Rueda Camelot es esencial para la mezcla armónica en sets de DJ. Ayuda a los DJs a mezclar tracks en la misma clave o claves compatibles, creando transiciones suaves y manteniendo el flujo musical durante toda la presentación.",
+        keyCompatibility: "Compatibilidad de claves:",
+        sameNumber: "Mismo número = Mezcla perfecta",
+        plusMinus: "±1 número = Cambio de energía",
+        sameLetter: "Misma letra = Relativo menor/mayor",
+        contact: "Contacto",
+        contactText: "Para reservas, prensa o colaboraciones — email:",
+        socials: "Redes Sociales",
+        subline: "ORGANIC • MELODIC • HOUSE"
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'en';
+
+    function updateLanguage(lang) {
+      const t = translations[lang];
+      document.title = t.title;
+      document.querySelector('meta[property="og:title"]').content = t.title;
+      document.querySelector('meta[name="twitter:title"]').content = t.title;
+      
+      document.querySelector('#about h2').textContent = t.about;
+      document.querySelector('#about .text p').innerHTML = t.aboutText;
+      document.querySelector('#about .text p:last-of-type').innerHTML = t.genres;
+      document.querySelector('#dj-tools h2').textContent = t.djTools;
+      document.querySelector('#dj-tools h3').textContent = t.camelotWheel;
+      document.querySelector('#dj-tools .text p').textContent = t.camelotText;
+      document.querySelector('#dj-tools .text p:last-of-type strong').textContent = t.keyCompatibility;
+      document.querySelector('#contact h2').textContent = t.contact;
+      document.querySelector('#contact p').innerHTML = t.contactText + ' <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a>';
+      document.querySelector('.bio h3').textContent = t.socials;
+      document.querySelector('.subline').textContent = t.subline;
+      
+      // Update language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      localStorage.setItem('language', lang);
+    }
+
+    // Initialize language and animations
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguage(currentLang);
+      
+      // Hide loading screen after 1.5s
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('fade-out');
+        
+        // Trigger entrance animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+          observer.observe(el);
+        });
+        
+        // Immediate animations for hero section
+        setTimeout(() => {
+          document.querySelector('.hero h1').classList.add('visible');
+          document.querySelector('.hero .subline').classList.add('visible');
+        }, 100);
+        
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
