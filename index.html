@@ -240,10 +240,14 @@
     
     /* Landing Section */
     #landing{
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover;
       background-size: cover;
       background-position: center;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      filter: contrast(1.2) saturate(1.3) brightness(0.9);
     }
     
     #landing .page-wrapper{
@@ -252,14 +256,17 @@
       position: absolute;
       top: 80px;
       left: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
     
     #logo{
-      width: 400px;
+      width: 500px;
       height: auto;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       animation: fadeInUp 1s ease;
-      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.5)) contrast(1.1) brightness(1.1);
     }
     
     #logo img{
@@ -270,38 +277,38 @@
     
     #social-links{
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-top: 1rem;
       animation: fadeInUp 1s ease 0.3s both;
     }
     
     #social-links a{
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-decoration: none;
-      font-size: 1.5rem;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
     #social-links a svg{
-      width: 32px;
-      height: 32px;
+      width: 20px;
+      height: 20px;
       transition: transform 0.3s ease;
+      filter: contrast(1.2) brightness(1.1);
     }
     
     #social-links a:hover{
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-5px) scale(1.1);
-      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,1);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
     
     #social-links a:hover svg{
@@ -500,131 +507,55 @@
       margin-bottom:1.5rem;
     }
 
-    /* Gallery Section */
-    #gallery{
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    #gallery::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(255,85,0,0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 50%, rgba(82,200,250,0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .gallery-container{
-      position: relative;
-      z-index: 1;
-    }
-    
-    .gallery-grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .gallery-item{
-      position: relative;
-      height: 400px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-    
-    .gallery-item:hover{
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(255,85,0,0.2);
-      border-color: rgba(255,85,0,0.3);
-    }
-    
-    .gallery-image-wrapper{
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    .gallery-item img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: brightness(0.9);
-    }
-    
-    .gallery-item:hover img{
-      transform: scale(1.1);
-      filter: brightness(1.1);
-    }
-    
-    .gallery-overlay{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-      padding: 2rem;
-      transform: translateY(100%);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .gallery-item:hover .gallery-overlay{
-      transform: translateY(0);
-    }
-    
-    .gallery-content h3{
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    
-    .gallery-content p{
-      color: rgba(255,255,255,0.8);
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .gallery-meta{
+    /* Language Selector */
+    .language-selector{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 0.5rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem;
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,0.2);
     }
     
-    .gallery-date,
-    .gallery-location{
-      background: rgba(255,85,0,0.2);
-      color: white;
+    .lang-btn{
       padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
       font-weight: 600;
-      border: 1px solid rgba(255,85,0,0.3);
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     
+    .lang-btn:hover{
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .lang-btn.active{
+      background: rgba(255,85,0,0.8);
+      color: white;
+      box-shadow: 0 2px 10px rgba(255,85,0,0.3);
+    }
+
     /* Marquee */
     .marquee-container{
       position: absolute;
-      top: 60px;
+      bottom: 0;
       left: 0;
       right: 0;
       background: rgba(0,0,0,0.8);
       backdrop-filter: blur(10px);
       border-top: 1px solid rgba(255,85,0,0.3);
-      border-bottom: 1px solid rgba(255,85,0,0.3);
       overflow: hidden;
       z-index: 10;
     }
@@ -820,12 +751,13 @@
       }
       
       #logo{
-        width: 280px;
+        width: 320px;
+        filter: drop-shadow(0 3px 15px rgba(0,0,0,0.5)) contrast(1.1) brightness(1.1);
       }
       
-      #social-links{gap:1rem;margin-top:2rem}
-      #social-links a{width:50px;height:50px}
-      #social-links a svg{width:26px;height:26px}
+      #social-links{gap:0.8rem;margin-top:1rem}
+      #social-links a{width:35px;height:35px}
+      #social-links a svg{width:18px;height:18px}
       
       /* Sections */
       .seccion{padding:3rem 1rem}
@@ -858,8 +790,20 @@
       .gallery-meta{gap:0.5rem}
       .gallery-date,.gallery-location{font-size:0.75rem;padding:0.3rem 0.6rem}
       
+      /* Language Selector */
+      .language-selector{
+        top: 15px;
+        right: 15px;
+        padding: 0.4rem;
+        gap: 0.3rem;
+      }
+      .lang-btn{
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      
       /* Marquee */
-      .marquee-container{top:40px}
+      .marquee-container{bottom:0;top:auto}
       .marquee-content{font-size:1rem;padding:0.8rem 0}
       .marquee-item{margin:0 2rem}
       
@@ -958,6 +902,13 @@
   </style>
 </head>
 <body>
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button class="lang-btn active" data-lang="ua">UA</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="es">ES</button>
+  </div>
+
   <!-- Landing Section -->
   <div id="landing" class="seccion">
     <div class="page-wrapper">
@@ -966,37 +917,60 @@
       </div>
       <div id="social-links">
         <a target="_blank" href="https://soundcloud.com/rosthedj" title="SoundCloud">
-          <svg width="32" height="32" viewBox="0 0 32 32">
-            <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm7.965 22.395c-.321 1.896-1.917 3.317-3.864 3.317-1.948 0-3.543-1.421-3.864-3.317H8.548v-1.568h11.689c.321-1.896 1.917-3.317 3.864-3.317 1.948 0 3.543 1.421 3.864 3.317h.021v1.568h-.021zm0-5.735c-.842 0-1.568.726-1.568 1.568s.726 1.568 1.568 1.568 1.568-.726 1.568-1.568-.726-1.568-1.568-1.568zm-7.965 0c-.842 0-1.568.726-1.568 1.568s.726 1.568 1.568 1.568 1.568-.726 1.568-1.568-.726-1.568-1.568-1.568z" fill="#ff5500"/>
+          <svg width="20" height="20" viewBox="0 0 32 32">
+            <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm7.965 22.395c-.321 1.896-1.917 3.317-3.864 3.317-1.948 0-3.543-1.421-3.864-3.317H8.548v-1.568h11.689c.321-1.896 1.917-3.317 3.864-3.317 1.948 0 3.543 1.421 3.864 3.317h.021v1.568h-.021zm0-5.735c-.842 0-1.568.726-1.568 1.568s.726 1.568 1.568 1.568 1.568-.726 1.568-1.568-.726-1.568-1.568-1.568zm-7.965 0c-.842 0-1.568.726-1.568 1.568s.726 1.568 1.568 1.568 1.568-.726 1.568-1.568-.726-1.568-1.568-1.568z" fill="#000000"/>
+            <path d="M7.2 16.8h1.6v4.8H7.2zm2.4-1.6h1.6v6.4H9.6zm2.4 0h1.6v6.4H12zm2.4-1.6h1.6v8H14.4zm2.4 0h1.6v8H16.8zm2.4-1.6h1.6v9.6H19.2zm2.4 0h1.6v9.6H21.6z" fill="#000000" opacity="0.8"/>
           </svg>
         </a>
         <a target="_blank" href="https://www.instagram.com/rosthedj/" title="Instagram">
-          <svg width="32" height="32" viewBox="0 0 32 32">
-            <path d="M16 2.881c4.275 0 4.781.019 6.462.094 1.563.069 2.406.331 2.969.55.744.288 1.281.638 1.819 1.175.438.438.788.975 1.175 1.819.219.563.481 1.406.55 2.969.075 1.681.094 2.188.094 6.462s-.019 4.781-.094 6.462c-.069 1.563-.331 2.406-.55 2.969-.288.744-.638 1.281-1.175 1.819-.438.438-.975.788-1.819 1.175-.563.219-1.406.481-2.969.55-1.681.075-2.188.094-6.462.094s-4.781-.019-6.462-.094c-1.563-.069-2.406-.331-2.969-.55-.744-.288-1.281-.638-1.819-1.175-.438-.438-.788-.975-1.175-1.819-.219-.563-.481-1.406-.55-2.969-.075-1.681-.094-2.188-.094-6.462s.019-4.781.094-6.462c.069-1.563.331-2.406.55-2.969.288-.744.638-1.281 1.175-1.819.438-.438.975-.788 1.819-1.175.563-.219 1.406-.481 2.969-.55 1.681-.075 2.188-.094 6.462-.094zm0-2.881c-4.35 0-4.887.02-6.594.097-1.7.078-2.859.35-3.875.744-1.05.406-1.938.938-2.831 1.831-.893.893-1.425 1.781-1.831 2.831-.394 1.016-.666 2.175-.744 3.875-.077 1.707-.097 2.244-.097 6.594s.02 4.887.097 6.594c.078 1.7.35 2.859.744 3.875.406 1.05.938 1.938 1.831 2.831.893.893 1.781 1.425 2.831 1.831 1.016.394 2.175.666 3.875.744 1.707.077 2.244.097 6.594.097s4.887-.02 6.594-.097c1.7-.078 2.859-.35 3.875-.744 1.05-.406 1.938-.938 2.831-1.831.893-.893 1.425-1.781 1.831-2.831.394-1.016.666-2.175.744-3.875.077-1.707.097-2.244.097-6.594s-.02-4.887-.097-6.594c-.078-1.7-.35-2.859-.744-3.875-.406-1.05-.938-1.938-1.831-2.831-.893-.893-1.781-1.425-2.831-1.831-1.016-.394-2.175-.666-3.875-.744-1.707-.077-2.244-.097-6.594-.097v0zm0 7.781c-3.381 0-6.119 2.738-6.119 6.119s2.738 6.119 6.119 6.119 6.119-2.738 6.119-6.119-2.738-6.119-6.119-6.119zm0 10.062c-2.181 0-3.944-1.763-3.944-3.944s1.763-3.944 3.944-3.944 3.944 1.763 3.944 3.944-1.763 3.944-3.944 3.944zm7.844-11.688c0 .788-.638 1.425-1.425 1.425s-1.425-.638-1.425-1.425.638-1.425 1.425-1.425 1.425.638 1.425 1.425z" fill="url(#instagram-gradient)"/>
-            <defs>
-              <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#f58529"/>
-                <stop offset="50%" style="stop-color:#dd2a7b"/>
-                <stop offset="100%" style="stop-color:#8134af"/>
-              </linearGradient>
-            </defs>
+          <svg width="20" height="20" viewBox="0 0 32 32">
+            <path d="M16 2.881c4.275 0 4.781.019 6.462.094 1.563.069 2.406.331 2.969.55.744.288 1.281.638 1.819 1.175.438.438.788.975 1.175 1.819.219.563.481 1.406.55 2.969.075 1.681.094 2.188.094 6.462s-.019 4.781-.094 6.462c-.069 1.563-.331 2.406-.55 2.969-.288.744-.638 1.281-1.175 1.819-.438.438-.975.788-1.819 1.175-.563.219-1.406.481-2.969.55-1.681.075-2.188.094-6.462.094s-4.781-.019-6.462-.094c-1.563-.069-2.406-.331-2.969-.55-.744-.288-1.281-.638-1.819-1.175-.438-.438-.788-.975-1.175-1.819-.219-.563-.481-1.406-.55-2.969-.075-1.681-.094-2.188-.094-6.462s.019-4.781.094-6.462c.069-1.563.331-2.406.55-2.969.288-.744.638-1.281 1.175-1.819.438-.438.975-.788 1.819-1.175.563-.219 1.406-.481 2.969-.55 1.681-.075 2.188-.094 6.462-.094zm0-2.881c-4.35 0-4.887.02-6.594.097-1.7.078-2.859.35-3.875.744-1.05.406-1.938.938-2.831 1.831-.893.893-1.425 1.781-1.831 2.831-.394 1.016-.666 2.175-.744 3.875-.077 1.707-.097 2.244-.097 6.594s.02 4.887.097 6.594c.078 1.7.35 2.859.744 3.875.406 1.05.938 1.938 1.831 2.831.893.893 1.781 1.425 2.831 1.831 1.016.394 2.175.666 3.875.744 1.707.077 2.244.097 6.594.097s4.887-.02 6.594-.097c1.7-.078 2.859-.35 3.875-.744 1.05-.406 1.938-.938 2.831-1.831.893-.893 1.425-1.781 1.831-2.831.394-1.016.666-2.175.744-3.875.077-1.707.097-2.244.097-6.594s-.02-4.887-.097-6.594c-.078-1.7-.35-2.859-.744-3.875-.406-1.05-.938-1.938-1.831-2.831-.893-.893-1.781-1.425-2.831-1.831-1.016-.394-2.175-.666-3.875-.744-1.707-.077-2.244-.097-6.594-.097v0zm0 7.781c-3.381 0-6.119 2.738-6.119 6.119s2.738 6.119 6.119 6.119 6.119-2.738 6.119-6.119-2.738-6.119-6.119-6.119zm0 10.062c-2.181 0-3.944-1.763-3.944-3.944s1.763-3.944 3.944-3.944 3.944 1.763 3.944 3.944-1.763 3.944-3.944 3.944zm7.844-11.688c0 .788-.638 1.425-1.425 1.425s-1.425-.638-1.425-1.425.638-1.425 1.425-1.425 1.425.638 1.425 1.425z" fill="#000000"/>
           </svg>
         </a>
         <a target="_blank" href="https://www.youtube.com/@rosthedj" title="YouTube">
-          <svg width="32" height="32" viewBox="0 0 32 32">
-            <path d="M31.68 9.6c-.4-1.6-1.6-2.8-3.2-3.2-2.8-.8-14.4-.8-14.4-.8s-11.6 0-14.4.8c-1.6.4-2.8 1.6-3.2 3.2-.8 2.8-.8 8.8-.8 8.8s0 6 .8 8.8c.4 1.6 1.6 2.8 3.2 3.2 2.8.8 14.4.8 14.4.8s11.6 0 14.4-.8c1.6-.4 2.8-1.6 3.2-3.2.8-2.8.8-8.8.8-8.8s0-6-.8-8.8zm-21.6 14.4v-11.2l9.6 5.6-9.6 5.6z" fill="#ff0000"/>
+          <svg width="20" height="20" viewBox="0 0 32 32">
+            <path d="M31.68 9.6c-.4-1.6-1.6-2.8-3.2-3.2-2.8-.8-14.4-.8-14.4-.8s-11.6 0-14.4.8c-1.6.4-2.8 1.6-3.2 3.2-.8 2.8-.8 8.8-.8 8.8s0 6 .8 8.8c.4 1.6 1.6 2.8 3.2 3.2 2.8.8 14.4.8 14.4.8s11.6 0 14.4-.8c1.6-.4 2.8-1.6 3.2-3.2.8-2.8.8-8.8.8-8.8s0-6-.8-8.8zm-21.6 14.4v-11.2l9.6 5.6-9.6 5.6z" fill="#000000"/>
           </svg>
         </a>
         <a target="_blank" href="https://www.mixcloud.com/rosthedj/" title="Mixcloud">
-          <svg width="32" height="32" viewBox="0 0 32 32">
-            <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-2.4 22.4h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8z" fill="#52c8fa"/>
+          <svg width="20" height="20" viewBox="0 0 32 32">
+            <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-2.4 22.4h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8zm4.8 0h-3.2v-12.8h3.2v12.8z" fill="#000000"/>
           </svg>
         </a>
         <a href="#contact" title="Contact">
-          <svg width="32" height="32" viewBox="0 0 32 32">
-            <path d="M16 2c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 26.837 0 16 7.163 0 16 0zm0 2.667C8.636 4.667 2.667 10.636 2.667 18S8.636 31.333 16 31.333 29.333 25.364 29.333 18 23.364 4.667 16 4.667zm0 4c1.473 0 2.667 1.194 2.667 2.667S17.473 14 16 14s-2.667-1.194-2.667-2.667S14.527 8.667 16 8.667zm0 8c3.682 0 6.667 2.985 6.667 6.667v1.333H9.333V23.333c0-3.682 2.985-6.667 6.667-6.667z" fill="#4a90e2"/>
+          <svg width="20" height="20" viewBox="0 0 32 32">
+            <path d="M16 2c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 26.837 0 16 7.163 0 16 0zm0 2.667C8.636 4.667 2.667 10.636 2.667 18S8.636 31.333 16 31.333 29.333 25.364 29.333 18 23.364 4.667 16 4.667zm0 4c1.473 0 2.667 1.194 2.667 2.667S17.473 14 16 14s-2.667-1.194-2.667-2.667S14.527 8.667 16 8.667zm0 8c3.682 0 6.667 2.985 6.667 6.667v1.333H9.333V23.333c0-3.682 2.985-6.667 6.667-6.667z" fill="#000000"/>
           </svg>
         </a>
+      </div>
+    </div>
+    
+    <!-- Marquee -->
+    <div class="marquee-container">
+      <div class="marquee">
+        <div class="marquee-content">
+          <span class="marquee-item">🎵 Organic House</span>
+          <span class="marquee-item">🌊 Melodic Waves</span>
+          <span class="marquee-item">🎧 Deep Vibes</span>
+          <span class="marquee-item">✨ Progressive Beats</span>
+          <span class="marquee-item">🌅 Sunset Sessions</span>
+          <span class="marquee-item">🎹 Harmonic Mixing</span>
+          <span class="marquee-item">🔊 Bass Lines</span>
+          <span class="marquee-item">🌟 Festival Energy</span>
+          <span class="marquee-item">🎶 Atmospheric Sounds</span>
+          <span class="marquee-item">💫 Dance Floor</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="marquee-item">🎵 Organic House</span>
+          <span class="marquee-item">🌊 Melodic Waves</span>
+          <span class="marquee-item">🎧 Deep Vibes</span>
+          <span class="marquee-item">✨ Progressive Beats</span>
+          <span class="marquee-item">🌅 Sunset Sessions</span>
+          <span class="marquee-item">🎹 Harmonic Mixing</span>
+          <span class="marquee-item">🔊 Bass Lines</span>
+          <span class="marquee-item">🌟 Festival Energy</span>
+          <span class="marquee-item">🎶 Atmospheric Sounds</span>
+          <span class="marquee-item">💫 Dance Floor</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1102,38 +1076,9 @@
 
   <!-- Gallery Section -->
   <div id="gallery" class="seccion">
-    <!-- Marquee -->
-    <div class="marquee-container">
-      <div class="marquee">
-        <div class="marquee-content">
-          <span class="marquee-item">🎵 Organic House</span>
-          <span class="marquee-item">🌊 Melodic Waves</span>
-          <span class="marquee-item">🎧 Deep Vibes</span>
-          <span class="marquee-item">✨ Progressive Beats</span>
-          <span class="marquee-item">🌅 Sunset Sessions</span>
-          <span class="marquee-item">🎹 Harmonic Mixing</span>
-          <span class="marquee-item">🔊 Bass Lines</span>
-          <span class="marquee-item">🌟 Festival Energy</span>
-          <span class="marquee-item">🎶 Atmospheric Sounds</span>
-          <span class="marquee-item">💫 Dance Floor</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="marquee-item">🎵 Organic House</span>
-          <span class="marquee-item">🌊 Melodic Waves</span>
-          <span class="marquee-item">🎧 Deep Vibes</span>
-          <span class="marquee-item">✨ Progressive Beats</span>
-          <span class="marquee-item">🌅 Sunset Sessions</span>
-          <span class="marquee-item">🎹 Harmonic Mixing</span>
-          <span class="marquee-item">🔊 Bass Lines</span>
-          <span class="marquee-item">🌟 Festival Energy</span>
-          <span class="marquee-item">🎶 Atmospheric Sounds</span>
-          <span class="marquee-item">💫 Dance Floor</span>
-        </div>
-      </div>
-    </div>
-    
     <div class="pagewrapper">
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-subtitle">Capturing the essence of electronic music performances</p>
+      <h2 class="section-title" data-lang="gallery-title">Gallery</h2>
+      <p class="section-subtitle" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
       <div class="gallery-container">
         <div class="gallery-grid">
           <div class="gallery-item">
@@ -1141,8 +1086,8 @@
               <img src="ROSDJ1.JPG" alt="ROS DJ performing live at electronic music event - Organic House DJ set" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Live Performance</h3>
-                  <p>Electronic music event</p>
+                  <h3 data-lang="gallery-live">Live Performance</h3>
+                  <p data-lang="gallery-live-desc">Electronic music event</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Spain</span>
@@ -1156,8 +1101,8 @@
               <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha in DJ studio mixing electronic music - Professional DJ setup" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Studio Session</h3>
-                  <p>Professional DJ setup</p>
+                  <h3 data-lang="gallery-studio">Studio Session</h3>
+                  <p data-lang="gallery-studio-desc">Professional DJ setup</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Studio</span>
@@ -1171,8 +1116,8 @@
               <img src="ROSDJ1.JPG" alt="ROS DJ live performance crowd reaction - Deep House music festival" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Festival Energy</h3>
-                  <p>Deep House music festival</p>
+                  <h3 data-lang="gallery-festival">Festival Energy</h3>
+                  <p data-lang="gallery-festival-desc">Deep House music festival</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Festival</span>
@@ -1186,8 +1131,8 @@
               <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha DJ equipment and studio setup - Professional music production" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Production Setup</h3>
-                  <p>Professional music production</p>
+                  <h3 data-lang="gallery-production">Production Setup</h3>
+                  <p data-lang="gallery-production-desc">Professional music production</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Studio</span>
@@ -1201,8 +1146,8 @@
               <img src="ROSDJ1.JPG" alt="ROS DJ performing at nightclub - Melodic House DJ performance" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Nightclub Session</h3>
-                  <p>Melodic House DJ performance</p>
+                  <h3 data-lang="gallery-nightclub">Nightclub Session</h3>
+                  <p data-lang="gallery-nightclub-desc">Melodic House DJ performance</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Club</span>
@@ -1216,8 +1161,8 @@
               <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
-                  <h3>Behind the Decks</h3>
-                  <p>Electronic music artist</p>
+                  <h3 data-lang="gallery-decks">Behind the Decks</h3>
+                  <p data-lang="gallery-decks-desc">Electronic music artist</p>
                   <div class="gallery-meta">
                     <span class="gallery-date">2024</span>
                     <span class="gallery-location">Performance</span>
@@ -1830,6 +1775,95 @@
         });
       });
     });
+
+    // Language System
+    const translations = {
+      ua: {
+        'gallery-title': 'Галерея',
+        'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
+        'gallery-live': 'Живий виступ',
+        'gallery-live-desc': 'Подія електронної музики',
+        'gallery-studio': 'Студійна сесія',
+        'gallery-studio-desc': 'Професійна DJ установка',
+        'gallery-festival': 'Енергія фестивалю',
+        'gallery-festival-desc': 'Фестиваль Deep House музики',
+        'gallery-production': 'Продакшн установка',
+        'gallery-production-desc': 'Професійне виробництво музики',
+        'gallery-nightclub': 'Нічний клуб',
+        'gallery-nightclub-desc': 'Виступ Melodic House DJ',
+        'gallery-decks': 'За пультом',
+        'gallery-decks-desc': 'Артист електронної музики'
+      },
+      en: {
+        'gallery-title': 'Gallery',
+        'gallery-subtitle': 'Capturing the essence of electronic music performances',
+        'gallery-live': 'Live Performance',
+        'gallery-live-desc': 'Electronic music event',
+        'gallery-studio': 'Studio Session',
+        'gallery-studio-desc': 'Professional DJ setup',
+        'gallery-festival': 'Festival Energy',
+        'gallery-festival-desc': 'Deep House music festival',
+        'gallery-production': 'Production Setup',
+        'gallery-production-desc': 'Professional music production',
+        'gallery-nightclub': 'Nightclub Session',
+        'gallery-nightclub-desc': 'Melodic House DJ performance',
+        'gallery-decks': 'Behind the Decks',
+        'gallery-decks-desc': 'Electronic music artist'
+      },
+      es: {
+        'gallery-title': 'Galería',
+        'gallery-subtitle': 'Capturando la esencia de las presentaciones de música electrónica',
+        'gallery-live': 'Presentación en Vivo',
+        'gallery-live-desc': 'Evento de música electrónica',
+        'gallery-studio': 'Sesión de Estudio',
+        'gallery-studio-desc': 'Configuración profesional de DJ',
+        'gallery-festival': 'Energía del Festival',
+        'gallery-festival-desc': 'Festival de música Deep House',
+        'gallery-production': 'Configuración de Producción',
+        'gallery-production-desc': 'Producción musical profesional',
+        'gallery-nightclub': 'Sesión de Club Nocturno',
+        'gallery-nightclub-desc': 'Presentación de DJ Melodic House',
+        'gallery-decks': 'Detrás de las Mesas',
+        'gallery-decks-desc': 'Artista de música electrónica'
+      }
+    };
+
+    let currentLang = 'ua';
+
+    function updateLanguage(lang) {
+      currentLang = lang;
+      
+      // Update all elements with data-lang attributes
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // Update language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Save language preference
+      localStorage.setItem('selectedLanguage', lang);
+    }
+
+    // Language button event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        updateLanguage(lang);
+      });
+    });
+
+    // Load saved language or default to Ukrainian
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'ua';
+    updateLanguage(savedLanguage);
 
     // Smooth scrolling and active navigation like DJ Nano
     document.addEventListener('DOMContentLoaded', () => {
