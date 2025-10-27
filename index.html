@@ -1,803 +1,201 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ROS DJ | Ukrainian DJ & Producer - Organic House Music</title>
-  <meta name="description" content="ROS DJ (Rostyslav Dabizha) - Professional Ukrainian DJ and producer creating immersive Organic House, Deep House & Melodic experiences. Available for worldwide bookings.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#ff2d55">
-  <link rel="preload" as="image" href="DJROS.jpg">
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="logo.png">
-  
-  <!-- SEO Meta Tags -->
-  <meta property="og:title" content="ROS DJ | Ukrainian DJ & Producer">
-  <meta property="og:description" content="Experience deep, melodic Organic House sets by ROS DJ. Professional Ukrainian DJ & producer available for worldwide bookings.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="DJROS.jpg">
-  <meta property="og:image:alt" content="ROS DJ performing live - Rostyslav Dabizha">
-  <meta property="og:url" content="https://rosthedj.com">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ROS DJ | Ukrainian DJ & Producer">
-  <meta name="twitter:description" content="Professional Ukrainian DJ creating immersive Organic House experiences.">
-  <meta name="twitter:image" content="DJROS.jpg">
-  
-  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Ukrainian DJ, Organic House, Deep House, Melodic House, DJ booking, electronic music, Spain DJ">
-  <link rel="canonical" href="https://rosthedj.com">
-  
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "ROS DJ",
-    "alternateName": "Rostyslav Dabizha",
-    "jobTitle": "DJ and Music Producer",
-    "description": "Professional Ukrainian DJ and producer specializing in Organic House, Deep House and Melodic music",
-    "url": "https://rosthedj.com",
-    "email": "r.dabizha@icloud.com",
-    "sameAs": [
-      "https://soundcloud.com/rosthedj",
-      "https://www.instagram.com/rosthedj/",
-      "https://www.youtube.com/@rosthedj",
-      "https://www.mixcloud.com/rosthedj/"
-    ],
-    "knowsAbout": ["Organic House", "Deep House", "Melodic House", "Electronic Music", "DJing"],
-    "nationality": "Ukrainian",
-    "basedIn": "Spain"
-  }
-  </script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R. Dabizha | DJ & Producer</title>
+  <link rel="preload" as="image" href="DJROS.webp">
   <style>
-    :root{
-      --bg:#0a0a0a;
-      --card:#111111;
-      --accent:#ff2d55;
-      --accent-light:#ff4466;
-      --text:#ffffff;
-      --text-secondary:#b0b0b0;
-      --muted:#666666;
-      --glass: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.1);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Modern Navigation */
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:1000;
-      background:rgba(10,10,10,0.95);
-      backdrop-filter:blur(20px);
-      border-bottom:1px solid var(--border);
-      padding:1rem 2rem;
-    }
-    .nav-container{
-      max-width:1400px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .logo{
-      font-size:1.5rem;
-      font-weight:900;
-      color:var(--accent);
-      text-decoration:none;
-      letter-spacing:-0.5px;
-    }
-    .nav-menu{
-      display:flex;
-      list-style:none;
-      gap:2rem;
-      margin:0;
-      padding:0;
-    }
-    .nav-link{
-      color:var(--text-secondary);
-      text-decoration:none;
-      font-weight:500;
-      transition:color 0.3s;
-      position:relative;
-    }
-    .nav-link:hover,
-    .nav-link.active{
-      color:var(--text);
-    }
-    .nav-link::after{
-      content:'';
-      position:absolute;
-      bottom:-5px;
-      left:0;
-      width:0;
-      height:2px;
-      background:var(--accent);
-      transition:width 0.3s;
-    }
-    .nav-link:hover::after,
-    .nav-link.active::after{
-      width:100%;
-    }
-    .nav-cta{
-      background:var(--accent);
-      color:white;
-      padding:0.7rem 1.5rem;
-      border-radius:25px;
-      text-decoration:none;
-      font-weight:600;
-      transition:all 0.3s;
-    }
-    .nav-cta:hover{
-      background:var(--accent-light);
-      transform:translateY(-2px);
-      box-shadow:0 10px 25px rgba(255,45,85,0.3);
+    html, body {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    /* Mobile Menu */
-    .mobile-menu-toggle{
-      display:none;
-      background:none;
-      border:none;
-      color:var(--text);
-      font-size:1.5rem;
-      cursor:pointer;
+    /* Loading screen */
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid #333;
+      border-top: 3px solid #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
     }
 
     /* Hero Section */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      background:linear-gradient(135deg, rgba(10,10,10,0.9), rgba(255,45,85,0.1)),
-                  url('DJROS.jpg') center/cover;
-      background-attachment:fixed;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:radial-gradient(circle at 20% 50%, rgba(255,45,85,0.2) 0%, transparent 50%);
-    }
-    .hero-content{
-      text-align:center;
-      z-index:1;
-      max-width:900px;
-      padding:0 2rem;
-    }
-    .hero-title{
-      font-size:clamp(3rem,8vw,6rem);
-      font-weight:900;
-      margin-bottom:1rem;
-      background:linear-gradient(135deg, var(--text), var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      letter-spacing:-2px;
-      line-height:0.9;
-    }
-    .hero-subtitle{
-      font-size:clamp(1.2rem,3vw,1.8rem);
-      color:var(--text-secondary);
-      margin-bottom:2rem;
-      font-weight:300;
-      letter-spacing:2px;
-    }
-    .hero-cta{
-      display:flex;
-      gap:1rem;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .btn-primary{
-      background:var(--accent);
-      color:white;
-      padding:1rem 2rem;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:1.1rem;
-      transition:all 0.3s;
-      display:inline-block;
-    }
-    .btn-primary:hover{
-      background:var(--accent-light);
-      transform:translateY(-3px);
-      box-shadow:0 15px 35px rgba(255,45,85,0.4);
-    }
-    .btn-secondary{
-      background:transparent;
-      color:white;
-      padding:1rem 2rem;
-      border:2px solid var(--border);
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:1.1rem;
-      transition:all 0.3s;
-      display:inline-block;
-    }
-    .btn-secondary:hover{
-      border-color:var(--accent);
-      color:var(--accent);
-      transform:translateY(-3px);
+    .hero {
+      height: 100vh;
+      background: url("DJROS.webp") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
     }
 
-    /* Section Styles */
-    section{
-      padding:5rem 2rem;
-      max-width:1400px;
-      margin:0 auto;
-    }
-    .section-title{
-      font-size:clamp(2rem,4vw,3rem);
-      font-weight:800;
-      margin-bottom:1rem;
-      text-align:center;
-      background:linear-gradient(135deg, var(--text), var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .section-subtitle{
-      text-align:center;
-      color:var(--text-secondary);
-      font-size:1.2rem;
-      margin-bottom:3rem;
-      max-width:600px;
-      margin-left:auto;
-      margin-right:auto;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
     }
 
-    /* About Section */
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:4rem;
-      align-items:center;
-      margin-top:3rem;
-    }
-    .about-content h3{
-      font-size:2rem;
-      margin-bottom:1rem;
-      color:var(--text);
-    }
-    .about-content p{
-      color:var(--text-secondary);
-      font-size:1.1rem;
-      line-height:1.8;
-      margin-bottom:1.5rem;
-    }
-    .about-image{
-      position:relative;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 25px 50px rgba(0,0,0,0.5);
-    }
-    .about-image img{
-      width:100%;
-      height:auto;
-      display:block;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1rem;
     }
 
-    /* Music Section */
-    .music-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
-    }
-    .music-card{
-      background:var(--card);
-      border-radius:20px;
-      padding:2rem;
-      border:1px solid var(--border);
-      transition:all 0.3s;
-      text-align:center;
-    }
-    .music-card:hover{
-      transform:translateY(-5px);
-      border-color:var(--accent);
-      box-shadow:0 20px 40px rgba(255,45,85,0.2);
-    }
-    .music-icon{
-      font-size:3rem;
-      margin-bottom:1rem;
-    }
-    .music-card h3{
-      font-size:1.5rem;
-      margin-bottom:1rem;
-      color:var(--text);
-    }
-    .music-card p{
-      color:var(--text-secondary);
-      margin-bottom:1.5rem;
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1rem;
     }
 
-    /* Gallery Section */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
-    }
-    .gallery-item{
-      position:relative;
-      border-radius:20px;
-      overflow:hidden;
-      height:300px;
-      cursor:pointer;
-      transition:all 0.3s;
-    }
-    .gallery-item:hover{
-      transform:scale(1.02);
-      box-shadow:0 25px 50px rgba(0,0,0,0.5);
-    }
-    .gallery-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .gallery-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      display:flex;
-      align-items:flex-end;
-      padding:2rem;
-      opacity:0;
-      transition:opacity 0.3s;
-    }
-    .gallery-item:hover .gallery-overlay{
-      opacity:1;
-    }
-    .gallery-overlay h3{
-      color:white;
-      font-size:1.3rem;
-      margin-bottom:0.5rem;
-    }
-    .gallery-overlay p{
-      color:var(--text-secondary);
+    .hero p {
+      font-size: 1.2rem;
+      color: #ddd;
     }
 
-    /* Contact Section */
-    .contact-content{
-      text-align:center;
-      max-width:800px;
-      margin:0 auto;
+    /* Social Links */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .contact-info{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
+
+    .socials a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
     }
-    .contact-item{
-      background:var(--card);
-      padding:2rem;
-      border-radius:20px;
-      border:1px solid var(--border);
-    }
-    .contact-item h3{
-      color:var(--accent);
-      margin-bottom:1rem;
-    }
-    .contact-item p{
-      color:var(--text-secondary);
-    }
-    .contact-item a{
-      color:var(--accent);
-      text-decoration:none;
-      transition:color 0.3s;
-    }
-    .contact-item a:hover{
-      color:var(--accent-light);
+
+    .socials a:hover {
+      transform: scale(1.15);
     }
 
     /* Footer */
-    footer{
-      background:var(--card);
-      border-top:1px solid var(--border);
-      padding:3rem 2rem 2rem;
-      text-align:center;
-    }
-    .footer-content{
-      max-width:1400px;
-      margin:0 auto;
-    }
-    .social-links{
-      display:flex;
-      justify-content:center;
-      gap:1rem;
-      margin-bottom:2rem;
-    }
-    .social-link{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      background:var(--glass);
-      border:1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--text-secondary);
-      text-decoration:none;
-      transition:all 0.3s;
-    }
-    .social-link:hover{
-      background:var(--accent);
-      color:white;
-      transform:translateY(-3px);
-    }
-    .footer-text{
-      color:var(--text-secondary);
-      margin-bottom:1rem;
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #999;
+      background: #000;
     }
 
-    /* Responsive */
-    @media (max-width:768px){
-      .mobile-menu-toggle{display:block}
-      .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:2rem;gap:1rem}
-      .nav-menu.active{display:flex}
-      .hero-title{font-size:clamp(2.5rem,6vw,4rem)}
-      .about-grid{grid-template-columns:1fr;gap:2rem}
-      .section{padding:3rem 1rem}
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
     }
-
-    /* Header (hybrid) */
-    header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.85))}
-    header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0}
-    .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
-    .hero .content{padding:2rem 1.2rem}
-    .hero h1{font-size:clamp(2.5rem,7vw,3.8rem);line-height:1.1;font-weight:900;letter-spacing:.6px;margin:0;color:#e6e9ef}
-    .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92}
-    @media (max-width:640px){ header{min-height:72vh} header::after{background-position:50% 25%} }
-
-    main{max-width:1100px;margin:2.5rem auto;padding:0 1.2rem}
-    section{margin-bottom:2.2rem}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-           border:1px solid rgba(255,255,255,0.06);padding:1.1rem;border-radius:16px;backdrop-filter:saturate(140%) blur(6px)}
-
-    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem}
-
-    .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(0%)}
-
-    /* Loading screen */
-    .loading-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
-    .loading-screen.fade-out{opacity:0;pointer-events:none}
-    .loader{width:60px;height:60px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--accent);border-radius:50%}
-
-    footer{text-align:center;padding:2rem 1rem 3.6rem;color:var(--muted);font-size:.95rem}
-
-    /* Gallery */
-    .gallery-item:hover .gallery-overlay{opacity:1}
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
+  <!-- Loading screen -->
   <div class="loading-screen" id="loadingScreen">
     <div class="loader"></div>
   </div>
-  <div class="topbar">
-    <div class="brandmark">
-      <strong>ROS DJ</strong>
-    </div>
-    <div class="language-switcher" style="display:flex;gap:.3rem">
-      <button class="lang-btn" data-lang="en" onclick="updateLanguage('en')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">EN</button>
-      <button class="lang-btn" data-lang="ua" onclick="updateLanguage('ua')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">UA</button>
-      <button class="lang-btn" data-lang="es" onclick="updateLanguage('es')" style="padding:.3rem .6rem;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;border-radius:6px;font-size:.8rem;cursor:pointer">ES</button>
-    </div>
-    <nav class="socials" aria-label="Social links">
-      <a class="icon-btn" href="https://soundcloud.com/rosthedj" target="_blank" aria-label="SoundCloud" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 10a4 4 0 0 1 4 4h-9a3 3 0 0 1-3-3 3 3 0 0 1 3-3c.9 0 1.7.4 2.3 1.1A4.98 4.98 0 0 1 17 10zM2 14h1V9H2v5zm2 0h1V8H4v6zm2 0h1V7H6v7zm2 0h1V6H8v8z"/></svg>
-      </a>
-      <a class="icon-btn" href="https://www.instagram.com/rosthedj/" target="_blank" aria-label="Instagram" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
-      </a>
-      <a class="icon-btn" href="https://www.youtube.com/@rosthedj" target="_blank" aria-label="YouTube" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C17.5 4 12 4 12 4h0s-5.5 0-8.1.3c-.4 0-1.3.1-2.1.9C1.2 5.9 1 7.5 1 7.5S.8 9.3.8 11v2c0 1.7.2 3.5.2 3.5s.2 1.6.8 2.3c.8.8 1.8.8 2.2.9C6.6 20 12 20 12 20s5.5 0 8.1-.3c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.3.8-2.3S23.2 14.7 23.2 13V11c0-1.7-.2-3.5-.2-3.5zM9.8 14.6V8.9l5.7 2.9-5.7 2.8z"/></svg>
-      </a>
-      <a class="icon-btn" href="https://www.mixcloud.com/rosthedj/" target="_blank" aria-label="Mixcloud" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.5 12.5a3.5 3.5 0 1 1-3.4-4.2 5.5 5.5 0 1 0-9.6 4.5 3.2 3.2 0 1 1 0 1.4 7 7 0 1 1 12.6-5.7 3.5 3.5 0 0 1 .4 4z"/></style>
-</head>
-<body>
+
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">ROS DJ</a>
-      <ul class="nav-menu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#music" class="nav-link">Music</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <a href="#contact" class="nav-cta">Book Now</a>
-      <button class="mobile-menu-toggle">☰</button>
-    </div>
+  <nav>
+    <div class="logo">R. DABIZHA</div>
+    <ul>
+      <li><a href="#home">Головна</a></li>
+      <li><a href="#mixes">Мікси</a></li>
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-content">
-      <h1 class="hero-title fade-in-up">ROS DJ</h1>
-      <p class="hero-subtitle fade-in-up delay-1">ORGANIC • MELODIC • HOUSE</p>
-      <div class="hero-cta fade-in-up delay-2">
-        <a href="#music" class="btn btn-primary">Listen Now</a>
-        <a href="#contact" class="btn btn-secondary">Book DJ</a>
+      <h1>R. DABIZHA</h1>
+      <p>Melodic Techno & Progressive Sounds</p>
+      <div class="socials">
+        <a href="https://soundcloud.com/" target="_blank" aria-label="SoundCloud">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"><path d="M17.1 10.9a3.9 3.9 0 0 1 3.9 3.9A3.9 3.9 0 0 1 17.1 18H5.5A3.5 3.5 0 0 1 5.5 11h.3a5 5 0 0 1 5-4.5 5 5 0 0 1 4.3 2.3c.5-.1 1-.1 1.5-.1Z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6a4.7 4.7 0 0 1 1.8 1.8c.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5a4.7 4.7 0 0 1-1.8 1.8c-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6a4.7 4.7 0 0 1-1.8-1.8c-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5a4.7 4.7 0 0 1 1.8-1.8c.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.4 0-4.6.1-1 .1-1.5.2-1.8.4a2.9 2.9 0 0 0-1.2 1.2c-.2.3-.3.8-.4 1.8-.1 1.2-.1 1.5-.1 4.6s0 3.4.1 4.6c.1 1 .2 1.5.4 1.8.3.5.7.9 1.2 1.2.3.2.8.3 1.8.4 1.2.1 1.5.1 4.6.1s3.4 0 4.6-.1c1-.1 1.5-.2 1.8-.4.5-.3.9-.7 1.2-1.2.2-.3.3-.8.4-1.8.1-1.2.1-1.5.1-4.6s0-3.4-.1-4.6c-.1-1-.2-1.5-.4-1.8a2.9 2.9 0 0 0-1.2-1.2c-.3-.2-.8-.3-1.8-.4-1.2-.1-1.5-.1-4.6-.1Zm0 3.2a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 7.5a2.9 2.9 0 1 0 0-5.8 2.9 2.9 0 0 0 0 5.8Zm5.8-7.7a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2 class="section-title fade-in-up">About ROS DJ</h2>
-    <p class="section-subtitle fade-in-up delay-1">Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets</p>
-    <div class="about-grid">
-      <div class="about-content slide-in-left">
-        <h3>Rostyslav Dabizha</h3>
-        <p>Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.</p>
-        <p><strong>Genres:</strong> Organic House · Deep House · Melodic House</p>
-        <p><strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings</p>
-    <section id="gallery" class="card">
-      <h2>Gallery</h2>
-      <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin-top:1.5rem">
-        <div class="gallery-item" style="position:relative;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
-          <img src="ROSDJ1.JPG" alt="ROS DJ performing live - Rostyslav Dabizha DJ set" style="width:100%;height:250px;object-fit:cover;transition:transform 0.5s ease">
-          <div class="gallery-overlay" style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1.5rem">
-            <div style="color:#fff">
-              <h3 style="margin:0;font-size:1.1rem">Live Performance</h3>
-              <p style="margin:.3rem 0 0;color:var(--muted);font-size:.9rem">Organic House set</p>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" style="position:relative;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
-          <img src="ROSDJ2.JPG" alt="ROS DJ in studio - Rostyslav Dabizha music production" style="width:100%;height:250px;object-fit:cover;transition:transform 0.5s ease">
-          <div class="gallery-overlay" style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1.5rem">
-            <div style="color:#fff">
-              <h3 style="margin:0;font-size:1.1rem">Studio Session</h3>
-              <p style="margin:.3rem 0 0;color:var(--muted);font-size:.9rem">Music production</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="dj-tools" class="card">
-      <h2>DJ Tools</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center">
-        <div>
-          <h3 style="margin-bottom:.8rem;color:#e6e9ef">Camelot Wheel</h3>
-          <p style="margin-bottom:1rem;line-height:1.7">
-            The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.
-          </p>
-          <p style="color:var(--muted);font-size:.95rem">
-            <strong>Key compatibility:</strong><br>
-            • Same number = Perfect mix<br>
-            • ±1 number = Energy change<br>
-            • Same letter = Relative minor/major
-          </p>
-        </div>
-        <div>
-          <div class="card" style="background:rgba(255,255,255,0.05);text-align:center;padding:1.5rem">
-            <img src="camelot-wheel.png" alt="Camelot Wheel for harmonic mixing" style="width:100%;max-width:300px;height:auto;border-radius:8px;margin:0 auto;display:block">
-            <p style="margin-top:1rem;color:var(--muted);font-size:.85rem">
-              Place your camelot-wheel.png file in the site folder
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="card">
-      <h2 style="margin-bottom:.6rem">Contact</h2>
-      <p style="color:var(--muted)">For bookings, press or collaborations — email: <a href="mailto:r.dabizha@icloud.com" style="color:var(--accent);text-decoration:none">r.dabizha@icloud.com</a></p>
-      <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
-    </section>
-  </main>
-
   <footer>
-    <div> ROS DJ — Rostyslav Dabizha · Organic House</div>
+    © 2025 R. Dabizha. All rights reserved.
   </footer>
+
   <script>
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileMenuToggle) {
-      mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-      });
-    }
-
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu if open
-          navMenu.classList.remove('active');
-          mobileMenuToggle.textContent = '☰';
-        }
-      });
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loadingScreen");
+      loader.classList.add("fade-out");
+      setTimeout(() => loader.remove(), 600);
     });
-
-    // Active Navigation on Scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbar = document.querySelector('.navbar');
-    
-    function updateActiveNav() {
-      const scrollY = window.pageYOffset;
-      
-      // Update navbar background on scroll
-      if (scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      
-      // Update active nav link
-      sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Parallax Effect for Hero
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero');
-      if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    });
-
-    // Gallery Lightbox
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    galleryItems.forEach(item => {
-      item.addEventListener('click', function() {
-        const img = this.querySelector('img');
-        const overlay = document.createElement('div');
-        overlay.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0,0,0,0.95);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          cursor: pointer;
-          backdrop-filter: blur(10px);
-        `;
-        
-        const lightboxImg = document.createElement('img');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxImg.style.cssText = `
-          max-width: 90%;
-          max-height: 90%;
-          object-fit: contain;
-          border-radius: 15px;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-        `;
-        
-        overlay.appendChild(lightboxImg);
-        document.body.appendChild(overlay);
-        
-        // Add fade in effect
-        setTimeout(() => {
-          overlay.style.opacity = '1';
-        }, 10);
-        
-        overlay.addEventListener('click', () => {
-          overlay.style.opacity = '0';
-          setTimeout(() => {
-            document.body.removeChild(overlay);
-          }, 300);
-        });
-      });
-    });
-
-    // Intersection Observer for Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observe all animated elements
-    document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right');
-      animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(el);
-      });
-      
-      // Initialize active nav
-      updateActiveNav();
-    });
-
-    // Add hover effect to cards
-    document.querySelectorAll('.music-card, .contact-item').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Add typing effect to hero title (optional)
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-      const originalText = heroTitle.textContent;
-      heroTitle.textContent = '';
-      let charIndex = 0;
-      
-      function typeWriter() {
-        if (charIndex < originalText.length) {
-          heroTitle.textContent += originalText.charAt(charIndex);
-          charIndex++;
-          setTimeout(typeWriter, 100);
-        }
-      }
-      
-      setTimeout(typeWriter, 500);
-    }
   </script>
 </body>
 </html>
