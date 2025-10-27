@@ -7,6 +7,7 @@
   <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostislav Dabizha.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0a0f0c">
+  <link rel="preload" as="image" href="DJROS.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="ROSDJ.jpeg" type="image/jpeg" sizes="any">
   <link rel="apple-touch-icon" href="ROSDJ.jpeg">
@@ -36,13 +37,13 @@
     #loader.is-running{animation:loadbar 1.6s ease-out infinite}
     #loader.is-complete{animation:none;width:100%;opacity:0;transition:opacity .4s ease .15s}
     @keyframes loadbar{0%{width:0}60%{width:82%}100%{width:88%}}
-    header{min-height:70vh;display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
+    header{min-height:100vh;display:flex;align-items:flex-end;justify-content:center;
+            background:linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.72)), url('DJROS.jpg') 50% 30%/cover no-repeat;
             position:relative;padding:2rem;overflow:hidden}
     header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(32,201,151,0.12), rgba(32,201,151,0) 60%);
                    filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none;z-index:0}
-    .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35}
-    .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center;position:relative;z-index:2}
+    .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.28}
+    .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
     .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:1.5px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -106,8 +107,14 @@
     .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
     .icon-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px -6px rgba(32,201,151,.42);border-color:rgba(255,255,255,0.22)}
     .reveal.is-visible{opacity:1;transform:none}
+    .scroll-hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:.3rem;opacity:.85}
+    .scroll-hint .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:bounce 1.6s infinite ease-in-out}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+    .topbar{opacity:0;transform:translateY(-8px);transition:opacity .3s ease, transform .3s ease}
+    .topbar.show{opacity:1;transform:none}
     @keyframes floatGlow{0%{transform:translate3d(-2%, -2%,0) scale(1)}50%{transform:translate3d(2%, 2%,0) scale(1.05)}100%{transform:translate3d(-2%, -2%,0) scale(1)}}
     @keyframes sheen{0%{opacity:.0;transform:skewX(-20deg) translateX(-120%)}15%{opacity:.5}100%{opacity:0;transform:skewX(-20deg) translateX(220%)}}
+    @media (max-width:640px){.particles{display:none}}
     @media (prefers-reduced-motion: reduce){
       *{transition:none !important;animation:none !important}
     }
@@ -140,16 +147,10 @@
   </div>
   <header>
     <canvas class="particles" aria-hidden="true"></canvas>
-    <div class="hero reveal" role="banner">
-      <div class="brand">
-        <h1>ROS DJ</h1>
-        <p class="lead">Organic House — Ukrainian DJ &amp; producer. Deep, melodic, atmospheric sets by Rostislav Dabizha.</p>
-        <div class="actions">
-          <a class="btn ghost" href="#contact">Contact</a>
-        </div>
-        <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">
-          Based in Spain 🇪🇸 — Born March 10, 1999. Specializes in immersive Organic House journeys.
-        </p>
+    <div class="hero" role="banner">
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="dot"></div>
+        <div>Scroll</div>
       </div>
     </div>
   </header>
@@ -169,6 +170,9 @@
           </p>
         </div>
         <div>
+          <div class="card portrait" aria-hidden="true" style="margin-bottom:1rem">
+            <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
+          </div>
           <h3 style="margin-bottom:.6rem">Socials</h3>
           <div class="socials" style="gap:.5rem">
             <a class="icon-btn" href="https://soundcloud.com/rosthedj" target="_blank" aria-label="SoundCloud" rel="noopener">
@@ -263,7 +267,8 @@
       function rand(a,b){return a + Math.random()*(b-a)}
       function init(){
         particles=[];
-        const count = 24; // subtle density
+        const isSmall = window.matchMedia('(max-width: 640px)').matches;
+        const count = isSmall ? 0 : 16; // reduced density; none on very small screens
         for(let i=0;i<count;i++){
           particles.push({x:rand(0,W), y:rand(0,H), r:rand(0.6,2.2), a:rand(0.2,0.8), vx:rand(-0.1,0.1), vy:rand(0.05,0.2)});
         }
@@ -295,26 +300,18 @@
       if(io) io.observe(header); else start();
     })();
 
-    // Hero tilt (brand + portrait)
+    // Show topbar after header
     (function(){
       const header = document.querySelector('header');
-      const brand = document.querySelector('.brand');
-      const portrait = document.querySelector('.portrait');
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if(!header || !brand || !portrait) return;
-      header.addEventListener('pointermove', (e)=>{
-        if(reduce.matches) return;
-        const r = header.getBoundingClientRect();
-        const mx = (e.clientX - r.left)/r.width - 0.5;
-        const my = (e.clientY - r.top)/r.height - 0.5;
-        const rx = my * -4; const ry = mx * 6;
-        brand.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-        portrait.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
-      header.addEventListener('pointerleave', ()=>{
-        brand.style.transform = '';
-        portrait.style.transform = '';
-      });
+      const topbar = document.querySelector('.topbar');
+      if(!header || !topbar || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ topbar.classList.remove('show'); }
+          else { topbar.classList.add('show'); }
+        })
+      }, {threshold:0.05});
+      io.observe(header);
     })();
 
     // Initial page reveal
