@@ -268,12 +268,12 @@
 
     /* Hero Section */
     .hero{
-      min-height:100vh;
+      min-height:120vh;
       display:flex;
       align-items:center;
       justify-content:center;
       position:relative;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('DJROS.jpg') center/cover;
       overflow:hidden;
     }
     .hero-content{
@@ -370,34 +370,21 @@
     }
 
     /* About Section */
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:4rem;
-      align-items:center;
-      margin-top:3rem;
+    .about-content{
+      max-width:800px;
+      margin:0 auto;
+      text-align:center;
     }
     .about-content h3{
       font-size:2rem;
-      margin-bottom:1rem;
-      color:var(--text);
+      margin-bottom:1.5rem;
+      color:var(--text-primary);
     }
     .about-content p{
       color:var(--text-secondary);
       font-size:1.1rem;
       line-height:1.8;
       margin-bottom:1.5rem;
-    }
-    .about-image{
-      position:relative;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 25px 50px rgba(0,0,0,0.5);
-    }
-    .about-image img{
-      width:100%;
-      height:auto;
-      display:block;
     }
 
     /* DJ Tools Section */
@@ -699,14 +686,18 @@
       border-color: #1a1a1a;
     }
 
-    .social-link svg{
+    .social-link img{
       width: 24px;
       height: 24px;
       transition: transform 0.3s ease;
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
     }
 
-    .social-link:hover svg{
+    .social-link:hover img{
       transform: scale(1.2);
+      filter: brightness(0) invert(1);
+      opacity: 1;
     }
 
     .footer-text{
@@ -726,8 +717,11 @@
       .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:2rem;gap:1rem}
       .nav-menu.active{display:flex}
       .hero-title{font-size:clamp(2.5rem,6vw,4rem)}
-      .about-grid{grid-template-columns:1fr;gap:2rem}
       .section{padding:3rem 1rem}
+      .dj-tools-grid{grid-template-columns:1fr}
+      .music-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr}
+      .contact-info{grid-template-columns:1fr}
     }
 
     /* Header (hybrid) */
@@ -827,16 +821,11 @@
   <section id="about" class="section">
     <h2 class="section-title">About ROS DJ</h2>
     <p class="section-subtitle">Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets</p>
-    <div class="about-grid">
-      <div class="about-content">
-        <h3>Rostyslav Dabizha</h3>
-        <p>Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.</p>
-        <p><strong>Genres:</strong> Organic House · Deep House · Melodic House</p>
-        <p><strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings</p>
-      </div>
-      <div class="about-image">
-        <img src="DJROS.jpg" alt="Rostyslav Dabizha - ROS DJ Professional Ukrainian DJ and Music Producer">
-      </div>
+    <div class="about-content">
+      <h3>Rostyslav Dabizha</h3>
+      <p>Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.</p>
+      <p><strong>Genres:</strong> Organic House · Deep House · Melodic House</p>
+      <p><strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings</p>
     </div>
   </section>
 
@@ -967,24 +956,16 @@
     <div class="footer-content">
       <div class="social-links">
         <a href="https://soundcloud.com/rosthedj" class="social-link" target="_blank" title="SoundCloud">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.5 10a4 4 0 0 1 4 4h-9a3 3 0 0 1-3-3 3 3 0 0 1 3-3c.9 0 1.7.4 2.3 1.1A4.98 4.98 0 0 1 17.5 10zM2 14h1V9H2v5zm2 0h1V8H4v6zm2 0h1V7H6v7zm2 0h1V6H8v8z"/>
-          </svg>
+          <img src="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2c33e1fb.ico" alt="SoundCloud" width="24" height="24">
         </a>
         <a href="https://www.instagram.com/rosthedj/" class="social-link" target="_blank" title="Instagram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
+          <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30nGjQp2a_.png" alt="Instagram" width="24" height="24">
         </a>
         <a href="https://www.youtube.com/@rosthedj" class="social-link" target="_blank" title="YouTube">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23 7.5s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C17.5 4 12 4 12 4h0s-5.5 0-8.1.3c-.4 0-1.3.1-2.1.9C1.2 5.9 1 7.5 1 7.5S.8 9.3.8 11v2c0 1.7.2 3.5.2 3.5s.2 1.6.8 2.3c.8.8 1.8.8 2.2.9C6.6 20 12 20 12 20s5.5 0 8.1-.3c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.3.8-2.3S23.2 14.7 23.2 13V11c0-1.7-.2-3.5-.2-3.5zM9.8 14.6V8.9l5.7 2.9-5.7 2.8z"/>
-          </svg>
+          <img src="https://www.youtube.com/s/desktop/49d4576c/img/favicon_32x32.png" alt="YouTube" width="24" height="24">
         </a>
         <a href="https://www.mixcloud.com/rosthedj/" class="social-link" target="_blank" title="Mixcloud">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19.5 12.5a3.5 3.5 0 1 1-3.4-4.2 5.5 5.5 0 1 0-9.6 4.5 3.2 3.2 0 1 1 0 1.4 7 7 0 1 1 12.6-5.7 3.5 3.5 0 0 1 .4 4z"/>
-          </svg>
+          <img src="https://www.mixcloud.com/media/images/www/global/favicon-64.png" alt="Mixcloud" width="24" height="24">
         </a>
       </div>
       <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
