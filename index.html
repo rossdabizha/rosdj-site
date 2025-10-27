@@ -240,14 +240,14 @@
     
     /* Landing Section */
     #landing{
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('DJROS.jpg') center/cover;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('DJROS.jpg') center/cover;
       background-size: cover;
       background-position: center;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      filter: contrast(1.2) saturate(1.3) brightness(0.9);
+      filter: contrast(1.05) saturate(1.1) brightness(1);
     }
     
     #landing .page-wrapper{
@@ -474,19 +474,23 @@
     }
 
     /* Music Section */
-    .music-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
+    .gallery-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .music-card{
-      background:var(--bg-card);
-      border-radius:20px;
-      padding:2rem;
-      border:1px solid var(--border);
-      transition:all 0.3s;
-      text-align:center;
+    
+    .gallery-item{
+      position: relative;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
     }
     .music-card:hover{
       transform:translateY(-5px);
@@ -783,7 +787,7 @@
       /* Gallery */
       .gallery-container{margin-top:2.5rem}
       .gallery-grid{grid-template-columns:1fr;gap:1.5rem}
-      .gallery-item{height:300px}
+      .gallery-item{height:250px}
       .gallery-overlay{padding:1.5rem}
       .gallery-overlay h3{font-size:1.3rem}
       .gallery-overlay p{font-size:0.9rem}
