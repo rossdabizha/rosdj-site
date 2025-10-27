@@ -1,5 +1,5 @@
 
-ROS DJ — Static one-page portfolio
+ROS DJ 
 ---------------------------------
 Files:
 - index.html
