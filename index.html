@@ -245,18 +245,25 @@
     }
     
     #landing .page-wrapper{
-      text-align: center;
+      text-align: left;
       z-index: 1;
+      position: absolute;
+      top: 80px;
+      left: 80px;
     }
     
     #logo{
-      font-size: clamp(4rem, 10vw, 8rem);
-      font-weight: 900;
-      color: white;
+      width: 300px;
+      height: auto;
       margin-bottom: 2rem;
-      letter-spacing: -3px;
-      text-shadow: 0 5px 20px rgba(0,0,0,0.5);
       animation: fadeInUp 1s ease;
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.5));
+    }
+    
+    #logo img{
+      width: 100%;
+      height: auto;
+      display: block;
     }
     
     #social-links{
@@ -283,10 +290,21 @@
       backdrop-filter: blur(10px);
     }
     
+    #social-links a img{
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+    
     #social-links a:hover{
       background: rgba(255,255,255,0.2);
       transform: translateY(-5px) scale(1.1);
       border-color: rgba(255,255,255,0.4);
+    }
+    
+    #social-links a:hover img{
+      transform: scale(1.1);
     }
     
     @keyframes fadeInUp{
@@ -750,9 +768,18 @@
       }
       
       /* Landing */
-      #logo{font-size:clamp(3rem,12vw,5rem)}
+      #landing .page-wrapper{
+        top: 40px;
+        left: 40px;
+      }
+      
+      #logo{
+        width: 200px;
+      }
+      
       #social-links{gap:1rem;margin-top:2rem}
-      #social-links a{width:50px;height:50px;font-size:1.2rem}
+      #social-links a{width:50px;height:50px}
+      #social-links a img{width:26px;height:26px}
       
       /* Sections */
       .seccion{padding:3rem 1rem}
@@ -883,12 +910,22 @@
   <!-- Landing Section -->
   <div id="landing" class="seccion">
     <div class="page-wrapper">
-      <div id="logo">ROS DJ</div>
+      <div id="logo">
+        <img src="logo.png" alt="ROS DJ Logo">
+      </div>
       <div id="social-links">
-        <a target="_blank" href="https://soundcloud.com/rosthedj" title="SoundCloud">SC</a>
-        <a target="_blank" href="https://www.instagram.com/rosthedj/" title="Instagram">IG</a>
-        <a target="_blank" href="https://www.youtube.com/@rosthedj" title="YouTube">YT</a>
-        <a target="_blank" href="https://www.mixcloud.com/rosthedj/" title="Mixcloud">MC</a>
+        <a target="_blank" href="https://soundcloud.com/rosthedj" title="SoundCloud">
+          <img src="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2c33e1fb.ico" alt="SoundCloud">
+        </a>
+        <a target="_blank" href="https://www.instagram.com/rosthedj/" title="Instagram">
+          <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30nGjQp2a_.png" alt="Instagram">
+        </a>
+        <a target="_blank" href="https://www.youtube.com/@rosthedj" title="YouTube">
+          <img src="https://www.youtube.com/s/desktop/4981804c/img/favicon_32x32.png" alt="YouTube">
+        </a>
+        <a target="_blank" href="https://www.mixcloud.com/rosthedj/" title="Mixcloud">
+          <img src="https://www.mixcloud.com/media/images/www/global/favicon-32x32.png" alt="Mixcloud">
+        </a>
         <a href="#contact" title="Contact">@</a>
       </div>
     </div>
