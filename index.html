@@ -220,6 +220,80 @@
       background: var(--glass);
     }
 
+    /* Fixed Navigation */
+    .fixed-nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,85,0,0.3);
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .fixed-nav.hidden{
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    
+    .nav-container{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .nav-links{
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-link{
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link::after{
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ff5500;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover{
+      color: white;
+    }
+    
+    .nav-link:hover::after{
+      width: 100%;
+    }
+    
+    .nav-link.active{
+      color: #ff5500;
+    }
+    
+    .nav-link.active::after{
+      width: 100%;
+    }
+
     /* Full screen sections like DJ Nano */
     .seccion{
       min-height: 100vh;
@@ -595,12 +669,108 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
     .dot.active{
       background: #ff5500;
       transform: scale(1.2);
     }
-    
+
+    /* Gallery Modal */
+    .gallery-modal{
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(20px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .gallery-modal.active{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content{
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: slideUp 0.3s ease;
+    }
+
+    .modal-close{
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2001;
+      background: rgba(255,85,0,0.8);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-close:hover{
+      background: rgba(255,85,0,1);
+      transform: scale(1.1);
+    }
+
+    #modalImage{
+      max-width: 90vw;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .modal-info{
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      max-width: 600px;
+    }
+
+    .modal-info h3{
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ff5500;
+    }
+
+    .modal-info p{
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn{
+      from{ opacity: 0; }
+      to{ opacity: 1; }
+    }
+
+    @keyframes slideUp{
+      from{ 
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to{ 
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     .gallery-item{
       position: relative;
       height: 300px;
@@ -868,6 +1038,19 @@
         margin: 0.3rem 0;
       }
       
+      /* Fixed Navigation */
+      .nav-container{
+        padding: 0 1rem;
+        height: 50px;
+      }
+      .nav-links{
+        gap: 1rem;
+      }
+      .nav-link{
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+      }
+      
       /* Landing */
       #landing .page-wrapper{
         top: 40px;
@@ -940,6 +1123,21 @@
       .gallery-overlay p{font-size:0.9rem}
       .gallery-meta{gap:0.5rem}
       .gallery-date,.gallery-location{font-size:0.75rem;padding:0.3rem 0.6rem}
+      
+      /* Gallery Modal */
+      .modal-close{
+        top: -30px;
+        right: -30px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+      }
+      .modal-info h3{
+        font-size: 1.2rem;
+      }
+      .modal-info p{
+        font-size: 0.9rem;
+      }
       
       /* Language Selector */
       .language-selector{
@@ -1053,6 +1251,20 @@
   </style>
 </head>
 <body>
+  <!-- Fixed Navigation -->
+  <nav class="fixed-nav" id="fixedNav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#landing" class="nav-link">HOME</a>
+        <a href="#about" class="nav-link">ABOUT</a>
+        <a href="#dj-tools" class="nav-link">DJ TOOLS</a>
+        <a href="#music" class="nav-link">MUSIC</a>
+        <a href="#gallery" class="nav-link">GALLERY</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Language Selector -->
   <div class="language-selector">
     <button class="lang-btn" data-lang="ua">UA</button>
@@ -1352,6 +1564,18 @@
         
         <!-- Slider Dots -->
         <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <img id="modalImage" src="" alt="Gallery image">
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
       </div>
     </div>
   </div>
@@ -2127,6 +2351,138 @@
       // Initialize
       createDots();
       updateSlider();
+
+      // Fixed Navigation Hide/Show on Scroll
+      const fixedNav = document.getElementById('fixedNav');
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+
+      function updateNav() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > lastScrollY && scrollY > 100) {
+          // Scrolling down
+          fixedNav.classList.add('hidden');
+        } else {
+          // Scrolling up or at top
+          fixedNav.classList.remove('hidden');
+        }
+        
+        lastScrollY = scrollY;
+        ticking = false;
+      }
+
+      function requestTick() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', requestTick);
+
+      // Update active nav link based on scroll position
+      function updateActiveNavLink() {
+        const sections = document.querySelectorAll('.seccion');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNavLink);
+
+      // Gallery Modal
+      const modal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalClose = document.getElementById('modalClose');
+
+      // Gallery data
+      const galleryData = [
+        {
+          src: 'ROSDJ1.JPG',
+          title: 'Live Performance',
+          description: 'Electronic music event'
+        },
+        {
+          src: 'ROSDJ2.JPG',
+          title: 'Studio Session',
+          description: 'Professional DJ setup'
+        },
+        {
+          src: 'ROSDJ.jpeg',
+          title: 'Festival Energy',
+          description: 'Deep House music festival'
+        },
+        {
+          src: 'ROSDJ2.JPG',
+          title: 'Production Setup',
+          description: 'Professional music production'
+        },
+        {
+          src: 'ROSDJ1.JPG',
+          title: 'Nightclub Session',
+          description: 'Melodic House DJ performance'
+        },
+        {
+          src: 'ROSDJ.jpeg',
+          title: 'Behind the Decks',
+          description: 'Electronic music artist'
+        }
+      ];
+
+      // Add click events to gallery slides
+      slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+          openModal(index);
+        });
+      });
+
+      // Open modal function
+      function openModal(index) {
+        const data = galleryData[index];
+        modalImage.src = data.src;
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal function
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Event listeners
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
 
       // Smooth scroll for navigation links
       const navLinks = document.querySelectorAll('nav a');
