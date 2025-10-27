@@ -29,21 +29,22 @@
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-         background:var(--bg);color:#e6e9ef;line-height:1.6;scroll-behavior:smooth;opacity:0;transform:translateY(6px);filter:blur(3px);transition:opacity 600ms ease, transform 600ms ease, filter 700ms ease}
+         background:var(--bg);color:#e6e9ef;line-height:1.6;scroll-behavior:smooth;opacity:0;transform:translateY(6px);filter:blur(3px);transition:opacity 600ms ease, transform 600ms ease, filter 700ms ease;padding-bottom:64px}
     body.is-ready{opacity:1;transform:none;filter:none}
     /* Loader */
     #loader{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:linear-gradient(90deg, rgba(255,45,85,0.2), var(--accent));z-index:9999;box-shadow:0 0 18px rgba(255,45,85,0.6)}
     #loader.is-running{animation:loadbar 1.6s ease-out infinite}
     #loader.is-complete{animation:none;width:100%;opacity:0;transition:opacity .4s ease .15s}
     @keyframes loadbar{0%{width:0}60%{width:82%}100%{width:88%}}
-    header{min-height:68vh;display:flex;align-items:flex-end;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.48), rgba(0,0,0,0.66)), url('DJROS.jpg') 50% 35%/cover no-repeat;
-            position:relative;padding:1.2rem;overflow:hidden}
-    header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%);
-                   filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none;z-index:0}
-    .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.28}
-    .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
-    .tagline{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#e6e9ef;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.9;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+    /* Hybrid header */
+    header{min-height:70vh;display:flex;align-items:center;justify-content:center;
+            background:linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.72)), url('DJROS.jpg') 50% 30%/cover no-repeat;
+            position:relative;overflow:hidden}
+    .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
+    .hero .content{padding:2rem 1.2rem}
+    .hero h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.12;font-weight:900;letter-spacing:.5px;margin:0;color:#e6e9ef;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+    .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+    @media (max-width:640px){ header{min-height:72vh;background-position:50% 25%} }
     .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:1.5px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -90,7 +91,7 @@
     .lb-close{position:absolute;top:-56px;right:0;width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(20,20,20,0.6);color:#fff}
     @media (max-width:720px){.lb-prev{left:8px}.lb-next{right:8px}.lb-close{top:8px;right:8px}.lb-caption{position:static;margin-top:.6rem}}
 
-    footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
+    footer{text-align:center;padding:2rem 1rem 3.6rem;color:var(--muted);font-size:.95rem}
 
 
     @media (max-width:880px){.hero{grid-template-columns:1fr;}.bio{grid-template-columns:1fr} .portrait img{height:300px}}
@@ -99,8 +100,8 @@
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
     .reveal-left{transform:translateX(-16px);opacity:0}
     .reveal-right{transform:translateX(16px);opacity:0}
-    /* Topbar */
-    .topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:linear-gradient(180deg, rgba(0,0,0,.75), rgba(0,0,0,.35));backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(255,255,255,0.06)}
+    /* Topbar as bottom bar */
+    .topbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.4));backdrop-filter:saturate(140%) blur(6px);border-top:1px solid rgba(255,255,255,0.06)}
     .brandmark{display:flex;align-items:center;gap:.6rem}
     .brandmark .logo{width:28px;height:28px;display:block}
     .socials{display:flex;gap:.4rem}
@@ -108,11 +109,10 @@
     .icon-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px -6px rgba(255,255,255,.28);border-color:rgba(255,255,255,0.22)}
     .reveal.is-visible{opacity:1;transform:none}
     
-    .topbar{opacity:0;transform:translateY(-8px);transition:opacity .3s ease, transform .3s ease}
-    .topbar.show{opacity:1;transform:none}
+    .topbar{opacity:1;transform:none;transition:opacity .3s ease, transform .3s ease}
     @keyframes floatGlow{0%{transform:translate3d(-2%, -2%,0) scale(1)}50%{transform:translate3d(2%, 2%,0) scale(1.05)}100%{transform:translate3d(-2%, -2%,0) scale(1)}}
     @keyframes sheen{0%{opacity:.0;transform:skewX(-20deg) translateX(-120%)}15%{opacity:.5}100%{opacity:0;transform:skewX(-20deg) translateX(220%)}}
-    @media (max-width:640px){.particles{display:none} header{min-height:82vh; background-position:50% 25%; padding:1rem}}
+    @media (max-width:640px){.particles{display:none}}
     @media (prefers-reduced-motion: reduce){
       *{transition:none !important;animation:none !important}
     }
@@ -144,9 +144,11 @@
     </nav>
   </div>
   <header>
-    <canvas class="particles" aria-hidden="true"></canvas>
     <div class="hero" role="banner">
-      <div class="tagline">ORGANIC - MELODIC - HOUSE DJ</div>
+      <div class="content">
+        <h1>DJ ROS (Rostyslav Dabizha)</h1>
+        <div class="subline">ORGANIC • MELODIC • HOUSE</div>
+      </div>
     </div>
   </header>
 
@@ -209,100 +211,11 @@
       els.forEach(el=>{ if(io){io.observe(el)} else {el.classList.add('is-visible')} });
     })();
 
-    // Subtle parallax for header background (scroll + pointer)
-    (function(){
-      const header = document.querySelector('header');
-      if(!header) return;
-      let sx = 0, sy = 0, tx = 0, ty = 0;
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-      window.addEventListener('scroll', ()=>{ ty = window.scrollY * 0.08; });
-      header.addEventListener('pointermove', (e)=>{
-        const r = header.getBoundingClientRect();
-        const mx = (e.clientX - r.left)/r.width - 0.5;
-        const my = (e.clientY - r.top)/r.height - 0.5;
-        tx = mx * 6; // px
-        sx = my * 6; // reuse var name for x/y smoothing
-      });
-      function loop(){
-        if(reduce.matches){ return; }
-        // simple easing
-        let x = parseFloat(header.dataset.px||'0');
-        let y = parseFloat(header.dataset.py||'0');
-        x += (tx - x) * 0.08;
-        y += ((-ty + sx) - y) * 0.08;
-        header.dataset.px = x.toFixed(3);
-        header.dataset.py = y.toFixed(3);
-        header.style.backgroundPosition = `calc(50% + ${x}px) calc(50% + ${y}px)`;
-        requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-    })();
+    // (Header parallax removed)
 
-    // Ambient particles in header
-    (function(){
-      const canvas = document.querySelector('.particles');
-      const header = document.querySelector('header');
-      if(!canvas || !header) return;
-      const ctx = canvas.getContext('2d');
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-      let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-      let W=0,H=0, particles=[], running=false;
-      function resize(){
-        const r = header.getBoundingClientRect();
-        W = Math.max(300, Math.floor(r.width));
-        H = Math.max(200, Math.floor(r.height));
-        canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.width = W+'px'; canvas.style.height = H+'px';
-        ctx.setTransform(dpr,0,0,dpr,0,0);
-      }
-      function rand(a,b){return a + Math.random()*(b-a)}
-      function init(){
-        particles=[];
-        const isSmall = window.matchMedia('(max-width: 640px)').matches;
-        const count = isSmall ? 0 : 16; // reduced density; none on very small screens
-        for(let i=0;i<count;i++){
-          particles.push({x:rand(0,W), y:rand(0,H), r:rand(0.6,2.2), a:rand(0.2,0.8), vx:rand(-0.1,0.1), vy:rand(0.05,0.2)});
-        }
-      }
-      function step(){
-        if(!running || reduce.matches){ return; }
-        ctx.clearRect(0,0,W,H);
-        for(const p of particles){
-          p.x += p.vx; p.y += p.vy;
-          if(p.x < -5) p.x = W+5; if(p.x > W+5) p.x = -5;
-          if(p.y < -5) p.y = H+5; if(p.y > H+5) p.y = -5;
-          const grd = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
-          grd.addColorStop(0, `rgba(255,255,255,${0.22*p.a})`);
-          grd.addColorStop(1, 'rgba(255,255,255,0)');
-          ctx.fillStyle = grd;
-          ctx.beginPath();
-          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-          ctx.fill();
-        }
-        requestAnimationFrame(step);
-      }
-      function start(){ if(running || reduce.matches) return; running=true; requestAnimationFrame(step); }
-      function stop(){ running=false; }
-      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((es)=>{
-        es.forEach(e=>{ if(e.isIntersecting){ start(); } else { stop(); } })
-      }, {threshold:0.01}) : null;
-      window.addEventListener('resize', ()=>{ resize(); init(); });
-      resize(); init();
-      if(io) io.observe(header); else start();
-    })();
+    // (Header particles removed)
 
-    // Show topbar after header
-    (function(){
-      const header = document.querySelector('header');
-      const topbar = document.querySelector('.topbar');
-      if(!header || !topbar || !('IntersectionObserver' in window)) return;
-      const io = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ topbar.classList.remove('show'); }
-          else { topbar.classList.add('show'); }
-        })
-      }, {threshold:0.05});
-      io.observe(header);
-    })();
+    // (Topbar observer removed — topbar always visible)
 
     // Initial page reveal
     (function(){
