@@ -8,7 +8,9 @@
   <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostislav Dabizha.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#070707">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="ROSDJ.jpeg" type="image/jpeg" sizes="any">
+  <link rel="apple-touch-icon" href="ROSDJ.jpeg">
   <meta property="og:title" content="ROS DJ — Organic House DJ & Producer">
   <meta property="og:description" content="Deep, melodic, atmospheric Organic House sets by Rostislav Dabizha.">
   <meta property="og:type" content="website">
@@ -28,38 +30,37 @@
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-         background:var(--bg);color:#eee;line-height:1.5;scroll-behavior:smooth}
+         background:var(--bg);color:#eee;line-height:1.6;scroll-behavior:smooth}
     header{min-height:70vh;display:flex;align-items:center;justify-content:center;
             background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover no-repeat;
             position:relative;padding:2rem;overflow:hidden}
     header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(255,45,85,0.12), rgba(255,45,85,0) 60%);
                    filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none}
     .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
-    .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:2px;margin-bottom:.4rem}
+    .brand h1{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:1.5px;margin-bottom:.4rem}
     .brand p.lead{color:var(--muted);font-size:1rem;margin-bottom:1rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600;position:relative;transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease}
-    .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.25);box-shadow:0 6px 20px -6px rgba(255,45,85,0.35)}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600;position:relative;transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease, background-size .25s ease}
+    .btn{background-image:linear-gradient(var(--accent), var(--accent));background-repeat:no-repeat;background-position:50% 100%;background-size:0% 2px}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.25);box-shadow:0 6px 20px -6px rgba(255,45,85,0.35);background-size:100% 2px}
+    .btn::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(120px 60px at 50% 120%, rgba(255,45,85,.35), rgba(255,45,85,0) 60%);opacity:0;transition:opacity .2s ease;filter:blur(8px);pointer-events:none}
+    .btn:hover::after{opacity:1}
     .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .btn.ghost{background:var(--glass);}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-           border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:14px;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
-    .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px -10px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04) inset}
+           border:1px solid rgba(255,255,255,0.06);padding:1.1rem;border-radius:16px;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;backdrop-filter:saturate(140%) blur(6px)}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 36px -12px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04) inset}
     .portrait{height:100%;display:flex;align-items:center;justify-content:center}
     .portrait img{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover;filter:grayscale(30%);transition:filter .5s ease, transform .6s ease}
     .portrait img:hover{filter:grayscale(0%);transform:scale(1.02)}
 
-    main{max-width:1100px;margin:2rem auto;padding:0 1rem;}
-    section{margin-bottom:2rem}
+    main{max-width:1100px;margin:2.5rem auto;padding:0 1.2rem;}
+    section{margin-bottom:2.2rem}
     .bio{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
     .bio .text h2{margin-bottom:.6rem}
-    .tracks{display:grid;gap:12px}
-    .tracks iframe{width:100%;height:152px;border:0;border-radius:10px;overflow:hidden}
+    
 
-
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;}
-
+    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem}
 
     footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
 
@@ -82,9 +83,7 @@
         <h1>ROS DJ</h1>
         <p class="lead">Organic House — Ukrainian DJ &amp; producer. Deep, melodic, atmospheric sets by Rostislav Dabizha.</p>
         <div class="actions">
-          <a class="btn" href="#music">Listen</a>
           <a class="btn ghost" href="#contact">Contact</a>
-          <a class="btn" href="#gallery">Gallery</a>
         </div>
         <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">
           Based in Spain 🇪🇸 — Born March 10, 1999. Specializes in immersive Organic House journeys.
@@ -127,15 +126,9 @@
     </section>
 
 
-    <section id="music" class="card reveal">
-      <h2 style="margin-bottom:.6rem">Music</h2>
-      <p style="color:var(--muted);margin-bottom:1rem">Latest mixes from SoundCloud and Mixcloud.</p>
-      <div class="tracks">
-        <iframe title="soundcloud-embed" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rosthedj&color=%23ff2d55&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-        <iframe title="mixcloud-embed" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Frosthedj%2F"></iframe>
-      </div>
-    </section>
     
+
+
 
 
     <section id="contact" class="card reveal">
@@ -158,6 +151,35 @@
       }
       const io = ('IntersectionObserver' in window) ? new IntersectionObserver(on, {threshold:0.12}) : null;
       els.forEach(el=>{ if(io){io.observe(el)} else {el.classList.add('is-visible')} });
+    })();
+
+    // Subtle parallax for header background (scroll + pointer)
+    (function(){
+      const header = document.querySelector('header');
+      if(!header) return;
+      let sx = 0, sy = 0, tx = 0, ty = 0;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      window.addEventListener('scroll', ()=>{ ty = window.scrollY * 0.08; });
+      header.addEventListener('pointermove', (e)=>{
+        const r = header.getBoundingClientRect();
+        const mx = (e.clientX - r.left)/r.width - 0.5;
+        const my = (e.clientY - r.top)/r.height - 0.5;
+        tx = mx * 6; // px
+        sx = my * 6; // reuse var name for x/y smoothing
+      });
+      function loop(){
+        if(reduce.matches){ return; }
+        // simple easing
+        let x = parseFloat(header.dataset.px||'0');
+        let y = parseFloat(header.dataset.py||'0');
+        x += (tx - x) * 0.08;
+        y += ((-ty + sx) - y) * 0.08;
+        header.dataset.px = x.toFixed(3);
+        header.dataset.py = y.toFixed(3);
+        header.style.backgroundPosition = `calc(50% + ${x}px) calc(50% + ${y}px)`;
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
     })();
   </script>
 </body>
