@@ -3,53 +3,458 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ROS DJ — Ukrainian DJ</title>
-  <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostyslav Dabizha.">
+  <title>ROS DJ — Ukrainian DJ & Producer | Organic House</title>
+  <meta name="description" content="ROS DJ (Rostyslav Dabizha) - Ukrainian DJ and producer specializing in Organic House, Deep House & Melodic music. Book for events worldwide.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ff2d55">
   <link rel="preload" as="image" href="DJROS.jpg">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
-  <meta property="og:title" content="ROS DJ — Ukrainian DJ">
-  <meta property="og:description" content="Ukrainian DJ and producer. Deep, melodic, organic house sets by Rostyslav Dabizha.">
+  <meta property="og:title" content="ROS DJ — Ukrainian DJ & Producer">
+  <meta property="og:description" content="Professional Ukrainian DJ & producer. Deep, melodic, organic house sets by Rostyslav Dabizha. Available for bookings worldwide.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="DJROS.jpg">
-  <meta property="og:image:alt" content="ROS DJ - Rostyslav Dabizha Ukrainian DJ">
+  <meta property="og:image:alt" content="ROS DJ - Rostyslav Dabizha performing live">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ROS DJ — Ukrainian DJ">
-  <meta name="twitter:description" content="Ukrainian DJ and producer. Deep, melodic, organic house sets by Rostyslav Dabizha.">
+  <meta name="twitter:title" content="ROS DJ — Ukrainian DJ & Producer">
+  <meta name="twitter:description" content="Professional Ukrainian DJ & producer. Organic House, Deep House & Melodic music specialist.">
   <meta name="twitter:image" content="DJROS.jpg">
-  <meta name="twitter:image:alt" content="ROS DJ - Rostyslav Dabizha Ukrainian DJ">
+  <meta name="twitter:image:alt" content="ROS DJ - Rostyslav Dabizha">
   
-  <!-- Image SEO -->
-  <meta name="image:alt" content="ROS DJ performing live, Rostyslav Dabizha, Ukrainian DJ, Organic House music">
-  <meta itemprop="image" content="DJROS.jpg">
-  <meta itemprop="name" content="ROS DJ - Rostyslav Dabizha">
-  <meta itemprop="description" content="Ukrainian DJ and producer specializing in Organic House, Deep House and Melodic music">
+  <!-- SEO & Structured Data -->
+  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Ukrainian DJ, Organic House, Deep House, Melodic House, DJ Ukraine, music producer, electronic music, house music, DJ booking">
+  <link rel="canonical" href="https://rosthedj.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ROS DJ",
+    "alternateName": "Rostyslav Dabizha",
+    "jobTitle": "DJ and Music Producer",
+    "description": "Ukrainian DJ and producer specializing in Organic House, Deep House and Melodic music",
+    "url": "https://rosthedj.com",
+    "email": "r.dabizha@icloud.com",
+    "sameAs": [
+      "https://soundcloud.com/rosthedj",
+      "https://www.instagram.com/rosthedj/",
+      "https://www.youtube.com/@rosthedj",
+      "https://www.mixcloud.com/rosthedj/"
+    ],
+    "knowsAbout": ["Organic House", "Deep House", "Melodic House", "Electronic Music", "DJing"],
+    "nationality": "Ukrainian",
+    "basedIn": "Spain"
+  }
+  </script>
+  
   <style>
     :root{
-      --bg:#000000;
-      --card:#0b0b0b;
-      --accent:#ff2d55; /* red accent outside header */
-      --muted:#9aa0a6;
-      --glass: rgba(255,255,255,0.035);
+      --bg:#0a0a0a;
+      --card:#111111;
+      --accent:#ff2d55;
+      --accent-light:#ff4466;
+      --text:#ffffff;
+      --text-secondary:#b0b0b0;
+      --muted:#666666;
+      --glass: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.1);
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-         background:var(--bg);color:#e6e9ef;line-height:1.6;padding-bottom:64px}
+    body{
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
 
-    /* Bottom bar */
-    .topbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,.4));backdrop-filter:saturate(140%) blur(6px);border-top:1px solid rgba(255,255,255,0.06)}
-    .brandmark{display:flex;align-items:center;gap:.6rem}
-    .socials{display:flex;gap:.4rem}
-    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent}
-    .icon-btn:hover{border-color:rgba(255,255,255,0.22);background:transparent}
-    .icon-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600}
-    .btn:hover{border-color:var(--accent);color:var(--accent)}
-    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    /* Modern Navigation */
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(10,10,10,0.95);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);
+      padding:1rem 2rem;
+    }
+    .nav-container{
+      max-width:1400px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-size:1.5rem;
+      font-weight:900;
+      color:var(--accent);
+      text-decoration:none;
+      letter-spacing:-0.5px;
+    }
+    .nav-menu{
+      display:flex;
+      list-style:none;
+      gap:2rem;
+      margin:0;
+      padding:0;
+    }
+    .nav-link{
+      color:var(--text-secondary);
+      text-decoration:none;
+      font-weight:500;
+      transition:color 0.3s;
+      position:relative;
+    }
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--text);
+    }
+    .nav-link::after{
+      content:'';
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:width 0.3s;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after{
+      width:100%;
+    }
+    .nav-cta{
+      background:var(--accent);
+      color:white;
+      padding:0.7rem 1.5rem;
+      border-radius:25px;
+      text-decoration:none;
+      font-weight:600;
+      transition:all 0.3s;
+    }
+    .nav-cta:hover{
+      background:var(--accent-light);
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(255,45,85,0.3);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle{
+      display:none;
+      background:none;
+      border:none;
+      color:var(--text);
+      font-size:1.5rem;
+      cursor:pointer;
+    }
+
+    /* Hero Section */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      background:linear-gradient(135deg, rgba(10,10,10,0.9), rgba(255,45,85,0.1)),
+                  url('DJROS.jpg') center/cover;
+      background-attachment:fixed;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:radial-gradient(circle at 20% 50%, rgba(255,45,85,0.2) 0%, transparent 50%);
+    }
+    .hero-content{
+      text-align:center;
+      z-index:1;
+      max-width:900px;
+      padding:0 2rem;
+    }
+    .hero-title{
+      font-size:clamp(3rem,8vw,6rem);
+      font-weight:900;
+      margin-bottom:1rem;
+      background:linear-gradient(135deg, var(--text), var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      letter-spacing:-2px;
+      line-height:0.9;
+    }
+    .hero-subtitle{
+      font-size:clamp(1.2rem,3vw,1.8rem);
+      color:var(--text-secondary);
+      margin-bottom:2rem;
+      font-weight:300;
+      letter-spacing:2px;
+    }
+    .hero-cta{
+      display:flex;
+      gap:1rem;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      padding:1rem 2rem;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:1.1rem;
+      transition:all 0.3s;
+      display:inline-block;
+    }
+    .btn-primary:hover{
+      background:var(--accent-light);
+      transform:translateY(-3px);
+      box-shadow:0 15px 35px rgba(255,45,85,0.4);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:white;
+      padding:1rem 2rem;
+      border:2px solid var(--border);
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:1.1rem;
+      transition:all 0.3s;
+      display:inline-block;
+    }
+    .btn-secondary:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+      transform:translateY(-3px);
+    }
+
+    /* Section Styles */
+    section{
+      padding:5rem 2rem;
+      max-width:1400px;
+      margin:0 auto;
+    }
+    .section-title{
+      font-size:clamp(2rem,4vw,3rem);
+      font-weight:800;
+      margin-bottom:1rem;
+      text-align:center;
+      background:linear-gradient(135deg, var(--text), var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .section-subtitle{
+      text-align:center;
+      color:var(--text-secondary);
+      font-size:1.2rem;
+      margin-bottom:3rem;
+      max-width:600px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* About Section */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:4rem;
+      align-items:center;
+      margin-top:3rem;
+    }
+    .about-content h3{
+      font-size:2rem;
+      margin-bottom:1rem;
+      color:var(--text);
+    }
+    .about-content p{
+      color:var(--text-secondary);
+      font-size:1.1rem;
+      line-height:1.8;
+      margin-bottom:1.5rem;
+    }
+    .about-image{
+      position:relative;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 25px 50px rgba(0,0,0,0.5);
+    }
+    .about-image img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Music Section */
+    .music-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:2rem;
+      margin-top:3rem;
+    }
+    .music-card{
+      background:var(--card);
+      border-radius:20px;
+      padding:2rem;
+      border:1px solid var(--border);
+      transition:all 0.3s;
+      text-align:center;
+    }
+    .music-card:hover{
+      transform:translateY(-5px);
+      border-color:var(--accent);
+      box-shadow:0 20px 40px rgba(255,45,85,0.2);
+    }
+    .music-icon{
+      font-size:3rem;
+      margin-bottom:1rem;
+    }
+    .music-card h3{
+      font-size:1.5rem;
+      margin-bottom:1rem;
+      color:var(--text);
+    }
+    .music-card p{
+      color:var(--text-secondary);
+      margin-bottom:1.5rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+      gap:2rem;
+      margin-top:3rem;
+    }
+    .gallery-item{
+      position:relative;
+      border-radius:20px;
+      overflow:hidden;
+      height:300px;
+      cursor:pointer;
+      transition:all 0.3s;
+    }
+    .gallery-item:hover{
+      transform:scale(1.02);
+      box-shadow:0 25px 50px rgba(0,0,0,0.5);
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .gallery-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      display:flex;
+      align-items:flex-end;
+      padding:2rem;
+      opacity:0;
+      transition:opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay{
+      opacity:1;
+    }
+    .gallery-overlay h3{
+      color:white;
+      font-size:1.3rem;
+      margin-bottom:0.5rem;
+    }
+    .gallery-overlay p{
+      color:var(--text-secondary);
+    }
+
+    /* Contact Section */
+    .contact-content{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto;
+    }
+    .contact-info{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:2rem;
+      margin-top:3rem;
+    }
+    .contact-item{
+      background:var(--card);
+      padding:2rem;
+      border-radius:20px;
+      border:1px solid var(--border);
+    }
+    .contact-item h3{
+      color:var(--accent);
+      margin-bottom:1rem;
+    }
+    .contact-item p{
+      color:var(--text-secondary);
+    }
+    .contact-item a{
+      color:var(--accent);
+      text-decoration:none;
+      transition:color 0.3s;
+    }
+    .contact-item a:hover{
+      color:var(--accent-light);
+    }
+
+    /* Footer */
+    footer{
+      background:var(--card);
+      border-top:1px solid var(--border);
+      padding:3rem 2rem 2rem;
+      text-align:center;
+    }
+    .footer-content{
+      max-width:1400px;
+      margin:0 auto;
+    }
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin-bottom:2rem;
+    }
+    .social-link{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:var(--glass);
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--text-secondary);
+      text-decoration:none;
+      transition:all 0.3s;
+    }
+    .social-link:hover{
+      background:var(--accent);
+      color:white;
+      transform:translateY(-3px);
+    }
+    .footer-text{
+      color:var(--text-secondary);
+      margin-bottom:1rem;
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .mobile-menu-toggle{display:block}
+      .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:2rem;gap:1rem}
+      .nav-menu.active{display:flex}
+      .hero-title{font-size:clamp(2.5rem,6vw,4rem)}
+      .about-grid{grid-template-columns:1fr;gap:2rem}
+      .section{padding:3rem 1rem}
+    }
 
     /* Header (hybrid) */
     header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.85))}
