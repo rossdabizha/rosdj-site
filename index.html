@@ -275,7 +275,9 @@
 
     /* Hero Section */
     .hero{
-      min-height:130vh;
+      height:100vh;
+      margin-top: -80px;
+      padding-top: 80px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -505,7 +507,7 @@
       margin-top:3rem;
     }
     .music-card{
-      background:var(--card);
+      background:var(--bg-card);
       border-radius:20px;
       padding:2rem;
       border:1px solid var(--border);
@@ -514,8 +516,8 @@
     }
     .music-card:hover{
       transform:translateY(-5px);
-      border-color:var(--accent);
-      box-shadow:0 20px 40px rgba(255,45,85,0.2);
+      border-color:#1a1a1a;
+      box-shadow:0 20px 40px rgba(255,255,255,0.1);
     }
     .music-icon{
       font-size:3rem;
@@ -524,7 +526,7 @@
     .music-card h3{
       font-size:1.5rem;
       margin-bottom:1rem;
-      color:var(--text);
+      color:var(--text-primary);
     }
     .music-card p{
       color:var(--text-secondary);
@@ -532,49 +534,116 @@
     }
 
     /* Gallery Section */
+    .gallery-container{
+      margin-top:3rem;
+      position:relative;
+    }
+    
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
+      grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));
+      gap:2.5rem;
+      perspective:1000px;
     }
+    
     .gallery-item{
       position:relative;
-      border-radius:20px;
+      border-radius:24px;
       overflow:hidden;
-      height:300px;
+      height:400px;
       cursor:pointer;
-      transition:all 0.3s;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style:preserve-3d;
+      background:var(--bg-card);
+      border:1px solid var(--border);
     }
+    
     .gallery-item:hover{
-      transform:scale(1.02);
-      box-shadow:0 25px 50px rgba(0,0,0,0.5);
+      transform:translateY(-8px) rotateX(2deg);
+      box-shadow:0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.05);
+      border-color:rgba(255,255,255,0.1);
     }
+    
+    .gallery-image-wrapper{
+      position:relative;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+    }
+    
     .gallery-item img{
       width:100%;
       height:100%;
       object-fit:cover;
+      transition:all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      filter:brightness(0.9);
     }
+    
+    .gallery-item:hover img{
+      transform:scale(1.1);
+      filter:brightness(1);
+    }
+    
     .gallery-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      background:linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
       display:flex;
       align-items:flex-end;
-      padding:2rem;
+      padding:2.5rem;
       opacity:0;
-      transition:opacity 0.3s;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform:translateY(20px);
     }
+    
     .gallery-item:hover .gallery-overlay{
       opacity:1;
+      transform:translateY(0);
     }
+    
+    .gallery-content{
+      transform:translateZ(20px);
+    }
+    
     .gallery-overlay h3{
       color:white;
-      font-size:1.3rem;
+      font-size:1.6rem;
+      font-weight:700;
       margin-bottom:0.5rem;
+      letter-spacing:-0.5px;
+      text-shadow:0 2px 10px rgba(0,0,0,0.5);
     }
+    
     .gallery-overlay p{
-      color:var(--text-secondary);
+      color:rgba(255,255,255,0.8);
+      font-size:1rem;
+      margin-bottom:1rem;
+      font-weight:400;
+    }
+    
+    .gallery-meta{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+    }
+    
+    .gallery-date,
+    .gallery-location{
+      background:rgba(255,255,255,0.1);
+      color:rgba(255,255,255,0.9);
+      padding:0.4rem 0.8rem;
+      border-radius:20px;
+      font-size:0.85rem;
+      font-weight:500;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+      transition:all 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-date,
+    .gallery-item:hover .gallery-location{
+      background:rgba(255,255,255,0.15);
+      transform:translateZ(10px);
     }
 
     /* Contact Section */
@@ -590,25 +659,25 @@
       margin-top:3rem;
     }
     .contact-item{
-      background:var(--card);
+      background:var(--bg-card);
       padding:2rem;
       border-radius:20px;
       border:1px solid var(--border);
     }
     .contact-item h3{
-      color:var(--accent);
+      color:#1a1a1a;
       margin-bottom:1rem;
     }
     .contact-item p{
       color:var(--text-secondary);
     }
     .contact-item a{
-      color:var(--accent);
+      color:#1a1a1a;
       text-decoration:none;
       transition:color 0.3s;
     }
     .contact-item a:hover{
-      color:var(--accent-light);
+      color:#2a2a2a;
     }
 
     /* Footer */
@@ -747,7 +816,7 @@
       .nav-cta{padding:0.6rem 1.2rem;font-size:0.9rem}
       
       /* Hero */
-      .hero{min-height:100vh}
+      .hero{height:100vh}
       .hero-title{font-size:clamp(2.5rem,10vw,4rem)}
       .hero-subtitle{font-size:clamp(1rem,4vw,1.4rem);letter-spacing:1px}
       .hero-cta{gap:0.8rem}
@@ -775,8 +844,14 @@
       .music-card h3{font-size:1.3rem}
       
       /* Gallery */
-      .gallery-grid{grid-template-columns:1fr;gap:1.5rem;margin-top:2.5rem}
-      .gallery-item{height:250px}
+      .gallery-container{margin-top:2.5rem}
+      .gallery-grid{grid-template-columns:1fr;gap:1.5rem}
+      .gallery-item{height:300px}
+      .gallery-overlay{padding:1.5rem}
+      .gallery-overlay h3{font-size:1.3rem}
+      .gallery-overlay p{font-size:0.9rem}
+      .gallery-meta{gap:0.5rem}
+      .gallery-date,.gallery-location{font-size:0.75rem;padding:0.3rem 0.6rem}
       
       /* Contact */
       .contact-info{grid-template-columns:1fr;gap:1.5rem}
@@ -800,44 +875,12 @@
       .contact-item{padding:1.2rem}
       .social-link{width:45px;height:45px}
       .social-link img{width:18px;height:18px}
-    }
-
-    /* Header (hybrid) */
-    header{min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.85))}
-    header::after{content:"";position:absolute;inset:0;background:url('DJROS.jpg') 50% 30%/cover no-repeat;z-index:0}
-    .hero{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
-    .hero .content{padding:2rem 1.2rem}
-    .hero h1{font-size:clamp(2.5rem,7vw,3.8rem);line-height:1.1;font-weight:900;letter-spacing:.6px;margin:0;color:#e6e9ef}
-    .hero .subline{margin-top:.4rem;color:#cbd0d6;letter-spacing:2px;font-weight:700;font-size:.95rem;opacity:.92}
-    @media (max-width:640px){ header{min-height:72vh} header::after{background-position:50% 25%} }
-
-    main{max-width:1100px;margin:2.5rem auto;padding:0 1.2rem}
-    section{margin-bottom:2.2rem}
-
-      .hero-title{
-        font-size: clamp(2.5rem, 8vw, 4rem);
-      }
-
-      .about-grid{
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .section{
-        padding: 4rem 1rem;
-      }
-
-      .music-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .contact-info{
-        grid-template-columns: 1fr;
-      }
+      
+      /* Gallery */
+      .gallery-item{height:250px}
+      .gallery-overlay{padding:1rem}
+      .gallery-overlay h3{font-size:1.2rem}
+      .gallery-overlay p{font-size:0.85rem}
     }
 
     /* Touch-friendly interactions */
@@ -1026,25 +1069,99 @@
   <!-- Gallery Section -->
   <section id="gallery" class="section">
     <h2 class="section-title">Gallery</h2>
-    <p class="section-subtitle">Moments from performances and studio sessions</p>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="ROS DJ performing live at electronic music event - Organic House DJ set">
-      </div>
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="Rostyslav Dabizha in DJ studio mixing electronic music - Professional DJ setup">
-      </div>
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="ROS DJ live performance crowd reaction - Deep House music festival">
-      </div>
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="Rostyslav Dabizha DJ equipment and studio setup - Professional music production">
-      </div>
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="ROS DJ performing at nightclub - Melodic House DJ performance">
-      </div>
-      <div class="gallery-item">
-        <img src="DJROS.jpg" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist">
+    <p class="section-subtitle">Capturing the essence of electronic music performances</p>
+    <div class="gallery-container">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ1.JPG" alt="ROS DJ performing live at electronic music event - Organic House DJ set" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Live Performance</h3>
+                <p>Electronic music event</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Spain</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha in DJ studio mixing electronic music - Professional DJ setup" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Studio Session</h3>
+                <p>Professional DJ setup</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ1.JPG" alt="ROS DJ live performance crowd reaction - Deep House music festival" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Festival Energy</h3>
+                <p>Deep House music festival</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Festival</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha DJ equipment and studio setup - Professional music production" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Production Setup</h3>
+                <p>Professional music production</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ1.JPG" alt="ROS DJ performing at nightclub - Melodic House DJ performance" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Nightclub Session</h3>
+                <p>Melodic House DJ performance</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Club</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h3>Behind the Decks</h3>
+                <p>Electronic music artist</p>
+                <div class="gallery-meta">
+                  <span class="gallery-date">2024</span>
+                  <span class="gallery-location">Performance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1123,7 +1240,7 @@
           title: "DJ Tools",
           subtitle: "Essential tools for harmonic mixing and professional DJ performance",
           camelot: {
-            title: " Camelot Wheel",
+            title: "🎵 Camelot Wheel",
             content: "The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.",
             compatibility: "Key Compatibility:",
             sameNumber: "Same number: Perfect mix",
@@ -1131,7 +1248,7 @@
             sameLetter: "Same letter: Relative minor/major"
           },
           bpm: {
-            title: " BPM Analysis",
+            title: "🎧 BPM Analysis",
             content: "Understanding BPM (Beats Per Minute) is crucial for creating seamless transitions. Match tempos or use creative tempo changes to enhance your DJ sets.",
             range: "Organic House Range:",
             deep: "Deep: 110-122 BPM",
@@ -1139,7 +1256,7 @@
             progressive: "Progressive: 122-128 BPM"
           },
           inKay: {
-            title: " In-Kay Key Detection",
+            title: "🎹 In-Kay Key Detection",
             content: "Professional key detection tool for DJs and producers. In-Kay helps you identify musical keys, find compatible tracks, and create harmonic mixes with precision. Essential for modern electronic music production.",
             features: "Features:",
             accurate: "Accurate Detection: Advanced algorithm analysis",
@@ -1183,16 +1300,16 @@
           title: "Get In Touch",
           subtitle: "Available for bookings, collaborations, and press inquiries",
           email: {
-            title: " Email",
+            title: "📧 Email",
             content: "For bookings and inquiries"
           },
           location: {
-            title: " Location",
+            title: "📍 Location",
             content1: "Based in Spain",
             content2: "Available for worldwide bookings"
           },
           genres: {
-            title: " Genres",
+            title: "🎵 Genres",
             content1: "Organic House",
             content2: "Deep House & Melodic"
           }
@@ -1200,8 +1317,8 @@
       },
       ua: {
         nav: {
-          about: "",
-          djTools: "DJ ",
+          about: "Про мене",
+          djTools: "DJ Інструменти",
           music: "Музика",
           gallery: "Галерея",
           contact: "Контакти",
@@ -1283,16 +1400,16 @@
           title: "Зв'язок",
           subtitle: "Доступний для замовлень, співпраці та преси",
           email: {
-            title: " Email",
+            title: "📧 Email",
             content: "Для замовлень та запитань"
           },
           location: {
-            title: " Локація",
+            title: "📍 Локація",
             content1: "Базуюся в Іспанії",
             content2: "Доступний для замовлень по всьому світу"
           },
           genres: {
-            title: " Жанри",
+            title: "🎵 Жанри",
             content1: "Organic House",
             content2: "Deep House & Melodic"
           }
@@ -1383,16 +1500,16 @@
           title: "Contacto",
           subtitle: "Disponible para reservas, colaboraciones y prensa",
           email: {
-            title: " Email",
+            title: "📧 Email",
             content: "Para reservas e consultas"
           },
           location: {
-            title: " Ubicación",
+            title: "📍 Ubicación",
             content1: "Basado en España",
             content2: "Disponible para reservas mundiales"
           },
           genres: {
-            title: " Géneros",
+            title: "🎵 Géneros",
             content1: "Organic House",
             content2: "Deep House & Melodic"
           }
@@ -1469,10 +1586,6 @@
       // Update gallery section
       document.querySelector('#gallery .section-title').textContent = t.gallery.title;
       document.querySelector('#gallery .section-subtitle').textContent = t.gallery.subtitle;
-      document.querySelector('#gallery .gallery-item:nth-child(1) .gallery-overlay h3').textContent = t.gallery.performance1.title;
-      document.querySelector('#gallery .gallery-item:nth-child(1) .gallery-overlay p').textContent = t.gallery.performance1.content;
-      document.querySelector('#gallery .gallery-item:nth-child(2) .gallery-overlay h3').textContent = t.gallery.performance2.title;
-      document.querySelector('#gallery .gallery-item:nth-child(2) .gallery-overlay p').textContent = t.gallery.performance2.content;
       
       // Update contact section
       document.querySelector('#contact .section-title').textContent = t.contact.title;
@@ -1651,63 +1764,14 @@
       });
     });
 
-    // Intersection Observer for Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observe all animated elements
+    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right');
-      animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(el);
-      });
+      // Initialize language
+      updateLanguage(currentLang);
       
       // Initialize active nav
       updateActiveNav();
     });
-
-    // Add hover effect to cards
-    document.querySelectorAll('.music-card, .contact-item').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Add typing effect to hero title (optional)
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-      const originalText = heroTitle.textContent;
-      heroTitle.textContent = '';
-      let charIndex = 0;
-      
-      function typeWriter() {
-        if (charIndex < originalText.length) {
-          heroTitle.textContent += originalText.charAt(charIndex);
-          charIndex++;
-          setTimeout(typeWriter, 100);
-        }
-      }
-      
-      setTimeout(typeWriter, 500);
-    }
   </script>
 </body>
 </html>
