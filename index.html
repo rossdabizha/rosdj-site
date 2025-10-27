@@ -474,11 +474,131 @@
     }
 
     /* Music Section */
+    .music-player-container{
+      margin: 3rem 0;
+      text-align: center;
+    }
+    
+    .playlist-title{
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(45deg, #ff5500, #52c8fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .soundcloud-embed{
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .soundcloud-embed iframe{
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(255,85,0,0.2);
+    }
+    
     .gallery-grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
+    }
+    
+    .gallery-slider{
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    
+    .gallery-slide{
+      display: none;
+      width: 100%;
+      height: 500px;
+      position: relative;
+    }
+    
+    .gallery-slide.active{
+      display: block;
+    }
+    
+    .gallery-slide .gallery-image-wrapper{
+      width: 100%;
+      height: 100%;
+    }
+    
+    .gallery-slide .gallery-image-wrapper img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .gallery-prev,
+    .gallery-next{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    
+    .gallery-prev{
+      left: 20px;
+    }
+    
+    .gallery-next{
+      right: 20px;
+    }
+    
+    .gallery-prev:hover,
+    .gallery-next:hover{
+      background: rgba(255,85,0,0.8);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .gallery-dots{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .dot{
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .dot.active{
+      background: #ff5500;
+      transform: scale(1.2);
     }
     
     .gallery-item{
@@ -784,10 +904,37 @@
       .music-icon{font-size:2.5rem}
       .music-card h3{font-size:1.3rem}
       
+      .music-player-container{
+        margin: 2rem 0;
+      }
+      .playlist-title{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      .soundcloud-embed{
+        padding: 1.5rem;
+      }
+      
       /* Gallery */
       .gallery-container{margin-top:2.5rem}
-      .gallery-grid{grid-template-columns:1fr;gap:1.5rem}
-      .gallery-item{height:250px}
+      .gallery-slider{
+        max-width: 100%;
+        margin: 2rem auto;
+      }
+      .gallery-slide{
+        height: 350px;
+      }
+      .gallery-prev,
+      .gallery-next{
+        width: 40px;
+        height: 40px;
+      }
+      .gallery-prev{
+        left: 10px;
+      }
+      .gallery-next{
+        right: 10px;
+      }
       .gallery-overlay{padding:1.5rem}
       .gallery-overlay h3{font-size:1.3rem}
       .gallery-overlay p{font-size:0.9rem}
@@ -908,8 +1055,8 @@
 <body>
   <!-- Language Selector -->
   <div class="language-selector">
-    <button class="lang-btn active" data-lang="ua">UA</button>
-    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ua">UA</button>
+    <button class="lang-btn active" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="es">ES</button>
   </div>
 
@@ -1053,25 +1200,39 @@
   <!-- Music Section -->
   <div id="music" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title">Music</h2>
-      <p class="section-subtitle">Experience my sound across different platforms</p>
+      <h2 class="section-title" data-lang="music-title">Music</h2>
+      <p class="section-subtitle" data-lang="music-subtitle">Listen to my latest releases and DJ sets</p>
+      
+      <!-- SoundCloud Player -->
+      <div class="music-player-container">
+        <h3 class="playlist-title" data-lang="playlist-title">ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA</h3>
+        <div class="soundcloud-embed">
+          <iframe 
+            width="100%" 
+            height="450" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2084390145&color=%23000000&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          </iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/rosthedj" title="ROS DJ" target="_blank" style="color: #cccccc; text-decoration: none;">ROS DJ</a> · 
+            <a href="https://soundcloud.com/rosthedj/sets/r-dabizha-playlist" title="Etapa de Potencia by R. Dabizha" target="_blank" style="color: #cccccc; text-decoration: none;">Etapa de Potencia by R. Dabizha</a>
+          </div>
+        </div>
+      </div>
+      
       <div class="music-grid">
         <div class="music-card">
           <div class="music-icon">🎵</div>
-          <h3>SoundCloud</h3>
-          <p>Latest mixes and productions with deep, melodic organic house vibes</p>
+          <h3 data-lang="music-soundcloud">SoundCloud</h3>
+          <p data-lang="music-soundcloud-desc">Latest mixes, original tracks, and exclusive content</p>
           <a href="https://soundcloud.com/rosthedj" class="btn btn-primary" target="_blank">Listen</a>
         </div>
         <div class="music-card">
-          <div class="music-icon">🎧</div>
-          <h3>Mixcloud</h3>
-          <p>Full DJ sets and podcasts showcasing my musical journey</p>
-          <a href="https://www.mixcloud.com/rosthedj/" class="btn btn-primary" target="_blank">Stream</a>
-        </div>
-        <div class="music-card">
-          <div class="music-icon">🎬</div>
-          <h3>YouTube</h3>
-          <p>Live performances, studio sessions, and exclusive content</p>
+          <div class="music-icon">🎹</div>
+          <h3 data-lang="music-youtube">YouTube</h3>
+          <p data-lang="music-youtube-desc">Live performances, studio sessions, and exclusive content</p>
           <a href="https://www.youtube.com/@rosthedj" class="btn btn-primary" target="_blank">Watch</a>
         </div>
       </div>
@@ -1084,8 +1245,8 @@
       <h2 class="section-title" data-lang="gallery-title">Gallery</h2>
       <p class="section-subtitle" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
       <div class="gallery-container">
-        <div class="gallery-grid">
-          <div class="gallery-item">
+        <div class="gallery-slider">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
               <img src="ROSDJ1.JPG" alt="ROS DJ performing live at electronic music event - Organic House DJ set" loading="lazy">
               <div class="gallery-overlay">
@@ -1100,7 +1261,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
               <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha in DJ studio mixing electronic music - Professional DJ setup" loading="lazy">
               <div class="gallery-overlay">
@@ -1115,9 +1276,9 @@
               </div>
             </div>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
-              <img src="ROSDJ1.JPG" alt="ROS DJ live performance crowd reaction - Deep House music festival" loading="lazy">
+              <img src="ROSDJ.jpeg" alt="ROS DJ portrait - Professional electronic music artist" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
                   <h3 data-lang="gallery-festival">Festival Energy</h3>
@@ -1130,7 +1291,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
               <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha DJ equipment and studio setup - Professional music production" loading="lazy">
               <div class="gallery-overlay">
@@ -1145,7 +1306,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
               <img src="ROSDJ1.JPG" alt="ROS DJ performing at nightclub - Melodic House DJ performance" loading="lazy">
               <div class="gallery-overlay">
@@ -1160,9 +1321,9 @@
               </div>
             </div>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-slide">
             <div class="gallery-image-wrapper">
-              <img src="ROSDJ2.JPG" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist" loading="lazy">
+              <img src="ROSDJ.jpeg" alt="Rostyslav Dabizha behind DJ decks - Electronic music artist" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-content">
                   <h3 data-lang="gallery-decks">Behind the Decks</h3>
@@ -1176,6 +1337,21 @@
             </div>
           </div>
         </div>
+        
+        <!-- Slider Navigation -->
+        <button class="gallery-prev" id="galleryPrev">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="gallery-next" id="galleryNext">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        
+        <!-- Slider Dots -->
+        <div class="gallery-dots" id="galleryDots"></div>
       </div>
     </div>
   </div>
@@ -1780,97 +1956,178 @@
       });
     });
 
-    // Language System
-    const translations = {
-      ua: {
-        'gallery-title': 'Галерея',
-        'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
-        'gallery-live': 'Живий виступ',
-        'gallery-live-desc': 'Подія електронної музики',
-        'gallery-studio': 'Студійна сесія',
-        'gallery-studio-desc': 'Професійна DJ установка',
-        'gallery-festival': 'Енергія фестивалю',
-        'gallery-festival-desc': 'Фестиваль Deep House музики',
-        'gallery-production': 'Продакшн установка',
-        'gallery-production-desc': 'Професійне виробництво музики',
-        'gallery-nightclub': 'Нічний клуб',
-        'gallery-nightclub-desc': 'Виступ Melodic House DJ',
-        'gallery-decks': 'За пультом',
-        'gallery-decks-desc': 'Артист електронної музики'
-      },
-      en: {
-        'gallery-title': 'Gallery',
-        'gallery-subtitle': 'Capturing the essence of electronic music performances',
-        'gallery-live': 'Live Performance',
-        'gallery-live-desc': 'Electronic music event',
-        'gallery-studio': 'Studio Session',
-        'gallery-studio-desc': 'Professional DJ setup',
-        'gallery-festival': 'Festival Energy',
-        'gallery-festival-desc': 'Deep House music festival',
-        'gallery-production': 'Production Setup',
-        'gallery-production-desc': 'Professional music production',
-        'gallery-nightclub': 'Nightclub Session',
-        'gallery-nightclub-desc': 'Melodic House DJ performance',
-        'gallery-decks': 'Behind the Decks',
-        'gallery-decks-desc': 'Electronic music artist'
-      },
-      es: {
-        'gallery-title': 'Galería',
-        'gallery-subtitle': 'Capturando la esencia de las presentaciones de música electrónica',
-        'gallery-live': 'Presentación en Vivo',
-        'gallery-live-desc': 'Evento de música electrónica',
-        'gallery-studio': 'Sesión de Estudio',
-        'gallery-studio-desc': 'Configuración profesional de DJ',
-        'gallery-festival': 'Energía del Festival',
-        'gallery-festival-desc': 'Festival de música Deep House',
-        'gallery-production': 'Configuración de Producción',
-        'gallery-production-desc': 'Producción musical profesional',
-        'gallery-nightclub': 'Sesión de Club Nocturno',
-        'gallery-nightclub-desc': 'Presentación de DJ Melodic House',
-        'gallery-decks': 'Detrás de las Mesas',
-        'gallery-decks-desc': 'Artista de música electrónica'
-      }
-    };
-
-    let currentLang = 'ua';
-
-    function updateLanguage(lang) {
-      currentLang = lang;
-      
-      // Update all elements with data-lang attributes
-      document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        if (translations[lang] && translations[lang][key]) {
-          element.textContent = translations[lang][key];
-        }
-      });
-
-      // Update language buttons
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-lang') === lang) {
-          btn.classList.add('active');
-        }
-      });
-
-      // Save language preference
-      localStorage.setItem('selectedLanguage', lang);
-    }
-
-    // Language button event listeners
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        updateLanguage(lang);
-      });
-    });
-
-    // Load saved language or default to Ukrainian
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'ua';
-    updateLanguage(savedLanguage);
-
     // Smooth scrolling and active navigation like DJ Nano
     document.addEventListener('DOMContentLoaded', () => {
+      // Language System
+      const translations = {
+        ua: {
+          'music-title': 'Музика',
+          'music-subtitle': 'Слухайте мої останні релізи та DJ сети',
+          'playlist-title': 'ETAPA DE POTENCIA ПЛЕЙЛИСТ ВІД R.DABIZHA',
+          'gallery-title': 'Галерея',
+          'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
+          'gallery-live': 'Живий виступ',
+          'gallery-live-desc': 'Подія електронної музики',
+          'gallery-studio': 'Студійна сесія',
+          'gallery-studio-desc': 'Професійна DJ установка',
+          'gallery-festival': 'Енергія фестивалю',
+          'gallery-festival-desc': 'Фестиваль Deep House музики',
+          'gallery-production': 'Продакшн установка',
+          'gallery-production-desc': 'Професійне виробництво музики',
+          'gallery-nightclub': 'Нічний клуб',
+          'gallery-nightclub-desc': 'Виступ Melodic House DJ',
+          'gallery-decks': 'За пультом',
+          'gallery-decks-desc': 'Артист електронної музики'
+        },
+        en: {
+          'music-title': 'Music',
+          'music-subtitle': 'Listen to my latest releases and DJ sets',
+          'playlist-title': 'ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA',
+          'gallery-title': 'Gallery',
+          'gallery-subtitle': 'Capturing the essence of electronic music performances',
+          'gallery-live': 'Live Performance',
+          'gallery-live-desc': 'Electronic music event',
+          'gallery-studio': 'Studio Session',
+          'gallery-studio-desc': 'Professional DJ setup',
+          'gallery-festival': 'Festival Energy',
+          'gallery-festival-desc': 'Deep House music festival',
+          'gallery-production': 'Production Setup',
+          'gallery-production-desc': 'Professional music production',
+          'gallery-nightclub': 'Nightclub Session',
+          'gallery-nightclub-desc': 'Melodic House DJ performance',
+          'gallery-decks': 'Behind the Decks',
+          'gallery-decks-desc': 'Electronic music artist'
+        },
+        es: {
+          'music-title': 'Música',
+          'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
+          'playlist-title': 'PLAYLIST ETAPA DE POTENCIA POR R.DABIZHA',
+          'gallery-title': 'Galería',
+          'gallery-subtitle': 'Capturando la esencia de las presentaciones de música electrónica',
+          'gallery-live': 'Presentación en Vivo',
+          'gallery-live-desc': 'Evento de música electrónica',
+          'gallery-studio': 'Sesión de Estudio',
+          'gallery-studio-desc': 'Configuración profesional de DJ',
+          'gallery-festival': 'Energía del Festival',
+          'gallery-festival-desc': 'Festival de música Deep House',
+          'gallery-production': 'Configuración de Producción',
+          'gallery-production-desc': 'Producción musical profesional',
+          'gallery-nightclub': 'Sesión de Club Nocturno',
+          'gallery-nightclub-desc': 'Presentación de DJ Melodic House',
+          'gallery-decks': 'Detrás de las Mesas',
+          'gallery-decks-desc': 'Artista de música electrónica'
+        }
+      };
+
+      let currentLang = 'en';
+
+      function updateLanguage(lang) {
+        currentLang = lang;
+        
+        // Update all elements with data-lang attributes
+        document.querySelectorAll('[data-lang]').forEach(element => {
+          const key = element.getAttribute('data-lang');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Update language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          }
+        });
+
+        // Save language preference
+        localStorage.setItem('selectedLanguage', lang);
+      }
+
+      // Language button event listeners
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          updateLanguage(lang);
+        });
+      });
+
+      // Load saved language or default to English
+      const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+      updateLanguage(savedLanguage);
+
+      // Gallery Slider
+      const slides = document.querySelectorAll('.gallery-slide');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      const dotsContainer = document.getElementById('galleryDots');
+      
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      // Create dots
+      function createDots() {
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      // Update slider
+      function updateSlider() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === currentSlide);
+        });
+        
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+      }
+
+      // Go to specific slide
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        updateSlider();
+      }
+
+      // Next slide
+      function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        updateSlider();
+      }
+
+      // Previous slide
+      function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        updateSlider();
+      }
+
+      // Event listeners
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+
+      // Auto-play (optional)
+      let autoPlayInterval = setInterval(nextSlide, 5000);
+
+      // Pause auto-play on hover
+      const slider = document.querySelector('.gallery-slider');
+      slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+      slider.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+      });
+
+      // Initialize
+      createDots();
+      updateSlider();
+
       // Smooth scroll for navigation links
       const navLinks = document.querySelectorAll('nav a');
       
