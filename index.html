@@ -727,20 +727,6 @@
         overlay.appendChild(lightboxImg);
         document.body.appendChild(overlay);
         
-        // Add fade in effect
-        setTimeout(() => {
-          overlay.style.opacity = '1';
-        }, 10);
-        
-        overlay.addEventListener('click', () => {
-          overlay.style.opacity = '0';
-          setTimeout(() => {
-            document.body.removeChild(overlay);
-          }, 300);
-        });
-      });
-    });
-
     // Intersection Observer for Animations
     const observerOptions = {
       threshold: 0.1,
@@ -765,11 +751,7 @@
         el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observer.observe(el);
       });
-      
-      // Initialize active nav
-      updateActiveNav();
-    });
-
+  
     // Add hover effect to cards
     document.querySelectorAll('.music-card, .contact-item').forEach(card => {
       card.addEventListener('mouseenter', function() {
