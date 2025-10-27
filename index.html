@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,8 +6,7 @@
   <title>ROS DJ — Portfolio</title>
   <meta name="description" content="ROS DJ — Ukrainian DJ and producer (Organic House). Rostislav Dabizha.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#000000">
-  <link rel="preload" as="image" href="DJROS.jpg">
+  <meta name="theme-color" content="#0a0f0c">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="ROSDJ.jpeg" type="image/jpeg" sizes="any">
   <link rel="apple-touch-icon" href="ROSDJ.jpeg">
@@ -22,26 +20,26 @@
   <meta name="twitter:image" content="DJROS.jpg">
   <style>
     :root{
-      --bg:#000000;
-      --card:#0b0b0b;
-      --accent:#ff2d55;/* neon red */
-      --muted:#9aa0a6;
+      --bg:#0a0f0c;
+      --card:#0f1512;
+      --accent:#20c997; /* muted organic green */
+      --muted:#a7b0a9;
       --glass: rgba(255,255,255,0.035);
-      --glow:#ff2d55;
+      --glow:#20c997;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
          background:var(--bg);color:#e6e9ef;line-height:1.6;scroll-behavior:smooth;opacity:0;transform:translateY(6px);filter:blur(3px);transition:opacity 600ms ease, transform 600ms ease, filter 700ms ease}
     body.is-ready{opacity:1;transform:none;filter:none}
     /* Loader */
-    #loader{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:linear-gradient(90deg, rgba(255,45,85,0.2), var(--accent));z-index:9999;box-shadow:0 0 18px rgba(255,45,85,0.6)}
+    #loader{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:linear-gradient(90deg, rgba(32,201,151,0.2), var(--accent));z-index:9999;box-shadow:0 0 18px rgba(32,201,151,0.45)}
     #loader.is-running{animation:loadbar 1.6s ease-out infinite}
     #loader.is-complete{animation:none;width:100%;opacity:0;transition:opacity .4s ease .15s}
     @keyframes loadbar{0%{width:0}60%{width:82%}100%{width:88%}}
     header{min-height:70vh;display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('DJROS.jpg') center/cover no-repeat;
+            background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
             position:relative;padding:2rem;overflow:hidden}
-    header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(255,45,85,0.12), rgba(255,45,85,0) 60%);
+    header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(60% 60% at 50% 40%, rgba(32,201,151,0.12), rgba(32,201,151,0) 60%);
                    filter:blur(30px);animation:floatGlow 18s ease-in-out infinite;pointer-events:none;z-index:0}
     .particles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35}
     .hero{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center;position:relative;z-index:2}
@@ -50,8 +48,8 @@
     .actions{display:flex;gap:.6rem;flex-wrap:wrap}
     .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:.6rem .9rem;border-radius:10px;color:#fff;text-decoration:none;font-weight:600;position:relative;transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease, background-size .25s ease}
     .btn{background-image:linear-gradient(var(--accent), var(--accent));background-repeat:no-repeat;background-position:50% 100%;background-size:0% 2px}
-    .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.25);box-shadow:0 6px 20px -6px rgba(255,45,85,0.35);background-size:100% 2px}
-    .btn::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(120px 60px at 50% 120%, rgba(255,45,85,.35), rgba(255,45,85,0) 60%);opacity:0;transition:opacity .2s ease;filter:blur(8px);pointer-events:none}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.25);box-shadow:0 6px 20px -6px rgba(32,201,151,0.3);background-size:100% 2px}
+    .btn::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(120px 60px at 50% 120%, rgba(32,201,151,.28), rgba(32,201,151,0) 60%);opacity:0;transition:opacity .2s ease;filter:blur(8px);pointer-events:none}
     .btn:hover::after{opacity:1}
     .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .btn.ghost{background:var(--glass);}
@@ -68,9 +66,28 @@
     .bio .text h2{margin-bottom:.6rem}
     
 
-    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,45,85,.6), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem;position:relative;overflow:hidden}
+    h2{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:700;letter-spacing:.4px;padding-bottom:.4rem;background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(32,201,151,.5), rgba(255,255,255,0));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;margin-bottom:.8rem;position:relative;overflow:hidden}
     .reveal.is-visible h2::after{animation:sheen 1.1s .15s ease-out 1 forwards}
     h2::after{content:"";position:absolute;top:0;left:-20%;width:18%;height:100%;background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 100%);transform:skewX(-20deg) translateX(-120%);opacity:0.0}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;display:block;filter:grayscale(20%);transition:transform .35s ease, filter .35s ease;cursor:pointer}
+    .gallery img:hover{transform:scale(1.02);filter:grayscale(0%)}
+    .gallery img:focus{outline:2px solid var(--accent);outline-offset:2px}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:50}
+    .lightbox.is-open{display:flex}
+    .lb-inner{position:relative;max-width:min(92vw,1100px);max-height:86vh;display:flex;align-items:center;justify-content:center}
+    .lb-img{max-width:100%;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+    .lb-caption{position:absolute;left:0;right:0;bottom:-44px;text-align:center;color:var(--muted);font-size:.95rem}
+    .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.18);background:rgba(20,20,20,0.6);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .lb-btn:hover{box-shadow:0 10px 30px -10px rgba(255,45,85,0.55);border-color:rgba(255,255,255,0.3)}
+    .lb-prev{left:-56px}
+    .lb-next{right:-56px}
+    .lb-close{position:absolute;top:-56px;right:0;width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(20,20,20,0.6);color:#fff}
+    @media (max-width:720px){.lb-prev{left:8px}.lb-next{right:8px}.lb-close{top:8px;right:8px}.lb-caption{position:static;margin-top:.6rem}}
 
     footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.95rem}
 
@@ -87,7 +104,7 @@
     .brandmark .logo{width:28px;height:28px;display:block}
     .socials{display:flex;gap:.4rem}
     .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
-    .icon-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px -6px rgba(255,45,85,.45);border-color:rgba(255,255,255,0.22)}
+    .icon-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px -6px rgba(32,201,151,.42);border-color:rgba(255,255,255,0.22)}
     .reveal.is-visible{opacity:1;transform:none}
     @keyframes floatGlow{0%{transform:translate3d(-2%, -2%,0) scale(1)}50%{transform:translate3d(2%, 2%,0) scale(1.05)}100%{transform:translate3d(-2%, -2%,0) scale(1)}}
     @keyframes sheen{0%{opacity:.0;transform:skewX(-20deg) translateX(-120%)}15%{opacity:.5}100%{opacity:0;transform:skewX(-20deg) translateX(220%)}}
@@ -134,15 +151,8 @@
           Based in Spain 🇪🇸 — Born March 10, 1999. Specializes in immersive Organic House journeys.
         </p>
       </div>
-
-
-      <div class="card portrait" aria-hidden="true">
-        <!-- Main portrait; replace file if needed -->
-        <img src="ROSDJ.jpeg" alt="ROS DJ portrait">
-      </div>
     </div>
   </header>
-
 
   <main>
     <section id="about" class="card reveal reveal-left">
@@ -178,11 +188,11 @@
       </div>
     </section>
 
-
-    
-
-
-
+    <section id="gallery" class="card reveal">
+      <h2 style="margin-bottom:.6rem">Gallery</h2>
+      <div class="gallery">
+      </div>
+    </section>
 
     <section id="contact" class="card reveal reveal-right">
       <h2 style="margin-bottom:.6rem">Contact</h2>
@@ -190,7 +200,6 @@
       <p style="color:var(--muted);margin-top:.6rem">To deploy: push this folder to a GitHub repo and enable GitHub Pages (Settings → Pages → Source: main branch /root).</p>
     </section>
   </main>
-
 
   <footer>
     <div> ROS DJ — Rostislav Dabizha · Organic House</div>
@@ -322,6 +331,73 @@
       if(document.readyState === 'loading'){
         document.addEventListener('DOMContentLoaded', run);
       } else { run(); }
+    })();
+
+    // Lightbox for Gallery
+    (function(){
+      const overlay = document.createElement('div');
+      overlay.className = 'lightbox';
+      overlay.innerHTML = `
+        <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Image viewer">
+          <button class="lb-btn lb-prev" aria-label="Previous" title="Previous">&#10094;</button>
+          <img class="lb-img" alt="">
+          <button class="lb-btn lb-next" aria-label="Next" title="Next">&#10095;</button>
+          <button class="lb-close" aria-label="Close" title="Close">&#10005;</button>
+          <div class="lb-caption" aria-live="polite"></div>
+        </div>`;
+      document.body.appendChild(overlay);
+      const imgEl = overlay.querySelector('.lb-img');
+      const capEl = overlay.querySelector('.lb-caption');
+      const prevBtn = overlay.querySelector('.lb-prev');
+      const nextBtn = overlay.querySelector('.lb-next');
+      const closeBtn = overlay.querySelector('.lb-close');
+      let list = [], idx = 0, touchX=0, touchY=0;
+
+      function collect(){
+        const g = document.querySelector('#gallery .gallery');
+        list = g ? Array.from(g.querySelectorAll('img')) : [];
+      }
+      function openAt(i){
+        collect();
+        if(!list.length) return;
+        idx = (i+list.length)%list.length;
+        const el = list[idx];
+        imgEl.src = el.dataset.full || el.src;
+        imgEl.alt = el.alt || '';
+        capEl.textContent = el.alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        imgEl.focus({preventScroll:true});
+      }
+      function close(){
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      function next(n=1){ openAt(idx + n); }
+
+      document.addEventListener('click', (e)=>{
+        const t = e.target;
+        if(t && t.closest('#gallery .gallery img')){
+          const imgs = Array.from(document.querySelectorAll('#gallery .gallery img'));
+          openAt(imgs.indexOf(t.closest('img')));
+        }
+        if(t === overlay){ close(); }
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(!overlay.classList.contains('is-open')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowRight') next(1);
+        if(e.key === 'ArrowLeft') next(-1);
+      });
+      prevBtn.addEventListener('click', ()=>next(-1));
+      nextBtn.addEventListener('click', ()=>next(1));
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('touchstart', (e)=>{ const t=e.changedTouches[0]; touchX=t.clientX; touchY=t.clientY; }, {passive:true});
+      overlay.addEventListener('touchend', (e)=>{
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchX; const dy = Math.abs(t.clientY - touchY);
+        if(Math.abs(dx) > 40 && dy < 40){ next(dx<0?1:-1); }
+      }, {passive:true});
     })();
   </script>
 </body>
