@@ -2087,12 +2087,12 @@
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
       <div class="nav-links">
-        <a href="#landing" class="nav-link">HOME</a>
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#dj-tools" class="nav-link">DJ TOOLS</a>
-        <a href="#music" class="nav-link">MUSIC</a>
-        <a href="#gallery" class="nav-link">GALLERY</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
+        <a href="#landing" class="nav-link" data-lang="nav-home">HOME</a>
+        <a href="#about" class="nav-link" data-lang="nav-about">ABOUT</a>
+        <a href="#dj-tools" class="nav-link" data-lang="nav-dj-tools">DJ TOOLS</a>
+        <a href="#music" class="nav-link" data-lang="nav-music">MUSIC</a>
+        <a href="#gallery" class="nav-link" data-lang="nav-gallery">GALLERY</a>
+        <a href="#contact" class="nav-link" data-lang="nav-contact">CONTACT</a>
       </div>
       <div class="lang-switcher" style="margin-left:auto;position:relative;">
         <button id="langBtn" style="background:none;border:none;padding:0.45rem 0.7rem;display:flex;align-items:center;gap:0.5rem;color:#fff;font-size:1.08rem;cursor:pointer;border-radius:16px;transition:background 0.22s;">
@@ -2137,9 +2137,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
   <!-- About Section -->
-  <div id="home" class="seccion" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+  <section id="landing" class="seccion" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
   <img src="logo.png" alt="ROS DJ Logo" style="width:48vw;max-width:480px;min-width:180px;display:block;margin:0 auto 1.5rem auto;filter:drop-shadow(0 2px 18px #000);">
-  <p class="section-subtitle" data-lang="home-desc" style="max-width:430px;margin:0 auto 1.5rem auto;font-size:1.15rem;">Professional Ukrainian DJ & Producer. Deep, melodic, organic house. Based in Spain, available worldwide.</p>
+  <p class="section-subtitle" style="color:#fff;" data-lang="home-desc" style="max-width:430px;margin:0 auto 1.5rem auto;font-size:1.15rem;">Professional Ukrainian DJ & Producer. Deep, melodic, organic house. Based in Spain, available worldwide.</p>
 <style>
 @media (max-width:600px){
   #home img[src="logo.png"]{
@@ -2160,10 +2160,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 }
 </style>
 </div>
-<div id="about" class="seccion">
+<section id="about" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title" data-lang="about-title">About ROS DJ</h2>
-      <p class="section-subtitle" data-lang="about-subtitle">Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets</p>
+      <h2 class="section-title" style="color:#fff;" data-lang="about-title">About ROS DJ</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="about-subtitle">Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets</p>
       <div class="about-content">
         <h3 data-lang="about-name">Rostyslav Dabizha</h3>
         <p data-lang="about-description">Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.</p>
@@ -2183,12 +2183,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 </div>
   <div id="dj-tools" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title" data-lang="dj-tools-title">Подумай про Це</h2>
-      <p class="section-subtitle" data-lang="dj-tools-subtitle">Essential tools for harmonic mixing and professional DJ performance</p>
+      <h2 class="section-title" style="color:#fff;" data-lang="dj-tools-title">Подумай про Це</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="dj-tools-subtitle">Essential tools for harmonic mixing and professional DJ performance</p>
       <div class="dj-tools-grid">
         <div class="tool-card">
           <h3 data-lang="camelot-title">🎵 Camelot Wheel</h3>
-          <img src="camelot-wheel.png" alt="Camelot Wheel" style="width:140px;max-width:100%;display:block;margin:0.7rem auto 1.2rem auto;filter:invert(1);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.10);">
+          <img src="camelot-wheel.png" alt="Camelot Wheel" style="width:140px;max-width:100%;display:block;margin:0.7rem auto 1.2rem auto;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.10);">
           <p data-lang="camelot-description">The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.</p>
           <div class="camelot-info">
             <h4 data-lang="camelot-compatibility">Key Compatibility:</h4>
@@ -2231,8 +2231,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   <!-- Sound Section -->
   <div id="music" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title" data-lang="music-title">Sound</h2>
-      <p class="section-subtitle" data-lang="music-subtitle">Experience my sound across platforms</p>
+      <h2 class="section-title" style="color:#fff;" data-lang="music-title">Sound</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="music-subtitle">Experience my sound across platforms</p>
       
       <!-- Featured Playlist -->
       <div class="featured-playlist">
@@ -2314,28 +2314,50 @@ document.addEventListener('DOMContentLoaded',()=>{
       </div>
       
   <div class="pagewrapper">
-    <h2 class="section-title" data-lang="gallery-title" style="font-size:2rem;font-weight:700;text-align:center;margin-bottom:1.1rem;letter-spacing:0.5px;">Gallery</h2>
-    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.2rem auto 1.7rem auto;">
-      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-        <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
-      </div>
-      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-        <img src="/images/ROSDJ1.JPG" alt="Live Performance">
-      </div>
-      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-        <img src="/images/ROSDJ2.JPG" alt="Studio Session">
-      </div>
-      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-        <img src="/images/DJROS.jpg" alt="DJROS">
-      </div>
+    <h2 class="section-title" style="color:#fff;" data-lang="gallery-title" style="font-size:2rem;font-weight:700;text-align:center;margin-bottom:1.1rem;letter-spacing:0.5px;">Gallery</h2>
+    <div class="gallery-slider" style="max-width:540px;margin:1.4rem auto 1.7rem auto;position:relative;background:rgba(255,255,255,0.10);backdrop-filter:blur(8px);border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.10);padding:0.7rem 0.2rem;">
+  <div class="gallery-slide active" style="text-align:center;">
+    <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:420px;object-fit:cover;border-radius:14px;">
   </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:420px;object-fit:cover;border-radius:14px;">
+  </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:420px;object-fit:cover;border-radius:14px;">
+  </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:420px;object-fit:cover;border-radius:14px;">
+  </div>
+  <button class="gallery-prev" id="galleryPrev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.18);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="gallery-next" id="galleryNext" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.18);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="gallery-dots" id="galleryDots" style="display:flex;justify-content:center;gap:10px;margin-top:14px;"></div>
+  <style>@media (max-width:700px){.gallery-slider{max-width:99vw!important;}.gallery-slide img{height:180px!important;}}</style>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const slides=document.querySelectorAll('.gallery-slide');
+  const prevBtn=document.getElementById('galleryPrev');
+  const nextBtn=document.getElementById('galleryNext');
+  const dotsContainer=document.getElementById('galleryDots');
+  let currentSlide=0;
+  function showSlide(idx){
+    slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+    Array.from(dotsContainer.children).forEach((d,i)=>d.classList.toggle('active',i===idx));
+  }
+  function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
+  function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
+  prevBtn.onclick=prevSlide;nextBtn.onclick=nextSlide;
+  for(let i=0;i<slides.length;i++){const dot=document.createElement('div');dot.className='dot';dot.onclick=()=>{currentSlide=i;showSlide(i);};dotsContainer.appendChild(dot);}
+  showSlide(currentSlide);
+});
+</script>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ2.JPG" alt="Studio Session">
-    <div class="gallery-caption"></div>
+    <div class="gallery-caption" style="color:#fff;"></div>
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/DJROS.jpg" alt="DJROS">
-    <div class="gallery-caption"></div>
+    <div class="gallery-caption" style="color:#fff;"></div>
   </div>
 </div>
     </div>
@@ -2368,8 +2390,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     </div>
   </div>
 </section>
-  <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;">Contact</h2>
-    <div class="contact-content" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
+  <h2 class="section-title" style="color:#fff;" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;">Contact</h2>
+    <div class="contact-content" style="color:#fff;" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
       <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:90px;max-width:170px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:1.16rem;margin-bottom:0.18rem;">
           <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
