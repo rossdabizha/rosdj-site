@@ -2004,12 +2004,6 @@
     <div class="modal-content">
       <span class="modal-close" id="modalClose">&times;</span>
       <img id="modalImage" src="" alt="Gallery image">
-      <div class="modal-info">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-      </div>
-    </div>
-  </div>
 
   <!-- DAW Logos Section -->
   <section class="seccion" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.3rem 0 0.2rem 0;gap:0.4rem;background:rgba(255,255,255,0.13);">
@@ -2026,12 +2020,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="seccion" style="background:rgba(255,255,255,0.13);backdrop-filter:blur(7px);border-radius:13px;box-shadow:0 2px 12px rgba(0,0,0,0.09);padding:0.5rem 0;max-width:280px;margin:1rem auto 1.2rem auto;">
-    <div class="pagewrapper">
-      <h2 class="section-title" style="color:#fff;font-size:0.95rem;margin-bottom:0.2rem;letter-spacing:0.4px;text-align:center;" data-lang="nav-contact">Contact</h2>
-      <div class="contact-content" style="display:flex;flex-direction:column;gap:0.3rem;align-items:center;">
-        <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.4rem 0.6rem;min-width:80px;max-width:150px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
           <div style="font-size:1rem;margin-bottom:0.15rem;">
             <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
           </div>
@@ -2048,6 +2036,21 @@
     </div>
   </section>
 
+  <!-- DAW Logos Section -->
+  <section class="seccion" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.3rem 0 0.2rem 0;gap:0.4rem;background:rgba(255,255,255,0.13);">
+    <h2 style="font-size:0.75rem;color:#fff;text-shadow:0 2px 8px #000;letter-spacing:0.5px;margin-bottom:0.3rem;" data-lang="daw-pro">Я використовую професійно</h2>
+    <div style="display:flex;gap:0.8rem;align-items:center;justify-content:center;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <img src="Rekordbox_Logo.png" alt="Rekordbox" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
+        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">Rekordbox</div>
+      </div>
+      <div style="text-align:center;">
+        <img src="Flstudio.png" alt="FL Studio" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
+        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">FL Studio</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
@@ -2057,6 +2060,9 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Auto-scroll to landing on page load
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
       // Language System
       const translations = {
         ua: {
