@@ -16,7 +16,7 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
   <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
@@ -125,7 +125,6 @@
       font-weight: 400;
       margin: 0;
       padding: 0;
-      /* Parallax effect */
       background-attachment: fixed;
       transition: background 0.6s;
     }
@@ -148,63 +147,6 @@
       color:#fff;
       transform: scale(1.06);
       box-shadow: 0 2px 12px rgba(211,47,47,0.18);
-    }
-
-
-    /* Mobile Menu */
-    .nav-actions{
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .language-switcher{
-      display: flex;
-      gap: 0.25rem;
-      background: var(--bg-card);
-      padding: 0.25rem;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-    }
-
-    .lang-btn{
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      padding: 0.5rem 1rem;
-      border-radius: 15px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .lang-btn:hover{
-      color: var(--text-primary);
-      background: var(--glass);
-    }
-
-    .lang-btn.active{
-      background: #1a1a1a;
-      color: white;
-      box-shadow: var(--glow);
-    }
-
-    .mobile-menu-toggle{
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      padding: 0.5rem;
-      border-radius: 8px;
-    }
-
-    .mobile-menu-toggle:hover{
-      color: var(--text-secondary);
-      background: var(--glass);
     }
 
     /* Fixed Navigation */
@@ -281,7 +223,7 @@
       width: 100%;
     }
 
-    /* Full screen sections like DJ Nano */
+    /* Full screen sections */
     .seccion{
       min-height: 100vh;
       width: 100%;
@@ -432,7 +374,7 @@
       margin-bottom:1.5rem;
     }
 
-    /* Подумай про Це Section */
+    /* DJ Tools Section */
     .dj-tools-grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -742,46 +684,7 @@
       box-shadow: 0 5px 20px rgba(255,85,0,0.4);
     }
     
-    .music-stats{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
-      text-align: center;
-    }
-    
-    .stat-item{
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 2rem 1rem;
-      transition: all 0.3s ease;
-    }
-    
-    .stat-item:hover{
-      transform: translateY(-3px);
-      border-color: #ff5500;
-      box-shadow: 0 10px 30px rgba(255,85,0,0.2);
-    }
-    
-    .stat-number{
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ff5500;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(45deg, #ff5500, #b71c1c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .stat-label{
-      font-size: 1rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
+    /* Gallery */
     .gallery-grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -789,89 +692,32 @@
       margin-top: 2rem;
     }
     
-    .gallery-slider{
+    .gallery-item{
       position: relative;
-      max-width: 900px;
-      margin: 2rem auto;
+      height: 300px;
+      border-radius: 15px;
       overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
     }
     
-    .gallery-slide{
-      display: none;
-      width: 100%;
-      height: 500px;
-      position: relative;
-    }
-    
-    .gallery-slide.active{
-      display: block;
-    }
-    
-    .gallery-slide .gallery-image-wrapper{
-      width: 100%;
-      height: 100%;
-    }
-    
-    .gallery-slide .gallery-image-wrapper img{
+    .gallery-item img{
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s ease;
     }
     
-    .gallery-prev,
-    .gallery-next{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.7);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 10;
-      backdrop-filter: blur(10px);
+    .gallery-item:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255,85,0,0.2);
     }
     
-    .gallery-prev{
-      left: 20px;
-    }
-    
-    .gallery-next{
-      right: 20px;
-    }
-    
-    .gallery-prev:hover,
-    .gallery-next:hover{
-      background: rgba(255,85,0,0.8);
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .gallery-dots{
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    
-    .dot{
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .dot.active{
-      background: #ff5500;
-      transform: scale(1.2);
+    .gallery-item:hover img{
+      transform: scale(1.05);
     }
 
     /* Gallery Modal */
@@ -971,40 +817,6 @@
       }
     }
 
-    .gallery-item{
-  margin-bottom:0 !important;
-  box-shadow:0 2px 16px rgba(0,0,0,0.13);
-  background:#18181c !important;
-
-      position: relative;
-      height: 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-    .music-card:hover{
-      transform:translateY(-5px);
-      border-color:#1a1a1a;
-      box-shadow:0 20px 40px rgba(255,255,255,0.1);
-    }
-    .music-icon{
-      font-size:3rem;
-      margin-bottom:1rem;
-    }
-    .music-card h3{
-      font-size:1.5rem;
-      margin-bottom:1rem;
-      color:var(--text-primary);
-    }
-    .music-card p{
-      color:var(--text-secondary);
-      margin-bottom:1.5rem;
-    }
-
     /* Language Selector */
     .language-selector{
       position: fixed;
@@ -1021,117 +833,6 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.18);
       transition: background 0.3s, box-shadow 0.3s;
     }
-    @media (max-width: 600px) {
-  .seccion{
-    padding: 1.1rem 0.2rem !important;
-    margin-bottom: 0.7rem !important;
-    min-height: unset !important;
-  }
-  .pagewrapper{
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .gallery-slider{
-    margin: 0.7rem auto 1rem auto !important;
-    padding: 0.1rem !important;
-  }
-  .contact-content{
-    gap: 0.3rem !important;
-    padding: 0.2rem 0 !important;
-  }
-  .pro-soft{
-    padding: 0.8rem 0 0.5rem 0 !important;
-    gap: 0.7rem !important;
-  }
-}
-  .language-selector{
-    position: fixed;
-    top: 12px;
-    right: 12px;
-    min-width: 36px;
-    min-height: 36px;
-    border-radius: 50%;
-    padding: 0.2rem;
-    z-index: 1200;
-    background: rgba(20,20,20,0.96) !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.17);
-  }
-  #footerLangMenu{
-    top: 48px !important;
-    min-width: 110px !important;
-    padding: 0.2rem 0.5rem !important;
-    font-size: 0.98rem !important;
-    border-radius: 12px !important;
-    background: rgba(30,30,30,0.99) !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.17) !important;
-  }
-  .lang-btn{
-    padding: 0.3rem 0.7rem !important;
-    font-size: 0.95rem !important;
-    border-radius: 12px !important;
-    margin: 0.1rem 0.1rem !important;
-  }
-  .section-title, .section-subtitle, .gallery-caption, .contact-content, .contact-item, .gallery-slider, .gallery-slide{
-    background: rgba(20,20,22,0.86) !important;
-    backdrop-filter: blur(4px) !important;
-    color: #fff !important;
-    border-radius: 14px !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12) !important;
-    padding: 0.7em 1em !important;
-  }
-  .seccion{
-    padding: 2.2rem 0.5rem !important;
-    gap: 0.5rem !important;
-    margin-bottom: 1.2rem !important;
-  }
-  .gallery-slider{
-    margin: 1.1rem auto 1.1rem auto !important;
-    padding: 0.2rem !important;
-  }
-  .contact-content{
-    gap: 0.5rem !important;
-    padding: 0.5rem 0 !important;
-  }
-}
-
-  .language-selector{
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    left: auto;
-    bottom: auto;
-    width: auto;
-    border-radius: 50%;
-    padding: 0.7rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-    background: rgba(20,20,20,0.88);
-    flex-direction: row;
-    transform: none;
-  }
-  .gallery-grid{
-    grid-template-columns: 1fr !important;
-  }
-  .gallery-item{
-  margin-bottom:0 !important;
-  box-shadow:0 2px 16px rgba(0,0,0,0.13);
-  background:#18181c !important;
-
-    height: auto !important;
-    min-width: 0 !important;
-    margin-bottom: 1rem;
-  }
-  .gallery-item img{
-    max-width: 100% !important;
-    max-height: 180px !important;
-    object-fit: cover !important;
-    display: block;
-    margin: 0 auto;
-  }
-  .gallery-item div{
-    word-break: break-word !important;
-    font-size: 1.05rem !important;
-  }
-}
 
     .lang-btn{
       padding: 0.4rem 0.95rem;
@@ -1152,74 +853,6 @@
       color: #fff;
       transform: scale(1.06);
       box-shadow: 0 2px 12px rgba(211,47,47,0.18);
-    }
-
-    
-    .lang-btn{
-      padding: 0.5rem 1rem;
-      background: transparent;
-      border: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .lang-btn:hover{
-      background: rgba(255,255,255,0.1);
-      color: white;
-    }
-    
-    .lang-btn.active{
-      background: rgba(255,85,0,0.8);
-      color: white;
-      box-shadow: 0 2px 10px rgba(255,85,0,0.3);
-    }
-
-    /* Marquee */
-    .marquee-container{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255,85,0,0.3);
-      overflow: hidden;
-      z-index: 10;
-    }
-    
-    .marquee{
-      display: flex;
-      animation: marquee 30s linear infinite;
-      white-space: nowrap;
-    }
-    
-    .marquee-content{
-      display: flex;
-      padding: 1rem 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .marquee-item{
-      margin: 0 3rem;
-      background: linear-gradient(45deg, #ff5500, #b71c1c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    @keyframes marquee{
-      0%{transform: translateX(0)}
-      100%{transform: translateX(-50%)}
     }
 
     /* Contact Section */
@@ -1442,7 +1075,7 @@
         margin-bottom: 1.5rem;
       }
       
-      /* Подумай про Це */
+      /* DJ Tools */
       .dj-tools-grid{
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1536,76 +1169,14 @@
         font-size: 0.9rem;
       }
       
-      .music-stats{
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 3rem 0;
-      }
-      
-      .stat-item{
-        padding: 1.5rem;
-      }
-      
-      .stat-number{
-        font-size: 2rem;
-      }
-      
-      .stat-label{
-        font-size: 0.9rem;
-      }
-      
       /* Gallery */
-      .gallery-container{
-  background:rgba(20,20,20,0.94);
-  border-radius:18px;
-  padding:1.2rem 0.5rem;
-  margin-bottom:3rem;
-  overflow-x:auto;
-  position:relative;
-
-  background:rgba(20,20,20,0.94);
-  border-radius:18px;
-  padding:1.2rem 0.5rem;
-  margin-bottom:3rem;
-  overflow-x:auto;
-  position:relative;
-
-        margin-top: 2.5rem;
+      .gallery-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
       }
-      .gallery-slider{
-        max-width: 100%;
-        margin: 2rem auto;
-      }
-      .gallery-slide{
-        height: 300px;
-      }
-      .gallery-prev,
-      .gallery-next{
-        width: 40px;
-        height: 40px;
-      }
-      .gallery-prev{
-        left: 10px;
-      }
-      .gallery-next{
-        right: 10px;
-      }
-      .gallery-overlay{
-        padding: 1.5rem;
-      }
-      .gallery-overlay h3{
-        font-size: 1.3rem;
-      }
-      .gallery-overlay p{
-        font-size: 0.9rem;
-      }
-      .gallery-meta{
-        gap: 0.5rem;
-      }
-      .gallery-date,
-      .gallery-location{
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
+      
+      .gallery-item{
+        height: 200px;
       }
       
       /* Gallery Modal */
@@ -1672,55 +1243,9 @@
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
       }
-      
-      /* Marquee */
-      .marquee-container{
-        bottom: 0;
-        top: auto;
-      }
-      .marquee-content{
-        font-size: 1rem;
-        padding: 0.8rem 0;
-      }
-      .marquee-item{
-        margin: 0 2rem;
-      }
     }
 
     @media (max-width:480px){
-  .pro-soft {
-    flex-direction: column !important;
-    gap: 1rem !important;
-    padding: 1.5rem 0 0.5rem 0 !important;
-  }
-  .pro-soft img {
-    width: 44px !important;
-  }
-  .pagewrapper, .seccion {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
-  .platform-card {
-    flex-direction: column !important;
-    padding: 1.2rem 0.7rem !important;
-    min-width: 0 !important;
-    width: 100% !important;
-  }
-  .contact-info {
-    flex-direction: column !important;
-    gap: 1rem !important;
-    align-items: stretch !important;
-  }
-  .about-content {
-    padding: 0.5rem !important;
-  }
-  .gallery {
-    padding: 0.5rem 0 !important;
-  }
-  body {
-    background-attachment: scroll !important;
-  }
-
       /* Extra small screens */
       .nav-container{
         padding: 0 0.8rem;
@@ -1788,7 +1313,7 @@
         line-height: 1.6;
       }
       
-      /* Подумай про Це */
+      /* DJ Tools */
       .tool-card{
         padding: 1.5rem 1rem;
       }
@@ -1846,39 +1371,14 @@
         font-size: 0.85rem;
       }
       
-      .stat-item{
-        padding: 1.2rem;
-      }
-      
-      .stat-number{
-        font-size: 1.8rem;
-      }
-      
-      .stat-label{
-        font-size: 0.8rem;
-      }
-      
       /* Gallery */
-      .gallery-slide{
+      .gallery-grid{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .gallery-item{
         height: 250px;
-      }
-      
-      .gallery-overlay{
-        padding: 1rem;
-      }
-      
-      .gallery-overlay h3{
-        font-size: 1.2rem;
-      }
-      
-      .gallery-overlay p{
-        font-size: 0.85rem;
-      }
-      
-      .gallery-date,
-      .gallery-location{
-        font-size: 0.7rem;
-        padding: 0.25rem 0.5rem;
       }
       
       /* Contact */
@@ -1925,16 +1425,6 @@
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
       }
-      
-      /* Marquee */
-      .marquee-content{
-        font-size: 0.9rem;
-        padding: 0.6rem 0;
-      }
-      
-      .marquee-item{
-        margin: 0 1.5rem;
-      }
     }
 
     @media (max-width:768px) and (orientation: landscape){
@@ -1953,10 +1443,6 @@
       
       .section-title{
         font-size: clamp(1.5rem, 6vw, 2rem);
-      }
-      
-      .gallery-slide{
-        height: 200px;
       }
       
       .soundcloud-embed iframe{
@@ -2009,77 +1495,7 @@
         transition-duration: 0.01ms !important;
       }
     }
-  
-/* === MOBILE FIX PATCH (2025 update) === */
-@media (max-width: 768px) {
-  * {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  img, iframe, video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .page-wrapper, .pagewrapper, .seccion {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  #landing .page-wrapper {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    text-align: center !important;
-    align-items: center !important;
-  }
-
-  #logo {
-    width: 90% !important;
-    max-width: 320px !important;
-    margin: 0 auto 1rem auto;
-  }
-
-  #social-links {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-  }
-
-  .section-title, .section-subtitle, p, h2, h3, h4 {
-    word-break: break-word !important;
-    text-align: center !important;
-  }
-
-  .dj-tools-grid,
-  .platforms-grid,
-  .music-stats,
-  .contact-info {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .tool-card, .platform-card, .stat-item, .contact-item {
-    width: 100% !important;
-    margin-bottom: 1rem;
-  }
-
-  .gallery-grid, .gallery-slider {
-    width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .marquee-content {
-    font-size: 0.9rem !important;
-    white-space: nowrap !important;
-  }
-}
-/* === END PATCH === */
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -2094,73 +1510,47 @@
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">GALLERY</a>
         <a href="#contact" class="nav-link" data-lang="nav-contact">CONTACT</a>
       </div>
-      <div class="lang-switcher" style="margin-left:auto;position:relative;">
-        <button id="langBtn" style="background:none;border:none;padding:0.45rem 0.7rem;display:flex;align-items:center;gap:0.5rem;color:#fff;font-size:1.08rem;cursor:pointer;border-radius:16px;transition:background 0.22s;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
-          <span id="currentLang" style="font-weight:600;">EN</span>
-        </button>
-        <div id="langMenu" style="display:none;position:absolute;right:0;top:110%;background:rgba(24,24,28,0.99);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.16);padding:0.4rem 0.7rem;z-index:2001;min-width:90px;">
-          <button class="lang-btn" data-lang="ua">UA</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="es">ES</button>
-        </div>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const langBtn=document.getElementById('langBtn');
-  const langMenu=document.getElementById('langMenu');
-  const currentLang=document.getElementById('currentLang');
-  langBtn.onclick=(e)=>{
-    e.stopPropagation();
-    langMenu.style.display=langMenu.style.display==='block'?'none':'block';
-  };
-  langMenu.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.onclick=()=>{
-      const lang=btn.getAttribute('data-lang');
-      localStorage.setItem('selectedLanguage',lang);
-      currentLang.textContent=lang.toUpperCase();
-      langMenu.style.display='none';
-      updateLanguage(lang);
-    };
-  });
-  document.addEventListener('click',(e)=>{
-    if(!langBtn.contains(e.target)&&!langMenu.contains(e.target)){
-      langMenu.style.display='none';
-    }
-  });
-  // Відобразити поточну мову в кнопці
-  const savedLang=localStorage.getItem('selectedLanguage')||'en';
-  currentLang.textContent=savedLang.toUpperCase();
-});
-</script>
+      <div class="language-selector">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
     </div>
   </nav>
 
+  <!-- Landing Section -->
+  <section id="landing" class="seccion">
+    <div class="page-wrapper">
+      <div id="logo">
+        <img src="logo.png" alt="ROS DJ Logo">
+      </div>
+      <div id="social-links">
+        <a href="https://soundcloud.com/rosthedj" target="_blank" aria-label="SoundCloud">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.5 10.5v8.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-8.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5zm-3 0v8.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-8.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5zm6 0v8.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-8.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5zm3 0v8.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-8.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5zm3 0v8.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-8.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@rosthedj" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2-1.9-.5-9.3-.5-9.3-.5s-7.4 0-9.3.5c-1.1.3-1.9 1.1-2.2 2.2-.5 1.9-.5 5.8-.5 5.8s0 3.9.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zm-13.8 9.3v-7l6.2 3.5-6.2 3.5z"/>
+          </svg>
+        </a>
+        <a href="https://www.mixcloud.com/rosthedj/" target="_blank" aria-label="Mixcloud">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zm-8-2h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/rosthedj/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1 5.8.1 5 .2 4.3.5 3.6.7 3.1 1 2.5 1.6 2 2.1 1.7 2.6 1.5 3.3 1.2 4 1.1 4.8 1.1 6 1 7.3 1 7.7 1 12s0 4.7.1 6c.1 1.2.2 2 .5 2.7.2.7.5 1.2 1.1 1.8.5.5 1.1.8 1.8 1.1.7.3 1.5.4 2.7.5 1.3.1 1.7.1 6 .1s4.7 0 6-.1c1.2-.1 2-.2 2.7-.5.7-.2 1.2-.5 1.8-1.1.5-.5.8-1.1 1.1-1.8.3-.7.4-1.5.5-2.7.1-1.3.1-1.7.1-6s0-4.7-.1-6c-.1-1.2-.2-2-.5-2.7-.2-.7-.5-1.2-1.1-1.8C20.9.5 20.3.2 19.6 0 18.9-.3 18.1-.4 16.9-.5 15.6 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.5-11.6c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
-  <section id="contact" class="seccion" style="background:rgba(255,255,255,0.13);backdrop-filter:blur(7px);border-radius:13px;box-shadow:0 2px 12px rgba(0,0,0,0.09);padding:0.7rem 0;max-width:290px;margin:1.2rem auto 1.5rem auto;">
-  <img src="logo.png" alt="ROS DJ Logo" style="width:48vw;max-width:480px;min-width:180px;display:block;margin:0 auto 1.5rem auto;filter:drop-shadow(0 2px 18px #000);">
-  <p class="section-subtitle" style="color:#fff;" data-lang="home-desc" style="max-width:430px;margin:0 auto 1.5rem auto;font-size:1.15rem;">Professional Ukrainian DJ & Producer. Deep, melodic, organic house. Based in Spain, available worldwide.</p>
-<style>
-@media (max-width:600px){
-  #home img[src="logo.png"]{
-    width:64vw!important;
-   @media (max-width:700px){
-  .gallery-slider{max-width:99vw!important;}
-  .gallery-slide img{height:180px!important;}
-  #home img[src*='logo.png']{
-    max-width:44vw!important;
-    max-height:60px!important;
-    margin:0 auto!important;
-    display:block;
-  }
-}
-    height:auto!important;
-    margin-bottom:1.1rem!important;
-  }
-}
-</style>
-</div>
-<section id="about" class="seccion" style="background:rgba(255,255,255,0.13);">
+  <section id="about" class="seccion" style="background:rgba(255,255,255,0.13);">
     <div class="pagewrapper">
       <h2 class="section-title" style="color:#fff;" data-lang="about-title">About ROS DJ</h2>
       <p class="section-subtitle" style="color:#fff;" data-lang="about-subtitle">Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets</p>
@@ -2171,22 +1561,15 @@ document.addEventListener('DOMContentLoaded',()=>{
         <p data-lang="about-location"><strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Подумай про Це Section -->
-<!-- DAW Logos -->
-<div style="display:flex;gap:2rem;align-items:center;justify-content:center;margin:2rem 0 3rem 0;">
-  <!-- Recordbox -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="24" fill="#d32f2f"/><path d="M24 12a12 12 0 1 1 0 24a12 12 0 0 1 0-24zm0 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zm0 4a5 5 0 1 1 0 10a5 5 0 0 1 0-10z" fill="#fff"/></svg>
-  <!-- FL Studio -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><ellipse cx="24" cy="28" rx="16" ry="18" fill="#d32f2f"/><path d="M24 16c2 0 4 2 4 4v8c0 2-2 4-4 4s-4-2-4-4v-8c0-2 2-4 4-4z" fill="#fff"/><ellipse cx="24" cy="19" rx="2" ry="3" fill="#fff"/></svg>
-</div>
-  <div id="dj-tools" class="seccion" style="background:rgba(255,255,255,0.13);">
+  <!-- DJ Tools Section -->
+  <section id="dj-tools" class="seccion" style="background:rgba(255,255,255,0.13);">
     <div class="pagewrapper">
       <h2 class="section-title" style="color:#fff;" data-lang="dj-tools-title">Подумай про Це</h2>
       <p class="section-subtitle" style="color:#fff;" data-lang="dj-tools-subtitle">Essential tools for harmonic mixing and professional DJ performance</p>
       <div class="dj-tools-grid">
-        <div class="tool-card" style="background:rgba(255,255,255,0.13);border-radius:14px;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <div class="tool-card" style="background:rgba(255,255,255,0.13);">
           <h3 data-lang="camelot-title">🎵 Camelot Wheel</h3>
           <img src="camelot-wheel.png" alt="Camelot Wheel" style="width:140px;max-width:100%;display:block;margin:0.7rem auto 1.2rem auto;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.10);">
           <p data-lang="camelot-description">The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.</p>
@@ -2199,7 +1582,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             </ul>
           </div>
         </div>
-        <div class="tool-card" style="background:rgba(255,255,255,0.13);border-radius:14px;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <div class="tool-card" style="background:rgba(255,255,255,0.13);">
           <h3 data-lang="bpm-title">🎧 BPM Analysis</h3>
           <p data-lang="bpm-description">Understanding BPM (Beats Per Minute) is crucial for creating seamless transitions. Match tempos or use creative tempo changes to enhance your DJ sets.</p>
           <div class="bpm-info">
@@ -2211,7 +1594,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             </ul>
           </div>
         </div>
-        <div class="tool-card" style="background:rgba(255,255,255,0.13);border-radius:14px;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <div class="tool-card" style="background:rgba(255,255,255,0.13);">
           <h3 data-lang="in-kay-title">🎹 In-Kay Key Detection</h3>
           <p data-lang="in-kay-description">Professional key detection tool for DJs and producers. In-Kay helps you identify musical keys, find compatible tracks, and create harmonic mixes with precision. Essential for modern electronic music production.</p>
           <div class="in-kay-info">
@@ -2226,10 +1609,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Sound Section -->
-  <div id="music" class="seccion" style="background:rgba(255,255,255,0.13);">
+  <!-- Music Section -->
+  <section id="music" class="seccion" style="background:rgba(255,255,255,0.13);">
     <div class="pagewrapper">
       <h2 class="section-title" style="color:#fff;" data-lang="music-title">Sound</h2>
       <p class="section-subtitle" style="color:#fff;" data-lang="music-subtitle">Experience my sound across platforms</p>
@@ -2266,7 +1649,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             <div class="platform-content">
               <h4 data-lang="music-soundcloud">SoundCloud</h4>
               <p data-lang="music-soundcloud-desc">Latest mixes, original tracks, and exclusive content</p>
-                            <a href="https://soundcloud.com/rosthedj" class="platform-btn" target="_blank">
+              <a href="https://soundcloud.com/rosthedj" class="platform-btn" target="_blank">
                 <span>Listen Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -2284,7 +1667,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             <div class="platform-content">
               <h4 data-lang="music-youtube">YouTube</h4>
               <p data-lang="music-youtube-desc">Live performances, studio sessions, and exclusive content</p>
-                            <a href="https://www.youtube.com/@rosthedj" class="platform-btn" target="_blank">
+              <a href="https://www.youtube.com/@rosthedj" class="platform-btn" target="_blank">
                 <span>Watch Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -2302,7 +1685,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             <div class="platform-content">
               <h4>Mixcloud</h4>
               <p>Full DJ sets and podcasts showcasing my musical journey</p>
-                            <a href="https://www.mixcloud.com/rosthedj/" class="platform-btn" target="_blank">
+              <a href="https://www.mixcloud.com/rosthedj/" class="platform-btn" target="_blank">
                 <span>Stream Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -2312,17 +1695,31 @@ document.addEventListener('DOMContentLoaded',()=>{
           </div>
         </div>
       </div>
-      
-  <div class="pagewrapper">
-    <h2 class="section-title" style="color:#fff;" data-lang="gallery-title" style="font-size:2rem;font-weight:700;text-align:center;margin-bottom:1.1rem;letter-spacing:0.5px;">Gallery</h2>
-    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;max-width:680px;margin:1.2rem auto 1.7rem auto;">
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);"><img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);"><img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);"><img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);"><img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-</div>
-<style>@media (max-width:700px){.gallery-grid{grid-template-columns:1fr 1fr!important;}.gallery-item img{height:110px!important;}}</style>
-  
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="seccion" style="background:rgba(255,255,255,0.13);">
+    <div class="pagewrapper">
+      <h2 class="section-title" style="color:#fff;" data-lang="gallery-title">Gallery</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
+          <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
+        </div>
+        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
+          <img src="/images/ROSDJ1.JPG" alt="Live Performance">
+        </div>
+        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
+          <img src="/images/ROSDJ2.JPG" alt="Studio Session">
+        </div>
+        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
+          <img src="/images/DJROS.jpg" alt="DJROS">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Gallery Modal -->
   <div id="galleryModal" class="gallery-modal">
     <div class="modal-content">
@@ -2335,59 +1732,52 @@ document.addEventListener('DOMContentLoaded',()=>{
     </div>
   </div>
 
+  <!-- DAW Logos Section -->
+  <section class="seccion" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 0 1rem 0;gap:1.5rem;background:rgba(255,255,255,0.13);">
+    <h2 style="font-size:1.2rem;color:#fff;text-shadow:0 2px 8px #000;letter-spacing:1px;margin-bottom:1.1rem;" data-lang="daw-pro">Я використовую професійно</h2>
+    <div style="display:flex;gap:2rem;align-items:center;justify-content:center;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <img src="Rekordbox_Logo.png" alt="Rekordbox" style="width:90px;height:auto;filter:drop-shadow(0 2px 8px #000);">
+        <div style="color:#fff;font-size:0.95rem;margin-top:0.3rem;">Rekordbox</div>
+      </div>
+      <div style="text-align:center;">
+        <img src="Flstudio.png" alt="FL Studio" style="width:90px;height:auto;filter:drop-shadow(0 2px 8px #000);">
+        <div style="color:#fff;font-size:0.95rem;margin-top:0.3rem;">FL Studio</div>
+      </div>
+    </div>
+  </section>
 
-<!-- DAW Logos & Copyright (footer block) -->
-<section class="pro-soft" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 0 1rem 0;gap:1.5rem;">
-  <h2 style="font-size:1.2rem;color:#fff;text-shadow:0 2px 8px #000;letter-spacing:1px;margin-bottom:1.1rem;" data-lang="daw-pro">Я використовую професійно</h2>
-  <div style="display:flex;gap:2rem;align-items:center;justify-content:center;flex-wrap:wrap;">
-    <div style="text-align:center;">
-      <img src="Rekordbox_Logo.png" alt="Rekordbox" style="width:90px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-      <div style="color:#fff;font-size:0.95rem;margin-top:0.3rem;">Rekordbox</div>
-    </div>
-    <div style="text-align:center;">
-      <img src="Flstudio.png" alt="FL Studio" style="width:90px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-      <div style="color:#fff;font-size:0.95rem;margin-top:0.3rem;">FL Studio</div>
-    </div>
-  </div>
-</section>
+  <!-- Contact Section -->
   <section id="contact" class="seccion" style="background:rgba(255,255,255,0.13);backdrop-filter:blur(7px);border-radius:13px;box-shadow:0 2px 12px rgba(0,0,0,0.09);padding:0.7rem 0;max-width:290px;margin:1.2rem auto 1.5rem auto;">
-  <div class="pagewrapper">
-    <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;text-align:center;" data-lang="nav-contact">Contact</h2>
-    <div class="contact-content" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
-      <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:90px;max-width:170px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
-        <div style="font-size:1.16rem;margin-bottom:0.18rem;">
-          <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
+    <div class="pagewrapper">
+      <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;text-align:center;" data-lang="nav-contact">Contact</h2>
+      <div class="contact-content" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
+        <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:90px;max-width:170px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
+          <div style="font-size:1.16rem;margin-bottom:0.18rem;">
+            <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
+          </div>
+          <a href="mailto:r.dabizha@icloud.com" style="display:inline-block;margin:0.1rem 0 0 0;padding:0.32rem 0.7rem;background:linear-gradient(90deg,#d32f2f 70%,#b71c1c 100%);color:#fff;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.89rem;box-shadow:0 1px 4px rgba(211,47,47,0.08);transition:background 0.18s;">r.dabizha@icloud.com</a>
         </div>
-        <a href="mailto:r.dabizha@icloud.com" style="display:inline-block;margin:0.1rem 0 0 0;padding:0.32rem 0.7rem;background:linear-gradient(90deg,#d32f2f 70%,#b71c1c 100%);color:#fff;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.89rem;box-shadow:0 1px 4px rgba(211,47,47,0.08);transition:background 0.18s;">r.dabizha@icloud.com</a>
-      </div>
-      <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:70px;max-width:110px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
-        <div style="font-size:1.16rem;margin-bottom:0.18rem;">
-          <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 12.414a4 4 0 1 0-1.414 1.414l4.243 4.243a1 1 0 0 0 1.414-1.414z"/><circle cx="11" cy="11" r="8"/></svg>
+        <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:70px;max-width:110px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
+          <div style="font-size:1.16rem;margin-bottom:0.18rem;">
+            <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 12.414a4 4 0 1 0-1.414 1.414l4.243 4.243a1 1 0 0 0 1.414-1.414z"/><circle cx="11" cy="11" r="8"/></svg>
+          </div>
+          <div style="color:#fff;font-size:0.81rem;">Spain</div>
+          <div style="color:#b0b0b0;font-size:0.77rem;margin-top:0.05rem;">Worldwide</div>
         </div>
-        <div style="color:#fff;font-size:0.81rem;">Spain</div>
-        <div style="color:#b0b0b0;font-size:0.77rem;margin-top:0.05rem;">Worldwide</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p class="footer-text"> 2024 ROS DJ. All rights reserved.</p>
+      <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Smooth scrolling and active navigation like DJ Nano
     document.addEventListener('DOMContentLoaded', () => {
-      // Scroll to logo on Home
-      setTimeout(() => {
-        const logo = document.querySelector('#home img[src="logo.png"]');
-        if (logo) logo.scrollIntoView({behavior:'smooth', block:'center'});
-      }, 120);
-
       // Language System
       const translations = {
         ua: {
@@ -2423,18 +1813,8 @@ document.addEventListener('DOMContentLoaded',()=>{
           'playlist-title': 'ETAPA DE POTENCIA ПЛЕЙЛИСТ ВІД R.DABIZHA',
           'gallery-title': 'Галерея',
           'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
-          'gallery-live': 'Живий виступ',
-          'gallery-live-desc': 'Подія електронної музики',
-          'gallery-studio': 'Студійна сесія',
-          'gallery-studio-desc': 'Професійна DJ установка',
-          'gallery-festival': 'Енергія фестивалю',
-          'gallery-festival-desc': 'Фестиваль Deep House музики',
-          'gallery-production': 'Продакшн установка',
-          'gallery-production-desc': 'Професійне виробництво музики',
-          'gallery-nightclub': 'Нічний клуб',
-          'gallery-nightclub-desc': 'Виступ Melodic House DJ',
-          'gallery-decks': 'За пультом',
-          'gallery-decks-desc': 'Артист електронної музики'
+          'daw-pro': 'Я використовую професійно',
+          'nav-contact': 'Контакт'
         },
         en: {
           'about-title': 'About ROS DJ',
@@ -2469,84 +1849,51 @@ document.addEventListener('DOMContentLoaded',()=>{
           'playlist-title': 'ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA',
           'gallery-title': 'Gallery',
           'gallery-subtitle': 'Capturing the essence of electronic music performances',
-          'gallery-live': 'Live Performance',
-          'gallery-live-desc': 'Electronic music event',
-          'gallery-studio': 'Studio Session',
-          'gallery-studio-desc': 'Professional DJ setup',
-          'gallery-festival': 'Festival Energy',
-          'gallery-festival-desc': 'Deep House music festival',
-          'gallery-production': 'Production Setup',
-          'gallery-production-desc': 'Professional music production',
-          'gallery-nightclub': 'Nightclub Session',
-          'gallery-studio-desc': 'Configuración profesional de DJ',
-          'gallery-festival': 'Energía del Festival',
-          'gallery-festival-desc': 'Festival de música Deep House',
-          'gallery-production': 'Configuración de Producción',
-          'gallery-production-desc': 'Producción musical profesional',
-          'gallery-nightclub': 'Sesión de Club Nocturno',
-          'gallery-nightclub-desc': 'Presentación de DJ Melodic House',
-          'gallery-decks': 'Detrás de las Mesas',
-          'gallery-decks-desc': 'Artista de música electrónica'
+          'daw-pro': 'Professional Software I Use',
+          'nav-contact': 'Contact'
+        },
+        es: {
+          'about-title': 'Sobre ROS DJ',
+          'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
+          'about-name': 'Rostyslav Dabizha',
+          'about-description': 'DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.',
+          'about-genres': '<strong>Géneros:</strong> Organic House · Deep House · Melodic House',
+          'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
+          'dj-tools-title': 'Herramientas de DJ',
+          'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
+          'camelot-title': '🎵 Rueda Camelot',
+          'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
+          'camelot-compatibility': 'Compatibilidad de tonalidad:',
+          'camelot-same': '<strong>Mismo número:</strong> Mezcla perfecta',
+          'camelot-energy': '<strong>±1 número:</strong> Cambio de energía',
+          'camelot-relative': '<strong>Misma letra:</strong> Menor/mayor relativo',
+          'bpm-title': '🎧 Análisis BPM',
+          'bpm-description': 'Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.',
+          'bpm-range': 'Rango de Organic House:',
+          'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
+          'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
+          'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
+          'in-kay-title': '🎹 Detección de tonalidad In-Kay',
+          'in-kay-description': 'Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.',
+          'in-kay-features': 'Funciones:',
+          'in-kay-accurate': '<strong>Detección precisa:</strong> Análisis de algoritmo avanzado',
+          'in-kay-formats': '<strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC',
+          'in-kay-export': '<strong>Opciones de exportación:</strong> Notación Camelot y musical',
+          'in-kay-button': 'Abrir In-Kay',
+          'music-title': 'Música',
+          'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
+          'playlist-title': 'ETAPA DE POTENCIA PLAYLIST DE R.DABIZHA',
+          'gallery-title': 'Galería',
+          'gallery-subtitle': 'Capturando la esencia de las actuaciones de música electrónica',
+          'daw-pro': 'Software profesional que uso',
+          'nav-contact': 'Contacto'
         }
       };
 
-      let currentLang = 'en';
-      // Додаємо переклад для іспанської
-      translations.es = {
-        'about-title': 'Sobre ROS DJ',
-        'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
-        'about-name': 'Rostyslav Dabizha',
-        'about-description': 'DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.',
-        'about-genres': '<strong>Géneros:</strong> Organic House · Deep House · Melodic House',
-        'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
-        'dj-tools-title': 'Herramientas de DJ',
-        'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
-        'camelot-title': '🎵 Rueda Camelot',
-        'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
-        'camelot-compatibility': 'Compatibilidad de tonalidad:',
-        'camelot-same': '<strong>Mismo número:</strong> Mezcla perfecta',
-        'camelot-energy': '<strong>±1 número:</strong> Cambio de energía',
-        'camelot-relative': '<strong>Misma letra:</strong> Menor/mayor relativo',
-        'bpm-title': '🎧 Análisis BPM',
-        'bpm-description': 'Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.',
-        'bpm-range': 'Rango de Organic House:',
-        'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
-        'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
-        'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
-        'in-kay-title': '🎹 Detección de tonalidad In-Kay',
-        'in-kay-description': 'Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.',
-        'in-kay-features': 'Funciones:',
-        'in-kay-accurate': '<strong>Detección precisa:</strong> Análisis de algoritmo avanzado',
-        'in-kay-formats': '<strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC',
-        'in-kay-export': '<strong>Opciones de exportación:</strong> Notación Camelot y musical',
-        'in-kay-button': 'Abrir In-Kay',
-        'music-title': 'Música',
-        'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
-        'playlist-title': 'ETAPA DE POTENCIA PLAYLIST DE R.DABIZHA',
-        'gallery-title': 'Galería',
-        'gallery-subtitle': 'Capturando la esencia de las actuaciones de música electrónica',
-        'gallery-live': 'Actuación en vivo',
-        'gallery-live-desc': 'Evento de música electrónica',
-        'gallery-studio': 'Sesión de estudio',
-        'gallery-studio-desc': 'Configuración profesional de DJ',
-        'gallery-festival': 'Energía del festival',
-        'gallery-festival-desc': 'Festival de música Deep House',
-        'gallery-production': 'Configuración de producción',
-        'gallery-production-desc': 'Producción musical profesional',
-        'gallery-nightclub': 'Sesión de club nocturno',
-        'gallery-nightclub-desc': 'Actuación de DJ Melodic House',
-        'gallery-decks': 'Detrás de las mesas',
-        'gallery-decks-desc': 'Artista de música electrónica'
-      };
-
       function updateLanguage(lang) {
-        currentLang = lang;
-        
-        // Update all elements with data-lang attributes
         document.querySelectorAll('[data-lang]').forEach(element => {
           const key = element.getAttribute('data-lang');
           if (translations[lang] && translations[lang][key]) {
-            // Якщо є HTML-розмітка — використовуємо innerHTML
             if (translations[lang][key].includes('<')) {
               element.innerHTML = translations[lang][key];
             } else {
@@ -2555,7 +1902,6 @@ document.addEventListener('DOMContentLoaded',()=>{
           }
         });
 
-        // Update language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
           btn.classList.remove('active');
           if (btn.getAttribute('data-lang') === lang) {
@@ -2563,7 +1909,6 @@ document.addEventListener('DOMContentLoaded',()=>{
           }
         });
 
-        // Save language preference
         localStorage.setItem('selectedLanguage', lang);
       }
 
@@ -2575,84 +1920,38 @@ document.addEventListener('DOMContentLoaded',()=>{
         });
       });
 
-      // Load saved language or default to English
+      // Load saved language or default to Spanish
       const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
       updateLanguage(savedLanguage);
 
-      // Gallery Slider
-      const slides = document.querySelectorAll('.gallery-slide');
-      const prevBtn = document.getElementById('galleryPrev');
-      const nextBtn = document.getElementById('galleryNext');
-      const dotsContainer = document.getElementById('galleryDots');
-      
-      let currentSlide = 0;
-      const totalSlides = slides.length;
+      // Gallery Modal
+      const modal = document.getElementById('galleryModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalClose = document.getElementById('modalClose');
+      const galleryItems = document.querySelectorAll('.gallery-item');
 
-      // Create dots
-      function createDots() {
-        for (let i = 0; i < totalSlides; i++) {
-          const dot = document.createElement('div');
-          dot.classList.add('dot');
-          if (i === 0) dot.classList.add('active');
-          dot.addEventListener('click', () => goToSlide(i));
-          dotsContainer.appendChild(dot);
-        }
-      }
-
-      // Update slider
-      function updateSlider() {
-        slides.forEach((slide, index) => {
-          slide.classList.toggle('active', index === currentSlide);
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('img');
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          modal.classList.add('active');
         });
-        
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentSlide);
-        });
-      }
-
-      // Go to specific slide
-      function goToSlide(slideIndex) {
-        currentSlide = slideIndex;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        updateSlider();
-      }
-
-      // Next slide
-       {
-        currentSlide++;
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        updateSlider();
-      }
-
-      // Previous slide
-       {
-        currentSlide--;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
-        updateSlider();
-      }
-
-      // Event listeners
-      prevBtn.addEventListener('click', prevSlide);
-      nextBtn.addEventListener('click', nextSlide);
-
-      // Auto-play (optional)
-      let autoPlayInterval = setInterval(nextSlide, 5000);
-
-      // Pause auto-play on hover
-      const slider = document.querySelector('.gallery-slider');
-      slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-      slider.addEventListener('mouseleave', () => {
-        autoPlayInterval = setInterval(nextSlide, 5000);
       });
 
-      // Initialize
-      createDots();
-      updateSlider();
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
 
       // Fixed Navigation Hide/Show on Scroll
       const fixedNav = document.getElementById('fixedNav');
+      const navLinks = document.querySelectorAll('.nav-link');
       let lastScrollY = window.scrollY;
       let ticking = false;
 
@@ -2660,10 +1959,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         const scrollY = window.scrollY;
         
         if (scrollY > lastScrollY && scrollY > 100) {
-          // Scrolling down
           fixedNav.classList.add('hidden');
         } else {
-          // Scrolling up or at top
           fixedNav.classList.remove('hidden');
         }
         
@@ -2684,6 +1981,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       function updateActiveNavLink() {
         const sections = document.querySelectorAll('.seccion');
         const scrollPosition = window.scrollY + window.innerHeight / 2;
+        let current = '';
         
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
@@ -2702,7 +2000,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
       window.addEventListener('scroll', updateActiveNavLink);
 
-      
+      // Smooth scrolling for navigation links
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
@@ -2717,80 +2015,9 @@ document.addEventListener('DOMContentLoaded',()=>{
           }
         });
       });
-      
-      // Update active navigation on scroll
-      function updateActiveNav() {
-        const sections = document.querySelectorAll('.seccion');
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
-        
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const sectionId = section.getAttribute('id');
-          
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-            if (activeLink) {
-              activeLink.classList.add('active');
-            }
-          }
-        });
-      }
-      
-      // Scroll event listener
-      window.addEventListener('scroll', updateActiveNav);
-      
+
       // Initial call
-      updateActiveNav();
-      
-      // Splash-screen language selection
-      const splash = document.getElementById('langSplash');
-      const footerLang = document.getElementById('footerLang');
-      const footerLangMenu = document.getElementById('footerLangMenu');
-      let hasLang = localStorage.getItem('selectedLanguage');
-      if (!hasLang && !localStorage.getItem('langSplashShown')) {
-        document.body.style.overflow = 'hidden';
-        splash.style.display = 'flex';
-      } else {
-        splash.style.display = 'none';
-        footerLang.style.display = 'block';
-        document.body.style.overflow = '';
-      }
-      document.querySelectorAll('.lang-splash-btn').forEach(btn => {
-        btn.onclick = () => {
-          const lang = btn.getAttribute('data-lang');
-          localStorage.setItem('selectedLanguage', lang);
-          localStorage.setItem('langSplashShown', '1');
-          updateLanguage(lang);
-          splash.style.opacity = 0;
-          setTimeout(()=>{
-            splash.style.display = 'none';
-            footerLang.style.display = 'block';
-            document.body.style.overflow = '';
-          }, 350);
-        };
-      });
-      // Footer language selector
-      footerLang.onclick = () => {
-        footerLangMenu.style.display = footerLangMenu.style.display === 'block' ? 'none' : 'block';
-      };
-      footerLangMenu.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.onclick = () => {
-          const lang = btn.getAttribute('data-lang');
-          localStorage.setItem('selectedLanguage', lang);
-          updateLanguage(lang);
-          footerLangMenu.style.display = 'none';
-        };
-      });
-      // Закрити меню при кліку поза ним
-      document.addEventListener('click', (e) => {
-        if (!footerLang.contains(e.target) && !footerLangMenu.contains(e.target)) {
-          footerLangMenu.style.display = 'none';
-        }
-      });
-      // Initialize language
-      updateLanguage(localStorage.getItem('selectedLanguage') || currentLang);
+      updateActiveNavLink();
     });
   </script>
 </body>
