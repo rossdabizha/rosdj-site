@@ -2322,36 +2322,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   <div class="gallery-item" style="background:rgba(255,255,255,0.13);"><img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
 </div>
 <style>@media (max-width:700px){.gallery-grid{grid-template-columns:1fr 1fr!important;}.gallery-item img{height:110px!important;}}</style>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const slides=document.querySelectorAll('.gallery-slide');
-  const prevBtn=document.getElementById('galleryPrev');
-  const nextBtn=document.getElementById('galleryNext');
-  const dotsContainer=document.getElementById('galleryDots');
-  let currentSlide=0;
-  function showSlide(idx){
-    slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
-    Array.from(dotsContainer.children).forEach((d,i)=>d.classList.toggle('active',i===idx));
-  }
-  function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
-  function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
-  prevBtn.onclick=prevSlide;nextBtn.onclick=nextSlide;
-  for(let i=0;i<slides.length;i++){const dot=document.createElement('div');dot.className='dot';dot.onclick=()=>{currentSlide=i;showSlide(i);};dotsContainer.appendChild(dot);}
-  showSlide(currentSlide);
-});
-</script>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-    <img src="/images/ROSDJ2.JPG" alt="Studio Session">
-    <div class="gallery-caption" style="color:#fff;"></div>
-  </div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.13);" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-    <img src="/images/DJROS.jpg" alt="DJROS">
-    <div class="gallery-caption" style="color:#fff;"></div>
-  </div>
-</div>
-    </div>
-  </div>
-
+  
   <!-- Gallery Modal -->
   <div id="galleryModal" class="gallery-modal">
     <div class="modal-content">
@@ -2379,8 +2350,10 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
 </section>
-  <h2 class="section-title" style="color:#fff;" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;">Contact</h2>
-    <div class="contact-content" style="color:#fff;" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
+  <section id="contact" class="seccion" style="background:rgba(255,255,255,0.13);backdrop-filter:blur(7px);border-radius:13px;box-shadow:0 2px 12px rgba(0,0,0,0.09);padding:0.7rem 0;max-width:290px;margin:1.2rem auto 1.5rem auto;">
+  <div class="pagewrapper">
+    <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;text-align:center;" data-lang="nav-contact">Contact</h2>
+    <div class="contact-content" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
       <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:90px;max-width:170px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:1.16rem;margin-bottom:0.18rem;">
           <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
@@ -2396,7 +2369,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
     </div>
   </div>
-</div>
+</section>
 
   
   <!-- Footer -->
