@@ -40,11 +40,35 @@
   <meta property="og:url" content="https://rosdj.com/">
   <meta property="og:title" content="ROS DJ - Professional Organic House DJ">
   <meta property="og:description" content="Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
-  <meta property="og:image" content="images/ROSDJ foto.jpg">
+  <meta property="og:image" content="https://rosdj.com/images/ROSDJ_foto.jpg">
+  <meta property="og:image:secure_url" content="https://rosdj.com/images/ROSDJ_foto.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ROS DJ - Professional DJ and Music Producer">
   <meta property="og:site_name" content="ROS DJ">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ROS DJ - Professional Organic House DJ">
+  <meta name="twitter:description" content="Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta name="twitter:image" content="https://rosdj.com/images/ROSDJ_foto.jpg">
+  <meta name="twitter:image:alt" content="ROS DJ - Professional DJ and Music Producer">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rosdj.com/" />
+  
+  <!-- Alternate language versions -->
+  <link rel="alternate" hreflang="en" href="https://rosdj.com/" />
+  <link rel="alternate" hreflang="uk" href="https://rosdj.com/uk/" />
+  <link rel="alternate" hreflang="es" href="https://rosdj.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://rosdj.com/" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="ROSDJ_foto.jpg" as="image">
+  <link rel="preconnect" href="https://embed.beatport.com">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -1890,11 +1914,50 @@
     </div>
   </section>
 
-  <!-- Music Section -->
-  <section id="music" class="seccion" style="background:rgba(255,255,255,0.13);">
+  <!-- Music Section with Beatport Chart -->
+  <section id="music" class="seccion" style="background:rgba(255,255,255,0.13);" itemscope itemtype="http://schema.org/MusicPlaylist">
     <div class="pagewrapper">
-      <h2 class="section-title" style="color:#fff;" data-lang="music-title">Sound</h2>
-      <p class="section-subtitle" style="color:#fff;" data-lang="music-subtitle">Experience my sound across platforms</p>
+      <h2 class="section-title" style="color:#fff;" data-lang="music-title" itemprop="name">Музика</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="music-subtitle" itemprop="description">Мої останні треки та плейлисти</p>
+      
+      <!-- Beatport Chart with Schema.org markup -->
+      <div class="beatport-embed" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+        <meta itemprop="name" content="ROS DJ - Top Tracks">
+        <meta itemprop="byArtist" content="ROS DJ">
+        <meta itemprop="genre" content="Organic House, Deep House, Melodic">
+        <meta itemprop="duration" content="PT1H">
+        <div class="section-description" style="margin-bottom: 2rem; text-align: center;">
+          <h3 style="color: #fff; margin-bottom: 1rem;" data-lang="beatport-title">Топ треків на Beatport</h3>
+          <p style="color: #ccc; max-width: 800px; margin: 0 auto 2rem;" data-lang="beatport-description">
+            Відкрийте для себе мої найкращі треки та подивіться, що грають інші ді-джеї
+          </p>
+        </div>
+        <div class="chart-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+          <iframe 
+            src="https://embed.beatport.com/?id=869295&type=chart" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allowtransparency="true" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+            title="ROS DJ - Top Tracks on Beatport"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+          </iframe>
+        </div>
+        <div class="beatport-link" style="text-align: center; margin-top: 1rem;">
+          <a href="https://www.beatport.com/artist/ros-dj/869295" target="_blank" rel="noopener noreferrer" style="color: #ff6b6b; text-decoration: none; font-weight: 500;" data-lang="view-on-beatport">
+            Відкрити в Beatport
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-left: 4px;">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
       
       <!-- Featured Playlist -->
       <div class="featured-playlist">
@@ -1977,23 +2040,114 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery Section with Schema.org Markup -->
   <section id="gallery" class="seccion" style="background:rgba(255,255,255,0.13);">
     <div class="pagewrapper">
-      <h2 class="section-title" style="color:#fff;" data-lang="gallery-title">Gallery</h2>
-      <p class="section-subtitle" style="color:#fff;" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
-      <div class="gallery-grid">
-        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
-          <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
+      <h2 class="section-title" style="color:#fff;" data-lang="gallery-title">Галерея</h2>
+      <p class="section-subtitle" style="color:#fff;" data-lang="gallery-subtitle">Фотографії з виступів та студійних сесій</p>
+      <div class="gallery-grid" itemscope itemtype="http://schema.org/ImageGallery">
+        <!-- Photo 1 -->
+        <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/ROSDJ_foto.jpg" 
+            alt="ROS DJ на сцені під час виступу" 
+            title="ROS DJ - живий виступ"
+            itemprop="contentUrl"
+            loading="lazy"
+            width="800"
+            height="600"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="ROS DJ - Виступ на сцені">
+          <meta itemprop="description" content="Професійний діджей ROS DJ під час виступу на сцені">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
         </div>
-        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
-          <img src="/images/ROSDJ1.JPG" alt="Live Performance">
+
+        <!-- Photo 2 -->
+        <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/Flstudio.png" 
+            alt="Робота в FL Studio" 
+            title="Створення музики у FL Studio"
+            loading="lazy"
+            width="800"
+            height="600"
+            itemprop="contentUrl"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="ROS DJ - Робота в студії">
+          <meta itemprop="description" content="ROS DJ створює музику у власній студії">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
         </div>
-        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
-          <img src="/images/ROSDJ2.JPG" alt="Studio Session">
+        <div class="gallery-item" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/Rekordbox_Logo.png" 
+            alt="ROS DJ - Використання Rekordbox для діджеїнгу" 
+            title="Професійне обладнання для діджеїнгу"
+            loading="lazy"
+            width="800"
+            height="600"
+            itemprop="contentUrl"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="ROS DJ - Професійне обладнання">
+          <meta itemprop="description" content="Використання професійного обладнання для діджеїнгу">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
         </div>
-        <div class="gallery-item" style="background:rgba(255,255,255,0.13);">
-          <img src="/images/DJROS.jpg" alt="DJROS">
+        <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/DJROS.jpg" 
+            alt="DJ ROS на фестивалі" 
+            title="DJ ROS на великому фестивалі"
+            loading="lazy"
+            width="800"
+            height="600"
+            itemprop="contentUrl"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="DJ ROS на фестивалі">
+          <meta itemprop="description" content="DJ ROS виступає на музичному фестивалі">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/rosdj.jpg" 
+            alt="DJ ROS у клубі" 
+            title="Нічний виступ у клубі"
+            loading="lazy"
+            width="800"
+            height="600"
+            itemprop="contentUrl"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="DJ ROS у клубі">
+          <meta itemprop="description" content="Нічний виступ DJ ROS у престижному клубі">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background:rgba(255,255,255,0.13);">
+          <img 
+            src="images/rosdj1.jpg" 
+            alt="DJ ROS на відкритому майданчику" 
+            title="Літній виступ на відкритому повітрі"
+            loading="lazy"
+            width="800"
+            height="600"
+            itemprop="contentUrl"
+            class="gallery-img"
+          >
+          <meta itemprop="name" content="DJ ROS на відкритому повітрі">
+          <meta itemprop="description" content="Літній виступ на відкритому майданчику">
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="600">
         </div>
       </div>
     </div>
@@ -2058,8 +2212,28 @@
     </div>
   </footer>
 
+  <!-- Lazy load images -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Lazy load images
+      const lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+      
+      if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove('lazy');
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
       // Auto-scroll to landing on page load
       window.scrollTo({ top: 0, behavior: 'smooth' });
       
