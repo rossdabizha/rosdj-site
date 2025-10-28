@@ -1937,78 +1937,6 @@
       }
     }
 
-    /* Touch-friendly interactions */
-    @media (hover: none) and (pointer: coarse){
-      .btn-primary, .btn-secondary, .platform-btn{
-        min-height: 44px;
-        min-width: 44px;
-      }
-      
-      .nav-link{
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .tool-card,
-      .platform-card,
-      .stat-item,
-      .contact-item{
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(255,85,0,0.2);
-      }
-      
-      .tool-card:hover,
-      .platform-card:hover,
-      .stat-item:hover,
-      .contact-item:hover{
-        transform: none;
-      }
-      
-      .tool-card:active,
-      .platform-card:active,
-      .stat-item:active,
-      .contact-item:active{
-        transform: scale(0.98);
-        transition: transform 0.1s ease;
-      }
-      
-      .gallery-slide{
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(255,85,0,0.2);
-      }
-      
-      .gallery-prev,
-      .gallery-next{
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      .modal-close{
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      /* Better touch targets for social links */
-      #social-links a{
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      .social-link{
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      /* Language buttons touch friendly */
-      .lang-btn{
-        min-height: 40px;
-        min-width: 40px;
-      }
-    }
-
-    /* Landscape mobile optimization */
     @media (max-width:768px) and (orientation: landscape){
       .seccion{
         padding: 2rem 1rem;
@@ -2176,7 +2104,6 @@
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-      </div>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const langBtn=document.getElementById('langBtn');
@@ -2217,9 +2144,16 @@ document.addEventListener('DOMContentLoaded',()=>{
 @media (max-width:600px){
   #home img[src="logo.png"]{
     width:64vw!important;
-    max-width:95vw!important;
-    min-width:80px!important;
-    max-height:110px!important;
+   @media (max-width:700px){
+  .gallery-slider{max-width:99vw!important;}
+  .gallery-slide img{height:180px!important;}
+  #home img[src*='logo.png']{
+    max-width:44vw!important;
+    max-height:60px!important;
+    margin:0 auto!important;
+    display:block;
+  }
+}
     height:auto!important;
     margin-bottom:1.1rem!important;
   }
@@ -2379,79 +2313,21 @@ document.addEventListener('DOMContentLoaded',()=>{
         </div>
       </div>
       
-          </div>
-  </div>
-
-  <!-- Gallery Section (new, professional masonry grid) -->
-<!-- Gallery Section (slider, transparent, 1 big photo) -->
-<section id="gallery" class="seccion" style="padding:1.1rem 0 2.2rem 0;">
   <div class="pagewrapper">
     <h2 class="section-title" data-lang="gallery-title" style="font-size:2rem;font-weight:700;text-align:center;margin-bottom:1.1rem;letter-spacing:0.5px;">Gallery</h2>
-    <div class="gallery-slider" style="max-width:540px;margin:1.2rem auto 1.7rem auto;position:relative;background:rgba(255,255,255,0.10);backdrop-filter:blur(8px);border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.10);padding:0.7rem 0.2rem;">
-      <div class="gallery-slide active" style="text-align:center;">
-        <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.2rem auto 1.7rem auto;">
+      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
       </div>
-      <div class="gallery-slide" style="text-align:center;">
-        <img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <img src="/images/ROSDJ1.JPG" alt="Live Performance">
       </div>
-      <div class="gallery-slide" style="text-align:center;">
-        <img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <img src="/images/ROSDJ2.JPG" alt="Studio Session">
       </div>
-      <div class="gallery-slide" style="text-align:center;">
-        <img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+      <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
+        <img src="/images/DJROS.jpg" alt="DJROS">
       </div>
-      <button class="gallery-prev" id="galleryPrev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.18);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <button class="gallery-next" id="galleryNext" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.18);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-      <div class="gallery-dots" id="galleryDots" style="display:flex;justify-content:center;gap:10px;margin-top:14px;"></div>
-      <style>@media (max-width:700px){.gallery-slider{max-width:99vw!important;}.gallery-slide img{height:180px!important;}}</style>
-    </div>
-  function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
-  prevBtn.onclick=prevSlide;nextBtn.onclick=nextSlide;
-  for(let i=0;i<slides.length;i++){const dot=document.createElement('div');dot.className='dot';dot.onclick=()=>{currentSlide=i;showSlide(i);};dotsContainer.appendChild(dot);}
-  showSlide(currentSlide);
-
-  // Modal logic
-  const modal=document.getElementById('galleryModal');
-  const modalImg=document.getElementById('galleryModalImg');
-  const modalClose=document.getElementById('galleryModalClose');
-  slides.forEach((s,i)=>{
-    s.querySelector('img').onclick=()=>{
-      modal.style.display='flex';
-      modalImg.src=s.querySelector('img').src;
-    };
-  });
-  modalClose.onclick=()=>{modal.style.display='none';modalImg.src='';};
-  modal.onclick=(e)=>{if(e.target===modal){modal.style.display='none';modalImg.src='';}};
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.style.display='none';modalImg.src='';}});
-});
-</script>
-    <script>
-      document.addEventListener('DOMContentLoaded',function(){
-        const slides=document.querySelectorAll('.gallery-slide');
-        const prevBtn=document.getElementById('galleryPrev');
-        const nextBtn=document.getElementById('galleryNext');
-        const dotsContainer=document.getElementById('galleryDots');
-        let currentSlide=0;
-        function showSlide(idx){
-          slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
-          Array.from(dotsContainer.children).forEach((d,i)=>d.classList.toggle('active',i===idx));
-        }
-        function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
-        function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
-        prevBtn.onclick=prevSlide;nextBtn.onclick=nextSlide;
-        slides.forEach((s,i)=>s.onclick=()=>showSlide(i));
-        for(let i=0;i<slides.length;i++){const dot=document.createElement('div');dot.className='dot';dot.onclick=()=>{currentSlide=i;showSlide(i);};dotsContainer.appendChild(dot);}
-        showSlide(currentSlide);
-      });
-    </script>
-  </div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-    <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
-    <div class="gallery-caption"></div>
-  </div>
-  <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
-    <img src="/images/ROSDJ1.JPG" alt="Live Performance">
-    <div class="gallery-caption"></div>
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ2.JPG" alt="Studio Session">
@@ -2492,10 +2368,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     </div>
   </div>
 </section>
-<!-- Contact Section (footer, compact) -->
-<div id="contact" class="seccion" style="background:rgba(255,255,255,0.13);backdrop-filter:blur(7px);border-radius:13px;box-shadow:0 2px 12px rgba(0,0,0,0.11);padding:0.7rem 0;max-width:300px;margin:1.2rem auto 0.5rem auto;">
-  <div class="pagewrapper">
-    <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;">Contact</h2>
+  <h2 class="section-title" style="color:#fff;font-size:1.05rem;margin-bottom:0.3rem;letter-spacing:0.5px;">Contact</h2>
     <div class="contact-content" style="display:flex;flex-direction:column;gap:0.4rem;align-items:center;">
       <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.5rem 0.7rem;min-width:90px;max-width:170px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:1.16rem;margin-bottom:0.18rem;">
@@ -2763,14 +2636,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
 
       // Next slide
-      function nextSlide() {
+       {
         currentSlide++;
         if (currentSlide >= totalSlides) currentSlide = 0;
         updateSlider();
       }
 
       // Previous slide
-      function prevSlide() {
+       {
         currentSlide--;
         if (currentSlide < 0) currentSlide = totalSlides - 1;
         updateSlider();
@@ -2826,9 +2699,8 @@ document.addEventListener('DOMContentLoaded',()=>{
       // Update active nav link based on scroll position
       function updateActiveNavLink() {
         const sections = document.querySelectorAll('.seccion');
-        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
         
-        let current = '';
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
           const sectionHeight = section.clientHeight;
@@ -2837,97 +2709,15 @@ document.addEventListener('DOMContentLoaded',()=>{
           }
         });
 
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`nav a[href="#${current}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
       }
 
       window.addEventListener('scroll', updateActiveNavLink);
 
-      // Gallery Modal
-      const modal = document.getElementById('galleryModal');
-      const modalImage = document.getElementById('modalImage');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDescription = document.getElementById('modalDescription');
-      const modalClose = document.getElementById('modalClose');
-
-      // Gallery data
-      const galleryData = [
-        {
-          src: 'ROSDJ1.JPG',
-          title: 'Live Performance',
-          description: 'Electronic music event'
-        },
-        {
-          src: 'ROSDJ2.JPG',
-          title: 'Studio Session',
-          description: 'Professional DJ setup'
-        },
-        {
-          src: 'ROSDJ.jpeg',
-          title: 'Festival Energy',
-          description: 'Deep House music festival'
-        },
-        {
-          src: 'ROSDJ2.JPG',
-          title: 'Production Setup',
-          description: 'Professional music production'
-        },
-        {
-          src: 'ROSDJ1.JPG',
-          title: 'Nightclub Session',
-          description: 'Melodic House DJ performance'
-        },
-        {
-          src: 'ROSDJ.jpeg',
-          title: 'Behind the Decks',
-          description: 'Electronic music artist'
-        }
-      ];
-
-      // Add click events to gallery slides
-      slides.forEach((slide, index) => {
-        slide.addEventListener('click', () => {
-          openModal(index);
-        });
-      });
-
-      // Open modal function
-      function openModal(index) {
-        const data = galleryData[index];
-        modalImage.src = data.src;
-        modalTitle.textContent = data.title;
-        modalDescription.textContent = data.description;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      // Close modal function
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-
-      // Event listeners
-      modalClose.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeModal();
-        }
-      });
-
-      // Smooth scroll for navigation links
-      const navLinks = document.querySelectorAll('nav a');
       
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
