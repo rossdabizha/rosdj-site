@@ -2360,28 +2360,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   <div class="pagewrapper">
     <h2 class="section-title" data-lang="gallery-title">Gallery</h2>
     <p class="section-subtitle" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
-    <div class="gallery-slider" style="max-width:350px;margin:1.3rem auto 1.7rem auto;position:relative;background:rgba(20,20,22,0.94);border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.13);padding:0.5rem 0.2rem;">
-  <div class="gallery-slide active" style="text-align:center;">
-    <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-    <div class="gallery-caption" style="position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(20,20,22,0.98) 80%,rgba(20,20,22,0.11) 100%);color:#fff;font-size:0.98rem;font-weight:600;padding:0.7rem 0.9rem 0.6rem 0.9rem;text-align:center;letter-spacing:0.1px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;">ROS DJ Official</div>
-  </div>
-  <div class="gallery-slide" style="text-align:center;">
-    <img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-    <div class="gallery-caption">Live Performance</div>
-  </div>
-  <div class="gallery-slide" style="text-align:center;">
-    <img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-    <div class="gallery-caption">Studio Session</div>
-  </div>
-  <div class="gallery-slide" style="text-align:center;">
-    <img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-    <div class="gallery-caption">DJROS Portrait</div>
-  </div>
-  <button class="gallery-prev" id="galleryPrev" style="position:absolute;left:6px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.7);color:#fff;border:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-  <button class="gallery-next" id="galleryNext" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.7);color:#fff;border:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-  <div class="gallery-dots" id="galleryDots" style="display:flex;justify-content:center;gap:8px;margin-top:10px;"></div>
-  <style>@media (max-width:700px){.gallery-slider{max-width:95vw!important;}.gallery-slide img{height:140px!important;}}</style>
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:1.1rem;max-width:680px;margin:1.2rem auto 1.7rem auto;">
+  <div class="gallery-item"><img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
+  <div class="gallery-item"><img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
+  <div class="gallery-item"><img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
+  <div class="gallery-item"><img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
 </div>
+<style>@media (max-width:700px){.gallery-grid{grid-template-columns:1fr 1fr!important;}.gallery-item img{height:110px!important;}}</style>
     <script>
       document.addEventListener('DOMContentLoaded',function(){
         const slides=document.querySelectorAll('.gallery-slide');
@@ -2402,51 +2387,6 @@ document.addEventListener('DOMContentLoaded',()=>{
       });
     </script>
   </div>
-    .gallery-item {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 6px 28px rgba(0,0,0,0.17);
-      background: #18181f;
-      transition: box-shadow 0.3s, transform 0.18s;
-      cursor: pointer;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      transition: transform 0.35s cubic-bezier(.32,2,.55,.27);
-      display: block;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.08);
-      filter: brightness(1.08) contrast(1.08);
-    }
-    .gallery-caption {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      background: linear-gradient(0deg,rgba(20,20,22,0.95) 80%,rgba(20,20,22,0.18) 100%);
-      color: #fff;
-      font-size: 1.13rem;
-      font-weight: 600;
-      padding: 1.1rem 1.2rem 0.9rem 1.2rem;
-      text-align: left;
-      letter-spacing: 0.2px;
-      opacity: 0.93;
-      transition: opacity 0.22s;
-      border-bottom-left-radius: 18px;
-      border-bottom-right-radius: 18px;
-      pointer-events: none;
-    }
-    .gallery-item:hover .gallery-caption {
-      opacity: 1;
-      background: linear-gradient(0deg,rgba(30,30,38,0.99) 90%,rgba(30,30,38,0.18) 100%);
-    }
-    @media (max-width:700px){
-      .gallery-item img{height:160px;}
-      .gallery-caption{font-size:1rem;padding:0.7rem 0.8rem;}
-    }
-  </style>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
     <div class="gallery-caption">ROS DJ Official</div>
