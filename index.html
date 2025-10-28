@@ -2193,9 +2193,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 <style>
 @media (max-width:600px){
   #home img[src="logo.png"]{
-    width:80vw!important;
+    width:64vw!important;
     max-width:95vw!important;
-    min-width:120px!important;
+    min-width:80px!important;
+    max-height:110px!important;
+    height:auto!important;
+    margin-bottom:1.1rem!important;
   }
 }
 </style>
@@ -2228,6 +2231,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div class="dj-tools-grid">
         <div class="tool-card">
           <h3 data-lang="camelot-title">🎵 Camelot Wheel</h3>
+          <img src="camelot-wheel.png" alt="Camelot Wheel" style="width:120px;max-width:100%;display:block;margin:0.7rem auto 1.2rem auto;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.10);">
           <p data-lang="camelot-description">The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.</p>
           <div class="camelot-info">
             <h4 data-lang="camelot-compatibility">Key Compatibility:</h4>
@@ -2360,13 +2364,61 @@ document.addEventListener('DOMContentLoaded',()=>{
   <div class="pagewrapper">
     <h2 class="section-title" data-lang="gallery-title">Gallery</h2>
     <p class="section-subtitle" data-lang="gallery-subtitle">Capturing the essence of electronic music performances</p>
-    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:1.1rem;max-width:680px;margin:1.2rem auto 1.7rem auto;">
-  <div class="gallery-item"><img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item"><img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item"><img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
-  <div class="gallery-item"><img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:200px;object-fit:cover;border-radius:14px;"></div>
+    <div class="gallery-slider" style="max-width:540px;margin:1.4rem auto 1.7rem auto;position:relative;background:rgba(20,20,22,0.94);border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.13);padding:0.7rem 0.2rem;">
+  <div class="gallery-slide active" style="text-align:center;">
+    <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+  </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/ROSDJ1.JPG" alt="Live Performance" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+  </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/ROSDJ2.JPG" alt="Studio Session" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+  </div>
+  <div class="gallery-slide" style="text-align:center;">
+    <img src="/images/DJROS.jpg" alt="DJROS" style="width:100%;height:410px;object-fit:cover;border-radius:14px;cursor:pointer;">
+  </div>
+  <button class="gallery-prev" id="galleryPrev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.7);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="gallery-next" id="galleryNext" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.7);color:#fff;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="gallery-dots" id="galleryDots" style="display:flex;justify-content:center;gap:10px;margin-top:14px;"></div>
+  <style>@media (max-width:700px){.gallery-slider{max-width:99vw!important;}.gallery-slide img{height:180px!important;}}</style>
 </div>
-<style>@media (max-width:700px){.gallery-grid{grid-template-columns:1fr 1fr!important;}.gallery-item img{height:110px!important;}}</style>
+<!-- Gallery Modal -->
+<div id="galleryModal" style="display:none;position:fixed;z-index:3000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.94);backdrop-filter:blur(10px);align-items:center;justify-content:center;">
+  <img id="galleryModalImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <span id="galleryModalClose" style="position:fixed;top:32px;right:38px;font-size:2.7rem;color:#fff;cursor:pointer;z-index:3001;user-select:none;">&times;</span>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const slides=document.querySelectorAll('.gallery-slide');
+  const prevBtn=document.getElementById('galleryPrev');
+  const nextBtn=document.getElementById('galleryNext');
+  const dotsContainer=document.getElementById('galleryDots');
+  let currentSlide=0;
+  function showSlide(idx){
+    slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+    Array.from(dotsContainer.children).forEach((d,i)=>d.classList.toggle('active',i===idx));
+  }
+  function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
+  function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
+  prevBtn.onclick=prevSlide;nextBtn.onclick=nextSlide;
+  for(let i=0;i<slides.length;i++){const dot=document.createElement('div');dot.className='dot';dot.onclick=()=>{currentSlide=i;showSlide(i);};dotsContainer.appendChild(dot);}
+  showSlide(currentSlide);
+
+  // Modal logic
+  const modal=document.getElementById('galleryModal');
+  const modalImg=document.getElementById('galleryModalImg');
+  const modalClose=document.getElementById('galleryModalClose');
+  slides.forEach((s,i)=>{
+    s.querySelector('img').onclick=()=>{
+      modal.style.display='flex';
+      modalImg.src=s.querySelector('img').src;
+    };
+  });
+  modalClose.onclick=()=>{modal.style.display='none';modalImg.src='';};
+  modal.onclick=(e)=>{if(e.target===modal){modal.style.display='none';modalImg.src='';}};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.style.display='none';modalImg.src='';}});
+});
+</script>
     <script>
       document.addEventListener('DOMContentLoaded',function(){
         const slides=document.querySelectorAll('.gallery-slide');
@@ -2389,19 +2441,19 @@ document.addEventListener('DOMContentLoaded',()=>{
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ foto.jpg" alt="ROS DJ Official">
-    <div class="gallery-caption">ROS DJ Official</div>
+    <div class="gallery-caption"></div>
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ1.JPG" alt="Live Performance">
-    <div class="gallery-caption">Live Performance</div>
+    <div class="gallery-caption"></div>
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/ROSDJ2.JPG" alt="Studio Session">
-    <div class="gallery-caption">Studio Session</div>
+    <div class="gallery-caption"></div>
   </div>
   <div class="gallery-item" style="background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,0.10);">
     <img src="/images/DJROS.jpg" alt="DJROS">
-    <div class="gallery-caption">DJROS Portrait</div>
+    <div class="gallery-caption"></div>
   </div>
 </div>
     </div>
@@ -2664,7 +2716,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       });
 
       // Load saved language or default to English
-      const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+      const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
       updateLanguage(savedLanguage);
 
       // Gallery Slider
