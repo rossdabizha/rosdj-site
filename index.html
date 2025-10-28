@@ -2,307 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ROS DJ — Rostyslav Dabizha</title>
   <meta name="description" content="ROS DJ — Rostyslav Dabizha. Ukrainian DJ & producer (Organic House, Deep House, Melodic). Based in Spain. Bookings worldwide.">
-  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Organic House, Deep House, Melodic House, DJ, Ukraine, Spain, mixes, DJ sets">
-  <meta name="author" content="Rostyslav Dabizha">
-  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rosdj.com/">
-
-  <!-- Favicons (transparent icons recommended) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
-  <meta name="theme-color" content="#000000">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ROS DJ — Rostyslav Dabizha">
-  <meta property="og:description" content="Ukrainian DJ & producer in Spain. Organic House, Deep House, Melodic. Bookings worldwide.">
-  <meta property="og:url" content="https://rosdj.com/">
+  <link rel="icon" type="image/png" href="logo.png">
   <meta property="og:image" content="images/ROSDJ_foto.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@rosthedj">
-
-  <!-- Schema.org — Person + Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "name": "Rostyslav Dabizha",
-        "alternateName": "ROS DJ",
-        "url": "https://rosdj.com",
-        "image": "https://rosdj.com/images/ROSDJ_foto.jpg",
-        "jobTitle": "DJ, Music Producer",
-        "description": "Ukrainian DJ and music producer specializing in Organic House, Deep House and Melodic House. Based in Spain, available for worldwide bookings.",
-        "sameAs": [
-          "https://soundcloud.com/rosthedj",
-          "https://www.instagram.com/rosthedj/",
-          "https://www.youtube.com/@rosthedj",
-          "https://www.mixcloud.com/rosthedj/"
-        ]
-      },
-      {
-        "@type": "Organization",
-        "name": "ROS DJ",
-        "url": "https://rosdj.com",
-        "logo": "https://rosdj.com/logo.png",
-        "sameAs": [
-          "https://soundcloud.com/rosthedj",
-          "https://www.instagram.com/rosthedj/",
-          "https://www.youtube.com/@rosthedj"
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg: #000;
-      --card: rgba(255,255,255,0.03);
-      --muted: rgba(255,255,255,0.75);
-      --accent: #ff5500;
-      --icon-opacity: 0.65; /* icons made more transparent */
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:#fff;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/ROSDJ_foto.jpg') center/cover fixed no-repeat;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* Basic layout */
-    .container{max-width:1200px;margin:0 auto;padding:1rem}
-    nav.fixed{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,85,0,0.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.6rem 1rem}
-    .nav-links{display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}
-    .nav-link{color:var(--muted);text-decoration:none;font-weight:600;font-size:0.85rem;opacity:0.95}
-    .nav-link:hover{color:#fff}
-    .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.25rem 0.6rem;border-radius:10px;color:var(--muted);font-weight:700;cursor:pointer;opacity:var(--icon-opacity)}
-
-    /* icons semi-transparent */
-    .social a, .social img, .nav-link, .lang-btn{opacity:var(--icon-opacity);transition:opacity 0.2s, transform 0.15s}
-    .social a:hover, .nav-link:hover, .lang-btn:hover{opacity:1;transform:translateY(-2px)}
-
-    /* Landing */
-    #landing{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:60px}
-    .hero{max-width:900px;text-align:center;padding:2rem;background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));border-radius:14px}
-    .logo {width:320px;margin:0 auto 1rem;opacity:0.98}
-    .tagline{font-size:1.05rem;color:var(--muted);margin-bottom:1.2rem}
-    .cta{display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap}
-
-    /* Sections */
-    section{padding:3.5rem 1rem}
-    .section-title{text-align:center;font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:0.5rem}
-    .section-sub{max-width:900px;margin:0.6rem auto 1.6rem;color:var(--muted);text-align:center}
-
-    /* Grid utilities */
-    .grid{display:grid;gap:1rem}
-    .grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .grid-2{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
-
-    /* Gallery */
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem}
-    .gallery-item{position:relative;border-radius:12px;overflow:hidden;height:220px;background:var(--card);border:1px solid rgba(255,255,255,0.04)}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
-    .gallery-item:hover img{transform:scale(1.04)}
-
-    /* Modal */
-    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;padding:1rem;z-index:2000}
-    .modal.active{display:flex}
-    .modal img{max-width:95%;max-height:80vh;border-radius:10px}
-
-    /* Footer */
-    footer{padding:2rem 1rem;text-align:center;color:var(--muted)}
-
-    /* Beatport player container */
-    .player{display:flex;justify-content:center;margin:1rem 0}
-
-    /* Accessibility & reduce motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none!important;transition:none!important}
-    }
-
-    /* Responsive tweaks */
-    @media (max-width:900px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} .logo{width:260px} }
-    @media (max-width:480px){
-      .gallery-grid{grid-template-columns:repeat(2,1fr);gap:0.6rem}
-      .gallery-item{height:150px;border-radius:8px}
-      .hero{padding:1rem}
-      .logo{width:200px}
-      .nav-inner{padding:0.5rem}
-      .section-title{font-size:1.4rem}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#fff;background:#000 url('images/ROSDJ_foto.jpg') center/cover fixed no-repeat;}
+    .hero{text-align:center;padding:80px 20px;background:rgba(0,0,0,0.6);}
+    .logo img{width:260px;opacity:0.9}
+    section{padding:60px 20px;text-align:center;background:rgba(0,0,0,0.7);margin:20px;border-radius:12px;}
+    h2{font-size:2em;margin-bottom:10px;}
+    p{max-width:800px;margin:0 auto 20px;line-height:1.6;color:#ddd;}
+    iframe{max-width:600px;width:100%;border:none;}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;padding:20px;}
+    .gallery img{width:100%;border-radius:10px;transition:transform .3s ease;}
+    .gallery img:hover{transform:scale(1.03);}
+    footer{text-align:center;padding:40px;color:#aaa;}
+    @media(max-width:600px){
+      .logo img{width:180px;}
+      h2{font-size:1.6em;}
+      section{margin:10px;padding:30px 10px;}
+      .gallery{grid-template-columns:repeat(2,1fr);}
     }
   </style>
 </head>
 <body>
-
-  <nav class="fixed" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <div style="display:flex;align-items:center;gap:1rem">
-        <a href="#landing" class="nav-link" aria-label="Home">HOME</a>
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#dj-tools" class="nav-link">DJ TOOLS</a>
-        <a href="#music" class="nav-link">MUSIC</a>
-        <a href="#gallery" class="nav-link">GALLERY</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
-      </div>
-      <div style="display:flex;align-items:center;gap:0.5rem">
-        <button class="lang-btn" aria-label="Ukrainian">UA</button>
-        <button class="lang-btn" aria-label="English">EN</button>
-        <button class="lang-btn" aria-label="Spanish">ES</button>
-      </div>
+  <div class="hero">
+    <div class="logo"><img src="logo.png" alt="ROS DJ Logo"></div>
+    <h1>ROS DJ — Rostyslav Dabizha</h1>
+    <p>Ukrainian DJ & music producer. Organic House · Deep House · Melodic House. Based in Spain. Bookings worldwide.</p>
+    <div>
+      <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="162" scrolling="no"></iframe>
     </div>
-  </nav>
+  </div>
 
-  <main id="landing">
-    <div class="hero container" role="main">
-      <div class="logo"><img src="logo.png" alt="ROS DJ logo" style="width:100%;height:auto;display:block"></div>
-      <p class="tagline">Professional Ukrainian DJ & producer — Organic House · Deep House · Melodic. Based in Spain. Available worldwide.</p>
-
-      <div class="cta">
-        <a href="#music" class="nav-link" style="padding:0.6rem 1rem;background:linear-gradient(90deg,var(--accent),#b71c1c);border-radius:12px;color:#fff;text-decoration:none">LISTEN</a>
-        <a href="#contact" class="nav-link" style="padding:0.6rem 1rem;border-radius:12px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none">CONTACT</a>
-      </div>
-    </div>
-  </main>
-
-  <section id="about" class="container" aria-labelledby="about-title">
-    <h2 id="about-title" class="section-title">About ROS DJ</h2>
-    <p class="section-sub">Rostyslav Dabizha (ROS DJ) is a Ukrainian DJ & music producer specializing in Organic House, Deep House & Melodic House. Relocated to Spain — available for worldwide bookings.</p>
-    <div class="grid grid-3" style="margin-top:1rem">
-      <div style="padding:1rem;background:var(--card);border-radius:12px"> 
-        <h3 style="margin-bottom:0.6rem">Genres</h3>
-        <p style="color:var(--muted)">Organic House · Deep House · Melodic House</p>
-      </div>
-      <div style="padding:1rem;background:var(--card);border-radius:12px">
-        <h3 style="margin-bottom:0.6rem">Based</h3>
-        <p style="color:var(--muted)">Spain — Available worldwide</p>
-      </div>
-      <div style="padding:1rem;background:var(--card);border-radius:12px">
-        <h3 style="margin-bottom:0.6rem">Bookings</h3>
-        <p style="color:var(--muted)">Email: <a href="mailto:info@rosdj.com" style="color:var(--accent)">info@rosdj.com</a></p>
-      </div>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p>Photos of ROS DJ performances and studio sessions — optimized for Google search.</p>
+    <div class="gallery">
+      <img src="images/DJROS.jpg" alt="ROS DJ live performance in Spain 2024" loading="lazy">
+      <img src="images/ROSDJ1.JPG" alt="ROS DJ Rostyslav Dabizha studio session" loading="lazy">
+      <img src="images/ROSDJ2.JPG" alt="ROS DJ deep house performance Ukraine" loading="lazy">
+      <img src="images/ROSDJ_foto.jpg" alt="Rostyslav Dabizha portrait Organic House DJ" loading="lazy">
     </div>
   </section>
 
-  <section id="dj-tools" class="container" aria-labelledby="tools-title">
-    <h2 id="tools-title" class="section-title">DJ Tools</h2>
-    <p class="section-sub">Tools and tips for harmonic mixing and professional DJ performance.</p>
-    <div class="grid grid-3">
-      <div style="padding:1rem;background:var(--card);border-radius:12px">
-        <h3>Camelot Wheel</h3>
-        <img src="camelot-wheel.png" alt="Camelot wheel for harmonic mixing - ROS DJ" style="width:120px;display:block;margin:0.6rem 0;border-radius:10px">
-        <p style="color:var(--muted)">Use the Camelot Wheel for harmonic transitions and smooth mixes.</p>
-      </div>
-      <div style="padding:1rem;background:var(--card);border-radius:12px">
-        <h3>BPM Analysis</h3>
-        <p style="color:var(--muted)">Typical ranges: Organic House 110-124 BPM.</p>
-      </div>
-      <div style="padding:1rem;background:var(--card);border-radius:12px">
-        <h3>Key Detection</h3>
-        <p style="color:var(--muted)">Accurate key detection and export formats for DJs and producers.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="music" class="container" aria-labelledby="music-title">
-    <h2 id="music-title" class="section-title">Music</h2>
-    <p class="section-sub">Listen to featured selections and charts.</p>
-
-    <div class="player" aria-hidden="false">
-      <!-- Beatport embed (replaced SoundCloud player) -->
-      <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="162" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
-    </div>
-
-    <div style="margin-top:1rem;text-align:center">
-      <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Also on SoundCloud</a>
-    </div>
-  </section>
-
-  <section id="gallery" class="container" aria-labelledby="gallery-title">
-    <h2 id="gallery-title" class="section-title">Gallery</h2>
-    <p class="section-sub">Photos & moments — alt tags are SEO-friendly for Google Images.</p>
-
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- Example gallery images with SEO-friendly alt text -->
-      <figure class="gallery-item"><img src="images/gallery1.jpg" alt="ROS DJ Rostyslav Dabizha performing live in Spain 2024" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="images/gallery2.jpg" alt="ROS DJ live set club performance Organic House 2023" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="images/gallery3.jpg" alt="Rostyslav Dabizha studio portrait producer DJ ROS" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="images/gallery4.jpg" alt="ROS DJ performing sunset party Spain melodic house" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="images/gallery5.jpg" alt="ROS DJ behind the decks deep house set" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="images/gallery6.jpg" alt="ROS DJ crowd shot live show Organic House" loading="lazy"></figure>
-    </div>
-  </section>
-
-  <section id="contact" class="container" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Contact</h2>
-    <p class="section-sub">Bookings & enquiries</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
-      <div style="background:var(--card);padding:1rem;border-radius:10px;min-width:220px;text-align:center">
-        <strong>Email</strong>
-        <div style="color:var(--muted)">info@rosdj.com</div>
-      </div>
-      <div style="background:var(--card);padding:1rem;border-radius:10px;min-width:220px;text-align:center">
-        <strong>Instagram</strong>
-        <div style="color:var(--muted)"><a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener" style="color:var(--accent)">@rosthedj</a></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div style="max-width:1000px;margin:0 auto;padding:1rem">
-      <div class="social" style="display:flex;gap:12px;justify-content:center;margin-bottom:1rem">
-        <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener" aria-label="SoundCloud link" style="display:inline-block;opacity:var(--icon-opacity)"><img src="icons/soundcloud.svg" alt="SoundCloud ROS DJ" width="28"></a>
-        <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener" aria-label="YouTube link" style="display:inline-block;opacity:var(--icon-opacity)"><img src="icons/youtube.svg" alt="YouTube ROS DJ" width="28"></a>
-        <a href="https://www.mixcloud.com/rosthedj/" target="_blank" rel="noopener" aria-label="Mixcloud link" style="display:inline-block;opacity:var(--icon-opacity)"><img src="icons/mixcloud.svg" alt="Mixcloud ROS DJ" width="28"></a>
-        <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener" aria-label="Instagram link" style="display:inline-block;opacity:var(--icon-opacity)"><img src="icons/instagram.svg" alt="Instagram ROS DJ" width="28"></a>
-      </div>
-      <div style="color:var(--muted);font-size:0.95rem">© {year} ROS DJ — Rostyslav Dabizha</div>
-    </div>
-  </footer>
-
-  <script>
-    // Small helper: replace year
-    document.addEventListener('DOMContentLoaded', function(){ 
-      document.querySelectorAll('footer div').forEach(function(el){
-        el.innerHTML = el.innerHTML.replace('{year}', new Date().getFullYear());
-      });
-    });
-
-    // Gallery modal (simple)
-    (function(){
-      const gallery = document.getElementById('galleryGrid');
-      if(!gallery) return;
-      gallery.addEventListener('click', function(e){
-        const img = e.target.closest('img');
-        if(!img) return;
-        const modal = document.createElement('div');
-        modal.className = 'modal active';
-        modal.innerHTML = '<img src="'+img.src+'" alt="'+(img.alt||'')+'"><button aria-label="Close" style="position:absolute;top:18px;right:18px;background:#ff5500;border:none;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer">Close</button>';
-        document.body.appendChild(modal);
-        modal.querySelector('button').addEventListener('click', function(){ document.body.removeChild(modal); });
-        modal.addEventListener('click', function(ev){ if(ev.target===modal) document.body.removeChild(modal); });
-      });
-    })();
-  </script>
+  <footer>© <script>document.write(new Date().getFullYear())</script> ROS DJ — Rostyslav Dabizha</footer>
 </body>
 </html>
