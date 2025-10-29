@@ -432,7 +432,6 @@
       width:100%;
       max-width:1000px;
       padding:var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-      animation:fadeInUp 1s ease-out;
       gap: var(--spacing-sm);
     }
     
@@ -440,7 +439,6 @@
     .social-links-block {
       text-align: center;
       margin-bottom: 0;
-      animation: fadeInUp 1s ease-out;
     }
     
     .social-links-block h4 {
@@ -528,7 +526,7 @@
       width:100%;
       max-width:500px;
       height:auto;
-      margin:0 auto var(--spacing-sm);
+      margin:0 auto var(--spacing-xs);
       padding:0 var(--spacing-md);
       filter:drop-shadow(0 8px 25px rgba(255,85,0,0.25)) contrast(1.05) brightness(1.1);
       transition:var(--transition);
@@ -553,24 +551,23 @@
       top:auto;
       left:auto;
       transform:none;
-      background:rgba(0,0,0,0.08);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
-      padding:var(--spacing-sm) var(--spacing-md);
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      padding:var(--spacing-md) var(--spacing-lg);
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 8px 20px rgba(0,0,0,0.18);
       text-align:center;
       z-index:10;
-      max-width:450px;
+      max-width:520px;
       width:85%;
       margin:0 auto;
-      animation:slideInLeft 1.2s ease-out;
-      opacity: 0.75;
+      opacity: 0.95;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: var(--spacing-sm);
+      gap: var(--spacing-xs);
     }
     
     .home-panel h1{
@@ -608,7 +605,6 @@
       background:rgba(255,85,0,0.3);
       border:1px solid rgba(255,85,0,0.5);
       transition:all 0.3s ease;
-      animation:pulse 2s infinite;
       opacity: 1;
     }
     
@@ -979,24 +975,30 @@
       width: 320px;
       height: 240px;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255,85,0,0.25);
-      border-color: rgba(255,85,0,0.3);
-    }
-
+    
     .gallery-item img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
-      transition: all 0.3s ease;
-      display: block;
+      transition: transform 0.3s ease;
     }
-
+    
     .gallery-item:hover img {
       transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
 
     /* Mobile Gallery - Horizontal Scroll */
@@ -1068,8 +1070,10 @@
 
     .modal-content {
       position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 80vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
       animation: modalZoom 0.3s ease-out;
     }
 
@@ -1600,18 +1604,18 @@
           <h5 data-lang="follow-dj">Follow DJ ROS</h5>
           <div class="home-social-icons">
             <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" class="home-social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" fill="currentColor"/>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
               </svg>
             </a>
             <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" class="home-social-icon" aria-label="SoundCloud">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" fill="currentColor"/>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
               </svg>
             </a>
             <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" class="home-social-icon" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
           </div>
@@ -1708,13 +1712,16 @@
       <p class="section-subtitle" data-lang="gallery-subtitle">Capturando la esencia de las actuaciones de música electrónica</p>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/rosdj1.webp" alt="ROS DJ Rostyslav Dabizha performing live DJ set at electronic music festival in Spain" loading="lazy" width="800" height="600" title="ROS DJ Live Performance - Electronic Music Festival Spain">
+          <img src="images/rosdj1.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" itemprop="image">
+          <div class="gallery-caption" data-lang="gallery-caption-1">Ukrainian DJ - Live Performance</div>
         </div>
         <div class="gallery-item">
-          <img src="images/rosdj2.webp" alt="ROS DJ Rostyslav Dabizha mixing organic house and deep house music at electronic music festival" loading="lazy" width="800" height="600" title="ROS DJ Electronic Music Festival Performance - Organic House Set">
+          <img src="images/rosdj2.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ mixing organic house and deep house music at electronic music festival" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Electronic Music Festival Performance - Organic House Set" itemprop="image">
+          <div class="gallery-caption" data-lang="gallery-caption-2">Ukrainian DJ - Organic House Set</div>
         </div>
         <div class="gallery-item">
-          <img src="images/DJROS.webp" alt="ROS DJ brand logo and professional DJ setup at electronic music festival" loading="lazy" width="800" height="600" title="ROS DJ Professional Setup - Electronic Music Festival Equipment">
+          <img src="images/DJROS.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ brand logo and professional DJ setup at electronic music festival" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Professional Setup - Electronic Music Festival Equipment" itemprop="image">
+          <div class="gallery-caption" data-lang="gallery-caption-3">Ukrainian DJ - Professional Setup</div>
         </div>
       </div>
     </div>
@@ -1885,7 +1892,10 @@
           'contact-subtitle': 'Зв\'яжіться зі мною',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Подумай про це →',
-          'follow-dj': 'Слідкуй за Dj Ros'
+          'follow-dj': 'Слідкуй за Dj Ros',
+          'gallery-caption-1': 'Український DJ - Live Виступ',
+          'gallery-caption-2': 'Український DJ - Organic House Сет',
+          'gallery-caption-3': 'Український DJ - Професійне Обладнання'
         },
         en: {
           'nav-home': 'Home',
@@ -1932,7 +1942,10 @@
           'contact-subtitle': 'Get in touch',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Think about it →',
-          'follow-dj': 'Follow Dj Ros'
+          'follow-dj': 'Follow Dj Ros',
+          'gallery-caption-1': 'Ukrainian DJ - Live Performance',
+          'gallery-caption-2': 'Ukrainian DJ - Organic House Set',
+          'gallery-caption-3': 'Ukrainian DJ - Professional Setup'
         },
         es: {
           'nav-home': 'Inicio',
@@ -1979,7 +1992,10 @@
           'contact-subtitle': 'Póngase en contacto',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Piensa en ello →',
-          'follow-dj': 'Sigue a Dj Ros'
+          'follow-dj': 'Sigue a Dj Ros',
+          'gallery-caption-1': 'DJ Ucraniano - Presentación en Vivo',
+          'gallery-caption-2': 'DJ Ucraniano - Set de Organic House',
+          'gallery-caption-3': 'DJ Ucraniano - Equipo Profesional'
         }
       };
       
