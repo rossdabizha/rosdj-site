@@ -8,6 +8,52 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#000000">
+  
+  <!-- Structured Data for Google Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ROS DJ",
+    "alternateName": "Rostyslav Dabizha",
+    "description": "Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
+    "url": "https://rosdj.com",
+    "image": "https://rosdj.com/ROSDJ_foto.webp",
+    "sameAs": [
+      "https://www.instagram.com/rosthedj/",
+      "https://soundcloud.com/rosthedj",
+      "https://www.youtube.com/@rosthedj",
+      "https://rosdj.bandcamp.com"
+    ],
+    "jobTitle": "DJ",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ROS DJ Music"
+    },
+    "knowsAbout": [
+      "Electronic Music",
+      "Organic House",
+      "Deep House",
+      "DJ Performance",
+      "Music Production"
+    ],
+    "nationality": "Ukrainian",
+    "gender": "Male",
+    "birthPlace": "Ukraine",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Spain"
+    },
+    "email": "r.dabizha@icloud.com",
+    "telephone": "+34-XXXXXXXXX",
+    "availableForHire": true,
+    "seeks": {
+      "@type": "JobPosting",
+      "title": "DJ Performances Worldwide",
+      "description": "Available for club performances, private events, and festivals worldwide"
+    }
+  }
+  </script>
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-config" content="browserconfig.xml">
   
@@ -21,6 +67,16 @@
   <meta name="geo.region" content="ES">
   <meta name="geo.placename" content="Spain">
   <meta name="ICBM" content="40.4637, -3.7492">
+  
+  <!-- Additional SEO for Knowledge Graph -->
+  <meta name="google-site-verification" content="your-verification-code">
+  <meta name="yandex-verification" content="your-yandex-code">
+  <meta name="msvalidate.01" content="your-bing-code">
+  <link rel="canonical" href="https://rosdj.com/">
+  <meta name="citation_title" content="ROS DJ - Professional Ukrainian DJ">
+  <meta name="citation_author" content="Rostyslav Dabizha">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_keywords" content="Organic House, Deep House, Ukrainian DJ, Electronic Music">
   
   <!-- Favicon & App Icons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -773,8 +829,8 @@
 
     /* Section Styles */
     section{
-      padding:3rem 2rem;
-      max-width:1400px;
+      padding:2rem 1.5rem;
+      max-width:1000px;
       margin:0 auto;
     }
     
@@ -784,20 +840,20 @@
       margin:1rem auto;
     }
     .section-title{
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       text-align: center;
       text-shadow: 0 2px 8px rgba(0,0,0,0.50);
       letter-spacing: 1px;
     }
     .section-subtitle{
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       text-align: center;
-      margin-bottom: 2rem;
-      max-width: 800px;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
@@ -1179,22 +1235,22 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
       flex-wrap: wrap;
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
     }
 
     .software-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
       border: 1px solid rgba(255,255,255,0.10);
       transition: all 0.3s ease;
-      min-width: 200px;
+      min-width: 180px;
     }
 
     .software-item:hover {
@@ -1205,8 +1261,8 @@
     }
 
     .software-item img {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       object-fit: contain;
       border-radius: 8px;
       transition: transform 0.3s ease;
@@ -1318,13 +1374,14 @@
     /* Contact Section */
     .contact-content {
       text-align: center;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+      padding: 1rem;
     }
 
     .contact-link {
       color: var(--text-primary);
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
     }
 
@@ -1648,9 +1705,16 @@
       <div id="logo">
         <img src="logo.png" alt="ROS DJ - Professional Ukrainian DJ Logo" width="600" height="400" loading="eager" />
       </div>
-      <div class="home-panel">
-        <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
+      <div class="home-panel" itemscope itemtype="https://schema.org/Person">
+        <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
         <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+        
+        <meta itemprop="name" content="ROS DJ">
+        <meta itemprop="alternateName" content="Rostyslav Dabizha">
+        <meta itemprop="jobTitle" content="DJ">
+        <meta itemprop="nationality" content="Ukrainian">
+        <link itemprop="url" href="https://rosdj.com">
+        <link itemprop="email" href="mailto:r.dabizha@icloud.com">
         
         <!-- Social Links in Home Panel -->
         <div class="home-social-links">
@@ -1664,25 +1728,25 @@
         <div class="home-social-section">
           <h6 data-lang="follow-social">Sígueme en redes sociales</h6>
           <div class="home-social-expanded">
-            <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Instagram - Ukrainian DJ Electronic Music" aria-label="ROS DJ Instagram - Follow Ukrainian DJ for electronic music updates">
+            <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Instagram - Ukrainian DJ Electronic Music" aria-label="ROS DJ Instagram - Follow Ukrainian DJ for electronic music updates" itemprop="sameAs">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
               </svg>
               <span>Instagram</span>
             </a>
-            <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ SoundCloud - Ukrainian DJ Organic House Music" aria-label="ROS DJ SoundCloud - Listen to Ukrainian DJ organic house and deep house mixes">
+            <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ SoundCloud - Ukrainian DJ Organic House Music" aria-label="ROS DJ SoundCloud - Listen to Ukrainian DJ organic house and deep house mixes" itemprop="sameAs">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
               </svg>
               <span>SoundCloud</span>
             </a>
-            <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ YouTube - Ukrainian DJ Electronic Music Videos" aria-label="ROS DJ YouTube - Watch Ukrainian DJ performances and electronic music videos">
+            <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ YouTube - Ukrainian DJ Electronic Music Videos" aria-label="ROS DJ YouTube - Watch Ukrainian DJ performances and electronic music videos" itemprop="sameAs">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
               <span>YouTube</span>
             </a>
-            <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Bandcamp - Ukrainian DJ Music Downloads" aria-label="ROS DJ Bandcamp - Download Ukrainian DJ electronic music and mixes">
+            <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Bandcamp - Ukrainian DJ Music Downloads" aria-label="ROS DJ Bandcamp - Download Ukrainian DJ electronic music and mixes" itemprop="sameAs">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M0 18.75l7.437-13.5h2.77L2.77 18.75H0zm11.413 0l7.437-13.5h2.77L14.183 18.75h-2.77z"/>
               </svg>
