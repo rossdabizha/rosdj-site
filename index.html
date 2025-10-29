@@ -18,7 +18,16 @@
     "alternateName": "Rostyslav Dabizha",
     "description": "Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
     "url": "https://rosdj.com",
-    "image": "https://rosdj.com/ROSDJ_foto.webp",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://rosdj.com/ROSDJ_foto.webp",
+      "creditText": "Rostyslav Dabizha",
+      "creator": {
+        "@type": "Person",
+        "name": "ROS DJ"
+      },
+      "copyrightNotice": "© 2024 ROS DJ. All rights reserved."
+    },
     "sameAs": [
       "https://www.instagram.com/rosthedj/",
       "https://soundcloud.com/rosthedj",
@@ -1782,7 +1791,16 @@
   <section id="landing" class="seccion">
     <div class="page-wrapper">
       <div id="logo">
-        <img src="logo.png" alt="ROS DJ - Professional Ukrainian DJ Logo" width="600" height="400" loading="eager" />
+        <img src="logo.png" 
+             alt="ROS DJ - Professional Ukrainian DJ Logo" 
+             width="600" 
+             height="400" 
+             loading="eager" 
+             itemprop="image"
+             title="ROS DJ - Professional Ukrainian DJ Logo"
+             data-credit="Rostyslav Dabizha"
+             data-creator="ROS DJ"
+             data-copyright="© 2024 ROS DJ. All rights reserved." />
       </div>
       <div class="home-panel" itemscope itemtype="https://schema.org/Person">
         <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
