@@ -254,6 +254,13 @@
       text-align: center;
       background: transparent;
       backdrop-filter: none;
+      transition: all 0.5s ease;
+    }
+
+    #landing.hidden {
+      opacity: 0;
+      transform: translateY(-100vh);
+      pointer-events: none;
     }
     
     #landing .page-wrapper{
@@ -1190,7 +1197,7 @@
       <div class="featured-playlist">
         <div class="playlist-header">
           <h3 class="playlist-title" data-lang="playlist-title">Etapa De Potencia by Dj ROS (parte 2)</h3>
-          <p class="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
+          <p class="playlist-desc" data-lang="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
         </div>
         <div class="soundcloud-embed">
           <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="600" frameborder="0" scrolling="no" style="max-width:1200px; width:100%; height:600px;"></iframe>
@@ -1441,7 +1448,7 @@
           'in-kay-button': 'Відкрити In-Kay',
           'sound-title': 'Sound',
           'music-subtitle': 'Слухайте мої останні релізи та DJ сети',
-          'playlist-title': 'ETAPA DE POTENCIA ПЛЕЙЛИСТ ВІД R.DABIZHA',
+          'playlist-title': 'ETAPA DE POTENCIA ПЛЕЙЛИСТ ВІД R.DABIZHA (ЧАСТИНА 2)',
           'gallery-title': 'Галерея',
           'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
           'daw-pro': 'Я використовую професійно',
@@ -1453,7 +1460,8 @@
           'nav-sound': 'Звук',
           'nav-home': 'Головна',
           'nav-about': 'Про мене',
-          'nav-gallery': 'Галерея'
+          'nav-gallery': 'Галерея',
+          'playlist-desc': 'Etapa de potencia - це не просто музика, це стан душі.'
         },
         en: {
           'ask-me-title': 'Ask Me',
@@ -1488,7 +1496,7 @@
           'in-kay-button': 'Open In-Kay',
           'sound-title': 'Sound',
           'music-subtitle': 'Listen to my latest releases and DJ sets',
-          'playlist-title': 'ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA',
+          'playlist-title': 'ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA (PART 2)',
           'gallery-title': 'Gallery',
           'gallery-subtitle': 'Capturing the essence of electronic music performances',
           'daw-pro': 'Professional Software I Use',
@@ -1500,7 +1508,8 @@
           'nav-sound': 'Sound',
           'nav-home': 'Home',
           'nav-about': 'About',
-          'nav-gallery': 'Gallery'
+          'nav-gallery': 'Gallery',
+          'playlist-desc': 'Etapa de potencia is not just music, it is a state of mind.'
         },
         es: {
           'ask-me-title': 'Pregúntame',
@@ -1535,7 +1544,7 @@
           'in-kay-button': 'Abrir In-Kay',
           'sound-title': 'Música',
           'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
-          'playlist-title': 'Etapa De Potencia by Dj ROS',
+          'playlist-title': 'Etapa De Potencia by Dj ROS (parte 2)',
           'gallery-title': 'Galería',
           'gallery-subtitle': 'Capturando la esencia de las actuaciones de música electrónica',
           'daw-pro': 'Software profesional que uso',
@@ -1547,7 +1556,8 @@
           'nav-sound': 'Sonido',
           'nav-home': 'Inicio',
           'nav-about': 'Sobre mí',
-          'nav-gallery': 'Galería'
+          'nav-gallery': 'Galería',
+          'playlist-desc': 'Etapa de potencia no es solo música, es un estado del alma.'
         }
       };
 
@@ -1615,6 +1625,7 @@
 
       // Fixed Navigation Hide/Show on Scroll
       const fixedNav = document.getElementById('fixedNav');
+      const landingSection = document.getElementById('landing');
       const navLinks = document.querySelectorAll('.nav-link');
       let lastScrollY = window.scrollY;
       let ticking = false;
@@ -1624,8 +1635,14 @@
         
         if (scrollY > lastScrollY && scrollY > 100) {
           fixedNav.classList.add('hidden');
+          if (scrollY > window.innerHeight * 0.5) {
+            landingSection.classList.add('hidden');
+          }
         } else {
           fixedNav.classList.remove('hidden');
+          if (scrollY < window.innerHeight * 0.3) {
+            landingSection.classList.remove('hidden');
+          }
         }
         
         lastScrollY = scrollY;
