@@ -1635,12 +1635,12 @@
         
         if (scrollY > lastScrollY && scrollY > 100) {
           fixedNav.classList.add('hidden');
-          if (scrollY > window.innerHeight * 0.5) {
+          if (scrollY > window.innerHeight * 0.3) {
             landingSection.classList.add('hidden');
           }
         } else {
           fixedNav.classList.remove('hidden');
-          if (scrollY < window.innerHeight * 0.3) {
+          if (scrollY < window.innerHeight * 0.1) {
             landingSection.classList.remove('hidden');
           }
         }
