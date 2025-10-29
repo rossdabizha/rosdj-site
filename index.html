@@ -1261,6 +1261,31 @@
     .gallery-item:hover::after {
       opacity: 1;
     }
+    
+    /* Think About Section */
+    .think-about-section {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .think-about-section h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .think-about-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
 
     @keyframes modalZoom {
       from {
@@ -1828,7 +1853,12 @@
       </div>
       <div class="home-panel" itemscope itemtype="https://schema.org/Person">
         <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
-        <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+        
+        <div class="think-about-section">
+          <h3 data-lang="think-about-title">Think about it</h3>
+          <p data-lang="think-about-desc">Explore professional DJ tools and elevate your music production to the next level.</p>
+          <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+        </div>
         
         <meta itemprop="name" content="ROS DJ">
         <meta itemprop="alternateName" content="Rostyslav Dabizha">
@@ -2166,6 +2196,9 @@
           'about-location': '<strong>Базується:</strong> Іспанія | <strong>Доступний:</strong> Бронювання по всьому світу',
           'dj-tools-title': 'Подумай про Це',
           'dj-tools-subtitle': 'Необхідні інструменти для гармонійного мікшування та професійних DJ виступів',
+          'think-about-title': 'Подумай про це',
+          'think-about-desc': 'Досліджуйте професійні DJ інструменти та підніміть свій музичний продакшн на новий рівень.',
+          'think-about-it': 'Подумай про це →',
           'camelot-title': '🎵 Колесо Кемелота',
           'camelot-description': 'Колесо Кемелота є необхідним для гармонійного мікшування в DJ сетах. Воно допомагає DJ мікшувати треки в тій самій тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом усього виступу.',
           'camelot-compatibility': 'Сумісність тональностей:',
@@ -2217,6 +2250,9 @@
           'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
           'dj-tools-title': 'Think About It',
           'dj-tools-subtitle': 'Essential tools for harmonic mixing and professional DJ performance',
+          'think-about-title': 'Think about it',
+          'think-about-desc': 'Explore professional DJ tools and elevate your music production to the next level.',
+          'think-about-it': 'Think about it →',
           'camelot-title': '🎵 Camelot Wheel',
           'camelot-description': 'The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.',
           'camelot-compatibility': 'Key Compatibility:',
@@ -2268,6 +2304,9 @@
           'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
           'dj-tools-title': 'Herramientas de DJ',
           'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
+          'think-about-title': 'Piénsalo',
+          'think-about-desc': 'Explora herramientas de DJ profesionales y eleva tu producción musical al siguiente nivel.',
+          'think-about-it': 'Piénsalo →',
           'camelot-title': '🎵 Rueda Camelot',
           'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
           'camelot-compatibility': 'Compatibilidad de tonalidad:',
