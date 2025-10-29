@@ -161,7 +161,7 @@
       background: transparent;
       backdrop-filter: none;
       border-bottom: none;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
       transform: translateY(0);
       opacity: 1;
     }
@@ -840,7 +840,7 @@
       }
 
       #logo img {
-        max-width: 450px;
+        max-width: 350px;
         margin-bottom: 1rem;
       }
 
@@ -993,245 +993,12 @@
       }
     }
 
-    /* Professional DJ Animations */
-    
-    /* Animated Sound Waves */
-    .sound-waves {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 100px;
-      background: linear-gradient(45deg, rgba(255, 85, 0, 0.1), rgba(108, 92, 231, 0.1));
-      border-radius: 50%;
-      animation: wave 8s infinite ease-in-out;
-    }
-    
-    .wave:nth-child(2) {
-      animation-delay: -2s;
-      animation-duration: 10s;
-      opacity: 0.7;
-    }
-    
-    .wave:nth-child(3) {
-      animation-delay: -4s;
-      animation-duration: 12s;
-      opacity: 0.5;
-    }
-    
-    @keyframes wave {
-      0%, 100% {
-        transform: translateX(-50%) scale(0.8);
-        border-radius: 50%;
-      }
-      50% {
-        transform: translateX(-30%) scale(1.2);
-        border-radius: 40%;
-      }
-    }
-    
-    /* Floating Musical Notes */
-    .floating-notes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .note {
-      position: absolute;
-      font-size: 24px;
-      color: rgba(255, 85, 0, 0.3);
-      animation: float 15s infinite linear;
-      opacity: 0;
-    }
-    
-    .note:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .note:nth-child(2) { left: 20%; animation-delay: 3s; }
-    .note:nth-child(3) { left: 40%; animation-delay: 6s; }
-    .note:nth-child(4) { left: 60%; animation-delay: 9s; }
-    .note:nth-child(5) { left: 80%; animation-delay: 12s; }
-    
-    .note::before {
-      content: '♪';
-      display: inline-block;
-      animation: spin 3s infinite linear;
-    }
-    
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Pulsing DJ Elements */
-    .dj-pulse {
-      animation: djPulse 2s infinite ease-in-out;
-    }
-    
-    @keyframes djPulse {
-      0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(255, 85, 0, 0.3);
-      }
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 40px rgba(255, 85, 0, 0.6);
-      }
-    }
-    
-    /* Vinyl Record Animation */
-    .vinyl-record {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #1a1a1a 30%, #000 70%);
-      position: relative;
-      animation: rotate 4s infinite linear;
-      border: 3px solid rgba(255, 85, 0, 0.3);
-    }
-    
-    .vinyl-record::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    }
-    
-    .vinyl-record::after {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      border-radius: 50%;
-      background: repeating-conic-gradient(
-        from 0deg,
-        rgba(255, 85, 0, 0.1) 0deg,
-        rgba(255, 85, 0, 0.1) 1deg,
-        transparent 1deg,
-        transparent 3deg
-      );
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Professional Hover Effects */
-    .tool-card {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .tool-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 85, 0, 0.1), transparent);
-      transition: left 0.5s;
-    }
-    
-    .tool-card:hover::before {
-      left: 100%;
-    }
-    
-    /* Frequency Bars Animation */
-    .frequency-bars {
-      display: flex;
-      align-items: end;
-      gap: 2px;
-      height: 60px;
-    }
-    
-    .bar {
-      width: 4px;
-      background: linear-gradient(180deg, #ff5500, #d32f2f);
-      border-radius: 2px;
-      animation: frequency 1.5s infinite ease-in-out;
-    }
-    
-    .bar:nth-child(1) { animation-delay: 0s; height: 20px; }
-    .bar:nth-child(2) { animation-delay: 0.1s; height: 35px; }
-    .bar:nth-child(3) { animation-delay: 0.2s; height: 50px; }
-    .bar:nth-child(4) { animation-delay: 0.3s; height: 30px; }
-    .bar:nth-child(5) { animation-delay: 0.4s; height: 45px; }
-    .bar:nth-child(6) { animation-delay: 0.5s; height: 25px; }
-    .bar:nth-child(7) { animation-delay: 0.6s; height: 55px; }
-    .bar:nth-child(8) { animation-delay: 0.7s; height: 40px; }
-    
-    @keyframes frequency {
-      0%, 100% { transform: scaleY(0.8); }
-      50% { transform: scaleY(1.2); }
-    }
-    
-    /* DJ Booth Glow Effect */
-    .dj-booth-glow {
-      position: relative;
-    }
-    
-    .dj-booth-glow::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      background: linear-gradient(45deg, rgba(255, 85, 0, 0.3), rgba(108, 92, 231, 0.3));
-      border-radius: 20px;
-      z-index: -1;
-      animation: glow 3s infinite ease-in-out alternate;
-    }
-    
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 20px rgba(255, 85, 0, 0.5), 0 0 40px rgba(108, 92, 231, 0.3);
-      }
-      to {
-        box-shadow: 0 0 30px rgba(255, 85, 0, 0.8), 0 0 60px rgba(108, 92, 231, 0.5);
-      }
+    /* Footer Styles */
+    footer{
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 3rem 0 2rem;
     }
 
     .footer-content{
@@ -1340,25 +1107,24 @@
           <button class="lang-btn active" data-lang="es">ES</button>
         </div>
       </div>
+    </div>
+  </nav>
+
+  <!-- Landing Section -->
+  <section id="landing" class="seccion">
+    <div class="page-wrapper">
+      <div id="logo">
+        <img src="logo.png" alt="ROS DJ Logo" />
+      </div>
+      <div class="home-panel">
+        <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
+        <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="seccion">
-    <!-- Animated Sound Waves -->
-    <div class="sound-waves">
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    
-    <!-- Floating Musical Notes -->
-    <div class="floating-notes">
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-    </div>
-    
     <div class="pagewrapper">
       <h2 class="section-title" data-lang="about-title">Sobre ROS DJ</h2>
       <p class="section-subtitle" data-lang="about-subtitle">Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos</p>
@@ -1367,21 +1133,6 @@
         <p data-lang="about-description">DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.</p>
         <p><strong data-lang="about-genres">Géneros: Organic House · Deep House · Melodic House</strong></p>
         <p><strong data-lang="about-location">Base: España | Disponible: Reservas en todo el mundo</strong></p>
-        
-        <!-- Vinyl Record Animation -->
-        <div class="vinyl-record dj-pulse" style="margin: 2rem auto;"></div>
-        
-        <!-- Frequency Bars -->
-        <div class="frequency-bars" style="margin: 2rem auto;">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -1392,7 +1143,7 @@
       <h2 class="section-title" data-lang="dj-tools-title">Herramientas de DJ</h2>
       <p class="section-subtitle" data-lang="dj-tools-subtitle">Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ</p>
       <div class="dj-tools-grid">
-        <div class="tool-card dj-booth-glow">
+        <div class="tool-card">
           <h3 data-lang="camelot-title">🎵 Rueda Camelot</h3>
           <img src="camelot-wheel.png" alt="Camelot Wheel diagram" style="width: 100%; max-width: 300px; margin: 1rem auto; display: block;" loading="lazy">
           <p data-lang="camelot-description">La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.</p>
@@ -1405,7 +1156,7 @@
             </ul>
           </div>
         </div>
-        <div class="tool-card dj-booth-glow">
+        <div class="tool-card">
           <h3 data-lang="bpm-title">🎧 Análisis BPM</h3>
           <p data-lang="bpm-description">Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.</p>
           <div class="bpm-info">
@@ -1417,7 +1168,7 @@
             </ul>
           </div>
         </div>
-        <div class="tool-card dj-booth-glow">
+        <div class="tool-card">
           <h3 data-lang="in-kay-title">🎹 Detección de tonalidad In-Kay</h3>
           <p data-lang="in-kay-description">Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.</p>
           <div class="in-kay-info">
@@ -1587,23 +1338,16 @@
       // Hide/show navigation on scroll
       let lastScrollY = window.scrollY;
       const nav = document.getElementById('fixedNav');
-      let isHidden = false;
       
       window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        // Hide navigation when scrolling down past 50px
-        if (currentScrollY > lastScrollY && currentScrollY > 50 && !isHidden) {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          // Scrolling down and past 100px
           nav.style.transform = 'translateY(-100%)';
-          isHidden = true;
-        } 
-        // Show navigation when scrolling up or at top
-        else if (currentScrollY < lastScrollY || currentScrollY <= 50) {
+        } else {
+          // Scrolling up or at top
           nav.style.transform = 'translateY(0)';
-          isHidden = false;
         }
-        
-        lastScrollY = currentScrollY;
+        lastScrollY = window.scrollY;
       });
       
       // Language System
@@ -1875,35 +1619,29 @@
       const fixedNav = document.getElementById('fixedNav');
       const navLinks = document.querySelectorAll('.nav-link');
       let lastScrollY = window.scrollY;
-      let isHidden = false;
       let ticking = false;
 
-      function updateNavVisibility() {
-        const currentScrollY = window.scrollY;
+      function updateNav() {
+        const scrollY = window.scrollY;
         
-        // Hide navigation when scrolling down past 50px
-        if (currentScrollY > lastScrollY && currentScrollY > 50 && !isHidden) {
-          fixedNav.style.transform = 'translateY(-100%)';
-          isHidden = true;
-        } 
-        // Show navigation when scrolling up or at top
-        else if (currentScrollY < lastScrollY || currentScrollY <= 50) {
-          fixedNav.style.transform = 'translateY(0)';
-          isHidden = false;
+        if (scrollY > lastScrollY && scrollY > 100) {
+          fixedNav.classList.add('hidden');
+        } else {
+          fixedNav.classList.remove('hidden');
         }
         
-        lastScrollY = currentScrollY;
+        lastScrollY = scrollY;
         ticking = false;
       }
 
-      function requestAnimationFrame() {
+      function requestTick() {
         if (!ticking) {
-          window.requestAnimationFrame(updateNavVisibility);
+          window.requestAnimationFrame(updateNav);
           ticking = true;
         }
       }
 
-      window.addEventListener('scroll', requestAnimationFrame, { passive: true });
+      window.addEventListener('scroll', requestTick);
 
       // Update active nav link based on scroll position
       function updateActiveNavLink() {
