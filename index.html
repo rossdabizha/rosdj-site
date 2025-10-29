@@ -256,18 +256,23 @@
     }
     
     /* Landing Section */
-    #landing{
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/ROSDJ_foto.jpg') center/cover no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: relative;
+    #landing {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      filter: contrast(0.97) saturate(1.08) brightness(1.08);
-      background-position: center 20%;
+      min-height: 100vh;
+      background: rgba(30, 30, 40, 0.25);
+      backdrop-filter: blur(8px) saturate(1.5);
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: all var(--transition-speed) ease;
+    }
+    
+    #landing:hover {
+      background: rgba(40, 40, 50, 0.3);
+      backdrop-filter: blur(10px) saturate(1.8);
     }
     
     #landing .page-wrapper{
@@ -284,11 +289,23 @@
     }
     
     #logo{
-      width: 500px;
+      width: 100%;
+      max-width: 500px;
       height: auto;
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease;
-      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.5)) contrast(0.95) brightness(1.05);
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+      filter: drop-shadow(0 8px 30px rgba(108, 92, 231, 0.2)) 
+              contrast(1.05) 
+              brightness(1.1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+    }
+    
+    #logo:hover {
+      transform: translateY(-5px);
+      filter: drop-shadow(0 12px 40px rgba(108, 92, 231, 0.3)) 
+              contrast(1.1) 
+              brightness(1.15);
     }
     
     #logo img{
