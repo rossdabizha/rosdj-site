@@ -68,7 +68,7 @@
   <link rel="alternate" hreflang="x-default" href="https://rosdj.com/" />
   
   <!-- Preload critical resources -->
-  <link rel="preload" href="images/ROSDJ_foto.jpg" as="image">
+  <link rel="preload" href="ROSDJ_foto.webp" as="image">
   <link rel="preconnect" href="https://embed.beatport.com">
   
   <!-- Schema.org Structured Data -->
@@ -79,7 +79,7 @@
     "name": "Rostyslav Dabizha",
     "alternateName": "ROS DJ",
     "url": "https://rosdj.com",
-    "image": "images/ROSDJ_foto.jpg",
+    "image": "ROSDJ_foto.webp",
     "jobTitle": "Professional DJ",
     "description": "Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music",
     "nationality": {
@@ -132,7 +132,7 @@
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/ROSDJ_foto.jpg') center center/cover no-repeat fixed;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('ROSDJ_foto.webp') center center/cover no-repeat fixed;
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
@@ -1177,10 +1177,10 @@
   <!-- Contact Section -->
   <section id="contact" class="seccion" style="padding: 2rem 0;">
     <div class="pagewrapper">
-      <h2 class="section-title" style="font-size: 2rem;">Contact</h2>
-      <p class="section-subtitle" style="font-size: 1rem;">Get in touch</p>
+      <h2 class="section-title" data-lang="contact-title">Contact</h2>
+      <p class="section-subtitle" data-lang="contact-subtitle">Get in touch</p>
       <div class="contact-content">
-        <a href="mailto:r.dabizha@icloud.com" class="contact-link">Email: r.dabizha@icloud.com</a>
+        <a href="mailto:r.dabizha@icloud.com" class="contact-link" data-lang="contact-email">Email: r.dabizha@icloud.com</a>
       </div>
     </div>
   </section>
@@ -1256,7 +1256,10 @@
           'gallery-title': 'Галерея',
           'gallery-subtitle': 'Вловлюючи суть електронних музичних виступів',
           'daw-pro': 'Я використовую професійно',
-          'nav-contact': 'Контакт'
+          'nav-contact': 'Контакт',
+          'contact-title': 'Контакт',
+          'contact-subtitle': 'Зв\'яжіться зі мною',
+          'contact-email': 'Email: r.dabizha@icloud.com'
         },
         en: {
           'ask-me-title': 'Ask Me',
@@ -1295,7 +1298,10 @@
           'gallery-title': 'Gallery',
           'gallery-subtitle': 'Capturing the essence of electronic music performances',
           'daw-pro': 'Professional Software I Use',
-          'nav-contact': 'Contact'
+          'nav-contact': 'Contact',
+          'contact-title': 'Contact',
+          'contact-subtitle': 'Get in touch',
+          'contact-email': 'Email: r.dabizha@icloud.com'
         },
         es: {
           'ask-me-title': 'Pregúntame',
@@ -1334,7 +1340,10 @@
           'gallery-title': 'Galería',
           'gallery-subtitle': 'Capturando la esencia de las actuaciones de música electrónica',
           'daw-pro': 'Software profesional que uso',
-          'nav-contact': 'Contacto'
+          'nav-contact': 'Contacto',
+          'contact-title': 'Contacto',
+          'contact-subtitle': 'Póngase en contacto',
+          'contact-email': 'Email: r.dabizha@icloud.com'
         }
       };
 
