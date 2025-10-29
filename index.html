@@ -277,7 +277,7 @@
     
     body{
       font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/120% auto no-repeat fixed;
+      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
       color:var(--text-primary);
       line-height:1.6;
       font-weight:400;
@@ -457,6 +457,29 @@
       background:var(--gradient);
       color:#fff;
       transform:scale(1.05);
+    }
+    
+    /* Primary Button */
+    .btn-primary {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: 50px;
+      border: 2px solid var(--primary);
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(255,85,0,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,85,0,0.5);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     }
 
     /* Modern Sections */
@@ -1519,7 +1542,7 @@
       
       html{
         font-size:16px;
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
         -webkit-overflow-scrolling: touch;
       }
       
@@ -1528,6 +1551,37 @@
         overflow-x: hidden;
         touch-action: pan-y;
         padding-top: 70px;
+      }
+      
+      /* Disable all animations on mobile */
+      * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      
+      .seccion {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .home-panel {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .tool-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .gallery-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
       }
       
       /* Hide desktop navigation completely */
@@ -1557,11 +1611,6 @@
         width: 140px;
         height: auto;
         filter: drop-shadow(0 4px 15px rgba(255,85,0,0.4));
-        transition: transform 0.3s ease;
-      }
-      
-      .mobile-logo:active {
-        transform: scale(0.95);
       }
       
       .menu-toggle {
@@ -1574,13 +1623,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(255,85,0,0.3);
-      }
-      
-      .menu-toggle:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(255,85,0,0.5);
       }
       
       .menu-toggle svg {
@@ -1633,13 +1676,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-      }
-      
-      .close-menu:hover {
-        background: rgba(255,85,0,0.2);
-        border-color: var(--primary);
-        transform: rotate(90deg);
       }
       
       .close-menu svg {
@@ -1673,18 +1709,16 @@
         border-radius: var(--border-radius);
         background: rgba(255,255,255,0.05);
         border: 2px solid transparent;
-        transition: all 0.3s ease;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-family: var(--font-display);
       }
       
-      .mobile-nav-item:hover, .mobile-nav-item.active {
+      .mobile-nav-item.active {
         color: var(--primary);
         background: rgba(255,85,0,0.1);
         border-color: var(--primary);
-        transform: translateX(10px);
       }
       
       .mobile-language-section {
@@ -1717,15 +1751,13 @@
         color: rgba(255,255,255,0.8);
         border-radius: var(--border-radius-sm);
         cursor: pointer;
-        transition: all 0.3s ease;
         min-width: 60px;
       }
       
-      .mobile-lang-btn:hover, .mobile-lang-btn.active {
+      .mobile-lang-btn.active {
         background: var(--gradient);
         border-color: var(--primary);
         color: white;
-        transform: scale(1.05);
       }
       
       /* Mobile Sections - Card Based Layout */
@@ -1797,12 +1829,6 @@
         border: none;
         border-radius: 50px;
         box-shadow: 0 4px 20px rgba(255,85,0,0.4);
-        transition: all 0.3s ease;
-      }
-      
-      .home-panel a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(255,85,0,0.6);
       }
       
       /* Mobile Social Links - Horizontal Scroll */
@@ -1828,12 +1854,6 @@
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.2);
         border-radius: var(--border-radius-sm);
-      }
-      
-      .social-link-item:hover {
-        background: rgba(255,85,0,0.2);
-        border-color: var(--primary);
-        transform: translateY(-3px);
       }
       
       /* Mobile Gallery - Grid */
@@ -1867,12 +1887,6 @@
         border: 1px solid rgba(255,255,255,0.15);
         padding: var(--spacing-lg);
         border-radius: var(--border-radius);
-      }
-      
-      .tool-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255,85,0,0.15);
-        border-color: var(--primary);
       }
       
       /* Disable hover effects on touch devices */
@@ -2118,6 +2132,7 @@
              data-copyright="© 2024 ROS DJ. All rights reserved." />
       </div>
       <div class="home-panel" itemscope itemtype="https://schema.org/Person">
+        <h1 data-lang="home-title">ROS DJ</h1>
         <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
         
         <div class="think-about-section">
@@ -2171,6 +2186,8 @@
             </a>
           </div>
         </div>
+        
+        <a href="#contact" class="btn-primary" data-lang="contact-me">Contact Me</a>
       </div>
     </div>
   </section>
