@@ -884,51 +884,83 @@
     @media (max-width: 768px) {
       .seccion {
         min-height: auto;
-        padding: 2rem 1rem;
-      }
-
-      #landing {
         padding: 1rem 0.5rem;
       }
 
-      #logo img {
-        max-width: 300px;
-        margin-bottom: 2rem;
+      #landing {
+        padding: 0.5rem 0.25rem;
       }
 
-      .section-title {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+      #logo img {
+        max-width: 250px;
         margin-bottom: 1rem;
       }
 
+      .section-title {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        margin-bottom: 0.5rem;
+      }
+
       .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
       }
 
       .home-panel {
-        padding: 1.5rem;
-        max-width: 90%;
+        padding: 1rem;
+        max-width: 95%;
+        font-size: 0.9rem;
       }
 
       .home-panel h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .home-panel p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      #social-links {
+        gap: 0.5rem;
+      }
+
+      #social-links a {
+        width: 30px;
+        height: 30px;
+      }
+
+      #social-links a svg {
+        width: 18px;
+        height: 18px;
       }
 
       .tool-card {
-        padding: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
       }
 
       .tool-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .tool-card p {
+        font-size: 0.85rem;
+      }
+
+      .camelot-info, .bpm-info, .in-kay-info {
+        padding: 0.8rem;
+        margin-top: 0.8rem;
       }
 
       .soundcloud-embed iframe {
-        height: 100px !important;
+        height: 150px;
       }
 
       .platforms-grid-compact {
-        gap: 1rem;
+        gap: 0.75rem;
       }
 
       .platform-card-compact {
@@ -942,25 +974,62 @@
       }
 
       .platform-card-compact h5 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       .small-text {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
       }
 
       .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-        padding: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 10px;
       }
 
-      /* Disable floating animations on mobile */
+      .gallery-item {
+        box-shadow: none;
+      }
+
+      .contact-content {
+        margin-top: 0.5rem;
+      }
+
+      .contact-link {
+        font-size: 0.9rem;
+      }
+
+      /* Fixed Navigation */
       .fixed-nav {
         transform: none !important;
         opacity: 1 !important;
+        height: 50px;
       }
 
+      .nav-container {
+        height: 50px;
+        padding: 0 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-link {
+        font-size: 0.75rem;
+      }
+
+      .language-selector {
+        gap: 0.2rem;
+        padding: 0.2rem;
+      }
+
+      .lang-btn {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
+      }
+
+      /* Disable hover effects on mobile */
       section:hover, .seccion:hover, .tool-card:hover, .platform-card:hover, .contact-item:hover {
         transform: none !important;
         box-shadow: none !important;
@@ -993,7 +1062,7 @@
       <div class="nav-links">
         <a href="#landing" class="nav-link" data-lang="nav-home">Home</a>
         <a href="#about" class="nav-link" data-lang="nav-about">About</a>
-        <a href="#music" class="nav-link" data-lang="nav-music">Music</a>
+        <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
         <a href="#contact" class="nav-link">Contact</a>
         <div class="language-selector">
@@ -1036,7 +1105,7 @@
       <div class="home-panel">
         <h1 data-lang="home-title">Bienvenido a ROS DJ</h1>
         <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
-        <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;">Подумай про це →</a>
+        <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
       </div>
     </div>
   </section>
@@ -1103,18 +1172,17 @@
     </div>
   </section>
 
-  <!-- Music Section -->
-  <section id="music" class="seccion">
+  <!-- Sound Section -->
+  <section id="sound" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title" data-lang="music-title">Música</h2>
+      <h2 class="section-title" data-lang="sound-title">Música</h2>
       <div class="featured-playlist">
         <div class="playlist-header">
-          <div class="playlist-badge">NEW RELEASE</div>
           <h3 class="playlist-title">Etapa De Potencia by Dj ROS (parte 2)</h3>
           <p class="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
         </div>
         <div class="soundcloud-embed">
-          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="200" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
+          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="300" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
         </div>
         <div class="platforms-section">
           <h4 class="platforms-title-compact" data-lang="daw-pro">Software profesional que uso</h4>
@@ -1252,7 +1320,7 @@
           'in-kay-formats': '<strong>Кілька форматів:</strong> Підтримка MP3, WAV, FLAC',
           'in-kay-export': '<strong>Опції експорту:</strong> Нотація Кемелота та музична',
           'in-kay-button': 'Відкрити In-Kay',
-          'music-title': 'Sound',
+          'sound-title': 'Sound',
           'music-subtitle': 'Слухайте мої останні релізи та DJ сети',
           'playlist-title': 'ETAPA DE POTENCIA ПЛЕЙЛИСТ ВІД R.DABIZHA',
           'gallery-title': 'Галерея',
@@ -1261,7 +1329,9 @@
           'nav-contact': 'Контакт',
           'contact-title': 'Контакт',
           'contact-subtitle': 'Зв\'яжіться зі мною',
-          'contact-email': 'Email: r.dabizha@icloud.com'
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Подумай про це →',
+          'nav-sound': 'Звук'
         },
         en: {
           'ask-me-title': 'Ask Me',
@@ -1294,7 +1364,7 @@
           'in-kay-formats': '<strong>Multiple Formats:</strong> MP3, WAV, FLAC support',
           'in-kay-export': '<strong>Export Options:</strong> Camelot & Soundal notation',
           'in-kay-button': 'Open In-Kay',
-          'music-title': 'Sound',
+          'sound-title': 'Sound',
           'music-subtitle': 'Listen to my latest releases and DJ sets',
           'playlist-title': 'ETAPA DE POTENCIA PLAYLIST BY R.DABIZHA',
           'gallery-title': 'Gallery',
@@ -1303,7 +1373,9 @@
           'nav-contact': 'Contact',
           'contact-title': 'Contact',
           'contact-subtitle': 'Get in touch',
-          'contact-email': 'Email: r.dabizha@icloud.com'
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Think about it →',
+          'nav-sound': 'Sound'
         },
         es: {
           'ask-me-title': 'Pregúntame',
@@ -1336,7 +1408,7 @@
           'in-kay-formats': '<strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC',
           'in-kay-export': '<strong>Opciones de exportación:</strong> Notación Camelot y musical',
           'in-kay-button': 'Abrir In-Kay',
-          'music-title': 'Música',
+          'sound-title': 'Música',
           'music-subtitle': 'Escucha mis últimos lanzamientos y sets de DJ',
           'playlist-title': 'Etapa De Potencia by Dj ROS',
           'gallery-title': 'Galería',
@@ -1345,7 +1417,9 @@
           'nav-contact': 'Contacto',
           'contact-title': 'Contacto',
           'contact-subtitle': 'Póngase en contacto',
-          'contact-email': 'Email: r.dabizha@icloud.com'
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Piensa en ello →',
+          'nav-sound': 'Sonido'
         }
       };
 
