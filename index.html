@@ -1237,6 +1237,30 @@
       object-fit: contain;
       border-radius: 10px;
     }
+    
+    /* Image copyright overlay */
+    .gallery-item {
+      position: relative;
+    }
+    
+    .gallery-item::after {
+      content: attr(data-copyright);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      font-size: 0.6rem;
+      padding: 2px 4px;
+      border-radius: 4px 0 4px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
 
     @keyframes modalZoom {
       from {
@@ -1942,16 +1966,43 @@
       <h2 class="section-title" data-lang="gallery-title">Galería</h2>
       <p class="section-subtitle" data-lang="gallery-subtitle">Capturando la esencia de las actuaciones de música electrónica</p>
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/rosdj1.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" itemprop="image">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj1.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
           <div class="gallery-caption" data-lang="gallery-caption-1">Ukrainian DJ - Live Performance</div>
         </div>
-        <div class="gallery-item">
-          <img src="images/rosdj2.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ mixing organic house and deep house music at electronic music festival" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Electronic Music Festival Performance - Organic House Set" itemprop="image">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj2.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ mixing organic house and deep house music at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Electronic Music Festival Performance - Organic House Set" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
           <div class="gallery-caption" data-lang="gallery-caption-2">Ukrainian DJ - Organic House Set</div>
         </div>
-        <div class="gallery-item">
-          <img src="images/DJROS.webp" alt="ROS DJ Rostyslav Dabizha Ukrainian DJ brand logo and professional DJ setup at electronic music festival" loading="lazy" width="1200" height="900" title="ROS DJ Ukrainian DJ Professional Setup - Electronic Music Festival Equipment" itemprop="image">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/DJROS.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ brand logo and professional DJ setup at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Professional Setup - Electronic Music Festival Equipment" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
           <div class="gallery-caption" data-lang="gallery-caption-3">Ukrainian DJ - Professional Setup</div>
         </div>
       </div>
@@ -1964,14 +2015,28 @@
       <h4 class="software-title" data-lang="daw-pro">Professional Software I Use</h4>
       <div class="software-grid">
         <div class="software-item">
-          <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="60" height="60" />
+          <img src="Flstudio.png" 
+               alt="FL Studio" 
+               loading="lazy" 
+               width="60" 
+               height="60"
+               data-credit="Image-Line Software"
+               data-copyright="© 2024 Image-Line. All rights reserved."
+               data-creator="Image-Line">
           <div class="software-info">
             <h5>FL Studio</h5>
             <p class="software-desc">Digital Audio Workstation</p>
           </div>
         </div>
         <div class="software-item">
-          <img src="Rekordbox_Logo.png" alt="Pioneer Rekordbox" loading="lazy" width="60" height="60" />
+          <img src="Rekordbox_Logo.png" 
+               alt="Pioneer Rekordbox" 
+               loading="lazy" 
+               width="60" 
+               height="60"
+               data-credit="Pioneer DJ Corporation"
+               data-copyright="© 2024 Pioneer DJ. All rights reserved."
+               data-creator="Pioneer DJ">
           <div class="software-info">
             <h5>Rekordbox</h5>
             <p class="software-desc">DJ Mixing Software</p>
