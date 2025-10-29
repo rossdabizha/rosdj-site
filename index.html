@@ -807,9 +807,163 @@
 </head>
 <body>
 
+  <!-- Fixed Navigation -->
+  <nav class="fixed-nav" id="fixedNav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#landing" class="nav-link" data-lang="nav-home">Home</a>
+        <a href="#about" class="nav-link" data-lang="nav-about">About</a>
+        <a href="#music" class="nav-link" data-lang="nav-music">Music</a>
+        <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
+        <div class="language-selector">
+          <button class="lang-btn" data-lang="uk">UA</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="es">ES</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Landing Section -->
+  <section id="landing" class="seccion">
+    <div class="page-wrapper">
+      <div id="logo">
+        <img src="logo.png" alt="ROS DJ Logo" />
+      </div>
+      <div id="social-links">
+        <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.5 0C5.149 0 0 5.149 0 11.5S5.149 23 11.5 23 23 17.851 23 11.5 17.851 0 11.5 0zM14.5 9.5h-2V8h2v1.5zm0 3h-2v-1.5h2V12.5zM11 9.5H9V8h2v1.5zm0 3H9v-1.5h2V12.5zM7.5 9.5h-2V8h2v1.5zm0 3h-2v-1.5h2V12.5z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <a href="https://www.mixcloud.com/rosthedj/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6.502v10.996h24V6.502H0zm9.114 1.406h1.588v8.184H9.114V7.908zm3.176 0h1.588v8.184h-1.588V7.908zM4.76 7.908h1.588v8.184H4.76V7.908zm12.475 0h1.588v8.184h-1.588V7.908z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="home-panel">
+        <h1 data-lang="home-title">Bienvenido a ROS DJ</h1>
+        <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="about-title">Sobre ROS DJ</h2>
+      <p class="section-subtitle" data-lang="about-subtitle">Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos</p>
+      <div class="about-content">
+        <h3 data-lang="about-name">Rostyslav Dabizha</h3>
+        <p data-lang="about-description">DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.</p>
+        <p><strong data-lang="about-genres">Géneros: Organic House · Deep House · Melodic House</strong></p>
+        <p><strong data-lang="about-location">Base: España | Disponible: Reservas en todo el mundo</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJ Tools Section -->
+  <section id="dj-tools" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="dj-tools-title">Herramientas de DJ</h2>
+      <p class="section-subtitle" data-lang="dj-tools-subtitle">Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ</p>
+      <div class="dj-tools-grid">
+        <div class="tool-card">
+          <h3 data-lang="camelot-title">🎵 Rueda Camelot</h3>
+          <p data-lang="camelot-description">La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.</p>
+          <div class="camelot-info">
+            <h4 data-lang="camelot-compatibility">Compatibilidad de tonalidad:</h4>
+            <ul>
+              <li data-lang="camelot-same"><strong>Mismo número:</strong> Mezcla perfecta</li>
+              <li data-lang="camelot-energy"><strong>±1 número:</strong> Cambio de energía</li>
+              <li data-lang="camelot-relative"><strong>Misma letra:</strong> Menor/mayor relativo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-card">
+          <h3 data-lang="bpm-title">🎧 Análisis BPM</h3>
+          <p data-lang="bpm-description">Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.</p>
+          <div class="bpm-info">
+            <h4 data-lang="bpm-range">Rango de Organic House:</h4>
+            <ul>
+              <li data-lang="bpm-deep"><strong>Deep:</strong> 110-122 BPM</li>
+              <li data-lang="bpm-melodic"><strong>Melodic:</strong> 118-124 BPM</li>
+              <li data-lang="bpm-progressive"><strong>Progressive:</strong> 122-128 BPM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-card">
+          <h3 data-lang="in-kay-title">🎹 Detección de tonalidad In-Kay</h3>
+          <p data-lang="in-kay-description">Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.</p>
+          <div class="in-kay-info">
+            <h4 data-lang="in-kay-features">Funciones:</h4>
+            <ul>
+              <li data-lang="in-kay-accurate"><strong>Detección precisa:</strong> Análisis de algoritmo avanzado</li>
+              <li data-lang="in-kay-formats"><strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC</li>
+              <li data-lang="in-kay-export"><strong>Opciones de exportación:</strong> Notación Camelot y musical</li>
+            </ul>
+            <button class="btn btn-primary" data-lang="in-kay-button">Abrir In-Kay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section id="music" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="music-title">Música</h2>
+      <p class="section-subtitle" data-lang="music-subtitle">Escucha mis últimos lanzamientos y sets de DJ</p>
+      <div class="featured-playlist">
+        <div class="playlist-header">
+          <div class="playlist-badge">NEW RELEASE</div>
+          <h3 class="playlist-title" data-lang="playlist-title">ETAPA DE POTENCIA PLAYLIST DE R.DABIZHA</h3>
+          <p class="playlist-desc">Organic House journey through deep, melodic and atmospheric sounds</p>
+        </div>
+        <div class="soundcloud-embed">
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1771163236&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        </div>
+        <div class="platforms-section">
+          <h4 class="platforms-title" data-lang="daw-pro">Software profesional que uso</h4>
+          <div class="platforms-grid">
+            <div class="platform-card">
+              <div class="platform-icon">
+                <img src="images/Flstudio.png" alt="FL Studio" loading="lazy" />
+              </div>
+              <h4>FL Studio</h4>
+              <p>Digital Audio Workstation for production</p>
+              <a href="#" class="platform-btn btn">Download</a>
+            </div>
+            <div class="platform-card">
+              <div class="platform-icon">
+                <img src="images/Rekordbox_Logo.png" alt="Pioneer Rekordbox" loading="lazy" />
+              </div>
+              <h4>Rekordbox</h4>
+              <p>DJ mixing software for professional performances</p>
+              <a href="#" class="platform-btn btn">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Gallery Section -->
   <section id="gallery" class="seccion" style="padding: 4rem 0;">
     <div class="pagewrapper">
+      <h2 class="section-title" data-lang="gallery-title">Galería</h2>
+      <p class="section-subtitle" data-lang="gallery-subtitle">Capturando la esencia de las actuaciones de música electrónica</p>
       <div class="gallery-grid">
         <div class="gallery-item">
           <img 
