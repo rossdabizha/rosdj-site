@@ -15,21 +15,7 @@
   <meta name="language" content="en, ua, es">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="logo.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="logo.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="logo.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="logo.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="logo.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="logo.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="logo.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
-  <link rel="icon" type="image/png" sizes="128x128" href="logo.png">
-  <link rel="shortcut icon" href="logo.png">
+  <link rel="icon" href="logo.png" type="image/png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="msapplication-TileColor" content="#1a1a1a">
   <meta name="msapplication-TileImage" content="logo.png">
@@ -1064,7 +1050,7 @@
         <a href="#about" class="nav-link" data-lang="nav-about">About</a>
         <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-link" data-lang="nav-contact">Contact</a>
         <div class="language-selector">
           <button class="lang-btn" data-lang="uk">UA</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -1333,7 +1319,10 @@
           'contact-subtitle': 'Зв\'яжіться зі мною',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Подумай про це →',
-          'nav-sound': 'Звук'
+          'nav-sound': 'Звук',
+          'nav-home': 'Головна',
+          'nav-about': 'Про мене',
+          'nav-gallery': 'Галерея'
         },
         en: {
           'ask-me-title': 'Ask Me',
@@ -1377,7 +1366,10 @@
           'contact-subtitle': 'Get in touch',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Think about it →',
-          'nav-sound': 'Sound'
+          'nav-sound': 'Sound',
+          'nav-home': 'Home',
+          'nav-about': 'About',
+          'nav-gallery': 'Gallery'
         },
         es: {
           'ask-me-title': 'Pregúntame',
@@ -1421,11 +1413,15 @@
           'contact-subtitle': 'Póngase en contacto',
           'contact-email': 'Email: r.dabizha@icloud.com',
           'think-about-it': 'Piensa en ello →',
-          'nav-sound': 'Sonido'
+          'nav-sound': 'Sonido',
+          'nav-home': 'Inicio',
+          'nav-about': 'Sobre mí',
+          'nav-gallery': 'Galería'
         }
       };
 
       function updateLanguage(lang) {
+        console.log('Updating language to:', lang);
         dataLangElements.forEach(element => {
           const key = element.getAttribute('data-lang');
           if (translations[lang] && translations[lang][key]) {
@@ -1434,6 +1430,8 @@
             } else {
               element.textContent = translations[lang][key];
             }
+          } else {
+            console.warn('Missing translation for key:', key, 'in language:', lang);
           }
         });
 
