@@ -674,40 +674,32 @@
       box-shadow: 0 5px 20px rgba(255,85,0,0.40);
     }
 
-    /* Gallery - Compact Version */
+    /* Gallery Section */
    .gallery-grid {
      display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-     gap: 1rem;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 20px;
+     padding: 20px;
      margin: 1rem 0;
-     padding: 0 1rem;
    }
-
-   .gallery-item {
-     position: relative;
-     height: 180px;
-     border-radius: 8px;
-     overflow: hidden;
-     transition: transform 0.2s ease, box-shadow 0.2s ease;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-     background: rgba(255, 255, 255, 0.05);
-   }
-
-   .gallery-item img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     transition: transform 0.3s ease;
-   }
-
-   .gallery-item:hover {
-     transform: translateY(-3px);
-     box-shadow: 0 6px 16px rgba(108, 92, 231, 0.2);
-   }
-
-   .gallery-item:hover img {
-     transform: scale(1.05);
-   }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
 
     /* Gallery Modal */
     .gallery-modal{
@@ -806,107 +798,53 @@
       }
     }
 
-    /* Gallery Section */
-    <section id="gallery" class="seccion">
-      <div class="pagewrapper">
-        <h2 class="section-title" data-lang="gallery-title">Галерея</h2>
-        <p class="section-subtitle" data-lang="gallery-subtitle">Фотографії з виступів та студійних сесій</p>
-        
-        <div class="gallery-grid" itemscope itemtype="http://schema.org/ImageGallery">
-          <!-- Photo 1 -->
-          <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <img 
-              src="images/ROSDJ_foto.jpg" 
-              alt="ROS DJ на сцені під час виступу"
-              loading="lazy"
-              width="800"
-              height="600"
-            >
-            <meta itemprop="name" content="ROS DJ - Виступ на сцені">
-            <meta itemprop="description" content="Професійний діджей ROS DJ під час виступу на сцені">
-            <meta itemprop="width" content="800">
-            <meta itemprop="height" content="600">
-          </div>
+    .gallery-item {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
 
-          <!-- Photo 2 -->
-          <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <img 
-              src="images/Flstudio.png" 
-              alt="Робота в FL Studio"
-              loading="lazy"
-              width="800"
-              height="600"
-            >
-            <meta itemprop="name" content="ROS DJ - Робота в студії">
-            <meta itemprop="description" content="ROS DJ створює музику у власній студії">
-            <meta itemprop="width" content="800">
-            <meta itemprop="height" content="600">
-          </div>
-
-          <!-- Photo 3 -->
-          <div class="gallery-item" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <img 
-              src="images/DJROS.jpg" 
-              alt="DJ ROS на фестивалі"
-              loading="lazy"
-              width="800"
-              height="600"
-            >
-            <meta itemprop="name" content="DJ ROS на фестивалі">
-            <meta itemprop="description" content="DJ ROS виступає на музичному фестивалі">
-            <meta itemprop="width" content="800">
-            <meta itemprop="height" content="600">
-    </div>
-  </section>
-
-  <!-- Gallery Modal -->
-  <div id="galleryModal" class="gallery-modal">
-    <div class="modal-content">
-      <span class="modal-close" id="modalClose">&times;</span>
-      <img id="modalImage" src="" alt="Gallery image">
-
-  <!-- DAW Logos Section -->
-  <section class="seccion" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.3rem 0 0.2rem 0;gap:0.4rem;background:rgba(255,255,255,0.13);">
-    <h2 style="font-size:0.75rem;color:#fff;text-shadow:0 2px 8px #000;letter-spacing:0.5px;margin-bottom:0.3rem;" data-lang="daw-pro">Я використовую професійно</h2>
-    <div style="display:flex;gap:0.8rem;align-items:center;justify-content:center;flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <img src="images/Rekordbox_Logo.png" alt="Rekordbox" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">Rekordbox</div>
-      </div>
-      <div style="text-align:center;">
-        <img src="images/Flstudio.png" alt="FL Studio" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">FL Studio</div>
-      </div>
-    </div>
-  </section>
-
-          <div style="font-size:1rem;margin-bottom:0.15rem;">
-            <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="3"/><path d="m3 6 8.4 7a2 2 0 0 0 2.2 0L21 6"/></svg>
-          </div>
-          <a href="mailto:r.dabizha@icloud.com" style="display:inline-block;margin:0.1rem 0 0 0;padding:0.25rem 0.6rem;background:linear-gradient(90deg,#d32f2f 70%,#b71c1c 100%);color:#fff;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.8rem;box-shadow:0 1px 4px rgba(211,47,47,0.08);transition:background 0.18s;">r.dabizha@icloud.com</a>
+  <!-- Gallery Section -->
+  <section id="gallery" class="seccion" style="padding: 4rem 0;">
+    <div class="pagewrapper">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img 
+            src="images/ROSDJ_foto.jpg" 
+            alt=""
+            loading="lazy"
+            width="800"
+            height="600"
+          >
         </div>
-        <div class="contact-item" style="background:rgba(255,255,255,0.07);border-radius:9px;padding:0.4rem 0.6rem;min-width:70px;max-width:110px;box-shadow:0 1px 5px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;">
-          <div style="font-size:1rem;margin-bottom:0.15rem;">
-            <svg width="16" height="16" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 12.414a4 4 0 1 0-1.414 1.414l4.243 4.243a1 1 0 0 0 1.414-1.414z"/><circle cx="11" cy="11" r="8"/></svg>
-          </div>
-          <div style="color:#fff;font-size:0.75rem;">Spain</div>
-          <div style="color:#b0b0b0;font-size:0.7rem;margin-top:0.05rem;">Worldwide</div>
+        <div class="gallery-item">
+          <img 
+            src="images/Flstudio.png" 
+            alt=""
+            loading="lazy"
+            width="800"
+            height="600"
+          >
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DAW Logos Section -->
-  <section class="seccion" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.3rem 0 0.2rem 0;gap:0.4rem;background:rgba(255,255,255,0.13);">
-    <h2 style="font-size:0.75rem;color:#fff;text-shadow:0 2px 8px #000;letter-spacing:0.5px;margin-bottom:0.3rem;" data-lang="daw-pro">Я використовую професійно</h2>
-    <div style="display:flex;gap:0.8rem;align-items:center;justify-content:center;flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <img src="images/Rekordbox_Logo.png" alt="Rekordbox" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">Rekordbox</div>
-      </div>
-      <div style="text-align:center;">
-        <img src="images/Flstudio.png" alt="FL Studio" style="width:45px;height:auto;filter:drop-shadow(0 2px 8px #000);">
-        <div style="color:#fff;font-size:0.6rem;margin-top:0.1rem;">FL Studio</div>
+        <div class="gallery-item">
+          <img 
+            src="images/DJROS.jpg" 
+            alt=""
+            loading="lazy"
+            width="800"
+            height="600"
+          >
+        </div>
       </div>
     </div>
   </section>
