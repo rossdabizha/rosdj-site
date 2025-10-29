@@ -1598,6 +1598,14 @@
       const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
       updateLanguage(savedLanguage);
 
+      // In-Kay button functionality
+      const inKayButton = document.querySelector('.in-kay-info .btn-primary');
+      if (inKayButton) {
+        inKayButton.addEventListener('click', () => {
+          window.open('in-kay.pages', '_blank');
+        });
+      }
+
       // Gallery Modal
       const modal = document.getElementById('galleryModal');
       const modalImg = document.getElementById('modalImage');
