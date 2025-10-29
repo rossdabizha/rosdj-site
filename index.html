@@ -1269,8 +1269,11 @@
           lazyImageObserver.observe(lazyImage);
         });
       }
-      // Auto-scroll to landing on page load
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Auto-scroll to logo on page load
+      const logoElement = document.getElementById('logo');
+      if (logoElement) {
+        logoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       
       // Language System
       'use strict';
