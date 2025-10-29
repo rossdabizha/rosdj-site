@@ -6,7 +6,7 @@
 
   <!-- Main English homepage - highest priority -->
   <url>
-    <loc>https://rosdj.com/</loc>
+    <loc>https://rosdj.es/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Spanish version - second highest priority -->
   <url>
-    <loc>https://rosdj.com/es/</loc>
+    <loc>https://rosdj.es/es/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- Ukrainian version - third priority -->
   <url>
-    <loc>https://rosdj.com/uk/</loc>
+    <loc>https://rosdj.es/uk/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
   <!-- HTML Sitemap page -->
   <url>
-    <loc>https://rosdj.com/sitemap.html</loc>
+    <loc>https://rosdj.es/sitemap.html</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
