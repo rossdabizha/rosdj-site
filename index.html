@@ -15,9 +15,10 @@
   <meta name="language" content="en, ua, es">
   
   <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="msapplication-TileColor" content="#1a1a1a">
   <meta name="msapplication-TileImage" content="logo.png">
@@ -1165,7 +1166,7 @@
       <h2 class="section-title" data-lang="sound-title">Música</h2>
       <div class="featured-playlist">
         <div class="playlist-header">
-          <h3 class="playlist-title">Etapa De Potencia by Dj ROS (parte 2)</h3>
+          <h3 class="playlist-title" data-lang="playlist-title">Etapa De Potencia by Dj ROS (parte 2)</h3>
           <p class="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
         </div>
         <div class="soundcloud-embed">
@@ -1297,8 +1298,63 @@
       'use strict';
       const dataLangElements = document.querySelectorAll('[data-lang]');
       const langButtons = document.querySelectorAll('.lang-btn');
+
+      console.log('Found', dataLangElements.length, 'elements with data-lang attributes');
+      console.log('Found', langButtons.length, 'language buttons');
+
+      function updateLanguage(lang) {
+        console.log('Updating language to:', lang);
+
+        if (!translations[lang]) {
+          console.error('Language not found:', lang);
+          return;
+        }
+
+        let updatedCount = 0;
+        let errorCount = 0;
+
+        dataLangElements.forEach(element => {
+          const key = element.getAttribute('data-lang');
+          if (translations[lang] && translations[lang][key]) {
+            try {
+              if (translations[lang][key].includes('<')) {
+                element.innerHTML = translations[lang][key];
+              } else {
+                element.textContent = translations[lang][key];
+              }
+              updatedCount++;
+            } catch (error) {
+              console.error('Error updating element with key:', key, error);
+              errorCount++;
+            }
+          } else {
+            console.warn('Missing translation for key:', key, 'in language:', lang);
+            errorCount++;
+          }
+        });
+
+        console.log(`Language update complete: ${updatedCount} updated, ${errorCount} errors`);
+
+        // Update button states
+        langButtons.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          }
+        });
+
+        // Save to localStorage
+        try {
+          localStorage.setItem('selectedLanguage', lang);
+        } catch (error) {
+          console.warn('Could not save language preference to localStorage:', error);
+        }
+
+        // Update document language attribute
+        document.documentElement.setAttribute('data-current-lang', lang);
+      }
+
       const translations = {
-        ua: {
           'ask-me-title': 'Запитай мене',
           'home-title': 'Ласкаво просимо до ROS DJ',
           'home-description': 'Професійний український DJ, що спеціалізується на Organic House, Deep House та Melodic музиці. Базується в Іспанії, доступний для бронювання по всьому світу.',
@@ -1355,7 +1411,7 @@
           'about-description': 'Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.',
           'about-genres': '<strong>Genres:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
-          'dj-tools-title': 'Подумай про Це',
+          'dj-tools-title': 'Think About It',
           'dj-tools-subtitle': 'Essential tools for harmonic mixing and professional DJ performance',
           'camelot-title': '🎵 Camelot Wheel',
           'camelot-description': 'The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.',
