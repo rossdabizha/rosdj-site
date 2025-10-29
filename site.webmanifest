@@ -1,0 +1,21 @@
+{
+  "name": "ROS DJ - Professional Organic House DJ",
+  "short_name": "ROS DJ",
+  "description": "Professional Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

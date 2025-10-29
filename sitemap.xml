@@ -1,116 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- English version -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Main English homepage - highest priority -->
   <url>
     <loc>https://rosdj.com/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://rosdj.com/#about</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/#dj-tools</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/#sound</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/#gallery</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/#contact</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
-  <!-- Ukrainian version -->
-  <url>
-    <loc>https://rosdj.com/uk/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/uk/#about</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/uk/#dj-tools</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/uk/#sound</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/uk/#gallery</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/uk/#contact</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Spanish version -->
+  <!-- Spanish version - second highest priority -->
   <url>
     <loc>https://rosdj.com/es/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Ukrainian version - third priority -->
   <url>
-    <loc>https://rosdj.com/es/#about</loc>
+    <loc>https://rosdj.com/uk/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- HTML Sitemap page -->
+  <url>
+    <loc>https://rosdj.com/sitemap.html</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://rosdj.com/es/#dj-tools</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/es/#sound</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/es/#gallery</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rosdj.com/es/#contact</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
 </urlset>

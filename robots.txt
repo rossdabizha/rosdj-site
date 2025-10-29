@@ -9,8 +9,13 @@ Allow: /*.jpg$
 Allow: /*.png$
 Allow: /*.svg$
 
-# Sitemap
+# Sitemap Index - Primary sitemap for Google
+Sitemap: https://rosdj.com/sitemap-index.xml
+
+# Individual sitemaps
 Sitemap: https://rosdj.com/sitemap.xml
+Sitemap: https://rosdj.com/sitemap.html
+Sitemap: https://rosdj.com/sitemap.txt
 
 # Crawl-delay: 10
 
@@ -22,4 +27,4 @@ Disallow: /cgi-bin/
 # Allow all other pages /
 
 # Sitemap location
-Sitemap: https://rosdj.com/sitemap.xml
+Sitemap: https://rosdj.com/sitemap-index.xml
