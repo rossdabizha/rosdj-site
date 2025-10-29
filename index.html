@@ -892,7 +892,7 @@
       }
 
       #logo img {
-        max-width: 250px;
+        max-width: 350px;
         margin-bottom: 1rem;
       }
 
@@ -956,7 +956,7 @@
       }
 
       .soundcloud-embed iframe {
-        height: 150px;
+        height: 200px;
       }
 
       .platforms-grid-compact {
@@ -1103,7 +1103,6 @@
         </a>
       </div>
       <div class="home-panel">
-        <h1 data-lang="home-title">Bienvenido a ROS DJ</h1>
         <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
         <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
       </div>
@@ -1182,7 +1181,7 @@
           <p class="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
         </div>
         <div class="soundcloud-embed">
-          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="300" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
+          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="400" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
         </div>
         <div class="platforms-section">
           <h4 class="platforms-title-compact" data-lang="daw-pro">Software profesional que uso</h4>
@@ -1215,8 +1214,8 @@
       <div class="gallery-grid">
         <div class="gallery-item">
           <img 
-            src="images/ROSDJ_foto.jpg" 
-            alt="ROS DJ Rostyslav Dabizha professional DJ photo"
+            src="images/rosdj1.jpg" 
+            alt="ROS DJ Rostyslav Dabizha performance photo"
             loading="lazy"
             width="800"
             height="600"
@@ -1288,6 +1287,9 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       
       // Language System
+      'use strict';
+      const dataLangElements = document.querySelectorAll('[data-lang]');
+      const langButtons = document.querySelectorAll('.lang-btn');
       const translations = {
         ua: {
           'ask-me-title': 'Запитай мене',
@@ -1424,7 +1426,7 @@
       };
 
       function updateLanguage(lang) {
-        document.querySelectorAll('[data-lang]').forEach(element => {
+        dataLangElements.forEach(element => {
           const key = element.getAttribute('data-lang');
           if (translations[lang] && translations[lang][key]) {
             if (translations[lang][key].includes('<')) {
@@ -1435,7 +1437,7 @@
           }
         });
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
+        langButtons.forEach(btn => {
           btn.classList.remove('active');
           if (btn.getAttribute('data-lang') === lang) {
             btn.classList.add('active');
@@ -1446,7 +1448,7 @@
       }
 
       // Language button event listeners
-      document.querySelectorAll('.lang-btn').forEach(btn => {
+      langButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           const lang = btn.getAttribute('data-lang');
           updateLanguage(lang);
