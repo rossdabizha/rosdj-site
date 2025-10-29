@@ -277,13 +277,13 @@
     
     body{
       font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat;
       color:var(--text-primary);
       line-height:1.6;
       font-weight:400;
       min-height:100vh;
       overflow-x:hidden;
-      background-attachment:fixed;
+      background-attachment:scroll;
       transition:var(--transition);
     }
     
@@ -1519,22 +1519,41 @@
       
       html{
         font-size:14px;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      body{
+        background-position: center top;
+        background-size: 120% auto;
+        background-attachment: scroll;
+        overflow-x: hidden;
+        touch-action: pan-y;
       }
       
       .seccion{
-        min-height:auto;
-        padding:var(--spacing-sm) var(--spacing-xs);
+        min-height:100vh;
+        padding:var(--spacing-md) var(--spacing-sm);
+        scroll-snap-type: y mandatory;
+        scroll-snap-align: start;
       }
       
       #landing{
-        padding:var(--spacing-xs) var(--spacing-xs);
-        min-height:auto;
-        height:auto;
+        padding:var(--spacing-md) var(--spacing-sm);
+        min-height:100vh;
+        height:100vh;
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       
       .fixed-nav{
         height:60px;
         background:rgba(0,0,0,0.95);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
       }
       
       .nav-container{
@@ -1553,6 +1572,7 @@
         padding:var(--spacing-xs) var(--spacing-sm);
         text-transform:none;
         letter-spacing:0.5px;
+        touch-action: manipulation;
       }
       
       .language-selector{
@@ -1567,6 +1587,7 @@
         padding:var(--spacing-xs) var(--spacing-sm);
         font-size:0.6rem;
         min-width:35px;
+        touch-action: manipulation;
       }
       
       #logo{
@@ -1624,6 +1645,11 @@
     }
     
     @media (max-width: 480px) {
+      body{
+        background-size: 140% auto;
+        background-position: center top;
+      }
+      
       .nav-links{
         flex-direction:column;
         gap:var(--spacing-sm);
@@ -1633,6 +1659,7 @@
         font-size:0.8rem;
         padding:var(--spacing-sm) var(--spacing-md);
         font-weight:600;
+        touch-action: manipulation;
       }
       
       .language-selector{
@@ -1645,6 +1672,7 @@
         font-size:0.7rem;
         padding:var(--spacing-xs) var(--spacing-sm);
         min-width:40px;
+        touch-action: manipulation;
       }
       
       .home-panel{
