@@ -459,19 +459,19 @@
     
     .home-panel{
       position:absolute;
-      top:75%;
+      top:80%;
       left:50%;
       transform:translate(-50%,-50%);
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(15px);
-      -webkit-backdrop-filter:blur(15px);
-      padding:var(--spacing-xl);
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      padding:var(--spacing-lg) var(--spacing-xl);
       border-radius:var(--border-radius);
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 15px 35px rgba(0,0,0,0.3);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
       text-align:center;
       z-index:10;
-      max-width:600px;
+      max-width:500px;
       width:90%;
       animation:slideInLeft 1.2s ease-out;
     }
@@ -490,11 +490,11 @@
     }
     
     .home-panel p{
-      color:rgba(255,255,255,0.85);
-      margin-bottom:var(--spacing-lg);
-      line-height:1.7;
-      text-shadow:0 2px 8px rgba(0,0,0,0.5);
-      font-size:clamp(1rem,2vw,1.2rem);
+      color:rgba(255,255,255,0.75);
+      margin-bottom:var(--spacing-md);
+      line-height:1.6;
+      text-shadow:0 2px 6px rgba(0,0,0,0.4);
+      font-size:clamp(0.95rem,2vw,1.15rem);
     }
     
     .home-panel a{
@@ -780,6 +780,70 @@
       font-size: 0.85rem;
       color: var(--text-secondary);
       margin: 0;
+    }
+
+    /* Gallery Styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(255,85,0,0.3);
+      border-color: rgba(255,85,0,0.4);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Mobile Gallery */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .gallery-item {
+        aspect-ratio: 16/9;
+        border-radius: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        gap: 1rem;
+      }
+      
+      .gallery-item {
+        aspect-ratio: 3/2;
+        border-radius: 12px;
+      }
     }
 
     .playlist-title{
@@ -1589,7 +1653,7 @@
         
         updateActiveLink: () => {
           const scrollPosition = window.scrollY + window.innerHeight / 2;
-          let current = '';
+          let current = 'landing'; // Default to home section
           
           cache.sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -1697,6 +1761,12 @@
       // Initialize everything
       const init = () => {
         console.log('🚀 Initializing ROS DJ website...');
+        
+        // Set Home as active on page load
+        const homeLink = document.querySelector('nav a[href="#landing"]');
+        if (homeLink) {
+          homeLink.classList.add('active');
+        }
         
         // Auto-scroll to home panel
         if (cache.homePanel && !state.isMobile) {
