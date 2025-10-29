@@ -942,7 +942,7 @@
       }
 
       .soundcloud-embed iframe {
-        height: 200px;
+        height: 100px;
       }
 
       .platforms-grid-compact {
@@ -1167,7 +1167,7 @@
           <p class="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
         </div>
         <div class="soundcloud-embed">
-          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="400" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
+          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="200" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>
         </div>
         <div class="platforms-section">
           <h4 class="platforms-title-compact" data-lang="daw-pro">Software profesional que uso</h4>
@@ -1269,11 +1269,26 @@
           lazyImageObserver.observe(lazyImage);
         });
       }
-      // Auto-scroll to logo on page load
-      const logoElement = document.getElementById('logo');
-      if (logoElement) {
-        logoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Auto-scroll to home panel on page load
+      const homePanel = document.querySelector('.home-panel');
+      if (homePanel) {
+        homePanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+      
+      // Hide/show navigation on scroll
+      let lastScrollY = window.scrollY;
+      const nav = document.getElementById('fixedNav');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          // Scrolling down and past 100px
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up or at top
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScrollY = window.scrollY;
+      });
       
       // Language System
       'use strict';
