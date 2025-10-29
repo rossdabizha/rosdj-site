@@ -409,8 +409,9 @@
       min-height:100vh;
       padding:var(--spacing-lg) var(--spacing-md);
       text-align:center;
-      background:transparent;
-      backdrop-filter:none;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
       transition:var(--transition);
     }
     
@@ -459,16 +460,16 @@
     
     .home-panel{
       position:absolute;
-      top:80%;
+      top:55%;
       left:50%;
       transform:translate(-50%,-50%);
-      background:rgba(0,0,0,0.25);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
       padding:var(--spacing-md) var(--spacing-lg);
       border-radius:var(--border-radius);
-      border:1px solid rgba(255,255,255,0.05);
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
       text-align:center;
       z-index:10;
       max-width:450px;
@@ -491,10 +492,10 @@
     
     .home-panel p{
       color:rgba(255,255,255,0.75);
-      margin-bottom:var(--spacing-md);
-      line-height:1.6;
-      text-shadow:0 2px 6px rgba(0,0,0,0.4);
-      font-size:clamp(0.95rem,2vw,1.15rem);
+      margin-bottom:var(--spacing-sm);
+      line-height:1.4;
+      text-shadow:0 2px 4px rgba(0,0,0,0.4);
+      font-size:clamp(0.85rem,1.8vw,1rem);
     }
     
     .home-panel a{
@@ -506,19 +507,29 @@
       font-weight:700;
       font-size:1.1rem;
       padding:var(--spacing-sm) var(--spacing-lg);
-      background:var(--glass);
-      border:2px solid var(--primary);
-      border-radius:50px;
-      transition:var(--transition);
-      text-transform:uppercase;
-      letter-spacing:1px;
+      background:linear-gradient(45deg, rgba(255,85,0,0.1), rgba(183,28,28,0.1));
+      border:1px solid rgba(255,85,0,0.3);
+      border-radius:25px;
+      transition:all 0.3s ease;
+      animation:pulse-glow 2s infinite;
     }
     
     .home-panel a:hover{
-      background:var(--gradient);
-      color:#fff;
-      transform:translateY(-2px);
+      background:linear-gradient(45deg, rgba(255,85,0,0.2), rgba(183,28,28,0.2));
+      border-color:rgba(255,85,0,0.5);
+      transform:translateY(-2px) scale(1.05);
       box-shadow:0 8px 25px rgba(255,85,0,0.3);
+    }
+    
+    @keyframes pulse-glow{
+      0%, 100%{
+        box-shadow:0 4px 15px rgba(255,85,0,0.2);
+        transform:scale(1);
+      }
+      50%{
+        box-shadow:0 6px 20px rgba(255,85,0,0.4);
+        transform:scale(1.02);
+      }
     }
     
     /* Language Selector in Navigation */
@@ -565,15 +576,21 @@
 
     /* Section Styles */
     section{
-      padding:5rem 2rem;
+      padding:3rem 2rem;
       max-width:1400px;
       margin:0 auto;
+    }
+    
+    section:not(#landing){
+      background:rgba(255,255,255,0.02);
+      border-radius:20px;
+      margin:1rem auto;
     }
     .section-title{
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       text-align: center;
       text-shadow: 0 2px 8px rgba(0,0,0,0.50);
       letter-spacing: 1px;
@@ -582,7 +599,7 @@
       font-size: 1.2rem;
       color: var(--text-secondary);
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
@@ -614,19 +631,27 @@
     .dj-tools-grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2.5rem;
-      margin-top: 4rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .tool-card{
-      background: transparent;
+      background: rgba(255,255,255,0.05);
       border-radius: 20px;
       padding: 2.5rem;
       text-align: center;
-      backdrop-filter: none;
-      border: none;
-      box-shadow: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+    }
+    
+    .tool-card:hover{
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,85,0,0.3);
+      box-shadow: 0 15px 35px rgba(255,85,0,0.15);
     }
 
     .tool-card h3{
@@ -828,28 +853,28 @@
     /* Mobile Gallery - Horizontal Scroll */
     @media (max-width: 768px) {
       .gallery-grid {
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        padding: 0 1rem 1.5rem 1rem;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0 0.5rem 1rem 0.5rem;
       }
       
       .gallery-item {
-        width: 250px;
-        height: 188px;
-        border-radius: 12px;
+        width: 200px;
+        height: 150px;
+        border-radius: 10px;
       }
     }
 
     @media (max-width: 480px) {
       .gallery-grid {
-        gap: 0.5rem;
-        padding: 0 0.75rem 1.25rem 0.75rem;
+        gap: 0.4rem;
+        padding: 0 0.4rem 0.8rem 0.4rem;
       }
       
       .gallery-item {
-        width: 220px;
-        height: 165px;
-        border-radius: 10px;
+        width: 180px;
+        height: 135px;
+        border-radius: 8px;
       }
     }
 
@@ -870,6 +895,117 @@
 
     .gallery-grid::-webkit-scrollbar-thumb:hover {
       background: rgba(255,85,0,0.7);
+    }
+
+    /* Software Section - Compact */
+    .software-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+    }
+
+    .software-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .software-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 1rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+      min-width: 200px;
+    }
+
+    .software-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+      box-shadow: 0 8px 20px rgba(255,85,0,0.2);
+    }
+
+    .software-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .software-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .software-info h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 0.25rem 0;
+    }
+
+    .software-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Mobile Software */
+    @media (max-width: 768px) {
+      .software-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .software-grid {
+        gap: 1.5rem;
+        flex-direction: column;
+      }
+      
+      .software-item {
+        min-width: 180px;
+        padding: 0.75rem 1rem;
+      }
+      
+      .software-item img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .software-info h5 {
+        font-size: 1rem;
+      }
+      
+      .software-desc {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .software-grid {
+        gap: 1rem;
+      }
+      
+      .software-item {
+        min-width: 160px;
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .software-item img {
+        width: 45px;
+        height: 45px;
+      }
     }
 
     .playlist-title{
@@ -946,13 +1082,13 @@
       
       .seccion{
         min-height:auto;
-        min-height:80vh;
-        padding:var(--spacing-md) var(--spacing-sm);
+        padding:var(--spacing-sm) var(--spacing-xs);
       }
       
       #landing{
-        padding:var(--spacing-sm) var(--spacing-xs);
-        min-height:100vh;
+        padding:var(--spacing-xs) var(--spacing-xs);
+        min-height:auto;
+        height:auto;
       }
       
       .fixed-nav{
@@ -993,8 +1129,8 @@
       }
       
       #logo{
-        max-width:350px;
-        margin-bottom:var(--spacing-lg);
+        max-width:280px;
+        margin-bottom:var(--spacing-md);
       }
       
       #logo img{
@@ -1006,10 +1142,11 @@
         top:auto;
         left:auto;
         transform:none;
-        padding:var(--spacing-lg);
+        padding:var(--spacing-sm) var(--spacing-md);
         width:95%;
         max-width:none;
-        margin-top:var(--spacing-lg);
+        margin-top:var(--spacing-md);
+        margin-bottom:var(--spacing-sm);
       }
       
       .home-panel h1{
@@ -1018,14 +1155,14 @@
       }
       
       .home-panel p{
-        font-size:0.9rem;
-        margin-bottom:var(--spacing-md);
-        line-height:1.5;
+        font-size:0.85rem;
+        margin-bottom:var(--spacing-sm);
+        line-height:1.3;
       }
       
       .home-panel a{
-        font-size:0.9rem;
-        padding:var(--spacing-sm) var(--spacing-md);
+        font-size:0.85rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
       }
       
       /* Disable hover effects on touch devices */
@@ -1052,21 +1189,32 @@
       }
       
       .nav-link{
-        font-size:0.65rem;
-        padding:var(--spacing-xs) var(--spacing-sm);
+        font-size:0.6rem;
+        padding:var(--spacing-xs) var(--spacing-xs);
       }
       
       .language-selector{
         order:-1;
-        margin-bottom:var(--spacing-sm);
+        margin-bottom:var(--spacing-xs);
       }
       
       .home-panel{
-        padding:var(--spacing-md);
+        padding:var(--spacing-xs) var(--spacing-sm);
+        width:98%;
       }
       
-      #logo{
-        max-width:280px;
+      .home-panel h1{
+        font-size:clamp(1rem,5vw,1.4rem);
+      }
+      
+      .home-panel p{
+        font-size:0.8rem;
+        line-height:1.2;
+      }
+      
+      .home-panel a{
+        font-size:0.8rem;
+        padding:var(--spacing-xs) var(--spacing-xs);
       }
     }
 
@@ -1277,25 +1425,6 @@
         <div class="soundcloud-embed">
           <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="600" frameborder="0" scrolling="no" style="max-width:1200px; width:100%; height:600px;"></iframe>
         </div>
-        <div class="platforms-section">
-          <h4 class="platforms-title-compact" data-lang="daw-pro">Software profesional que uso</h4>
-          <div class="platforms-grid-compact">
-            <div class="platform-card-compact">
-              <div class="platform-icon-compact">
-                <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="80" height="80" />
-              </div>
-              <h5>FL Studio</h5>
-              <p class="small-text">Digital Audio Workstation</p>
-            </div>
-            <div class="platform-card-compact">
-              <div class="platform-icon-compact">
-                <img src="Rekordbox_Logo.png" alt="Pioneer Rekordbox" loading="lazy" width="80" height="80" />
-              </div>
-              <h5>Rekordbox</h5>
-              <p class="small-text">DJ Mixing Software</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1314,6 +1443,29 @@
         </div>
         <div class="gallery-item">
           <img src="images/DJROS.webp" alt="ROS DJ brand logo and professional DJ setup at electronic music festival" loading="lazy" width="800" height="600" title="ROS DJ Professional Setup - Electronic Music Festival Equipment">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Section -->
+  <section id="software" class="seccion">
+    <div class="pagewrapper">
+      <h4 class="software-title" data-lang="daw-pro">Professional Software I Use</h4>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="60" height="60" />
+          <div class="software-info">
+            <h5>FL Studio</h5>
+            <p class="software-desc">Digital Audio Workstation</p>
+          </div>
+        </div>
+        <div class="software-item">
+          <img src="Rekordbox_Logo.png" alt="Pioneer Rekordbox" loading="lazy" width="60" height="60" />
+          <div class="software-info">
+            <h5>Rekordbox</h5>
+            <p class="software-desc">DJ Mixing Software</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1422,7 +1574,7 @@
           'nav-sound': 'Музика',
           'nav-gallery': 'Фото',
           'nav-contact': 'Контакт',
-          'home-description': 'Професійний український DJ, що спеціалізується на Organic House, Deep House та Melodic музиці. Базується в Іспанії, доступний для бронювання по всьому світу.',
+          'home-description': 'Професійний український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
           'about-title': 'Про ROS DJ',
           'about-subtitle': 'Створення захоплюючих музичних подорожей через глибокі, мелодійні та атмосферні органик хаус сети',
           'about-name': 'Ростислав Дабіжа',
@@ -1468,7 +1620,7 @@
           'nav-sound': 'Music', 
           'nav-gallery': 'Photos',
           'nav-contact': 'Contact',
-          'home-description': 'Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.',
+          'home-description': 'Professional Ukrainian DJ | Organic House, Deep House & Melodic | Spain | Worldwide bookings',
           'about-title': 'About ROS DJ',
           'about-subtitle': 'Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets',
           'about-name': 'Rostyslav Dabizha',
@@ -1514,7 +1666,7 @@
           'nav-sound': 'Música',
           'nav-gallery': 'Fotos',
           'nav-contact': 'Contacto',
-          'home-description': 'DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.',
+          'home-description': 'DJ ucraniano profesional | Organic House, Deep House & Melodic | España | Reservas mundiales',
           'about-title': 'Sobre ROS DJ',
           'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
           'about-name': 'Rostyslav Dabizha',
