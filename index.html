@@ -1593,22 +1593,22 @@
   }
 
   body {
-    background: 
-      linear-gradient(
-        135deg, 
-        rgba(0,0,0,0.85) 0%,
-        rgba(0,0,0,0.7) 100%
-      ),
-      url('images/ROSDJ_foto.webp') center/cover no-repeat fixed;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow-x: hidden;
-    touch-action: pan-y;
-    min-height: 100vh;
-  }
+  background: 
+    linear-gradient(
+      135deg, 
+      rgba(0,0,0,0.8) 0%,
+      rgba(0,0,0,0.6) 100%
+    ),
+    url('images/ROSDJ_foto.webp') center center no-repeat fixed;
+  background-size: auto 100%;
+  background-attachment: fixed;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
 
   /* Disable animations only if user prefers reduced motion */
   @media (prefers-reduced-motion: reduce) {
