@@ -277,13 +277,13 @@
     
     body{
       font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat;
       color:var(--text-primary);
       line-height:1.6;
       font-weight:400;
       min-height:100vh;
       overflow-x:hidden;
-      background-attachment:fixed;
+      background-attachment:scroll;
       transition:var(--transition);
     }
     
@@ -457,29 +457,6 @@
       background:var(--gradient);
       color:#fff;
       transform:scale(1.05);
-    }
-    
-    /* Primary Button */
-    .btn-primary {
-      display: inline-block;
-      background: var(--gradient);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: var(--spacing-sm) var(--spacing-lg);
-      border-radius: 50px;
-      border: 2px solid var(--primary);
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(255,85,0,0.3);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,85,0,0.5);
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     }
 
     /* Modern Sections */
@@ -1528,365 +1505,126 @@
       color: #ff5500;
     }
 
-    /* Modern Mobile Responsive - Completely Different Structure */
-    @media (max-width: 480px) {
+    /* Modern Mobile Responsive */
+    @media (max-width: 768px) {
       :root{
-        --spacing-xs:0.5rem;
-        --spacing-sm:1rem;
-        --spacing-md:1.5rem;
-        --spacing-lg:2rem;
-        --spacing-xl:2.5rem;
+        --spacing-xs:0.25rem;
+        --spacing-sm:0.5rem;
+        --spacing-md:1rem;
+        --spacing-lg:1.5rem;
+        --spacing-xl:2rem;
         --border-radius:16px;
-        --border-radius-sm:12px;
+        --border-radius-sm:8px;
       }
       
       html{
-        font-size:16px;
+        font-size:14px;
         scroll-behavior: auto;
         -webkit-overflow-scrolling: touch;
       }
       
       body{
-        background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/120% auto no-repeat fixed;
+        background-position: center top;
+        background-size: 120% auto;
+        background-attachment: scroll;
         overflow-x: hidden;
         touch-action: pan-y;
-        padding-top: 70px;
       }
       
-      /* Disable all animations on mobile */
-      * {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-      }
-      
-      .seccion {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .home-panel {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .tool-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .gallery-item {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      /* Hide desktop navigation completely */
-      .fixed-nav {
-        display: none !important;
-      }
-      
-      /* Modern Mobile Header */
-      .mobile-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 70px;
-        background: rgba(0,0,0,0.95);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        border-bottom: 2px solid rgba(255,85,0,0.3);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--spacing-md);
-      }
-      
-      .mobile-logo {
-        width: 140px;
-        height: auto;
-        filter: drop-shadow(0 4px 15px rgba(255,85,0,0.4));
-      }
-      
-      .menu-toggle {
-        width: 35px;
-        height: 35px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 15px rgba(255,85,0,0.3);
-      }
-      
-      .menu-toggle svg {
-        width: 20px;
-        height: 20px;
-        fill: white;
-      }
-      
-      /* Full Screen Mobile Navigation */
-      .mobile-fullscreen-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(0,0,0,0.98), rgba(26,26,26,0.98));
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
-        z-index: 2000;
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(-100%);
-      }
-      
-      .mobile-fullscreen-nav.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      
-      .mobile-nav-header {
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--spacing-md);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-      
-      .close-menu {
-        width: 40px;
-        height: 40px;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .close-menu svg {
-        width: 20px;
-        height: 20px;
-        fill: white;
-      }
-      
-      .mobile-nav-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: var(--spacing-xl) var(--spacing-lg);
-        overflow-y: auto;
-      }
-      
-      .mobile-nav-items {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        margin-bottom: var(--spacing-xl);
-      }
-      
-      .mobile-nav-item {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: rgba(255,255,255,0.9);
-        text-decoration: none;
-        padding: var(--spacing-md) var(--spacing-lg);
-        border-radius: var(--border-radius);
-        background: rgba(255,255,255,0.05);
-        border: 2px solid transparent;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-family: var(--font-display);
-      }
-      
-      .mobile-nav-item.active {
-        color: var(--primary);
-        background: rgba(255,85,0,0.1);
-        border-color: var(--primary);
-      }
-      
-      .mobile-language-section {
-        margin-top: var(--spacing-lg);
-        padding-top: var(--spacing-lg);
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
-      
-      .mobile-lang-title {
-        font-size: 1rem;
-        color: rgba(255,255,255,0.6);
-        text-align: center;
-        margin-bottom: var(--spacing-md);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      
-      .mobile-lang-buttons {
-        display: flex;
-        gap: var(--spacing-sm);
-        justify-content: center;
-      }
-      
-      .mobile-lang-btn {
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 1rem;
-        font-weight: 600;
-        background: rgba(255,255,255,0.1);
-        border: 2px solid rgba(255,255,255,0.2);
-        color: rgba(255,255,255,0.8);
-        border-radius: var(--border-radius-sm);
-        cursor: pointer;
-        min-width: 60px;
-      }
-      
-      .mobile-lang-btn.active {
-        background: var(--gradient);
-        border-color: var(--primary);
-        color: white;
-      }
-      
-      /* Mobile Sections - Card Based Layout */
       .seccion{
-        min-height: auto;
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-md) 0;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        min-height:100vh;
+        padding:var(--spacing-md) var(--spacing-sm);
+        scroll-snap-type: y mandatory;
+        scroll-snap-align: start;
       }
       
       #landing{
-        padding: var(--spacing-lg) var(--spacing-md);
-        min-height: calc(100vh - 70px);
+        padding:var(--spacing-md) var(--spacing-sm);
+        min-height:100vh;
+        height:100vh;
+        scroll-snap-align: start;
         display: flex;
         align-items: center;
-        background: transparent;
-        border: none;
-        margin: 0;
+        justify-content: center;
       }
       
-      #landing .page-wrapper {
-        padding: var(--spacing-xl);
-        background: rgba(0,0,0,0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(255,255,255,0.15);
-        text-align: center;
+      .fixed-nav{
+        height:60px;
+        background:rgba(0,0,0,0.95);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+      
+      .nav-container{
+        height:60px;
+        padding:0 var(--spacing-md);
+      }
+      
+      .nav-links{
+        gap:var(--spacing-sm);
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+      
+      .nav-link{
+        font-size:0.7rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
+        text-transform:none;
+        letter-spacing:0.5px;
+        touch-action: manipulation;
+      }
+      
+      .language-selector{
+        gap:var(--spacing-xs);
+        padding:var(--spacing-xs);
+        margin-top:var(--spacing-xs);
+        width:100%;
+        justify-content:center;
+      }
+      
+      .lang-btn{
+        padding:var(--spacing-xs) var(--spacing-sm);
+        font-size:0.6rem;
+        min-width:35px;
+        touch-action: manipulation;
       }
       
       #logo{
-        max-width:250px;
-        margin-bottom: var(--spacing-lg);
+        max-width:280px;
+        margin-bottom:var(--spacing-md);
+      }
+      
+      #logo img{
+        border-radius:var(--border-radius);
       }
       
       .home-panel{
-        background: transparent;
-        backdrop-filter: none;
-        padding: 0;
-        width:100%;
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:none;
+        padding:var(--spacing-sm) var(--spacing-md);
+        width:95%;
         max-width:none;
-        margin: 0;
-        border: none;
-        border-radius: 0;
+        margin-top:var(--spacing-md);
+        margin-bottom:var(--spacing-sm);
       }
       
       .home-panel h1{
-        font-size:2.2rem;
-        margin-bottom: var(--spacing-md);
-        line-height: 1.2;
+        font-size:clamp(1.2rem,6vw,1.8rem);
+        margin-bottom:var(--spacing-sm);
       }
       
       .home-panel p{
-        font-size:1.1rem;
-        margin-bottom: var(--spacing-lg);
-        line-height:1.5;
-        color: rgba(255,255,255,0.9);
+        font-size:0.85rem;
+        margin-bottom:var(--spacing-sm);
+        line-height:1.3;
       }
       
       .home-panel a{
-        font-size:1.1rem;
-        padding: var(--spacing-md) var(--spacing-lg);
-        background: var(--gradient);
-        border: none;
-        border-radius: 50px;
-        box-shadow: 0 4px 20px rgba(255,85,0,0.4);
-      }
-      
-      /* Mobile Social Links - Horizontal Scroll */
-      .social-links-grid {
-        display: flex;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-lg);
-        padding: var(--spacing-md) 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      
-      .social-links-grid::-webkit-scrollbar {
-        display: none;
-      }
-      
-      .social-link-item {
-        min-width: 100px;
-        padding: var(--spacing-md);
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: var(--border-radius-sm);
-      }
-      
-      /* Mobile Gallery - Grid */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
-        padding: 0;
-      }
-      
-      .gallery-item {
-        width: 100%;
-        height: 150px;
-        border-radius: var(--border-radius-sm);
-        overflow: hidden;
-      }
-      
-      .gallery-item img {
-        height: 120px;
-      }
-      
-      /* Mobile Tools - Vertical Cards */
-      .dj-tools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-      
-      .tool-card {
-        background: rgba(255,255,255,0.08);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.15);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
+        font-size:0.85rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
       }
       
       /* Disable hover effects on touch devices */
@@ -1903,6 +1641,57 @@
         .home-panel a:hover{
           transform:none;
         }
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body{
+        background-size: 140% auto;
+        background-position: center top;
+      }
+      
+      .nav-links{
+        flex-direction:column;
+        gap:var(--spacing-sm);
+      }
+      
+      .nav-link{
+        font-size:0.8rem;
+        padding:var(--spacing-sm) var(--spacing-md);
+        font-weight:600;
+        touch-action: manipulation;
+      }
+      
+      .language-selector{
+        order:-1;
+        margin-bottom:var(--spacing-sm);
+        padding:var(--spacing-sm);
+      }
+      
+      .lang-btn{
+        font-size:0.7rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
+        min-width:40px;
+        touch-action: manipulation;
+      }
+      
+      .home-panel{
+        padding:var(--spacing-xs) var(--spacing-sm);
+        width:98%;
+      }
+      
+      .home-panel h1{
+        font-size:clamp(1rem,5vw,1.4rem);
+      }
+      
+      .home-panel p{
+        font-size:0.8rem;
+        line-height:1.2;
+      }
+      
+      .home-panel a{
+        font-size:0.8rem;
+        padding:var(--spacing-xs) var(--spacing-xs);
       }
     }
 
@@ -2057,47 +1846,7 @@
   </style>
 <body>
 
-  <!-- Mobile Header -->
-  <header class="mobile-header">
-    <img src="logo.png" alt="ROS DJ Logo" class="mobile-logo">
-    <button class="menu-toggle" id="menuToggle">
-      <svg viewBox="0 0 24 24">
-        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </header>
-
-  <!-- Full Screen Mobile Navigation -->
-  <nav class="mobile-fullscreen-nav" id="mobileFullscreenNav">
-    <div class="mobile-nav-header">
-      <img src="logo.png" alt="ROS DJ Logo" class="mobile-logo">
-      <button class="close-menu" id="closeMenu">
-        <svg viewBox="0 0 24 24">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <div class="mobile-nav-content">
-      <div class="mobile-nav-items">
-        <a href="#landing" class="mobile-nav-item" data-lang="nav-home">Головна</a>
-        <a href="#about" class="mobile-nav-item" data-lang="nav-about">Про мене</a>
-        <a href="#sound" class="mobile-nav-item" data-lang="nav-sound">Музика</a>
-        <a href="#gallery" class="mobile-nav-item" data-lang="nav-gallery">Фото</a>
-        <a href="#contact" class="mobile-nav-item" data-lang="nav-contact">Контакт</a>
-        <a href="#dj-tools" class="mobile-nav-item" data-lang="nav-think-about">Think about it</a>
-      </div>
-      <div class="mobile-language-section">
-        <div class="mobile-lang-title" data-lang="language">Мова</div>
-        <div class="mobile-lang-buttons">
-          <button class="mobile-lang-btn" data-lang="uk">UA</button>
-          <button class="mobile-lang-btn" data-lang="en">EN</button>
-          <button class="mobile-lang-btn" data-lang="es">ES</button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Desktop Navigation (Hidden on Mobile) -->
+  <!-- Fixed Navigation -->
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
       <div class="nav-links">
@@ -2132,7 +1881,6 @@
              data-copyright="© 2024 ROS DJ. All rights reserved." />
       </div>
       <div class="home-panel" itemscope itemtype="https://schema.org/Person">
-        <h1 data-lang="home-title">ROS DJ</h1>
         <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
         
         <div class="think-about-section">
@@ -2186,8 +1934,6 @@
             </a>
           </div>
         </div>
-        
-        <a href="#contact" class="btn-primary" data-lang="contact-me">Contact Me</a>
       </div>
     </div>
   </section>
@@ -2440,14 +2186,9 @@
       const cache = {
         body: document.body,
         nav: document.getElementById('fixedNav'),
-        mobileFullscreenNav: document.getElementById('mobileFullscreenNav'),
-        menuToggle: document.getElementById('menuToggle'),
-        closeMenu: document.getElementById('closeMenu'),
         landing: document.getElementById('landing'),
         navLinks: document.querySelectorAll('.nav-link'),
-        mobileNavItems: document.querySelectorAll('.mobile-nav-item'),
         langButtons: document.querySelectorAll('.lang-btn'),
-        mobileLangButtons: document.querySelectorAll('.mobile-lang-btn'),
         dataLangElements: document.querySelectorAll('[data-lang]'),
         homePanel: document.querySelector('.home-panel'),
         logo: document.getElementById('logo'),
@@ -2708,16 +2449,8 @@
             }
           });
           
-          // Update desktop button states
+          // Update button states
           cache.langButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-          
-          // Update mobile button states
-          cache.mobileLangButtons.forEach(btn => {
             btn.classList.remove('active');
             if (btn.getAttribute('data-lang') === lang) {
               btn.classList.add('active');
@@ -2733,15 +2466,7 @@
         },
         
         init: () => {
-          // Desktop language buttons
           cache.langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              languageSystem.update(btn.getAttribute('data-lang'));
-            });
-          });
-          
-          // Mobile language buttons
-          cache.mobileLangButtons.forEach(btn => {
             btn.addEventListener('click', () => {
               languageSystem.update(btn.getAttribute('data-lang'));
             });
@@ -2749,99 +2474,6 @@
           
           // Load saved language
           languageSystem.update(state.currentLang);
-        }
-      };
-      
-      // Mobile navigation system
-      const mobileNavigationSystem = {
-        openMenu: () => {
-          cache.mobileFullscreenNav.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          document.body.style.position = 'fixed';
-          document.body.style.top = '0';
-          document.body.style.left = '0';
-          document.body.style.right = '0';
-          document.body.style.bottom = '0';
-        },
-        
-        closeMenu: () => {
-          cache.mobileFullscreenNav.classList.remove('active');
-          document.body.style.overflow = '';
-          document.body.style.position = '';
-          document.body.style.top = '';
-          document.body.style.left = '';
-          document.body.style.right = '';
-          document.body.style.bottom = '';
-        },
-        
-        smoothScroll: (e) => {
-          e.preventDefault();
-          const targetId = e.target.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetId);
-          
-          if (targetSection) {
-            mobileNavigationSystem.closeMenu();
-            
-            setTimeout(() => {
-              targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }, 400);
-          }
-        },
-        
-        updateActiveLink: () => {
-          const scrollPosition = window.scrollY + window.innerHeight / 2;
-          let current = 'landing';
-          
-          cache.sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= (sectionTop - 100)) {
-              current = section.getAttribute('id');
-            }
-          });
-          
-          // Update desktop nav links
-          cache.navLinks.forEach(link => link.classList.remove('active'));
-          const activeDesktopLink = document.querySelector(`.nav-link[href="#${current}"]`);
-          if (activeDesktopLink) {
-            activeDesktopLink.classList.add('active');
-          }
-          
-          // Update mobile nav links
-          cache.mobileNavItems.forEach(link => link.classList.remove('active'));
-          const activeMobileLink = document.querySelector(`.mobile-nav-item[href="#${current}"]`);
-          if (activeMobileLink) {
-            activeMobileLink.classList.add('active');
-          }
-        },
-        
-        init: () => {
-          // Menu toggle button
-          cache.menuToggle.addEventListener('click', mobileNavigationSystem.openMenu);
-          
-          // Close menu button
-          cache.closeMenu.addEventListener('click', mobileNavigationSystem.closeMenu);
-          
-          // Mobile nav links
-          cache.mobileNavItems.forEach(link => {
-            link.addEventListener('click', mobileNavigationSystem.smoothScroll);
-          });
-          
-          // Close menu on escape key
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && cache.mobileFullscreenNav.classList.contains('active')) {
-              mobileNavigationSystem.closeMenu();
-            }
-          });
-          
-          // Close menu on resize to desktop
-          window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-              mobileNavigationSystem.closeMenu();
-            }
-          });
         }
       };
       
@@ -2986,12 +2618,8 @@
         
         // Set Home as active on page load
         const homeLink = document.querySelector('nav a[href="#landing"]');
-        const mobileHomeLink = document.querySelector('.mobile-nav-item[href="#landing"]');
         if (homeLink) {
           homeLink.classList.add('active');
-        }
-        if (mobileHomeLink) {
-          mobileHomeLink.classList.add('active');
         }
         
         // Scroll to top on page load
@@ -2999,7 +2627,6 @@
         
         // Initialize all systems
         languageSystem.init();
-        mobileNavigationSystem.init();
         navigationSystem.init();
         gallerySystem.init();
         performanceMonitor.init();
