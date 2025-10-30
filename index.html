@@ -1574,49 +1574,43 @@
       color: #ff5500;
     }
 
-/* Modern Mobile Responsive - Completely Different Structure */
-@media (max-width: 480px) {
-  :root {
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.2rem;
-    --spacing-lg: 1.8rem;
-    --spacing-xl: 2.2rem;
-    --border-radius: 14px;
-    --border-radius-sm: 10px;
+/* Мобільна версія */
+  @media (max-width: 768px) {
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: 
+        linear-gradient(
+          135deg, 
+          rgba(0,0,0,0.7), 
+          rgba(0,0,0,0.5)
+        ),
+        url('images/ROSDJ_foto.webp') center/cover no-repeat fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Виправлення для контенту */
+    .seccion {
+      padding: 20px;
+      margin: 0;
+    }
+
+    .pagewrapper {
+      padding: 15px;
+      box-sizing: border-box;
+    }
   }
-
-  html {
-    font-size: 15px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-
-body {
-  background: 
-    linear-gradient(
-      135deg, 
-      rgba(0,0,0,0.7), 
-      rgba(0,0,0,0.5)
-    ),
-    url('images/ROSDJ_foto.webp') center/cover no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  touch-action: pan-y;
-}
 
 
   /* Disable animations only if user prefers reduced motion */
