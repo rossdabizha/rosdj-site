@@ -1,0 +1,60 @@
+/* Center align main content */
+.pagewrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center content sections */
+.about-content,
+.dj-tools-grid,
+.gallery-grid,
+.platforms-grid,
+.featured-playlist,
+.contact-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Center individual cards and items */
+.tool-card,
+.platform-card,
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ensure text in cards is centered */
+.tool-card p,
+.platform-card p,
+.gallery-caption {
+  text-align: center;
+  width: 100%;
+}
+
+/* Center navigation */
+.nav-container {
+  justify-content: center;
+}
+
+/* Center footer content */
+.footer-content,
+.footer-container {
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Ensure images in cards are centered */n.tool-card img,
+.platform-card img,
+.gallery-item img {
+  margin: 0 auto;
+  display: block;
+}
