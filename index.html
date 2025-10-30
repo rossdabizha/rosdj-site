@@ -1592,22 +1592,27 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  body {
+
+body {
   background: 
     linear-gradient(
       135deg, 
       rgba(0,0,0,0.7), 
       rgba(0,0,0,0.5)
     ),
-    url('images/ROSDJ_foto.webp') center/cover no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    url('images/ROSDJ_foto.webp') center/contain no-repeat fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-color: #000;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
   touch-action: pan-y;
 }
+
 
   /* Disable animations only if user prefers reduced motion */
   @media (prefers-reduced-motion: reduce) {
