@@ -8,6 +8,76 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#000000">
+  
+  <!-- Structured Data for Google Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ROS DJ",
+    "alternateName": "Rostyslav Dabizha",
+    "description": "Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
+    "url": "https://rosdj.com",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://rosdj.com/ROSDJ_foto.webp",
+      "creditText": "Rostyslav Dabizha",
+      "creator": {
+        "@type": "Person",
+        "name": "ROS DJ"
+      },
+      "copyrightNotice": "© 2024 ROS DJ. All rights reserved."
+    },
+    "sameAs": [
+      "https://www.instagram.com/rosthedj/",
+      "https://soundcloud.com/rosthedj",
+      "https://www.youtube.com/@rosthedj",
+      "https://rosdj.bandcamp.com"
+    ],
+    "jobTitle": "DJ",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ROS DJ Music"
+    },
+    "knowsAbout": [
+      "Electronic Music",
+      "Organic House",
+      "Deep House",
+      "DJ Performance",
+      "Music Production"
+    ],
+    "nationality": "Ukrainian",
+    "gender": "Male",
+    "birthPlace": "Ukraine",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Spain"
+    },
+    "email": "r.dabizha@icloud.com",
+    "telephone": "+34-XXXXXXXXX",
+    "availableForHire": true,
+    "seeks": {
+      "@type": "JobPosting",
+      "title": "DJ Performances Worldwide",
+      "description": "Available for club performances, private events, and festivals worldwide",
+      "datePosted": "2024-01-01",
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Worldwide"
+        }
+      },
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "ROS DJ Music",
+        "url": "https://rosdj.com"
+      },
+      "employmentType": "Freelance",
+      "validThrough": "2025-12-31"
+    }
+  }
+  </script>
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-config" content="browserconfig.xml">
   
@@ -22,13 +92,23 @@
   <meta name="geo.placename" content="Spain">
   <meta name="ICBM" content="40.4637, -3.7492">
   
-  <!-- Favicon & App Icons -->
+  <!-- Additional SEO for Knowledge Graph -->
+  <meta name="google-site-verification" content="your-verification-code">
+  <meta name="yandex-verification" content="your-yandex-code">
+  <meta name="msvalidate.01" content="your-bing-code">
+  <link rel="canonical" href="https://rosdj.com/">
+  <meta name="citation_title" content="ROS DJ - Professional Ukrainian DJ">
+  <meta name="citation_author" content="Rostyslav Dabizha">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_keywords" content="Organic House, Deep House, Ukrainian DJ, Electronic Music">
+  
+  <!-- Favicon for bookmarks and search -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-  <link rel="shortcut icon" href="logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="shortcut icon" href="favicon.svg">
+  
+  <!-- Favicon metadata for search engines -->
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -197,27 +277,17 @@
     
     body{
       font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+      background:linear-gradient(135deg,rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
       color:var(--text-primary);
       line-height:1.6;
       font-weight:400;
       min-height:100vh;
       overflow-x:hidden;
       background-attachment:fixed;
-      transition:var(--transition);
+      position: relative;
     }
     
     /* Modern Animations */
-    @keyframes fadeInUp{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
     
     @keyframes pulse{
       0%,100%{transform:scale(1)}
@@ -275,13 +345,14 @@
       left:0;
       right:0;
       z-index:1000;
-      background:rgba(0,0,0,0.8);
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      border-bottom:1px solid var(--border);
-      transition:var(--transition);
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.8) 100%);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform:translateY(0);
       opacity:1;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
     }
     
     .fixed-nav.hidden{
@@ -378,6 +449,29 @@
       color:#fff;
       transform:scale(1.05);
     }
+    
+    /* Primary Button */
+    .btn-primary {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: 50px;
+      border: 2px solid var(--primary);
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(255,85,0,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,85,0,0.5);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
 
     /* Modern Sections */
     .seccion{
@@ -399,126 +493,272 @@
       z-index:1;
     }
     
-    /* Landing Section */
-    #landing{
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
-      padding:var(--spacing-lg) var(--spacing-md);
-      text-align:center;
-      background:transparent;
-      backdrop-filter:none;
-      transition:var(--transition);
+    /* Clean Home Section */
+    .home-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0;
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      position: relative;
     }
     
-    #landing.hidden{
-      opacity:0;
-      transform:translateY(-100vh);
-      pointer-events:none;
+    .home-section:hover {
+      background: none !important;
+      transform: none !important;
     }
     
-    #landing .page-wrapper{
-      text-align:center;
-      z-index:1;
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      width:100%;
-      max-width:900px;
-      padding:var(--spacing-lg);
-      animation:fadeInUp 1s ease-out;
+    .home-content {
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
     }
     
-    #logo{
-      width:100%;
-      max-width:600px;
-      height:auto;
-      margin:0 auto var(--spacing-xl);
-      padding:0 var(--spacing-md);
-      filter:drop-shadow(0 12px 40px rgba(255,85,0,0.3)) contrast(1.1) brightness(1.2);
-      transition:var(--transition);
-      transform:translateY(0);
+    .home-content:hover {
+      background: none !important;
+      transform: none !important;
     }
     
-    #logo:hover{
-      transform:translateY(-8px) scale(1.02);
-      filter:drop-shadow(0 20px 60px rgba(255,85,0,0.4)) contrast(1.15) brightness(1.25);
+    .logo-container {
+      margin: 0;
+      display: block;
+      background: none !important;
     }
     
-    #logo img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:var(--border-radius);
+    .main-logo {
+      width: auto;
+      height: auto;
+      max-width: 900px;
+      display: block;
+      filter: none !important;
+      box-shadow: none !important;
     }
     
-    .home-panel{
-      position:absolute;
-      top:80%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      background:rgba(0,0,0,0.25);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      padding:var(--spacing-md) var(--spacing-lg);
-      border-radius:var(--border-radius);
-      border:1px solid rgba(255,255,255,0.05);
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-      text-align:center;
-      z-index:10;
-      max-width:450px;
-      width:85%;
-      animation:slideInLeft 1.2s ease-out;
+    .main-logo:hover {
+      filter: none !important;
+      transform: none !important;
+      box-shadow: none !important;
     }
     
-    .home-panel h1{
-      color:var(--text-primary);
-      font-size:clamp(1.8rem,4vw,2.5rem);
-      margin-bottom:var(--spacing-md);
-      font-weight:800;
-      font-family:var(--font-display);
-      text-shadow:0 4px 20px rgba(0,0,0,0.8);
-      background:var(--gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+    /* Hide subtitle */
+    .home-subtitle {
+      display: none;
     }
     
-    .home-panel p{
-      color:rgba(255,255,255,0.75);
-      margin-bottom:var(--spacing-md);
-      line-height:1.6;
-      text-shadow:0 2px 6px rgba(0,0,0,0.4);
-      font-size:clamp(0.95rem,2vw,1.15rem);
+    /* Social Links Block */
+    .social-links-block {
+      text-align: center;
+      margin-bottom: 0;
     }
     
-    .home-panel a{
-      display:inline-flex;
-      align-items:center;
-      gap:var(--spacing-xs);
-      color:var(--primary);
-      text-decoration:none;
-      font-weight:700;
-      font-size:1.1rem;
-      padding:var(--spacing-sm) var(--spacing-lg);
-      background:var(--glass);
-      border:2px solid var(--primary);
-      border-radius:50px;
-      transition:var(--transition);
-      text-transform:uppercase;
-      letter-spacing:1px;
+    .social-links-block h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.40);
+      text-transform: none;
+      letter-spacing: 0.5px;
+      opacity: 0.95;
     }
     
-    .home-panel a:hover{
-      background:var(--gradient);
-      color:#fff;
-      transform:translateY(-2px);
-      box-shadow:0 8px 25px rgba(255,85,0,0.3);
+    .social-links-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .social-link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 0.6rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      min-width: 70px;
+      opacity: 0.95;
+    }
+    
+    .social-link-item:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+      background: rgba(255,85,0,0.08);
+      border-color: rgba(255,85,0,0.2);
+      box-shadow: 0 4px 12px rgba(255,85,0,0.15);
+      opacity: 1;
+    }
+    
+    .social-link-item svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-link-item:hover svg {
+      transform: scale(1.1);
+    }
+    
+    .social-link-item span {
+      font-size: 0.7rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0.2px;
+    }
+    
+    /* Mobile Social Links */
+    @media (max-width: 768px) {
+      .social-links-grid {
+        gap: 1rem;
+      }
+      
+      .social-link-item {
+        min-width: 80px;
+        padding: 0.75rem;
+      }
+      
+      .social-link-item svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .social-link-item span {
+        font-size: 0.75rem;
+      }
+    }
+    
+    /* Removed logo styles */
+    
+    /* Removed home-panel styles */
+    
+    /* Home Panel Social Links */
+    .home-social-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: var(--spacing-xs);
+      padding-top: var(--spacing-xs);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .home-social-links h5 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .home-social-icons {
+      display: flex;
+      gap: 0.8rem;
+    }
+    
+    .home-social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .home-social-icon:hover {
+      color: var(--primary);
+      background: rgba(255,85,0,0.15);
+      border-color: rgba(255,85,0,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .home-social-icon svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    
+    /* Additional Social Section */
+    .home-social-section {
+      margin-top: var(--spacing-sm);
+      padding-top: var(--spacing-sm);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+    }
+    
+    .home-social-section h6 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: var(--spacing-xs);
+      text-transform: none;
+      letter-spacing: 0.3px;
+    }
+    
+    .home-social-expanded {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    
+    .social-link-expanded {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link-expanded:hover {
+      background: rgba(255,85,0,0.12);
+      border-color: rgba(255,85,0,0.25);
+      color: var(--primary);
+      transform: translateY(0);
+    }
+    
+    .social-link-expanded svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    
+    @keyframes pulse-glow{
+      0%, 100%{
+        box-shadow:0 4px 15px rgba(255,85,0,0.2);
+        transform:scale(1);
+      }
+      50%{
+        box-shadow:0 6px 20px rgba(255,85,0,0.4);
+        transform:scale(1.02);
+      }
     }
     
     /* Language Selector in Navigation */
@@ -552,38 +792,33 @@
       transform: scale(1.05);
     }
     
-    @keyframes fadeInUp{
-      from{
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to{
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    /* Removed fadeInUp animation */
 
-    /* Section Styles */
+    /* Clean Section Styles */
     section{
-      padding:5rem 2rem;
-      max-width:1400px;
-      margin:0 auto;
+      padding:2rem 1.5rem;
+      max-width:1000px;
+      margin:1rem auto;
+      background: rgba(0,0,0,0.5);
+      border-radius:20px;
+      position: relative;
+      z-index: 2;
     }
     .section-title{
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.8rem;
       text-align: center;
       text-shadow: 0 2px 8px rgba(0,0,0,0.50);
       letter-spacing: 1px;
     }
     .section-subtitle{
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       text-align: center;
-      margin-bottom: 3rem;
-      max-width: 800px;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
@@ -610,66 +845,95 @@
       text-shadow: 0 1px 3px rgba(0,0,0,0.50);
     }
 
-    /* DJ Tools Section */
+    /* Horizontal Row DJ Tools */
     .dj-tools-grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2.5rem;
-      margin-top: 4rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,85,0,0.5) rgba(255,255,255,0.1);
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-thumb {
+      background: rgba(255,85,0,0.5);
+      border-radius: 3px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,85,0,0.7);
     }
 
     .tool-card{
-      background: transparent;
-      border-radius: 20px;
-      padding: 2.5rem;
-      text-align: center;
-      backdrop-filter: none;
-      border: none;
-      box-shadow: none;
-      transition: all 0.3s ease;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      min-width: 300px;
+      flex: 0 0 auto;
     }
 
     .tool-card h3{
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
       color: var(--text-primary);
-      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+      font-weight: 600;
     }
 
     .tool-card p{
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 0.85rem;
+      line-height: 1.5;
       color: var(--text-secondary);
-      text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+      margin-bottom: 0.7rem;
     }
 
     .camelot-info,
     .bpm-info,
     .in-kay-info{
       background: transparent;
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin-top: 1.5rem;
+      border-radius: 8px;
+      padding: 0.7rem;
+      margin-top: 0.7rem;
       border: none;
+      text-align: left;
     }
 
     .camelot-info h4,
     .bpm-info h4,
     .in-kay-info h4{
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.50);
+      color: var(--primary);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .camelot-info ul,
+    .bpm-info ul,
+    .in-kay-info ul{
+      list-style: none;
+      padding: 0;
     }
 
     .camelot-info li,
     .bpm-info li,
     .in-kay-info li{
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.6;
+      padding: 0.3rem 0;
       color: var(--text-secondary);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.50);
+      font-size: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
     }
 
     .in-kay-info .btn{
@@ -784,14 +1048,36 @@
 
     /* Gallery Styles */
     .gallery-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
       max-width: 100%;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
+      padding: 0 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
+      }
+      
+      .gallery-item {
+        height: 200px;
+      }
+      
+      .gallery-item img {
+        height: 160px;
+      }
     }
 
     .gallery-item {
@@ -801,55 +1087,60 @@
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.10);
       transition: all 0.3s ease;
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      width: 280px;
-      height: 210px;
+      width: 100%;
+      height: 250px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255,85,0,0.25);
-      border-color: rgba(255,85,0,0.3);
-    }
-
+    
     .gallery-item img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
-      transition: all 0.3s ease;
-      display: block;
+      transition: transform 0.3s ease;
     }
-
+    
     .gallery-item:hover img {
       transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
 
     /* Mobile Gallery - Horizontal Scroll */
     @media (max-width: 768px) {
       .gallery-grid {
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        padding: 0 1rem 1.5rem 1rem;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0 0.5rem 1rem 0.5rem;
       }
       
       .gallery-item {
-        width: 250px;
-        height: 188px;
-        border-radius: 12px;
+        width: 200px;
+        height: 150px;
+        border-radius: 10px;
       }
     }
 
     @media (max-width: 480px) {
       .gallery-grid {
-        gap: 0.5rem;
-        padding: 0 0.75rem 1.25rem 0.75rem;
+        gap: 0.4rem;
+        padding: 0 0.4rem 0.8rem 0.4rem;
       }
       
       .gallery-item {
-        width: 220px;
-        height: 165px;
-        border-radius: 10px;
+        width: 180px;
+        height: 135px;
+        border-radius: 8px;
       }
     }
 
@@ -870,6 +1161,313 @@
 
     .gallery-grid::-webkit-scrollbar-thumb:hover {
       background: rgba(255,85,0,0.7);
+    }
+
+    /* Gallery Modal */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .gallery-modal.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 50vw;
+      max-height: 50vh;
+      width: auto;
+      height: auto;
+      animation: modalZoom 0.3s ease-out;
+      object-fit: contain;
+    }
+    
+    .modal-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    
+    /* Image copyright overlay */
+    .gallery-item {
+      position: relative;
+    }
+    
+    .gallery-item::after {
+      content: attr(data-copyright);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      font-size: 0.6rem;
+      padding: 2px 4px;
+      border-radius: 4px 0 4px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+    
+    /* Herramientas para DJ Section */
+    .herramientas-section {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .herramientas-section h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .herramientas-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    @keyframes modalZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* Responsive modal sizes */
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 70vw;
+        max-height: 60vh;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .modal-content {
+        max-width: 85vw;
+        max-height: 50vh;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
+    .modal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* Software Section - Compact */
+    .software-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+    }
+
+    .software-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .software-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+      min-width: 180px;
+    }
+
+    .software-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+      box-shadow: 0 8px 20px rgba(255,85,0,0.2);
+    }
+
+    .software-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .software-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* New Compact Software Section */
+    .software-section-compact {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .software-wrapper-compact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .software-title-compact {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    
+    .software-grid-compact {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .software-item-compact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .software-item-compact:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+    
+    .software-item-compact img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    
+    .software-item-compact span {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .software-info h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 0.25rem 0;
+    }
+
+    .software-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Mobile Software */
+    @media (max-width: 768px) {
+      .software-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .software-grid {
+        gap: 1.5rem;
+        flex-direction: column;
+      }
+      
+      .software-item {
+        min-width: 180px;
+        padding: 0.75rem 1rem;
+      }
+      
+      .software-item img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .software-info h5 {
+        font-size: 1rem;
+      }
+      
+      .software-desc {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .software-grid {
+        gap: 1rem;
+      }
+      
+      .software-item {
+        min-width: 160px;
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .software-item img {
+        width: 45px;
+        height: 45px;
+      }
     }
 
     .playlist-title{
@@ -911,16 +1509,64 @@
       box-shadow: 0 10px 30px rgba(255,85,0,0.20);
     }
 
-    /* Contact Section */
+    /* Compact Contact Section */
+    .contact-section-compact {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-title-compact {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.9;
+    }
+    
+    .contact-email-compact {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.6rem 1.5rem;
+      background: rgba(255,85,0,0.1);
+      border-radius: 30px;
+      border: 1px solid rgba(255,85,0,0.3);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .contact-email-compact:hover {
+      background: rgba(255,85,0,0.2);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    /* Old Contact styles - kept for compatibility */
     .contact-content {
       text-align: center;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+      padding: 1rem;
     }
 
     .contact-link {
       color: var(--text-primary);
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
     }
 
@@ -928,104 +1574,160 @@
       color: #ff5500;
     }
 
-    /* Modern Mobile Responsive */
-    @media (max-width: 768px) {
+    /* Modern Mobile Responsive - Completely Different Structure */
+    @media (max-width: 480px) {
       :root{
-        --spacing-xs:0.25rem;
-        --spacing-sm:0.5rem;
-        --spacing-md:1rem;
-        --spacing-lg:1.5rem;
-        --spacing-xl:2rem;
+        --spacing-xs:0.5rem;
+        --spacing-sm:1rem;
+        --spacing-md:1.5rem;
+        --spacing-lg:2rem;
+        --spacing-xl:2.5rem;
         --border-radius:16px;
-        --border-radius-sm:8px;
+        --border-radius-sm:12px;
       }
       
       html{
-        font-size:14px;
+        font-size:16px;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
       }
       
+      body{
+        background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/120% auto no-repeat fixed;
+        overflow-x: hidden;
+        touch-action: pan-y;
+        padding-top: 70px;
+      }
+      
+      /* Disable all animations on mobile */
+      * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      
+      .seccion {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .home-panel {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .tool-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .gallery-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      /* Hide desktop navigation completely */
+      .fixed-nav {
+        display: none !important;
+      }
+      
+      /* Removed mobile header styles */
+      
+      /* Removed menu toggle styles - no longer needed */
+      
+      /* Removed Full Screen Mobile Navigation styles */
+      
+      /* Mobile Sections - Card Based Layout */
       .seccion{
-        min-height:auto;
-        min-height:80vh;
-        padding:var(--spacing-md) var(--spacing-sm);
+        min-height: auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-md) 0;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: var(--border-radius);
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
       }
       
-      #landing{
-        padding:var(--spacing-sm) var(--spacing-xs);
-        min-height:100vh;
+      /* Mobile Clean Home Section */
+      .home-section {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
       }
       
-      .fixed-nav{
-        height:60px;
-        background:rgba(0,0,0,0.95);
+      .home-content {
+        top: 20px;
+        left: 10px;
       }
       
-      .nav-container{
-        height:60px;
-        padding:0 var(--spacing-md);
+      .main-logo {
+        max-width: 350px;
       }
       
-      .nav-links{
-        gap:var(--spacing-sm);
-        flex-wrap:wrap;
-        justify-content:center;
+      /* Removed mobile home-cta styles */
+      
+      /* Mobile Social Links - Horizontal Scroll */
+      .social-links-grid {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        padding: var(--spacing-md) 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
       }
       
-      .nav-link{
-        font-size:0.7rem;
-        padding:var(--spacing-xs) var(--spacing-sm);
-        text-transform:none;
-        letter-spacing:0.5px;
+      .social-links-grid::-webkit-scrollbar {
+        display: none;
       }
       
-      .language-selector{
-        gap:var(--spacing-xs);
-        padding:var(--spacing-xs);
-        margin-top:var(--spacing-xs);
-        width:100%;
-        justify-content:center;
+      .social-link-item {
+        min-width: 100px;
+        padding: var(--spacing-md);
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: var(--border-radius-sm);
       }
       
-      .lang-btn{
-        padding:var(--spacing-xs) var(--spacing-sm);
-        font-size:0.6rem;
-        min-width:35px;
+      /* Mobile Gallery - Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+        padding: 0;
       }
       
-      #logo{
-        max-width:350px;
-        margin-bottom:var(--spacing-lg);
+      .gallery-item {
+        width: 100%;
+        height: 150px;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
       }
       
-      #logo img{
-        border-radius:var(--border-radius);
+      .gallery-item img {
+        height: 120px;
       }
       
-      .home-panel{
-        position:relative;
-        top:auto;
-        left:auto;
-        transform:none;
-        padding:var(--spacing-lg);
-        width:95%;
-        max-width:none;
-        margin-top:var(--spacing-lg);
+      /* Mobile Tools - Vertical Cards */
+      .dj-tools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
       }
       
-      .home-panel h1{
-        font-size:clamp(1.2rem,6vw,1.8rem);
-        margin-bottom:var(--spacing-sm);
-      }
-      
-      .home-panel p{
-        font-size:0.9rem;
-        margin-bottom:var(--spacing-md);
-        line-height:1.5;
-      }
-      
-      .home-panel a{
-        font-size:0.9rem;
-        padding:var(--spacing-sm) var(--spacing-md);
+      .tool-card {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.15);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
       }
       
       /* Disable hover effects on touch devices */
@@ -1044,33 +1746,48 @@
         }
       }
     }
-    
-    @media (max-width: 480px) {
-      .nav-links{
-        flex-direction:column;
-        gap:var(--spacing-xs);
-      }
-      
-      .nav-link{
-        font-size:0.65rem;
-        padding:var(--spacing-xs) var(--spacing-sm);
-      }
-      
-      .language-selector{
-        order:-1;
-        margin-bottom:var(--spacing-sm);
-      }
-      
-      .home-panel{
-        padding:var(--spacing-md);
-      }
-      
-      #logo{
-        max-width:280px;
-      }
-    }
 
-    /* Footer Styles */
+    /* Mobile Compact Contact */
+    .contact-section-compact {
+      max-width: 90%;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    
+    .contact-title-compact {
+      font-size: 1rem;
+    }
+    
+    .contact-email-compact {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+    
+    .contact-item{
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover{
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .contact-link{
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-link:hover{
+      color: var(--primary);
+    }
     footer{
       background: var(--bg-primary);
       border-top: 1px solid var(--border);
@@ -1128,21 +1845,87 @@
       fill: currentColor;
       transition: all 0.3s ease;
     }
+    
+    /* Dark Footer Section */
+    .footer-section {
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.85);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .footer-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .footer-social h4 {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    
+    .footer-social-links.compact {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+    
+    .footer-social-links.compact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 25px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      min-width: auto;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .footer-social-links.compact a:hover {
+      background: rgba(255,85,0,0.2);
+      border-color: var(--primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    
+    .footer-social-links.compact svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
 
     .footer-social-links a:hover svg{
       transform: scale(1.1);
     }
 
     .footer-bottom{
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      margin-top: 1.5rem;
     }
-
+    
     .footer-text{
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin: 0.5rem 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      margin: 0.4rem 0;
+    }
+    
+    .footer-text a {
+      color: var(--primary);
+      font-weight: 500;
     }
 
     .footer-text a:hover{
@@ -1167,17 +1950,39 @@
     }
 
   </style>
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Offset for fixed header */
+    html {
+      scroll-padding-top: 80px;
+    }
+    
+    /* Force initial scroll position */
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Ensure page starts at top */
+    html, body {
+      scroll-behavior: auto;
+    }
+  </style>
 <body>
 
-  <!-- Fixed Navigation -->
+  <!-- Desktop Navigation (Hidden on Mobile) -->
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
       <div class="nav-links">
-        <a href="#landing" class="nav-link" data-lang="nav-home">Home</a>
+        <a href="#home" class="nav-link" data-lang="nav-home">Home</a>
         <a href="#about" class="nav-link" data-lang="nav-about">About</a>
         <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
         <a href="#contact" class="nav-link" data-lang="nav-contact">Contact</a>
+        <a href="#dj-tools" class="nav-link" data-lang="nav-herramientas">Herramientas para DJ</a>
         <div class="language-selector">
           <button class="lang-btn" data-lang="uk">UA</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -1187,15 +1992,16 @@
     </div>
   </nav>
 
-  <!-- Landing Section -->
-  <section id="landing" class="seccion">
-    <div class="page-wrapper">
-      <div id="logo">
-        <img src="logo.png" alt="ROS DJ - Professional Ukrainian DJ Logo" width="600" height="400" loading="eager" />
-      </div>
-      <div class="home-panel">
-        <p data-lang="home-description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
-        <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+  <!-- Clean Home Section -->
+  <section id="home" class="home-section">
+    <div class="home-content">
+      <div class="logo-container">
+        <img src="logo.png" 
+             alt="ROS DJ - Professional Ukrainian DJ Logo" 
+             class="main-logo"
+             width="900" 
+             height="600"
+             loading="eager">
       </div>
     </div>
   </section>
@@ -1277,25 +2083,6 @@
         <div class="soundcloud-embed">
           <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="600" frameborder="0" scrolling="no" style="max-width:1200px; width:100%; height:600px;"></iframe>
         </div>
-        <div class="platforms-section">
-          <h4 class="platforms-title-compact" data-lang="daw-pro">Software profesional que uso</h4>
-          <div class="platforms-grid-compact">
-            <div class="platform-card-compact">
-              <div class="platform-icon-compact">
-                <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="80" height="80" />
-              </div>
-              <h5>FL Studio</h5>
-              <p class="small-text">Digital Audio Workstation</p>
-            </div>
-            <div class="platform-card-compact">
-              <div class="platform-icon-compact">
-                <img src="Rekordbox_Logo.png" alt="Pioneer Rekordbox" loading="lazy" width="80" height="80" />
-              </div>
-              <h5>Rekordbox</h5>
-              <p class="small-text">DJ Mixing Software</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1306,38 +2093,80 @@
       <h2 class="section-title" data-lang="gallery-title">Galería</h2>
       <p class="section-subtitle" data-lang="gallery-subtitle">Capturando la esencia de las actuaciones de música electrónica</p>
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/rosdj1.webp" alt="ROS DJ Rostyslav Dabizha performing live DJ set at electronic music festival in Spain" loading="lazy" width="800" height="600" title="ROS DJ Live Performance - Electronic Music Festival Spain">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj1.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-1">Ukrainian DJ - Live Performance</div>
         </div>
-        <div class="gallery-item">
-          <img src="images/rosdj2.webp" alt="ROS DJ Rostyslav Dabizha mixing organic house and deep house music at electronic music festival" loading="lazy" width="800" height="600" title="ROS DJ Electronic Music Festival Performance - Organic House Set">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj2.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ mixing organic house and deep house music at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Electronic Music Festival Performance - Organic House Set" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-2">Ukrainian DJ - Organic House Set</div>
         </div>
-        <div class="gallery-item">
-          <img src="images/DJROS.webp" alt="ROS DJ brand logo and professional DJ setup at electronic music festival" loading="lazy" width="800" height="600" title="ROS DJ Professional Setup - Electronic Music Festival Equipment">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/DJROS.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ brand logo and professional DJ setup at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Professional Setup - Electronic Music Festival Equipment" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-3">Ukrainian DJ - Professional Setup</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="seccion">
-    <div class="pagewrapper">
-      <h2 class="section-title" data-lang="contact-title">Contact</h2>
-      <p class="section-subtitle" data-lang="contact-subtitle">Get in touch</p>
-      <div class="contact-content">
-        <div class="contact-item">
-          <a href="mailto:r.dabizha@icloud.com" class="contact-link" data-lang="contact-email">Email: r.dabizha@icloud.com</a>
+  <section id="contact" class="contact-section-compact">
+    <div class="contact-wrapper">
+      <h3 class="contact-title-compact" data-lang="contact-title">Contact</h3>
+      <a href="mailto:r.dabizha@icloud.com" class="contact-email-compact">r.dabizha@icloud.com</a>
+    </div>
+  </section>
+
+  <!-- Compact Software Section -->
+  <section id="software" class="software-section-compact">
+    <div class="software-wrapper-compact">
+      <h4 class="software-title-compact" data-lang="daw-pro">Software</h4>
+      <div class="software-grid-compact">
+        <div class="software-item-compact">
+          <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="40" height="40">
+          <span>FL Studio</span>
+        </div>
+        <div class="software-item-compact">
+          <img src="Rekordbox_Logo.png" alt="Rekordbox" loading="lazy" width="40" height="40">
+          <span>Rekordbox</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-container">
       <div class="footer-social">
-        <h4>Sígueme en redes sociales</h4>
-        <div class="footer-social-links">
+        <h4 data-lang="follow-social">Follow me on social media</h4>
+        <div class="footer-social-links compact">
           <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.5 6.5h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0H7.5v7H8.5v-7z"/>
@@ -1361,6 +2190,12 @@
               <path d="M0 6.502v10.996h24V6.502H0zm9.114 1.406h1.588v8.184H9.114V7.908zm3.176 0h1.588v8.184h-1.588V7.908zM4.76 7.908h1.588v8.184H4.76V7.908zm12.475 0h1.588v8.184h-1.588V7.908z"/>
             </svg>
             Mixcloud
+          </a>
+          <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 18.75l7.437-13.5h2.77L2.77 18.75H0zm11.413 0l7.437-13.5h2.77L14.183 18.75h-2.77z"/>
+            </svg>
+            Bandcamp
           </a>
         </div>
       </div>
@@ -1393,9 +2228,11 @@
       const cache = {
         body: document.body,
         nav: document.getElementById('fixedNav'),
-        landing: document.getElementById('landing'),
+        menuToggle: document.getElementById('menuToggle'),
         navLinks: document.querySelectorAll('.nav-link'),
+        mobileNavItems: document.querySelectorAll('.mobile-nav-item'),
         langButtons: document.querySelectorAll('.lang-btn'),
+        mobileLangButtons: document.querySelectorAll('.mobile-lang-btn'),
         dataLangElements: document.querySelectorAll('[data-lang]'),
         homePanel: document.querySelector('.home-panel'),
         logo: document.getElementById('logo'),
@@ -1422,7 +2259,8 @@
           'nav-sound': 'Музика',
           'nav-gallery': 'Фото',
           'nav-contact': 'Контакт',
-          'home-description': 'Професійний український DJ, що спеціалізується на Organic House, Deep House та Melodic музиці. Базується в Іспанії, доступний для бронювання по всьому світу.',
+          'nav-herramientas': 'Інструменти DJ',
+          'home-description': 'Професійний український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
           'about-title': 'Про ROS DJ',
           'about-subtitle': 'Створення захоплюючих музичних подорожей через глибокі, мелодійні та атмосферні органик хаус сети',
           'about-name': 'Ростислав Дабіжа',
@@ -1430,8 +2268,11 @@
           'festival-performances': '🎵 <strong>Музична подорож:</strong> Створюю унікальні DJ сети для клубів, приватних подій та онлайн-платформ. Працюю над створенням атмосферних сетів, що поєднують глибокі мелодії та сучасні електронні ритми.',
           'about-genres': '<strong>Жанри:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Базується:</strong> Іспанія | <strong>Доступний:</strong> Бронювання по всьому світу',
-          'dj-tools-title': 'Подумай про Це',
+          'dj-tools-title': 'Інструменти DJ',
           'dj-tools-subtitle': 'Необхідні інструменти для гармонійного мікшування та професійних DJ виступів',
+          'herramientas-title': 'Інструменти DJ',
+          'herramientas-desc': 'Досліджуйте професійні DJ інструменти та підніміть свій музичний продакшн на новий рівень.',
+          'herramientas-link': 'Інструменти DJ →',
           'camelot-title': '🎵 Колесо Кемелота',
           'camelot-description': 'Колесо Кемелота є необхідним для гармонійного мікшування в DJ сетах. Воно допомагає DJ мікшувати треки в тій самій тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом усього виступу.',
           'camelot-compatibility': 'Сумісність тональностей:',
@@ -1460,7 +2301,11 @@
           'contact-title': 'Контакт',
           'contact-subtitle': 'Зв\'яжіться зі мною',
           'contact-email': 'Email: r.dabizha@icloud.com',
-          'think-about-it': 'Подумай про це →'
+          'follow-dj': 'Слідкуй за Dj Ros',
+          'gallery-caption-1': 'Український DJ - Live Виступ',
+          'gallery-caption-2': 'Український DJ - Organic House Сет',
+          'gallery-caption-3': 'Український DJ - Професійне Обладнання',
+          'follow-social': 'Слідкуй за мною в соціальних мережах'
         },
         en: {
           'nav-home': 'Home',
@@ -1468,7 +2313,8 @@
           'nav-sound': 'Music', 
           'nav-gallery': 'Photos',
           'nav-contact': 'Contact',
-          'home-description': 'Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.',
+          'nav-herramientas': 'DJ Tools',
+          'home-description': 'Professional Ukrainian DJ | Organic House, Deep House & Melodic | Spain | Worldwide bookings',
           'about-title': 'About ROS DJ',
           'about-subtitle': 'Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets',
           'about-name': 'Rostyslav Dabizha',
@@ -1476,8 +2322,11 @@
           'festival-performances': '🎵 <strong>Musical Journey:</strong> Creating unique DJ sets for clubs, private events and online platforms. Working on crafting atmospheric sets that combine deep melodies with modern electronic rhythms.',
           'about-genres': '<strong>Genres:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
-          'dj-tools-title': 'Think About It',
+          'dj-tools-title': 'DJ Tools',
           'dj-tools-subtitle': 'Essential tools for harmonic mixing and professional DJ performance',
+          'herramientas-title': 'DJ Tools',
+          'herramientas-desc': 'Explore professional DJ tools and elevate your music production to the next level.',
+          'herramientas-link': 'DJ Tools →',
           'camelot-title': '🎵 Camelot Wheel',
           'camelot-description': 'The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.',
           'camelot-compatibility': 'Key Compatibility:',
@@ -1506,7 +2355,11 @@
           'contact-title': 'Contact',
           'contact-subtitle': 'Get in touch',
           'contact-email': 'Email: r.dabizha@icloud.com',
-          'think-about-it': 'Think about it →'
+          'follow-dj': 'Follow Dj Ros',
+          'gallery-caption-1': 'Ukrainian DJ - Live Performance',
+          'gallery-caption-2': 'Ukrainian DJ - Organic House Set',
+          'gallery-caption-3': 'Ukrainian DJ - Professional Setup',
+          'follow-social': 'Follow me on social media'
         },
         es: {
           'nav-home': 'Inicio',
@@ -1514,7 +2367,8 @@
           'nav-sound': 'Música',
           'nav-gallery': 'Fotos',
           'nav-contact': 'Contacto',
-          'home-description': 'DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.',
+          'nav-herramientas': 'Herramientas para DJ',
+          'home-description': 'DJ ucraniano profesional | Organic House, Deep House & Melodic | España | Reservas mundiales',
           'about-title': 'Sobre ROS DJ',
           'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
           'about-name': 'Rostyslav Dabizha',
@@ -1524,6 +2378,9 @@
           'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
           'dj-tools-title': 'Herramientas de DJ',
           'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
+          'herramientas-title': 'Herramientas para DJ',
+          'herramientas-desc': 'Explora herramientas de DJ profesionales y eleva tu producción musical al siguiente nivel.',
+          'herramientas-link': 'Herramientas para DJ →',
           'camelot-title': '🎵 Rueda Camelot',
           'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
           'camelot-compatibility': 'Compatibilidad de tonalidad:',
@@ -1552,7 +2409,11 @@
           'contact-title': 'Contacto',
           'contact-subtitle': 'Póngase en contacto',
           'contact-email': 'Email: r.dabizha@icloud.com',
-          'think-about-it': 'Piensa en ello →'
+          'follow-dj': 'Sigue a Dj Ros',
+          'gallery-caption-1': 'DJ Ucraniano - Presentación en Vivo',
+          'gallery-caption-2': 'DJ Ucraniano - Set de Organic House',
+          'gallery-caption-3': 'DJ Ucraniano - Equipo Profesional',
+          'follow-social': 'Sígueme en redes sociales'
         }
       };
       
@@ -1629,8 +2490,16 @@
             }
           });
           
-          // Update button states
+          // Update desktop button states
           cache.langButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
+            }
+          });
+          
+          // Update mobile button states
+          cache.mobileLangButtons.forEach(btn => {
             btn.classList.remove('active');
             if (btn.getAttribute('data-lang') === lang) {
               btn.classList.add('active');
@@ -1646,7 +2515,15 @@
         },
         
         init: () => {
+          // Desktop language buttons
           cache.langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+              languageSystem.update(btn.getAttribute('data-lang'));
+            });
+          });
+          
+          // Mobile language buttons
+          cache.mobileLangButtons.forEach(btn => {
             btn.addEventListener('click', () => {
               languageSystem.update(btn.getAttribute('data-lang'));
             });
@@ -1657,20 +2534,21 @@
         }
       };
       
+      // Removed mobile navigation system - no longer needed
+      
       // Navigation system
       const navigationSystem = {
         updateNav: () => {
           const scrollY = window.scrollY;
           
-          if (scrollY > state.lastScrollY && scrollY > 100) {
-            cache.nav.classList.add('hidden');
-            if (scrollY > window.innerHeight * 0.3) {
-              cache.landing.classList.add('hidden');
-            }
-          } else {
-            cache.nav.classList.remove('hidden');
-            if (scrollY < window.innerHeight * 0.1) {
-              cache.landing.classList.remove('hidden');
+          // Only hide/show navigation on desktop
+          if (window.innerWidth > 768) {
+            if (scrollY > state.lastScrollY && scrollY > 100) {
+              cache.nav.classList.add('hidden');
+              // Removed the landing.classList.add('hidden') - landing should always be visible
+            } else {
+              cache.nav.classList.remove('hidden');
+              // Removed the landing.classList.remove('hidden') - landing should always be visible
             }
           }
           
@@ -1679,7 +2557,7 @@
         
         updateActiveLink: () => {
           const scrollPosition = window.scrollY + window.innerHeight / 2;
-          let current = 'landing'; // Default to home section
+          let current = 'home'; // Default to home section
           
           cache.sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -1742,7 +2620,8 @@
         
         init: () => {
           cache.galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+              e.stopPropagation();
               const img = item.querySelector('img');
               gallerySystem.openModal(img);
             });
@@ -1755,14 +2634,21 @@
             }
           });
           
-          // Keyboard navigation
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && cache.modal.classList.contains('active')) {
-              gallerySystem.closeModal();
-            }
+          // Prevent scroll propagation in gallery
+          cache.galleryItems.forEach(item => {
+            item.addEventListener('wheel', (e) => {
+              e.stopPropagation();
+            }, { passive: false });
           });
         }
       };
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cache.modal.classList.contains('active')) {
+          gallerySystem.closeModal();
+        }
+      });
       
       // Performance monitoring
       const performanceMonitor = {
@@ -1789,20 +2675,13 @@
         console.log('🚀 Initializing ROS DJ website...');
         
         // Set Home as active on page load
-        const homeLink = document.querySelector('nav a[href="#landing"]');
+        const homeLink = document.querySelector('nav a[href="#home"]');
         if (homeLink) {
           homeLink.classList.add('active');
         }
         
-        // Auto-scroll to home panel
-        if (cache.homePanel && !state.isMobile) {
-          setTimeout(() => {
-            cache.homePanel.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'center' 
-            });
-          }, 500);
-        }
+        // Scroll to top on page load
+        window.scrollTo(0, 0);
         
         // Initialize all systems
         languageSystem.init();
@@ -1830,5 +2709,13 @@
       
     })();
   </script>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <img id="modalImage" class="modal-image" src="" alt="" />
+    </div>
+  </div>
 </body>
 </html>
