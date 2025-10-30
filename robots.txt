@@ -1,32 +1,30 @@
-# Allow all search engines to crawl the website
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://rosdj.com/sitemap.xml
-
-# Disallow admin and other private areas
-Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /search/
-Disallow: /*?*
-
-# Allow all image files
+Allow: /$
+Allow: /#
+Allow: /*.css$
+Allow: /*.js$
 Allow: /*.jpg$
-Allow: /*.jpeg$
 Allow: /*.png$
-Allow: /*.gif$
-Allow: /*.webp$
+Allow: /*.svg$
+
+# Sitemap Index - Primary sitemap for Google
+Sitemap: https://rosdj.es/sitemap-index.xml
+
+# Individual sitemaps
+Sitemap: https://rosdj.es/sitemap.xml
+Sitemap: https://rosdj.es/sitemap.html
+Sitemap: https://rosdj.es/sitemap.txt
 
 # Crawl-delay: 10
 
-# Allow social media link crawlers
-User-agent: Twitterbot
-Allow: /
+# Disallow admin and other private sections
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
 
-User-agent: LinkedInBot
-Allow: /
+# Allow all other pages /
 
-User-agent: Facebot
-Allow: /
+# Sitemap location
+Sitemap: https://rosdj.es/sitemap-index.xml
