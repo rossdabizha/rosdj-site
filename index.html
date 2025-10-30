@@ -1574,168 +1574,157 @@
       color: #ff5500;
     }
 
-    /* Modern Mobile Responsive - Completely Different Structure */
-    @media (max-width: 480px) {
-      :root{
-        --spacing-xs:0.5rem;
-        --spacing-sm:1rem;
-        --spacing-md:1.5rem;
-        --spacing-lg:2rem;
-        --spacing-xl:2.5rem;
-        --border-radius:16px;
-        --border-radius-sm:12px;
-      }
-      
-      html{
-        font-size:16px;
-        scroll-behavior: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      body{
-        background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/120% auto no-repeat fixed;
-        overflow-x: hidden;
-        touch-action: pan-y;
-        padding-top: 70px;
-      }
-      
-      /* Disable all animations on mobile */
-      * {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-      }
-      
-      .seccion {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .home-panel {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .tool-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .gallery-item {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      /* Hide desktop navigation completely */
-      .fixed-nav {
-        display: none !important;
-      }
-      
-      /* Removed mobile header styles */
-      
-      /* Removed menu toggle styles - no longer needed */
-      
-      /* Removed Full Screen Mobile Navigation styles */
-      
-      /* Mobile Sections - Card Based Layout */
-      .seccion{
-        min-height: auto;
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-md) 0;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      }
-      
-      /* Mobile Clean Home Section */
-      .home-section {
-        min-height: 100vh;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .home-content {
-        top: 20px;
-        left: 10px;
-      }
-      
-      .main-logo {
-        max-width: 350px;
-      }
-      
-      /* Removed mobile home-cta styles */
-      
-      /* Mobile Social Links - Horizontal Scroll */
-      .social-links-grid {
-        display: flex;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-lg);
-        padding: var(--spacing-md) 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      
-      .social-links-grid::-webkit-scrollbar {
-        display: none;
-      }
-      
-      .social-link-item {
-        min-width: 100px;
-        padding: var(--spacing-md);
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: var(--border-radius-sm);
-      }
-      
-      /* Mobile Gallery - Grid */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
-        padding: 0;
-      }
-      
-      .gallery-item {
-        width: 100%;
-        height: 150px;
-        border-radius: var(--border-radius-sm);
-        overflow: hidden;
-      }
-      
-      .gallery-item img {
-        height: 120px;
-      }
-      
-      /* Mobile Tools - Vertical Cards */
-      .dj-tools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-      
-      .tool-card {
-        background: rgba(255,255,255,0.08);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.15);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
-      }
-      
-      /* Disable hover effects on touch devices */
-      @media (hover: none) and (pointer: coarse){
-        .nav-link:hover::after,
-        .nav-link.active::after{
-          width:0;
-        }
+/* Modern Mobile Responsive - Completely Different Structure */
+@media (max-width: 480px) {
+  :root {
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.2rem;
+    --spacing-lg: 1.8rem;
+    --spacing-xl: 2.2rem;
+    --border-radius: 14px;
+    --border-radius-sm: 10px;
+  }
+
+  html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    background: 
+      linear-gradient(
+        135deg, 
+        rgba(0,0,0,0.85) 0%,
+        rgba(0,0,0,0.7) 100%
+      ),
+      url('images/ROSDJ_foto.webp') center/cover no-repeat fixed;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    touch-action: pan-y;
+    min-height: 100vh;
+  }
+
+  /* Disable animations only if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Base section styling */
+  .seccion {
+    min-height: auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Home section specific */
+  .home-section {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    padding: var(--spacing-lg);
+    width: 100%;
+  }
+
+  .main-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Gallery grid adjustments */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    padding: 0;
+  }
+
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* Tools section */
+  .dj-tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .tool-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Performance optimizations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 0;
+    }
+    
+    /* Add touch feedback */
+    .tool-card:active,
+    .gallery-item:active {
+      transform: scale(0.98);
+    }
+  }
+}
         
         #logo:hover{
           transform:none;
@@ -1744,7 +1733,6 @@
         .home-panel a:hover{
           transform:none;
         }
-      }
     }
 
     /* Mobile Compact Contact */
