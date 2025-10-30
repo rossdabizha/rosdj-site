@@ -277,17 +277,27 @@
     
     body{
       font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+      background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/cover no-repeat;
       color:var(--text-primary);
       line-height:1.6;
       font-weight:400;
       min-height:100vh;
       overflow-x:hidden;
-      background-attachment:fixed;
-      position: relative;
+      background-attachment:scroll;
+      transition:var(--transition);
     }
     
     /* Modern Animations */
+    @keyframes fadeInUp{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
     
     @keyframes pulse{
       0%,100%{transform:scale(1)}
@@ -345,14 +355,13 @@
       left:0;
       right:0;
       z-index:1000;
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.8) 100%);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background:rgba(0,0,0,0.8);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);
+      transition:var(--transition);
       transform:translateY(0);
       opacity:1;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
     }
     
     .fixed-nav.hidden{
@@ -449,29 +458,6 @@
       color:#fff;
       transform:scale(1.05);
     }
-    
-    /* Primary Button */
-    .btn-primary {
-      display: inline-block;
-      background: var(--gradient);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: var(--spacing-sm) var(--spacing-lg);
-      border-radius: 50px;
-      border: 2px solid var(--primary);
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(255,85,0,0.3);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,85,0,0.5);
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    }
 
     /* Modern Sections */
     .seccion{
@@ -493,67 +479,40 @@
       z-index:1;
     }
     
-    /* Clean Home Section */
-    .home-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 0;
-      margin: 0;
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-      position: relative;
+    /* Landing Section */
+    #landing{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:var(--spacing-lg) var(--spacing-md);
+      text-align:center;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+      transition:var(--transition);
     }
     
-    .home-section:hover {
-      background: none !important;
-      transform: none !important;
+    #landing.hidden{
+      opacity:0;
+      transform:translateY(-100vh);
+      pointer-events:none;
     }
     
-    .home-content {
-      position: absolute;
-      top: 50px;
-      left: 30px;
-      max-width: none;
-      margin: 0;
-      padding: 0;
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-    
-    .home-content:hover {
-      background: none !important;
-      transform: none !important;
-    }
-    
-    .logo-container {
-      margin: 0;
-      display: block;
-      background: none !important;
-    }
-    
-    .main-logo {
-      width: auto;
-      height: auto;
-      max-width: 900px;
-      display: block;
-      filter: none !important;
-      box-shadow: none !important;
-    }
-    
-    .main-logo:hover {
-      filter: none !important;
-      transform: none !important;
-      box-shadow: none !important;
-    }
-    
-    /* Hide subtitle */
-    .home-subtitle {
-      display: none;
+    #landing .page-wrapper{
+      text-align:center;
+      z-index:1;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      width:100%;
+      max-width:1000px;
+      padding:var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+      gap: var(--spacing-sm);
     }
     
     /* Social Links Block */
@@ -643,9 +602,98 @@
       }
     }
     
-    /* Removed logo styles */
+    #logo{
+      width:100%;
+      max-width:500px;
+      height:auto;
+      margin:0 auto var(--spacing-xs);
+      padding:0 var(--spacing-md);
+      filter:drop-shadow(0 8px 25px rgba(255,85,0,0.25)) contrast(1.05) brightness(1.1);
+      transition:var(--transition);
+      transform:translateY(0);
+      opacity: 0.9;
+    }
     
-    /* Removed home-panel styles */
+    #logo:hover{
+      transform:translateY(0);
+      filter:drop-shadow(0 8px 25px rgba(255,85,0,0.25)) contrast(1.05) brightness(1.1);
+    }
+    
+    #logo img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:var(--border-radius);
+    }
+    
+    .home-panel{
+      position:relative;
+      top:auto;
+      left:auto;
+      transform:none;
+      background:rgba(0,0,0,0.25);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      padding:var(--spacing-md) var(--spacing-lg);
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 6px 16px rgba(0,0,0,0.15);
+      text-align:center;
+      z-index:10;
+      max-width:520px;
+      width:85%;
+      margin:0 auto;
+      opacity: 0.9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+    
+    .home-panel h1{
+      color:var(--text-primary);
+      font-size:clamp(1.4rem,3.5vw,2rem);
+      margin-bottom:var(--spacing-xs);
+      font-weight:700;
+      font-family:var(--font-display);
+      text-shadow:0 2px 12px rgba(0,0,0,0.6);
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    .home-panel p{
+      color:rgba(255,255,255,1);
+      margin-bottom:var(--spacing-xs);
+      line-height:1.3;
+      font-size:0.9rem;
+      font-weight:500;
+      opacity: 1;
+    }
+    
+    .home-panel a{
+      display:inline-flex;
+      align-items:center;
+      gap:var(--spacing-xs);
+      color:var(--primary);
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.9rem;
+      padding:var(--spacing-xs) var(--spacing-md);
+      border-radius:50px;
+      background:rgba(255,85,0,0.3);
+      border:1px solid rgba(255,85,0,0.5);
+      transition:all 0.3s ease;
+      opacity: 1;
+    }
+    
+    .home-panel a:hover{
+      background:linear-gradient(45deg, rgba(255,85,0,0.2), rgba(183,28,28,0.2));
+      border-color:rgba(255,85,0,0.5);
+      transform:translateY(0) scale(1);
+      box-shadow:none;
+    }
     
     /* Home Panel Social Links */
     .home-social-links {
@@ -792,17 +840,28 @@
       transform: scale(1.05);
     }
     
-    /* Removed fadeInUp animation */
+    @keyframes fadeInUp{
+      from{
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    /* Clean Section Styles */
+    /* Section Styles */
     section{
       padding:2rem 1.5rem;
       max-width:1000px;
-      margin:1rem auto;
-      background: rgba(0,0,0,0.5);
+      margin:0 auto;
+    }
+    
+    section:not(#landing){
+      background:rgba(255,255,255,0.02);
       border-radius:20px;
-      position: relative;
-      z-index: 2;
+      margin:1rem auto;
     }
     .section-title{
       font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -845,95 +904,74 @@
       text-shadow: 0 1px 3px rgba(0,0,0,0.50);
     }
 
-    /* Horizontal Row DJ Tools */
+    /* DJ Tools Section */
     .dj-tools-grid{
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      margin-top: 1rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,85,0,0.5) rgba(255,255,255,0.1);
-    }
-    
-    .dj-tools-grid::-webkit-scrollbar {
-      height: 6px;
-    }
-    
-    .dj-tools-grid::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.1);
-      border-radius: 3px;
-    }
-    
-    .dj-tools-grid::-webkit-scrollbar-thumb {
-      background: rgba(255,85,0,0.5);
-      border-radius: 3px;
-    }
-    
-    .dj-tools-grid::-webkit-scrollbar-thumb:hover {
-      background: rgba(255,85,0,0.7);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .tool-card{
-      background: rgba(0,0,0,0.3);
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: left;
-      border: 1px solid rgba(255,255,255,0.05);
-      position: relative;
-      min-width: 300px;
-      flex: 0 0 auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .tool-card:hover{
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,85,0,0.3);
+      box-shadow: 0 15px 35px rgba(255,85,0,0.15);
     }
 
     .tool-card h3{
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
       color: var(--text-primary);
-      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
     }
 
     .tool-card p{
-      font-size: 0.85rem;
-      line-height: 1.5;
+      font-size: 1rem;
+      line-height: 1.7;
       color: var(--text-secondary);
-      margin-bottom: 0.7rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.50);
     }
 
     .camelot-info,
     .bpm-info,
     .in-kay-info{
       background: transparent;
-      border-radius: 8px;
-      padding: 0.7rem;
-      margin-top: 0.7rem;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
       border: none;
-      text-align: left;
     }
 
     .camelot-info h4,
     .bpm-info h4,
     .in-kay-info h4{
-      color: var(--primary);
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .camelot-info ul,
-    .bpm-info ul,
-    .in-kay-info ul{
-      list-style: none;
-      padding: 0;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.50);
     }
 
     .camelot-info li,
     .bpm-info li,
     .in-kay-info li{
-      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
       color: var(--text-secondary);
-      font-size: 0.8rem;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.50);
     }
 
     .in-kay-info .btn{
@@ -1224,8 +1262,8 @@
       opacity: 1;
     }
     
-    /* Herramientas para DJ Section */
-    .herramientas-section {
+    /* Think About Section */
+    .think-about-section {
       margin-top: 2rem;
       padding: 1.5rem;
       background: rgba(255,255,255,0.05);
@@ -1234,7 +1272,7 @@
       text-align: center;
     }
     
-    .herramientas-section h3 {
+    .think-about-section h3 {
       color: var(--primary);
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
@@ -1242,7 +1280,7 @@
       letter-spacing: 1px;
     }
     
-    .herramientas-section p {
+    .think-about-section p {
       color: rgba(255,255,255,0.8);
       font-size: 0.9rem;
       margin-bottom: 1rem;
@@ -1349,66 +1387,6 @@
     .software-item:hover img {
       transform: scale(1.1);
     }
-    
-    /* New Compact Software Section */
-    .software-section-compact {
-      max-width: 400px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: rgba(0,0,0,0.4);
-      border-radius: 12px;
-      text-align: center;
-    }
-    
-    .software-wrapper-compact {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    
-    .software-title-compact {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 500;
-    }
-    
-    .software-grid-compact {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .software-item-compact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.6rem;
-      background: rgba(255,255,255,0.03);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    
-    .software-item-compact:hover {
-      background: rgba(255,255,255,0.06);
-      transform: translateY(-2px);
-    }
-    
-    .software-item-compact img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    
-    .software-item-compact span {
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
 
     .software-info h5 {
       font-size: 1.1rem;
@@ -1509,54 +1487,7 @@
       box-shadow: 0 10px 30px rgba(255,85,0,0.20);
     }
 
-    /* Compact Contact Section */
-    .contact-section-compact {
-      max-width: 400px;
-      margin: 3rem auto;
-      padding: 1.5rem;
-      background: rgba(0,0,0,0.6);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
-    
-    .contact-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .contact-title-compact {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      opacity: 0.9;
-    }
-    
-    .contact-email-compact {
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.6rem 1.5rem;
-      background: rgba(255,85,0,0.1);
-      border-radius: 30px;
-      border: 1px solid rgba(255,85,0,0.3);
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    
-    .contact-email-compact:hover {
-      background: rgba(255,85,0,0.2);
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-    
-    /* Old Contact styles - kept for compatibility */
+    /* Contact Section */
     .contact-content {
       text-align: center;
       margin-top: 0.5rem;
@@ -1574,160 +1505,126 @@
       color: #ff5500;
     }
 
-    /* Modern Mobile Responsive - Completely Different Structure */
-    @media (max-width: 480px) {
+    /* Modern Mobile Responsive */
+    @media (max-width: 768px) {
       :root{
-        --spacing-xs:0.5rem;
-        --spacing-sm:1rem;
-        --spacing-md:1.5rem;
-        --spacing-lg:2rem;
-        --spacing-xl:2.5rem;
+        --spacing-xs:0.25rem;
+        --spacing-sm:0.5rem;
+        --spacing-md:1rem;
+        --spacing-lg:1.5rem;
+        --spacing-xl:2rem;
         --border-radius:16px;
-        --border-radius-sm:12px;
+        --border-radius-sm:8px;
       }
       
       html{
-        font-size:16px;
+        font-size:14px;
         scroll-behavior: auto;
         -webkit-overflow-scrolling: touch;
       }
       
       body{
-        background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('images/ROSDJ_foto.webp') center center/120% auto no-repeat fixed;
+        background-position: center top;
+        background-size: 120% auto;
+        background-attachment: scroll;
         overflow-x: hidden;
         touch-action: pan-y;
-        padding-top: 70px;
       }
       
-      /* Disable all animations on mobile */
-      * {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-      }
-      
-      .seccion {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .home-panel {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .tool-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .gallery-item {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      /* Hide desktop navigation completely */
-      .fixed-nav {
-        display: none !important;
-      }
-      
-      /* Removed mobile header styles */
-      
-      /* Removed menu toggle styles - no longer needed */
-      
-      /* Removed Full Screen Mobile Navigation styles */
-      
-      /* Mobile Sections - Card Based Layout */
       .seccion{
-        min-height: auto;
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-md) 0;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        min-height:100vh;
+        padding:var(--spacing-md) var(--spacing-sm);
+        scroll-snap-type: y mandatory;
+        scroll-snap-align: start;
       }
       
-      /* Mobile Clean Home Section */
-      .home-section {
-        min-height: 100vh;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .home-content {
-        top: 20px;
-        left: 10px;
-      }
-      
-      .main-logo {
-        max-width: 350px;
-      }
-      
-      /* Removed mobile home-cta styles */
-      
-      /* Mobile Social Links - Horizontal Scroll */
-      .social-links-grid {
+      #landing{
+        padding:var(--spacing-md) var(--spacing-sm);
+        min-height:100vh;
+        height:100vh;
+        scroll-snap-align: start;
         display: flex;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-lg);
-        padding: var(--spacing-md) 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        align-items: center;
+        justify-content: center;
       }
       
-      .social-links-grid::-webkit-scrollbar {
-        display: none;
+      .fixed-nav{
+        height:60px;
+        background:rgba(0,0,0,0.95);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
       }
       
-      .social-link-item {
-        min-width: 100px;
-        padding: var(--spacing-md);
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: var(--border-radius-sm);
+      .nav-container{
+        height:60px;
+        padding:0 var(--spacing-md);
       }
       
-      /* Mobile Gallery - Grid */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
-        padding: 0;
+      .nav-links{
+        gap:var(--spacing-sm);
+        flex-wrap:wrap;
+        justify-content:center;
       }
       
-      .gallery-item {
-        width: 100%;
-        height: 150px;
-        border-radius: var(--border-radius-sm);
-        overflow: hidden;
+      .nav-link{
+        font-size:0.7rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
+        text-transform:none;
+        letter-spacing:0.5px;
+        touch-action: manipulation;
       }
       
-      .gallery-item img {
-        height: 120px;
+      .language-selector{
+        gap:var(--spacing-xs);
+        padding:var(--spacing-xs);
+        margin-top:var(--spacing-xs);
+        width:100%;
+        justify-content:center;
       }
       
-      /* Mobile Tools - Vertical Cards */
-      .dj-tools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+      .lang-btn{
+        padding:var(--spacing-xs) var(--spacing-sm);
+        font-size:0.6rem;
+        min-width:35px;
+        touch-action: manipulation;
       }
       
-      .tool-card {
-        background: rgba(255,255,255,0.08);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.15);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
+      #logo{
+        max-width:280px;
+        margin-bottom:var(--spacing-md);
+      }
+      
+      #logo img{
+        border-radius:var(--border-radius);
+      }
+      
+      .home-panel{
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:none;
+        padding:var(--spacing-sm) var(--spacing-md);
+        width:95%;
+        max-width:none;
+        margin-top:var(--spacing-md);
+        margin-bottom:var(--spacing-sm);
+      }
+      
+      .home-panel h1{
+        font-size:clamp(1.2rem,6vw,1.8rem);
+        margin-bottom:var(--spacing-sm);
+      }
+      
+      .home-panel p{
+        font-size:0.85rem;
+        margin-bottom:var(--spacing-sm);
+        line-height:1.3;
+      }
+      
+      .home-panel a{
+        font-size:0.85rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
       }
       
       /* Disable hover effects on touch devices */
@@ -1746,21 +1643,63 @@
         }
       }
     }
+    
+    @media (max-width: 480px) {
+      body{
+        background-size: 140% auto;
+        background-position: center top;
+      }
+      
+      .nav-links{
+        flex-direction:column;
+        gap:var(--spacing-sm);
+      }
+      
+      .nav-link{
+        font-size:0.8rem;
+        padding:var(--spacing-sm) var(--spacing-md);
+        font-weight:600;
+        touch-action: manipulation;
+      }
+      
+      .language-selector{
+        order:-1;
+        margin-bottom:var(--spacing-sm);
+        padding:var(--spacing-sm);
+      }
+      
+      .lang-btn{
+        font-size:0.7rem;
+        padding:var(--spacing-xs) var(--spacing-sm);
+        min-width:40px;
+        touch-action: manipulation;
+      }
+      
+      .home-panel{
+        padding:var(--spacing-xs) var(--spacing-sm);
+        width:98%;
+      }
+      
+      .home-panel h1{
+        font-size:clamp(1rem,5vw,1.4rem);
+      }
+      
+      .home-panel p{
+        font-size:0.8rem;
+        line-height:1.2;
+      }
+      
+      .home-panel a{
+        font-size:0.8rem;
+        padding:var(--spacing-xs) var(--spacing-xs);
+      }
+    }
 
-    /* Mobile Compact Contact */
-    .contact-section-compact {
-      max-width: 90%;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    
-    .contact-title-compact {
-      font-size: 1rem;
-    }
-    
-    .contact-email-compact {
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
+    /* Contact Section - Compact */
+    .contact-content{
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
     }
     
     .contact-item{
@@ -1845,87 +1784,21 @@
       fill: currentColor;
       transition: all 0.3s ease;
     }
-    
-    /* Dark Footer Section */
-    .footer-section {
-      margin-top: 2rem;
-      padding: 2rem 1rem;
-      background: rgba(0,0,0,0.85);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .footer-container {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .footer-social h4 {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-    
-    .footer-social-links.compact {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-sm);
-      flex-wrap: wrap;
-    }
-    
-    .footer-social-links.compact a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 1rem;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 25px;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.85rem;
-      min-width: auto;
-      transition: var(--transition);
-      font-weight: 500;
-    }
-    
-    .footer-social-links.compact a:hover {
-      background: rgba(255,85,0,0.2);
-      border-color: var(--primary);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-    
-    .footer-social-links.compact svg {
-      width: 18px;
-      height: 18px;
-      fill: #ffffff;
-    }
 
     .footer-social-links a:hover svg{
       transform: scale(1.1);
     }
 
     .footer-bottom{
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.2rem;
-      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 2rem;
     }
-    
+
     .footer-text{
-      color: rgba(255,255,255,0.8);
-      font-size: 0.8rem;
-      margin: 0.4rem 0;
-    }
-    
-    .footer-text a {
-      color: var(--primary);
-      font-weight: 500;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
     }
 
     .footer-text a:hover{
@@ -1973,16 +1846,16 @@
   </style>
 <body>
 
-  <!-- Desktop Navigation (Hidden on Mobile) -->
+  <!-- Fixed Navigation -->
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
       <div class="nav-links">
-        <a href="#home" class="nav-link" data-lang="nav-home">Home</a>
+        <a href="#landing" class="nav-link" data-lang="nav-home">Home</a>
         <a href="#about" class="nav-link" data-lang="nav-about">About</a>
         <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
         <a href="#contact" class="nav-link" data-lang="nav-contact">Contact</a>
-        <a href="#dj-tools" class="nav-link" data-lang="nav-herramientas">Herramientas para DJ</a>
+        <a href="#dj-tools" class="nav-link" data-lang="nav-think-about">Think about it</a>
         <div class="language-selector">
           <button class="lang-btn" data-lang="uk">UA</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -1992,16 +1865,75 @@
     </div>
   </nav>
 
-  <!-- Clean Home Section -->
-  <section id="home" class="home-section">
-    <div class="home-content">
-      <div class="logo-container">
+  <!-- Landing Section -->
+  <section id="landing" class="seccion">
+    <div class="page-wrapper">
+      <div id="logo">
         <img src="logo.png" 
              alt="ROS DJ - Professional Ukrainian DJ Logo" 
-             class="main-logo"
-             width="900" 
-             height="600"
-             loading="eager">
+             width="600" 
+             height="400" 
+             loading="eager" 
+             itemprop="image"
+             title="ROS DJ - Professional Ukrainian DJ Logo"
+             data-credit="Rostyslav Dabizha"
+             data-creator="ROS DJ"
+             data-copyright="© 2024 ROS DJ. All rights reserved." />
+      </div>
+      <div class="home-panel" itemscope itemtype="https://schema.org/Person">
+        <p data-lang="home-description" itemprop="description">DJ ucraniano profesional especializado en Organic House, Deep House y música Melódica. Con base en España, disponible para reservas en todo el mundo.</p>
+        
+        <div class="think-about-section">
+          <h3 data-lang="think-about-title">Think about it</h3>
+          <p data-lang="think-about-desc">Explore professional DJ tools and elevate your music production to the next level.</p>
+          <a href="#dj-tools" style="color: #ff5500; text-decoration: none; font-weight: bold;" data-lang="think-about-it">Подумай про це →</a>
+        </div>
+        
+        <meta itemprop="name" content="ROS DJ">
+        <meta itemprop="alternateName" content="Rostyslav Dabizha">
+        <meta itemprop="jobTitle" content="DJ">
+        <meta itemprop="nationality" content="Ukrainian">
+        <link itemprop="url" href="https://rosdj.com">
+        <link itemprop="email" href="mailto:r.dabizha@icloud.com">
+        
+        <!-- Social Links in Home Panel -->
+        <div class="home-social-links">
+          <h5 data-lang="follow-dj">Follow DJ ROS</h5>
+          <div class="home-social-icons">
+            <!-- Icons removed to avoid duplication - see expanded social section below -->
+          </div>
+        </div>
+        
+        <!-- Additional Social Section -->
+        <div class="home-social-section">
+          <h6 data-lang="follow-social">Sígueme en redes sociales</h6>
+          <div class="home-social-expanded">
+            <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Instagram - Ukrainian DJ Electronic Music" aria-label="ROS DJ Instagram - Follow Ukrainian DJ for electronic music updates" itemprop="sameAs">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ SoundCloud - Ukrainian DJ Organic House Music" aria-label="ROS DJ SoundCloud - Listen to Ukrainian DJ organic house and deep house mixes" itemprop="sameAs">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+              </svg>
+              <span>SoundCloud</span>
+            </a>
+            <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ YouTube - Ukrainian DJ Electronic Music Videos" aria-label="ROS DJ YouTube - Watch Ukrainian DJ performances and electronic music videos" itemprop="sameAs">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>YouTube</span>
+            </a>
+            <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" class="social-link-expanded" title="ROS DJ Bandcamp - Ukrainian DJ Music Downloads" aria-label="ROS DJ Bandcamp - Download Ukrainian DJ electronic music and mixes" itemprop="sameAs">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M0 18.75l7.437-13.5h2.77L2.77 18.75H0zm11.413 0l7.437-13.5h2.77L14.183 18.75h-2.77z"/>
+              </svg>
+              <span>Bandcamp</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2136,37 +2068,62 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section-compact">
-    <div class="contact-wrapper">
-      <h3 class="contact-title-compact" data-lang="contact-title">Contact</h3>
-      <a href="mailto:r.dabizha@icloud.com" class="contact-email-compact">r.dabizha@icloud.com</a>
-    </div>
-  </section>
-
-  <!-- Compact Software Section -->
-  <section id="software" class="software-section-compact">
-    <div class="software-wrapper-compact">
-      <h4 class="software-title-compact" data-lang="daw-pro">Software</h4>
-      <div class="software-grid-compact">
-        <div class="software-item-compact">
-          <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="40" height="40">
-          <span>FL Studio</span>
+  <!-- Software Section -->
+  <section id="software" class="seccion">
+    <div class="pagewrapper">
+      <h4 class="software-title" data-lang="daw-pro">Professional Software I Use</h4>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Flstudio.png" 
+               alt="FL Studio" 
+               loading="lazy" 
+               width="60" 
+               height="60"
+               data-credit="Image-Line Software"
+               data-copyright="© 2024 Image-Line. All rights reserved."
+               data-creator="Image-Line">
+          <div class="software-info">
+            <h5>FL Studio</h5>
+            <p class="software-desc">Digital Audio Workstation</p>
+          </div>
         </div>
-        <div class="software-item-compact">
-          <img src="Rekordbox_Logo.png" alt="Rekordbox" loading="lazy" width="40" height="40">
-          <span>Rekordbox</span>
+        <div class="software-item">
+          <img src="Rekordbox_Logo.png" 
+               alt="Pioneer Rekordbox" 
+               loading="lazy" 
+               width="60" 
+               height="60"
+               data-credit="Pioneer DJ Corporation"
+               data-copyright="© 2024 Pioneer DJ. All rights reserved."
+               data-creator="Pioneer DJ">
+          <div class="software-info">
+            <h5>Rekordbox</h5>
+            <p class="software-desc">DJ Mixing Software</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="footer-section">
-    <div class="footer-container">
+  <!-- Contact Section -->
+  <section id="contact" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="contact-title">Contact</h2>
+      <p class="section-subtitle" data-lang="contact-subtitle">Get in touch</p>
+      <div class="contact-content">
+        <div class="contact-item">
+          <a href="mailto:r.dabizha@icloud.com" class="contact-link" data-lang="contact-email">Email: r.dabizha@icloud.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
       <div class="footer-social">
-        <h4 data-lang="follow-social">Follow me on social media</h4>
-        <div class="footer-social-links compact">
+        <h4>Sígueme en redes sociales</h4>
+        <div class="footer-social-links">
           <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.5 6.5h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0H7.5v7H8.5v-7z"/>
@@ -2202,6 +2159,7 @@
       <div class="footer-bottom">
         <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
         <p class="footer-text"><a href="sitemap.html" style="color: #ff5500; text-decoration: none;">Карта сайту</a></p>
+        <p class="footer-text"><a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" style="color: #ff5500; text-decoration: none;">Bandcamp</a></p>
       </div>
     </div>
   </footer>
@@ -2228,11 +2186,9 @@
       const cache = {
         body: document.body,
         nav: document.getElementById('fixedNav'),
-        menuToggle: document.getElementById('menuToggle'),
+        landing: document.getElementById('landing'),
         navLinks: document.querySelectorAll('.nav-link'),
-        mobileNavItems: document.querySelectorAll('.mobile-nav-item'),
         langButtons: document.querySelectorAll('.lang-btn'),
-        mobileLangButtons: document.querySelectorAll('.mobile-lang-btn'),
         dataLangElements: document.querySelectorAll('[data-lang]'),
         homePanel: document.querySelector('.home-panel'),
         logo: document.getElementById('logo'),
@@ -2259,7 +2215,7 @@
           'nav-sound': 'Музика',
           'nav-gallery': 'Фото',
           'nav-contact': 'Контакт',
-          'nav-herramientas': 'Інструменти DJ',
+          'nav-think-about': 'Подумай про це',
           'home-description': 'Професійний український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
           'about-title': 'Про ROS DJ',
           'about-subtitle': 'Створення захоплюючих музичних подорожей через глибокі, мелодійні та атмосферні органик хаус сети',
@@ -2268,11 +2224,11 @@
           'festival-performances': '🎵 <strong>Музична подорож:</strong> Створюю унікальні DJ сети для клубів, приватних подій та онлайн-платформ. Працюю над створенням атмосферних сетів, що поєднують глибокі мелодії та сучасні електронні ритми.',
           'about-genres': '<strong>Жанри:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Базується:</strong> Іспанія | <strong>Доступний:</strong> Бронювання по всьому світу',
-          'dj-tools-title': 'Інструменти DJ',
+          'dj-tools-title': 'Подумай про Це',
           'dj-tools-subtitle': 'Необхідні інструменти для гармонійного мікшування та професійних DJ виступів',
-          'herramientas-title': 'Інструменти DJ',
-          'herramientas-desc': 'Досліджуйте професійні DJ інструменти та підніміть свій музичний продакшн на новий рівень.',
-          'herramientas-link': 'Інструменти DJ →',
+          'think-about-title': 'Подумай про це',
+          'think-about-desc': 'Досліджуйте професійні DJ інструменти та підніміть свій музичний продакшн на новий рівень.',
+          'think-about-it': 'Подумай про це →',
           'camelot-title': '🎵 Колесо Кемелота',
           'camelot-description': 'Колесо Кемелота є необхідним для гармонійного мікшування в DJ сетах. Воно допомагає DJ мікшувати треки в тій самій тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом усього виступу.',
           'camelot-compatibility': 'Сумісність тональностей:',
@@ -2301,6 +2257,7 @@
           'contact-title': 'Контакт',
           'contact-subtitle': 'Зв\'яжіться зі мною',
           'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Подумай про це →',
           'follow-dj': 'Слідкуй за Dj Ros',
           'gallery-caption-1': 'Український DJ - Live Виступ',
           'gallery-caption-2': 'Український DJ - Organic House Сет',
@@ -2313,7 +2270,7 @@
           'nav-sound': 'Music', 
           'nav-gallery': 'Photos',
           'nav-contact': 'Contact',
-          'nav-herramientas': 'DJ Tools',
+          'nav-think-about': 'Think about it',
           'home-description': 'Professional Ukrainian DJ | Organic House, Deep House & Melodic | Spain | Worldwide bookings',
           'about-title': 'About ROS DJ',
           'about-subtitle': 'Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets',
@@ -2322,11 +2279,11 @@
           'festival-performances': '🎵 <strong>Musical Journey:</strong> Creating unique DJ sets for clubs, private events and online platforms. Working on crafting atmospheric sets that combine deep melodies with modern electronic rhythms.',
           'about-genres': '<strong>Genres:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
-          'dj-tools-title': 'DJ Tools',
+          'dj-tools-title': 'Think About It',
           'dj-tools-subtitle': 'Essential tools for harmonic mixing and professional DJ performance',
-          'herramientas-title': 'DJ Tools',
-          'herramientas-desc': 'Explore professional DJ tools and elevate your music production to the next level.',
-          'herramientas-link': 'DJ Tools →',
+          'think-about-title': 'Think about it',
+          'think-about-desc': 'Explore professional DJ tools and elevate your music production to the next level.',
+          'think-about-it': 'Think about it →',
           'camelot-title': '🎵 Camelot Wheel',
           'camelot-description': 'The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.',
           'camelot-compatibility': 'Key Compatibility:',
@@ -2355,6 +2312,7 @@
           'contact-title': 'Contact',
           'contact-subtitle': 'Get in touch',
           'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Think about it →',
           'follow-dj': 'Follow Dj Ros',
           'gallery-caption-1': 'Ukrainian DJ - Live Performance',
           'gallery-caption-2': 'Ukrainian DJ - Organic House Set',
@@ -2367,7 +2325,7 @@
           'nav-sound': 'Música',
           'nav-gallery': 'Fotos',
           'nav-contact': 'Contacto',
-          'nav-herramientas': 'Herramientas para DJ',
+          'nav-think-about': 'Piénsalo',
           'home-description': 'DJ ucraniano profesional | Organic House, Deep House & Melodic | España | Reservas mundiales',
           'about-title': 'Sobre ROS DJ',
           'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
@@ -2378,9 +2336,9 @@
           'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
           'dj-tools-title': 'Herramientas de DJ',
           'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
-          'herramientas-title': 'Herramientas para DJ',
-          'herramientas-desc': 'Explora herramientas de DJ profesionales y eleva tu producción musical al siguiente nivel.',
-          'herramientas-link': 'Herramientas para DJ →',
+          'think-about-title': 'Piénsalo',
+          'think-about-desc': 'Explora herramientas de DJ profesionales y eleva tu producción musical al siguiente nivel.',
+          'think-about-it': 'Piénsalo →',
           'camelot-title': '🎵 Rueda Camelot',
           'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
           'camelot-compatibility': 'Compatibilidad de tonalidad:',
@@ -2409,6 +2367,7 @@
           'contact-title': 'Contacto',
           'contact-subtitle': 'Póngase en contacto',
           'contact-email': 'Email: r.dabizha@icloud.com',
+          'think-about-it': 'Piensa en ello →',
           'follow-dj': 'Sigue a Dj Ros',
           'gallery-caption-1': 'DJ Ucraniano - Presentación en Vivo',
           'gallery-caption-2': 'DJ Ucraniano - Set de Organic House',
@@ -2490,16 +2449,8 @@
             }
           });
           
-          // Update desktop button states
+          // Update button states
           cache.langButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-          
-          // Update mobile button states
-          cache.mobileLangButtons.forEach(btn => {
             btn.classList.remove('active');
             if (btn.getAttribute('data-lang') === lang) {
               btn.classList.add('active');
@@ -2515,15 +2466,7 @@
         },
         
         init: () => {
-          // Desktop language buttons
           cache.langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              languageSystem.update(btn.getAttribute('data-lang'));
-            });
-          });
-          
-          // Mobile language buttons
-          cache.mobileLangButtons.forEach(btn => {
             btn.addEventListener('click', () => {
               languageSystem.update(btn.getAttribute('data-lang'));
             });
@@ -2534,21 +2477,20 @@
         }
       };
       
-      // Removed mobile navigation system - no longer needed
-      
       // Navigation system
       const navigationSystem = {
         updateNav: () => {
           const scrollY = window.scrollY;
           
-          // Only hide/show navigation on desktop
-          if (window.innerWidth > 768) {
-            if (scrollY > state.lastScrollY && scrollY > 100) {
-              cache.nav.classList.add('hidden');
-              // Removed the landing.classList.add('hidden') - landing should always be visible
-            } else {
-              cache.nav.classList.remove('hidden');
-              // Removed the landing.classList.remove('hidden') - landing should always be visible
+          if (scrollY > state.lastScrollY && scrollY > 100) {
+            cache.nav.classList.add('hidden');
+            if (scrollY > window.innerHeight * 0.3) {
+              cache.landing.classList.add('hidden');
+            }
+          } else {
+            cache.nav.classList.remove('hidden');
+            if (scrollY < window.innerHeight * 0.1) {
+              cache.landing.classList.remove('hidden');
             }
           }
           
@@ -2557,7 +2499,7 @@
         
         updateActiveLink: () => {
           const scrollPosition = window.scrollY + window.innerHeight / 2;
-          let current = 'home'; // Default to home section
+          let current = 'landing'; // Default to home section
           
           cache.sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -2675,7 +2617,7 @@
         console.log('🚀 Initializing ROS DJ website...');
         
         // Set Home as active on page load
-        const homeLink = document.querySelector('nav a[href="#home"]');
+        const homeLink = document.querySelector('nav a[href="#landing"]');
         if (homeLink) {
           homeLink.classList.add('active');
         }
