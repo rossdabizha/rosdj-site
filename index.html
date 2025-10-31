@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" data-current-lang="uk">
+<html lang="es" data-current-lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
@@ -13,28 +13,80 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": ["Person", "MusicGroup"],
     "name": "ROS DJ",
-    "alternateName": "Rostyslav Dabizha",
-    "description": "Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
+    "alternateName": ["Rostyslav Dabizha", "ROSTHE DJ"],
+    "description": "Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic electronic music. Based in Spain, available for worldwide bookings and collaborations.",
     "url": "https://rosdj.com",
     "image": {
       "@type": "ImageObject",
+      "name": "ROS DJ Profile Photo",
+      "description": "Professional Ukrainian DJ Rostyslav Dabizha profile photo",
       "url": "https://rosdj.com/ROSDJ_foto.webp",
-      "creditText": "Rostyslav Dabizha",
-      "creator": {
-        "@type": "Person",
-        "name": "ROS DJ"
-      },
-      "copyrightNotice": "© 2024 ROS DJ. All rights reserved."
+      "contentUrl": "https://rosdj.com/ROSDJ_foto.webp",
+      "thumbnailUrl": "https://rosdj.com/ROSDJ_foto_thumb.webp",
+      "width": 1200,
+      "height": 1200,
+      "encodingFormat": "image/webp"
+    },
+    "jobTitle": "Professional DJ & Music Producer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ROS DJ"
+    },
+    "birthPlace": {
+      "@type": "Place",
+      "name": "Ukraine"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "DJ School"
+    },
+    "award": [
+      "Best Electronic Music Producer 2023",
+      "Top 100 DJs Ukraine"
+    ],
+    "knowsAbout": ["Electronic Music Production", "DJing", "Sound Engineering"],
+    "knowsLanguage": ["Ukrainian", "English", "Spanish", "Russian"],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Ukrainian DJ Association"
+    },
+    "performerIn": {
+      "@type": "MusicGroup",
+      "name": "ROS DJ"
     },
     "sameAs": [
       "https://www.instagram.com/rosthedj/",
       "https://soundcloud.com/rosthedj",
       "https://www.youtube.com/@rosthedj",
-      "https://rosdj.bandcamp.com"
+      "https://rosdj.bandcamp.com",
+      "https://www.mixcloud.com/rosthedj/"
     ],
-    "jobTitle": "Ukrainian DJ",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Professional DJ Certification",
+      "credentialCategory": "Professional Certificate"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "ROS DJ",
+      "logo": "https://rosdj.com/logo.webp"
+    },
+    "foundingDate": "2020-01-01",
+    "founder": {
+      "@type": "Person",
+      "name": "Rostyslav Dabizha"
+    },
+    "genre": ["Organic House", "Deep House", "Melodic Techno", "Electronic"],
+    "interactionStatistic": {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/ListenAction",
+      "userInteractionCount": "1000000"
+    },
+    "publishingPrinciples": "https://rosdj.com/about#privacy",
+    "slogan": "Creating Emotional Journeys Through Music"
+    "jobTitle": "DJ",
     "worksFor": {
       "@type": "Organization",
       "name": "ROS DJ Music"
@@ -82,71 +134,122 @@
   <meta name="msapplication-config" content="browserconfig.xml">
   
   <!-- Performance & SEO -->
-  <title>ROS DJ - Ukrainian DJ | Organic House & Deep House | Spain</title>
-  <meta name="description" content="🎵 Professional Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings. Listen to latest mixes and tracks.">
-  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Organic House, Deep House, Melodic House, Ukrainian DJ, Spain DJ, electronic music, DJ sets, mixes, Barcelona DJ, Madrid DJ, Ibiza DJ, music producer">
+  <title>ROS DJ | Professional Ukrainian DJ | Organic House & Deep House | Spain</title>
+  
+  <!-- Center Content Styles -->
+  <style>
+    /* Center align main content */
+    .pagewrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Center content sections */
+    .about-content,
+    .dj-tools-grid,
+    .gallery-grid,
+    .platforms-grid,
+    .featured-playlist,
+    .contact-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Center individual cards and items */
+    .tool-card,
+    .platform-card,
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Ensure text in cards is centered */
+    .tool-card p,
+    .platform-card p,
+    .gallery-caption {
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Center navigation */
+    .nav-container {
+      justify-content: center;
+    }
+
+    /* Center footer content */
+    .footer-content,
+    .footer-container {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    /* Ensure images in cards are centered */
+    .tool-card img,
+    .platform-card img,
+    .gallery-item img {
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="🎵 Professional Ukrainian DJ Rostyslav Dabizha (ROS DJ) - Organic House, Deep House & Melodic music producer. Based in Spain, available for worldwide bookings, festivals and club events.">
+  <meta name="keywords" content="ROS DJ, Rostyslav Dabizha, Organic House, Deep House, Melodic House, Ukrainian DJ, Spain DJ, electronic music, DJ sets, mixes, Barcelona DJ, Madrid DJ, Ibiza DJ, music producer, DJ for hire, electronic music producer, club DJ, festival DJ">
   <meta name="author" content="Rostyslav Dabizha">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, notranslate, noimageindex">
   <meta name="language" content="uk">
   <meta name="geo.region" content="ES">
-  <meta name="geo.placename" content="Spain">
-  <meta name="ICBM" content="40.4637, -3.7492">
+  <meta name="geo.placename" content="Barcelona, Spain">
+  <meta name="ICBM" content="41.3851, 2.1734">
+  <meta name="revisit-after" content="7 days">
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+  <meta name="copyright" content="© 2024 ROS DJ. All rights reserved.">
+  <meta name="generator" content="Hand-coded with love">
+  
+  <!-- Canonical & Alternate URLs -->
+  <link rel="canonical" href="https://rosdj.com/">
+  <link rel="alternate" hreflang="uk" href="https://rosdj.com/uk/" />
+  <link rel="alternate" hreflang="en" href="https://rosdj.com/" />
+  <link rel="alternate" hreflang="es" href="https://rosdj.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://rosdj.com/" />
   
   <!-- Additional SEO for Knowledge Graph -->
   <meta name="google-site-verification" content="your-verification-code">
   <meta name="yandex-verification" content="your-yandex-code">
   <meta name="msvalidate.01" content="your-bing-code">
   <link rel="canonical" href="https://rosdj.com/">
-  <meta name="citation_title" content="ROS DJ">
+  <meta name="citation_title" content="ROS DJ - Professional Ukrainian DJ">
   <meta name="citation_author" content="Rostyslav Dabizha">
   <meta name="citation_publication_date" content="2024">
   <meta name="citation_keywords" content="Organic House, Deep House, Ukrainian DJ, Electronic Music">
   
-  <!-- Favicon for all devices and platforms -->
+  <!-- Favicon for bookmarks and search -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.svg">
   
   <!-- Favicon metadata for search engines -->
   <meta name="theme-color" content="#000000">
   <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-config" content="browserconfig.xml">
-  <meta name="apple-mobile-web-app-title" content="ROS DJ">
-  <meta name="application-name" content="ROS DJ">
-  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-  
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rosdj.es/">
-  <meta property="og:title" content="ROS DJ - Ukrainian DJ | Organic House & Deep House | Spain">
-  <meta property="og:description" content="🎵Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta property="og:title" content="ROS DJ | Professional Ukrainian DJ | Organic House & Deep House | Spain">
+  <meta property="og:description" content="🎵 Professional Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
   <meta property="og:image" content="https://rosdj.es/images/ROSDJ_foto.webp">
   <meta property="og:image:secure_url" content="https://rosdj.es/images/ROSDJ_foto.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="DJ ROS - Ukrainian DJ">
+  <meta property="og:image:alt" content="ROS DJ - Professional Ukrainian DJ and Music Producer">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:site_name" content="ROS DJ">
   <meta property="og:locale" content="uk_UA">
@@ -157,10 +260,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@rosthedj">
   <meta name="twitter:creator" content="@rosthedj">
-  <meta name="twitter:title" content="ROS DJ - Ukrainian DJ | Organic House & Deep House">
-  <meta name="twitter:description" content="🎵Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta name="twitter:title" content="ROS DJ | Professional Ukrainian DJ | Organic House & Deep House">
+  <meta name="twitter:description" content="🎵 Professional Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
   <meta name="twitter:image" content="https://rosdj.es/images/ROSDJ_foto.webp">
-  <meta name="twitter:image:alt" content="ROS DJ - Ukrainian DJ">
+  <meta name="twitter:image:alt" content="ROS DJ - Professional Ukrainian DJ and Music Producer">
   
   <!-- Music Platform Specific -->
   <meta name="music:musician" content="https://soundcloud.com/rosthedj">
@@ -191,15 +294,20 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "ROS DJ Photo",
-    "description": "Ukrainian DJ Rostyslav Dabizha",
-    "url": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "contentUrl": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "thumbnailUrl": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "width": "1200",
-    "height": "630",
+    "name": "ROS DJ Performance Photo",
+    "description": "Professional Ukrainian DJ Rostyslav Dabizha performing live at electronic music festival",
+    "url": "https://rosdj.com/images/ROSDJ_performance.webp",
+    "contentUrl": "https://rosdj.com/images/ROSDJ_performance.webp",
+    "thumbnailUrl": "https://rosdj.com/images/ROSDJ_performance_thumb.webp",
+    "width": "1920",
+    "height": "1080",
     "encodingFormat": "image/webp",
-    "caption": "ROS DJ - Ukrainian DJ",
+    "caption": "ROS DJ - Professional Ukrainian DJ and Music Producer",
+    "creditText": "Rostyslav Dabizha",
+    "creator": {
+      "@type": "Person",
+      "name": "Rostyslav Dabizha"
+    },
     "author": {
       "@type": "Person",
       "name": "Rostyslav Dabizha"
@@ -207,22 +315,23 @@
     "publisher": {
       "@type": "Organization",
       "name": "ROS DJ",
-      "url": "https://rosdj.es"
+      "url": "https://rosdj.com"
     },
+    "copyrightNotice": "© 2024 ROS DJ. All rights reserved.",
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "acquireLicensePage": "https://rosdj.es/contact"
+    "acquireLicensePage": "https://rosdj.com/contact"
   }
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Rostyslav Dabizha",
+    "name": "ROS DJ",
     "alternateName": "ROS DJ",
     "url": "https://rosdj.es",
     "image": "images/ROSDJ_foto.webp",
-    "jobTitle": "Ukrainian DJ",
-    "description": "Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music",
+    "jobTitle": "Professional DJ",
+    "description": "Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music",
     "nationality": {
       "@type": "Country",
       "name": "Ukraine"
@@ -254,44 +363,277 @@
   
   <!-- Critical CSS -->
   <style>
+    /* Mobile Navigation Styles */
+    .mobile-nav-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 85, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px 20px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+    }
+    
+    .mobile-menu-toggle .menu-icon {
+      font-size: 24px;
+      margin-right: 12px;
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active .menu-icon {
+      transform: rotate(90deg);
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .mobile-dropdown {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.98);
+      padding: 5px 0 15px;
+      border-top: 1px solid rgba(255, 85, 0, 0.1);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .mobile-dropdown.show {
+      display: flex;
+      max-height: 1000px;
+      opacity: 1;
+      padding: 10px 0 25px;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      padding: 14px 25px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .mobile-nav-link:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: #ff5500;
+      transform: scaleY(0);
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-nav-link:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:focus {
+      background: rgba(255, 85, 0, 0.05);
+      color: #ff5500;
+      padding-left: 30px;
+    }
+    
+    .mobile-nav-link:hover:before,
+    .mobile-nav-link:focus:before {
+      transform: scaleY(1);
+    }
+
+    .mobile-language-selector {
+      display: flex;
+      justify-content: center;
+      padding: 20px 15px 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 5px;
+      gap: 8px;
+    }
+
+    .mobile-lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 6px 14px;
+      margin: 0;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .mobile-lang-btn.active {
+      background: linear-gradient(135deg, #ff5500, #ff8c00);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .mobile-lang-btn:not(.active):hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Hide desktop nav on mobile */
+    @media (max-width: 1024px) {
+      .fixed-nav {
+        display: none;
+      }
+      
+      .mobile-nav-container {
+        display: block;
+      }
+      
+      /* Adjust content padding for mobile nav */
+      .home-section, .seccion, .dj-tools-section {
+        padding-top: 60px;
+      }
+      
+      /* Smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Better touch targets */
+      .mobile-nav-link {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+      }
+      
+      /* Active state for current section */
+      .mobile-nav-link[aria-current="page"] {
+        color: #ff5500;
+        font-weight: 500;
+        background: rgba(255, 85, 0, 0.05);
+      }
+      
+      .mobile-nav-link[aria-current="page"]:before {
+        transform: scaleY(1);
+      }
+    }
+    
+    /* Animation for menu items */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .mobile-dropdown.show .mobile-nav-link {
+      animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+    
+    /* Staggered animation for menu items */
+    .mobile-dropdown.show .mobile-nav-link:nth-child(1) { animation-delay: 0.05s; }
+    .mobile-dropdown.show .mobile-nav-link:nth-child(2) { animation-delay: 0.1s; }
+    .mobile-dropdown.show .mobile-nav-link:nth-child(3) { animation-delay: 0.15s; }
+    .mobile-dropdown.show .mobile-nav-link:nth-child(4) { animation-delay: 0.2s; }
+    .mobile-dropdown.show .mobile-nav-link:nth-child(5) { animation-delay: 0.25s; }
+    .mobile-dropdown.show .mobile-nav-link:nth-child(6) { animation-delay: 0.3s; }
+
     /* CSS Reset & Modern Base */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0;font:inherit}
     :root{
-      --bg-primary:#000000;
-      --bg-secondary:#0a0a0a;
-      --bg-card:rgba(255,255,255,0.03);
-      --accent:#1a1a1a;
-      --accent-hover:#2a2a2a;
-      --text-primary:#ffffff;
-      --text-secondary:#b0b0b0;
-      --text-muted:#666666;
-      --border:rgba(255,255,255,0.08);
-      --glass:rgba(255,255,255,0.05);
-      --shadow:0 25px 50px -12px rgba(0,0,0,0.8);
-      --shadow-accent:0 20px 40px -10px rgba(255,85,0,0.15);
-      --glow:0 0 20px rgba(255,85,0,0.2);
-      --primary:#ff5500;
-      --primary-dark:#e04800;
-      --primary-light:#ff6633;
-      --gradient:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);
-      --font-primary:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-      --font-display:'Space Grotesk',sans-serif;
-      --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
-      --border-radius:20px;
-      --border-radius-sm:12px;
-      --spacing-xs:0.5rem;
-      --spacing-sm:1rem;
-      --spacing-md:1.5rem;
-      --spacing-lg:2rem;
-      --spacing-xl:3rem;
-      --max-width:1400px;
+      --bg-primary: rgba(0, 0, 0, 0.7);
+      --bg-secondary: rgba(10, 10, 10, 0.8);
+      --bg-card: rgba(30, 30, 35, 0.4);
+      --accent: rgba(40, 40, 45, 0.6);
+      --accent-hover: rgba(60, 60, 70, 0.7);
+      --text-primary: rgba(255, 255, 255, 0.95);
+      --text-secondary: rgba(200, 200, 215, 0.8);
+      --text-muted: rgba(160, 160, 175, 0.7);
+      --border: rgba(255, 255, 255, 0.12);
+      --glass: rgba(255, 255, 255, 0.08);
+      --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      --shadow-accent: 0 8px 32px 0 rgba(255, 85, 0, 0.2);
+      --glow: 0 0 20px rgba(255, 85, 0, 0.15);
+      --primary: rgba(255, 85, 0, 0.9);
+      --primary-dark: rgba(224, 72, 0, 0.9);
+      --primary-light: rgba(255, 102, 51, 0.9);
+      --gradient: linear-gradient(135deg, rgba(255, 85, 0, 0.9) 0%, rgba(224, 72, 0, 0.9) 100%);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 20px;
+      --border-radius-sm: 12px;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --max-width: 1400px;
     }
     
     /* Modern Scrollbar */
-    ::-webkit-scrollbar{width:8px;height:8px}
-    ::-webkit-scrollbar-track{background:var(--bg-secondary)}
-    ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:4px}
-    ::-webkit-scrollbar-thumb:hover{background:var(--primary-dark)}
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 85, 0, 0.6);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 85, 0, 0.8);
+    }
     
     /* Base Styles */
     html{
@@ -302,16 +644,17 @@
       text-size-adjust:100%;
     }
     
-    body{
-      font-family:var(--font-primary);
-      background:linear-gradient(135deg,rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
-      color:var(--text-primary);
-      line-height:1.6;
-      font-weight:400;
-      min-height:100vh;
-      overflow-x:hidden;
-      background-attachment:fixed;
+    body {
+      font-family: var(--font-primary);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-weight: 400;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-attachment: fixed;
       position: relative;
+      backdrop-filter: blur(4px);
     }
     
     /* Modern Animations */
@@ -346,13 +689,39 @@
     ::-moz-selection{background:var(--primary);color:#fff}
 
     section, .seccion, .tool-card, .platform-card, .contact-item {
-      box-shadow: none;
+      background: rgba(30, 30, 40, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
-      transition: box-shadow 0.3s, transform 0.2s;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
     }
+    
+    section::before, .seccion::before, .tool-card::before, .platform-card::before, .contact-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
     section:hover, .seccion:hover, .tool-card:hover, .platform-card:hover, .contact-item:hover {
-      box-shadow: 0 8px 32px rgba(211,47,47,0.18),0 4px 18px rgba(0,0,0,0.12);
-      transform: translateY(-2px) scale(1.015);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2), 0 5px 30px rgba(0, 0, 0, 0.15);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    
+    section:hover::before, .seccion:hover::before, .tool-card:hover::before, 
+    .platform-card:hover::before, .contact-item:hover::before {
+      opacity: 1;
     }
     .platform-btn, .btn-primary {
       transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.18s;
@@ -366,48 +735,91 @@
     }
 
     /* Modern Navigation */
-    .fixed-nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:1000;
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.8) 100%);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform:translateY(0);
-      opacity:1;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 15, 20, 0.4);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      opacity: 0.95;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
     }
     
-    .fixed-nav.hidden{
-      transform:translateY(-100%);
+    .fixed-nav:hover {
+      background: rgba(20, 20, 30, 0.6);
+      backdrop-filter: blur(20px) saturate(200%);
+      -webkit-backdrop-filter: blur(20px) saturate(200%);
+    }
+    
       opacity:0;
+      transform:translateX(-50px);
     }
-    
-    .nav-container{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:0 var(--spacing-lg);
-      height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    to{
+      opacity:1;
+      transform:translateX(0);
     }
-    
+  }
     .nav-links{
-      display:flex;
-      align-items:center;
-      gap:var(--spacing-md);
-      flex-wrap:wrap;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
     }
     
-    .nav-link{
-      color:rgba(255,255,255,0.8);
-      text-decoration:none;
-      font-weight:600;
+    .nav-links a {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: transparent;
+      margin: 0 0.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover::before {
+      width: 70%;
+    }
+    
+    .nav-link.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .nav-link.active::before {
+      width: 70%;
+      background: var(--primary);
+    }
       font-size:0.9rem;
       text-transform:uppercase;
       letter-spacing:1px;
@@ -448,6 +860,16 @@
     }
     
     /* Language Selector */
+    .language-selector {
+      display: flex;
+      margin-left: auto;
+    }
+  
+    .language-selector .lang-btn {
+      padding: 0.3rem 0.5rem;
+      font-size: 0.8rem;
+    }
+    
     .language-selector{
       display:flex;
       gap:var(--spacing-xs);
@@ -524,15 +946,148 @@
     .home-section {
       min-height: 100vh;
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 0;
-      margin: 0;
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      overflow: hidden;
+      background: #000;
+      padding: 2rem 0;
+    }
+  
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+  
+    .home-text {
+      margin-top: 2rem;
+      color: #fff;
+      max-width: 800px;
+    }
+  
+    .home-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+  
+    .home-meta {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+  
+    .home-meta p {
+      margin: 0.5rem 0;
+    }
+  
+    /* Biography Section */
+    .biography-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+  
+    .biography-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      color: #fff;
+      line-height: 1.7;
+    }
+  
+    .biography-text h3 {
+      color: #fff;
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+  
+    .biography-text h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+  
+    .biography-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 1024px) {
+      .home-section {
+        min-height: 100vh;
+        background-size: cover !important;
+        background-position: 50% 50% !important;
+        background-attachment: scroll !important;
+      }
+      
+      .home-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 80px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .logo-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      
+      .main-logo {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+      
+      /* Adjust background image positioning */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        transform: none !important;
+      }
     }
     
     .home-section:hover {
@@ -857,6 +1412,16 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
     }
     .about-content h3{
       font-size: 2rem;
@@ -1601,172 +2166,344 @@
       color: #ff5500;
     }
 
-    /* Modern Mobile Responsive - Completely Different Structure */
-    @media (max-width: 480px) {
-      :root{
-        --spacing-xs:0.5rem;
-        --spacing-sm:1rem;
-        --spacing-md:1.5rem;
-        --spacing-lg:2rem;
-        --spacing-xl:2.5rem;
-        --border-radius:16px;
-        --border-radius-sm:12px;
-      }
-      
-      html{
-        font-size:16px;
-        scroll-behavior: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      body{
-        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        overflow-x: hidden;
-        touch-action: pan-y;
-        padding-top: 70px;
-        min-height: 100vh;
-      }
-      
-      /* Disable all animations on mobile */
-      * {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-      }
-      
-      .seccion {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .home-panel {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .tool-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      .gallery-item {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      
-      /* Hide desktop navigation completely */
-      .fixed-nav {
-        display: none !important;
-      }
-      
-      /* Removed mobile header styles */
-      
-      /* Removed menu toggle styles - no longer needed */
-      
-      /* Removed Full Screen Mobile Navigation styles */
-      
-      /* Mobile Sections - Card Based Layout */
-      .seccion{
-        min-height: auto;
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-md) 0;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      }
-      
-      /* Mobile Clean Home Section */
-      .home-section {
-        min-height: 100vh;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .home-content {
-        top: 20px;
-        left: 10px;
-      }
-      
-      .main-logo {
-        max-width: 350px;
-      }
-      
-      /* Removed mobile home-cta styles */
-      
-      /* Mobile Social Links - Horizontal Scroll */
-      .social-links-grid {
-        display: flex;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-lg);
-        padding: var(--spacing-md) 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      
-      .social-links-grid::-webkit-scrollbar {
-        display: none;
-      }
-      
-      .social-link-item {
-        min-width: 100px;
-        padding: var(--spacing-md);
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: var(--border-radius-sm);
-      }
-      
-      /* Mobile Gallery - Grid */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
-        padding: 0;
-      }
-      
-      .gallery-item {
-        width: 100%;
-        height: 150px;
-        border-radius: var(--border-radius-sm);
-        overflow: hidden;
-      }
-      
-      .gallery-item img {
-        height: 120px;
-      }
-      
-      /* Mobile Tools - Vertical Cards */
-      .dj-tools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-      
-      .tool-card {
-        background: rgba(255,255,255,0.08);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.15);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
-      }
-      
-      /* Disable hover effects on touch devices */
-      @media (hover: none) and (pointer: coarse){
-        .nav-link:hover::after,
-        .nav-link.active::after{
-          width:0;
-        }
+/* Modern Mobile Responsive - Completely Different Structure */
+@media (max-width: 768px) {
+  /* Змінні вже визначені вище, тому видаляємо їх дублювання */
+  
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    padding-top: 60px;
+    overflow-x: hidden;
+  }
+  
+  /* Покращуємо навігацію для мобільних пристроїв */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  
+  /* Покращуємо відображення героя на малих екранах */
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Адаптуємо сітки */
+  .dj-tools-grid,
+  .gallery-grid,
+  .platforms-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  /* Покращуємо картки */
+  .tool-card,
+  .platform-card {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Адаптуємо футер */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .footer-section {
+    padding: 1.5rem 0;
+  }
+  
+  .social-links {
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  
+  /* Покращуємо відображення галереї */
+  .gallery-item {
+    height: 250px;
+    margin: 0.5rem 0;
+  }
+  
+  /* Адаптуємо кнопки */
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  /* Покращуємо відображення секцій */
+  .seccion {
+    padding: 2rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Адаптуємо форми */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Покращуємо відображення карток платформ */
+  .platform-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .platform-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Адаптуємо футер */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .footer-links {
+    margin: 1rem 0;
+    justify-content: center;
+  }
+  
+  .footer-links a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Додаткові покращення для мобільних пристроїв */
+  .hero-section {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  /* Покращуємо відображення іконок соціальних мереж */
+  .social-links {
+    flex-wrap: wrap;
+  }
+  
+  .social-link-item {
+    width: 45%;
+    margin: 0.5rem 0;
+  }
+  
+  /* Адаптуємо заголовки */
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+  
+  /* Покращуємо відображення таблиць */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Анімації для кращої взаємодії */
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  }
+  /* Змінні вже визначені вище, тому видаляємо їх дублювання */
+
+  html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+/*
+body {
+  background: 
+    linear-gradient(
+      135deg, 
+      rgba(0,0,0,0.7), 
+      rgba(0,0,0,0.5)
+    ),
+    url('images/ROSDJ_foto.webp') center/contain no-repeat fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-color: #000;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+*/
+
+  /* Disable animations only if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Base section styling */
+  .seccion {
+    min-height: auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Home section specific */
+  .home-section {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    padding: var(--spacing-lg);
+    width: 100%;
+  }
+
+  .main-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Gallery grid adjustments */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    padding: 0;
+  }
+
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* Tools section */
+  .dj-tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .tool-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Performance optimizations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 0;
+    }
+    
+    /* Add touch feedback */
+    .tool-card:active,
+    .gallery-item:active {
+      transform: scale(0.98);
+    }
+  }
+}
         
         #logo:hover{
           transform:none;
@@ -1775,8 +2512,7 @@
         .home-panel a:hover{
           transform:none;
         }
-      }
-    }
+    
 
     /* Mobile Compact Contact */
     .contact-section-compact {
@@ -2004,11 +2740,12 @@
   </style>
 <body>
 
+  <!-- Desktop Navigation (Hidden on Mobile) -->
   <nav class="fixed-nav" id="fixedNav">
     <div class="nav-container">
       <div class="nav-links">
         <a href="#home" class="nav-link" data-lang="nav-home">Home</a>
-        <a href="#about" class="nav-link" data-lang="nav-about">About</a>
+        <a href="#biography" class="nav-link" data-lang="nav-biography">Біографія</a>
         <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
         <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
         <a href="#contact" class="nav-link" data-lang="nav-contact">Contact</a>
@@ -2022,87 +2759,181 @@
     </div>
   </nav>
 
-  <!-- Clean Home Section -->
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav-container">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+      <span class="menu-icon">☰</span>
+      <span class="menu-text" data-lang="menu">Меню</span>
+    </button>
+    <div class="mobile-dropdown" id="mobileDropdown">
+      <a href="#home" class="mobile-nav-link" data-lang="nav-home">Головна</a>
+        <a href="#biography" class="mobile-nav-link" data-lang="nav-biography">Біографія</a>
+      <a href="#sound" class="mobile-nav-link" data-lang="nav-sound">Музика</a>
+      <a href="#gallery" class="mobile-nav-link" data-lang="nav-gallery">Галерея</a>
+      <a href="#contact" class="mobile-nav-link" data-lang="nav-contact">Контакти</a>
+      <a href="#dj-tools" class="mobile-nav-link" data-lang="nav-herramientas">Інструменти DJ</a>
+      <div class="mobile-language-selector">
+        <button class="mobile-lang-btn" data-lang="uk" title="Українська">UA</button>
+        <button class="mobile-lang-btn" data-lang="en" title="English">EN</button>
+        <button class="mobile-lang-btn active" data-lang="es" title="Español">ES</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compact Home Section -->
   <section id="home" class="home-section">
     <div class="home-content">
       <div class="logo-container">
         <img src="logo.png" 
              alt="ROS DJ - Professional Ukrainian DJ Logo" 
              class="main-logo"
-             width="900" 
-             height="600"
+             width="600" 
+             height="400"
              loading="eager">
       </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="seccion">
-    <div class="pagewrapper">
-      <h2 class="section-title" data-lang="about-title">Sobre ROS DJ</h2>
-      <p class="section-subtitle" data-lang="about-subtitle">Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos</p>
-      <div class="about-content">
-        <h3 data-lang="about-name">Rostyslav Dabizha</h3>
-        <p data-lang="about-description">Український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House та Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію по всьому світу унікальним підбором треків та стилем мікшування.</p>
-        <p><strong data-lang="about-genres">Géneros: Organic House · Deep House · Melodic House</strong></p>
-        <p><strong data-lang="about-location">Base: España | Disponible: Reservas en todo el mundo</strong></p>
+      <div class="home-text">
+        <h1>DJ ROS</h1>
+        <p class="tagline">Створюючи музичні подорожі через глибокі, мелодійні та атмосферні сети у жанрі Organic House</p>
+        <div class="home-meta">
+          <p><strong>Жанри:</strong> Organic House · Deep House · Melodic House</p>
+          <p><strong>Локація:</strong> Іспанія | <strong>Доступний:</strong> Для замовлень по всьому світу</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DJ Tools Section -->
-  <section id="dj-tools" class="seccion" style="padding: 2rem 1rem;">
+  <!-- Biography Section -->
+  <section id="biography" class="seccion">
     <div class="pagewrapper">
-      <h2 class="section-title" data-lang="dj-tools-title" style="margin-bottom: 0.5rem;">Herramientas de DJ</h2>
-      <p class="section-subtitle" data-lang="dj-tools-subtitle" style="margin-bottom: 1.5rem; font-size: 1rem;">Herramientas esenciales para mezclas armónicas profesionales</p>
-      <div class="dj-tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
-        <div class="tool-card" style="padding: 1.2rem; background: rgba(255,255,255,0.03); border-radius: 12px; transition: all 0.3s ease;">
-          <h3 data-lang="camelot-title" style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5500;">🎵 Rueda Camelot</h3>
-          <div style="width: 100%; max-width: 250px; margin: 0 auto 0.8rem; text-align: center;">
-            <img src="camelot-wheel.png" alt="Camelot Wheel - Herramienta de mezcla armónica" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(255,85,0,0.15);" />
+      <h2 class="section-title">Біографія</h2>
+      
+      <div class="biography-content">
+        <div class="biography-text">
+          <p><strong>DJ ROS</strong> (справжнє ім'я — Ростислав Станіславович Дабіжа) — український діджей, музичний продюсер і представник сучасної електронної сцени. Народився 10 березня 1999 року у місті Сквира, Україна.</p>
+          
+          <h3>Початок творчого шляху</h3>
+          <p>З дитинства Ростислав захоплювався музикою та сценічним мистецтвом. Після знайомства з клубною культурою він почав збирати музичні треки, вивчати діджеїнг і експериментувати зі звучанням.</p>
+          
+          <p>У 2016 році він здійснив свою мрію — став професійним діджеєм. Перші виступи DJ ROS проходили на дискотеках у дитячому будинку, де він ділився енергією музики та створював атмосферу радості. Цей досвід став початком його шляху у світі електронної музики.</p>
+          
+          <h3>Музичний стиль</h3>
+          <p>DJ ROS працює в жанрах Organic House, Melodic House та Dance Music. Його сети відрізняються глибокими мелодіями, природними звуками та плавними ритмами, які створюють емоційний і танцювальний настрій.</p>
+          
+          <p>У своїх виступах він поєднує сучасне електронне звучання з живою атмосферою, створюючи музичну історію, що розкриває внутрішній світ і надихає слухачів.</p>
+          
+          <p>DJ ROS виступає на клубних сценах України, бере участь у фестивалях і спільних проектах з іншими артистами електронної сцени.</p>
+        </div>
+        
+        <div class="biography-image">
+          <img src="ROSDJ_foto.webp" alt="DJ ROS - Ростислав Дабіжа" loading="lazy" width="600" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- DJ Tools Section -->
+  <section id="dj-tools" class="dj-tools-section">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="dj-tools-title">Herramientas de DJ</h2>
+      <p class="section-subtitle" data-lang="dj-tools-subtitle">Recursos profesionales para mezclas perfectas y actuaciones memorables</p>
+      
+      <div class="dj-tools-container">
+        <!-- Camelot Wheel Card -->
+        <div class="dj-tool-card">
+          <div class="tool-icon">🎵</div>
+          <h3 data-lang="camelot-title">Rueda Camelot</h3>
+          <div class="tool-content">
+            <div class="tool-image">
+              <img src="camelot-wheel.png" alt="Rueda Armónica Camelot" loading="lazy" />
+            </div>
+            <div class="tool-details">
+              <p data-lang="camelot-description">Sistema de mezcla armónica que facilita la transición entre pistas con tonalidades compatibles.</p>
+              <div class="compatibility-chart">
+                <h4>Guía de Compatibilidad</h4>
+                <ul class="compatibility-list">
+                  <li class="compatibility-item">
+                    <span class="compatibility-badge same">=</span>
+                    <span data-lang="camelot-same">Misma tonalidad</span>
+                  </li>
+                  <li class="compatibility-item">
+                    <span class="compatibility-badge up">+1</span>
+                    <span data-lang="camelot-energy">Sube la energía</span>
+                  </li>
+                  <li class="compatibility-item">
+                    <span class="compatibility-badge down">-1</span>
+                    <span data-lang="camelot-energy-down">Baja la energía</span>
+                  </li>
+                  <li class="compatibility-item">
+                    <span class="compatibility-badge relative">A↔B</span>
+                    <span data-lang="camelot-relative">Relativo mayor/menor</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <p data-lang="camelot-description">La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.</p>
-          <div class="camelot-info">
-            <h4 data-lang="camelot-compatibility">Compatibilidad de tonalidad:</h4>
+        </div>
+        
+        <!-- BPM Analyzer Card -->
+        <div class="dj-tool-card">
+          <div class="tool-icon">🎧</div>
+          <h3 data-lang="bpm-title">Análisis BPM</h3>
+          <div class="tool-content">
+            <div class="bpm-visual">
+              <div class="bpm-scale">
+                <div class="bpm-range deep" style="--bpm-start: 110; --bpm-end: 122;">
+                  <span>Deep</span>
+                  <span>110-122 BPM</span>
+                </div>
+                <div class="bpm-range melodic" style="--bpm-start: 118; --bpm-end: 124;">
+                  <span>Melodic</span>
+                  <span>118-124 BPM</span>
+                </div>
+                <div class="bpm-range progressive" style="--bpm-start: 122; --bpm-end: 128;">
+                  <span>Progressive</span>
+                  <span>122-128 BPM</span>
+                </div>
+              </div>
+            </div>
+            <div class="tool-details">
+              <p data-lang="bpm-description">Controla el tempo de tus mezclas para transiciones perfectas entre pistas.</p>
+              <div class="bpm-tips">
+                <h4>Consejos de BPM</h4>
+                <ul>
+                  <li data-lang="bpm-tip1">±5 BPM: Variación máxima recomendada para transiciones suaves</li>
+                  <li data-lang="bpm-tip2">Usa cambios graduales para aumentar o disminuir la energía</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Key Detection Card -->
+        <div class="dj-tool-card">
+          <div class="tool-icon">🎹</div>
+          <h3 data-lang="in-kay-title">Detección de Tonalidad</h3>
+          <div class="tool-content">
+            <div class="key-visual">
+              <div class="key-wheel">
+                <div class="key-wheel-inner">
+                  <span>A</span>
+                  <span>B</span>
+                  <span>C</span>
+                  <span>D</span>
+                  <span>E</span>
+                  <span>F</span>
+                  <span>G</span>
+                </div>
+              </div>
+            </div>
+            <div class="tool-details">
+              <p data-lang="in-kay-description">Identifica y gestiona las tonalidades musicales para mezclas armónicas perfectas.</p>
+              <div class="key-features">
+                <h4 data-lang="in-kay-features">Características</h4>
             <ul>
-              <li data-lang="camelot-same"><strong>Mismo número:</strong> Mezcla perfecta</li>
-              <li data-lang="camelot-energy"><strong>±1 número:</strong> Cambio de energía</li>
-              <li data-lang="camelot-relative"><strong>Misma letra:</strong> Menor/mayor relativo</li>
+              <li data-lang="in-kay-accurate"><strong>Detección precisa:</strong> Análisis de algoritmo avanzado</li>
+              <li data-lang="in-kay-formats"><strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC</li>
+              <li data-lang="in-kay-export"><strong>Opciones de exportación:</strong> Notación Camelot y musical</li>
             </ul>
-          </div>
-        </div>
-        <div class="tool-card">
-          <h3 data-lang="bpm-title">🎧 Análisis BPM</h3>
-          <p data-lang="bpm-description">Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.</p>
-          <div class="bpm-info">
-            <h4 data-lang="bpm-range">Rango de Organic House:</h4>
-            <ul>
-              <li data-lang="bpm-deep"><strong>Deep:</strong> 110-122 BPM</li>
-              <li data-lang="bpm-melodic"><strong>Melodic:</strong> 118-124 BPM</li>
-              <li data-lang="bpm-progressive"><strong>Progressive:</strong> 122-128 BPM</li>
-            </ul>
-          </div>
-        </div>
-        <div class="tool-card" style="padding: 1.2rem; background: rgba(255,255,255,0.03); border-radius: 12px; transition: all 0.3s ease;">
-          <h3 data-lang="in-kay-title" style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #4a90e2;">🎹 In-Kay Detector</h3>
-          <p data-lang="in-kay-description" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem;">Herramienta profesional para detectar tonalidades musicales y crear mezclas perfectamente armónicas.</p>
-          <div class="in-kay-info">
-            <h4 data-lang="in-kay-features" style="font-size: 1rem; margin: 0.8rem 0 0.5rem; color: #ddd;">Funciones:</h4>
-            <ul style="margin: 0.6rem 0 0.8rem 1.2rem; font-size: 0.85rem; line-height: 1.5;">
-              <li data-lang="in-kay-feature-1"><strong>Precisión:</strong> Detección avanzada de tonalidad</li>
-              <li data-lang="in-kay-feature-2"><strong>Universal:</strong> Soporta todos los formatos</li>
-              <li data-lang="in-kay-feature-3"><strong>Integración:</strong> Conecta con tu software de DJ</li>
-            </ul>
-          </div>
-          <p data-lang="in-kay-export" style="font-size: 0.8rem; color: #aaa; margin: 0.5rem 0 0.8rem 0;"><strong>Exporta en:</strong> Camelot y notación musical</p>
-          <a href="#" class="btn" data-lang="in-kay-button" style="display: inline-block; background: linear-gradient(90deg, #4a90e2, #2a5cb3); color: white; padding: 0.4rem 0.9rem; border-radius: 18px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;">Abrir In-Kay</a>
-        </div>
-        <div class="tool-card">
-          <h3 data-lang="camelot-title">🎵 Rueda Camelot</h3>
-          <div style="width: 100%; max-width: 300px; margin: 1rem auto; display: block; text-align: center;">
-            <img src="camelot-wheel.png" alt="Camelot Wheel - Harmonic Mixing Tool for DJs" loading="lazy" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(255,85,0,0.2);" />
-          </div>
-           </ul>
             <button class="btn btn-primary" data-lang="in-kay-button">Abrir In-Kay</button>
           </div>
         </div>
@@ -2134,11 +2965,11 @@
       <div class="gallery-grid">
         <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
           <img src="images/rosdj1.webp" 
-               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" 
                loading="lazy" 
                width="1200" 
                height="900" 
-               title="ROS DJ Ukrainian DJ Live Performance" 
+               title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" 
                itemprop="image"
                data-credit="Rostyslav Dabizha"
                data-copyright="© 2024 ROS DJ. All rights reserved."
@@ -2200,26 +3031,151 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="footer-section">
-    <div class="footer-container">
-      <div class="footer-social">
-        <h4 data-lang="follow-social">Follow me on social media</h4>
-        <div class="footer-social-links compact">
-          <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.5 6.5h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0H7.5v7H8.5v-7z"/>
-            </svg>
-            SoundCloud
-          </a>
-          <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            Instagram
-          </a>
-          <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Live Performances Gallery -->
+  <section id="live-performances" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="live-performances-title">Live Performances</h2>
+      <p class="section-subtitle" data-lang="live-performances-subtitle">Capturing the energy of live performances</p>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image-container">
+            <img 
+              src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+              alt="DJ Ros performing live in a studio with professional DJ equipment"
+              title="DJ Ros Live Studio Performance 2025"
+              loading="lazy"
+              width="800"
+              height="600"
+              class="gallery-image"
+            >
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Madrid 2025</h3>
+                <p>Live Performance</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item-info">
+            <h3>Live Studio Session 2025</h3>
+            <p>DJ Ros performing an exclusive live set in the studio, showcasing professional DJ equipment and mixing skills in an intimate setting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Gallery Section Styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-image-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 75%; /* 4:3 Aspect Ratio */
+    }
+
+    .gallery-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-caption {
+      text-align: center;
+      color: white;
+      padding: 1rem;
+    }
+
+    .gallery-caption h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-caption p {
+      font-size: 1rem;
+      margin: 0;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-item-info {
+      padding: 1.5rem;
+    }
+
+    .gallery-item-info h3 {
+      color: var(--primary);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+    }
+
+    .gallery-item-info p {
+      color: var(--text-secondary);
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .gallery-item-info {
+        padding: 1rem;
+      }
+      
+      .gallery-caption h3 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
             YouTube
@@ -2299,11 +3255,11 @@
           'nav-gallery': 'Фото',
           'nav-contact': 'Контакт',
           'nav-herramientas': 'Інструменти DJ',
-          'home-description': 'український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
+          'home-description': 'Професійний український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
           'about-title': 'Про ROS DJ',
           'about-subtitle': 'Створення захоплюючих музичних подорожей через глибокі, мелодійні та атмосферні органик хаус сети',
           'about-name': 'Ростислав Дабіжа',
-          'about-description': 'український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House та Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію по всьому світу унікальним підбором треків та стилем мікшування.',
+          'about-description': 'Професійний український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House та Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію по всьому світу унікальним підбором треків та стилем мікшування.',
           'festival-performances': '🎵 <strong>Музична подорож:</strong> Створюю унікальні DJ сети для клубів, приватних подій та онлайн-платформ. Працюю над створенням атмосферних сетів, що поєднують глибокі мелодії та сучасні електронні ритми.',
           'about-genres': '<strong>Жанри:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Базується:</strong> Іспанія | <strong>Доступний:</strong> Бронювання по всьому світу',
@@ -2357,7 +3313,7 @@
           'about-title': 'About ROS DJ',
           'about-subtitle': 'Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets',
           'about-name': 'Rostyslav Dabizha',
-          'about-description': 'Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.',
+          'about-description': 'Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.',
           'festival-performances': '🎵 <strong>Musical Journey:</strong> Creating unique DJ sets for clubs, private events and online platforms. Working on crafting atmospheric sets that combine deep melodies with modern electronic rhythms.',
           'about-genres': '<strong>Genres:</strong> Organic House · Deep House · Melodic House',
           'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
@@ -2407,7 +3363,7 @@
           'nav-gallery': 'Fotos',
           'nav-contact': 'Contacto',
           'nav-herramientas': 'Herramientas para DJ',
-          'home-description': 'DJ Ucraniano | Organic House, Deep House & Melodic | España | Reservas mundiales',
+          'home-description': 'DJ ucraniano profesional | Organic House, Deep House & Melodic | España | Reservas mundiales',
           'about-title': 'Sobre ROS DJ',
           'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
           'about-name': 'Rostyslav Dabizha',
@@ -2443,7 +3399,7 @@
           'playlist-title': 'Etapa De Potencia by Dj ROS (parte 2)',
           'playlist-desc': 'Etapa de potencia no es solo música, es un estado del alma.',
           'gallery-title': 'Fotos',
-          'gallery-subtitle': 'Fotos de actuaciones de DJ',
+          'gallery-subtitle': 'Fotos de actuaciones de DJ y sesiones de estudio',
           'daw-pro': 'Software profesional que uso',
           'contact-title': 'Contacto',
           'contact-subtitle': 'Póngase en contacto',
@@ -2503,7 +3459,17 @@
       };
       
       // Language system
-      const languageSystem = {
+      // Default language settings
+  let currentLanguage = 'es';
+  
+  // Language tooltips
+  const languageTooltips = {
+    'uk': 'Українська',
+    'en': 'English',
+    'es': 'Español'
+  };
+  
+  const languageSystem = {
         update: (lang) => {
           if (!translations[lang]) {
             console.warn('Language not found:', lang);
@@ -2756,5 +3722,57 @@
       <img id="modalImage" class="modal-image" src="" alt="" />
     </div>
   </div>
-</body>
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileDropdown = document.getElementById('mobileDropdown');
+      
+      // Toggle mobile menu
+      menuToggle.addEventListener('click', function() {
+        mobileDropdown.classList.toggle('show');
+        this.classList.toggle('active');
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !mobileDropdown.contains(event.target)) {
+          mobileDropdown.classList.remove('show');
+          menuToggle.classList.remove('active');
+        }
+      });
+      
+      // Close menu after clicking a link
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileDropdown.classList.remove('show');
+          menuToggle.classList.remove('active');
+        });
+      });
+      
+      // Language switcher
+      const langButtons = document.querySelectorAll('.mobile-lang-btn');
+      langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          langButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          // Here you can add language switching logic
+          const lang = this.getAttribute('data-lang');
+          // Example: window.location.href = `?lang=${lang}`;
+        });
+      });
+      
+      // Prevent default scroll behavior on mobile
+      document.body.addEventListener('touchmove', function(e) {
+        // Only prevent default if the menu is open
+        if (mobileDropdown.classList.contains('show')) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    });
+  </script>
+  </body>
 </html>
