@@ -314,30 +314,6 @@
       position: relative;
     }
     
-    @media (max-width: 768px) {
-      body {
-        background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
-        background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
-      
-      /* Ensure content sections are more readable on mobile */
-      .seccion, section, .tool-card, .platform-card, .contact-item {
-        background-color: rgba(10, 10, 10, 0.85);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      /* Improve text readability on the background */
-      h1, h2, h3, h4, h5, h6, p, .section-title, .section-subtitle, .about-content p {
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-      }
-    }
-    
     /* Modern Animations */
     
     @keyframes pulse{
@@ -670,221 +646,2128 @@
       font-size: 0.7rem;
       font-weight: 400;
       text-transform: none;
-    .mobile-menu-toggle {
+      letter-spacing: 0.2px;
+    }
+    
+    /* Mobile Social Links */
+    @media (max-width: 768px) {
+      .social-links-grid {
+        gap: 1rem;
+      }
+      
+      .social-link-item {
+        min-width: 80px;
+        padding: 0.75rem;
+      }
+      
+      .social-link-item svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .social-link-item span {
+        font-size: 0.75rem;
+      }
+    }
+    
+    /* Removed logo styles */
+    
+    /* Removed home-panel styles */
+    
+    /* Home Panel Social Links */
+    .home-social-links {
       display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: var(--spacing-xs);
+      padding-top: var(--spacing-xs);
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     
-    .nav-container {
-      justify-content: space-between;
-      padding: 0.8rem 1.5rem;
+    .home-social-links h5 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     
-    .social-link-item svg {
-      width: 24px;
-      height: 24px;
+    .home-social-icons {
+      display: flex;
+      gap: 0.8rem;
     }
     
-    /* Mobile Menu Toggle Button */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1001;
-    }
-    
-    .mobile-menu-toggle span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: #fff;
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-    
-    /* Mobile Menu Overlay */
-    .mobile-menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
+    .home-social-icon {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
     }
     
-    .mobile-menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
+    .home-social-icon:hover {
+      color: var(--primary);
+      background: rgba(255,85,0,0.15);
+      border-color: rgba(255,85,0,0.3);
+      transform: translateY(-2px);
     }
     
-    .mobile-menu-content {
-      position: relative;
-      width: 90%;
-      max-width: 400px;
-      background: rgba(20, 20, 20, 0.98);
-      border-radius: 12px;
-      padding: 2rem;
+    .home-social-icon svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    
+    /* Additional Social Section */
+    .home-social-section {
+      margin-top: var(--spacing-sm);
+      padding-top: var(--spacing-sm);
+      border-top: 1px solid rgba(255,255,255,0.15);
       text-align: center;
     }
     
-    .mobile-menu-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
+    .home-social-section h6 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: var(--spacing-xs);
+      text-transform: none;
+      letter-spacing: 0.3px;
+    }
+    
+    .home-social-expanded {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    
+    .social-link-expanded {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link-expanded:hover {
+      background: rgba(255,85,0,0.12);
+      border-color: rgba(255,85,0,0.25);
+      color: var(--primary);
+      transform: translateY(0);
+    }
+    
+    .social-link-expanded svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    
+    @keyframes pulse-glow{
+      0%, 100%{
+        box-shadow:0 4px 15px rgba(255,85,0,0.2);
+        transform:scale(1);
+      }
+      50%{
+        box-shadow:0 6px 20px rgba(255,85,0,0.4);
+        transform:scale(1.02);
+      }
+    }
+    
+    /* Language Selector in Navigation */
+    .nav-links .language-selector{
+      position: static;
+      display: flex;
+      gap: 0.3rem;
+      margin-left: 1rem;
+      background: rgba(255,255,255,0.05);
+      padding: 0.3rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    
+    .nav-links .language-selector .lang-btn{
+      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      background: rgba(255,255,255,0.08);
       border: none;
       color: #fff;
-      font-size: 2rem;
+      font-weight: 600;
       cursor: pointer;
-      padding: 0.5rem;
-      line-height: 1;
+      transition: all 0.3s ease;
+      border-radius: 10px;
     }
     
-    .mobile-nav {
+    .nav-links .language-selector .lang-btn.active,
+    .nav-links .language-selector .lang-btn:hover{
+      background: linear-gradient(90deg,#d32f2f 60%,#b71c1c 100%);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    
+    /* Removed fadeInUp animation */
+
+    /* Clean Section Styles */
+    section{
+      padding:2rem 1.5rem;
+      max-width:1000px;
+      margin:1rem auto;
+      background: rgba(0,0,0,0.5);
+      border-radius:20px;
+      position: relative;
+      z-index: 2;
+    }
+    .section-title{
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.50);
+      letter-spacing: 1px;
+    }
+    .section-subtitle{
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.50);
+    }
+
+    /* About Section */
+    .about-content{
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-content h3{
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+    }
+    .about-content p{
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+    }
+
+    /* Horizontal Row DJ Tools */
+    .dj-tools-grid{
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,85,0,0.5) rgba(255,255,255,0.1);
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-thumb {
+      background: rgba(255,85,0,0.5);
+      border-radius: 3px;
+    }
+    
+    .dj-tools-grid::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,85,0,0.7);
+    }
+
+    .tool-card{
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      min-width: 300px;
+      flex: 0 0 auto;
+    }
+
+    .tool-card h3{
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .tool-card p{
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-bottom: 0.7rem;
+    }
+
+    .camelot-info,
+    .bpm-info,
+    .in-kay-info{
+      background: transparent;
+      border-radius: 8px;
+      padding: 0.7rem;
+      margin-top: 0.7rem;
+      border: none;
+      text-align: left;
+    }
+
+    .camelot-info h4,
+    .bpm-info h4,
+    .in-kay-info h4{
+      color: var(--primary);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .camelot-info ul,
+    .bpm-info ul,
+    .in-kay-info ul{
+      list-style: none;
+      padding: 0;
+    }
+
+    .camelot-info li,
+    .bpm-info li,
+    .in-kay-info li{
+      padding: 0.3rem 0;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .in-kay-info .btn{
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    /* Sound Section */
+    .featured-playlist{
+      margin: 4rem 0;
+    }
+
+    .playlist-header{
+      margin-bottom: 2rem;
+    }
+
+    .playlist-badge{
+      display: inline-block;
+      background: linear-gradient(45deg, #d32f2f, #b71c1c);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%, 100%{ transform: scale(1); }
+      50%{ transform: scale(1.05); }
+    }
+
+    /* Platforms Grid */
+    .platforms-section {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .platforms-title-compact {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+    }
+
+    .platforms-grid-compact {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .platform-card-compact {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-    
-    .mobile-nav-link {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.10);
       transition: all 0.3s ease;
-      display: block;
+      min-width: 150px;
+    }
+
+    .platform-card-compact:hover {
+      transform: translateY(-5px);
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+    }
+
+    .platform-icon-compact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 15px;
+      padding: 1rem;
+    }
+
+    .platform-icon-compact img {
+      width: 60px !important;
+      height: 60px !important;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .platform-icon-compact img:hover {
+      transform: scale(1.1);
+    }
+
+    .platform-card-compact h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .small-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Gallery Styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 100%;
+      padding: 0 1rem;
     }
     
-    .mobile-nav-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateX(5px);
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+      }
     }
     
-    .mobile-language-selector {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
+      }
+      
+      .gallery-item {
+        height: 200px;
+      }
+      
+      .gallery-item img {
+        height: 160px;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+      width: 100%;
+      height: 250px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
     
-    .mobile-lang-label {
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    /* Mobile Gallery - Horizontal Scroll */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0 0.5rem 1rem 0.5rem;
+      }
+      
+      .gallery-item {
+        width: 200px;
+        height: 150px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        gap: 0.4rem;
+        padding: 0 0.4rem 0.8rem 0.4rem;
+      }
+      
+      .gallery-item {
+        width: 180px;
+        height: 135px;
+        border-radius: 8px;
+      }
+    }
+
+    /* Scrollbar Styling */
+    .gallery-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .gallery-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+    }
+
+    .gallery-grid::-webkit-scrollbar-thumb {
+      background: rgba(255,85,0,0.5);
+      border-radius: 3px;
+    }
+
+    .gallery-grid::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,85,0,0.7);
+    }
+
+    /* Gallery Modal */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .gallery-modal.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 50vw;
+      max-height: 50vh;
+      width: auto;
+      height: auto;
+      animation: modalZoom 0.3s ease-out;
+      object-fit: contain;
+    }
+    
+    .modal-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    
+    /* Image copyright overlay */
+    .gallery-item {
+      position: relative;
+    }
+    
+    .gallery-item::after {
+      content: attr(data-copyright);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      font-size: 0.6rem;
+      padding: 2px 4px;
+      border-radius: 4px 0 4px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+    
+    /* Herramientas para DJ Section */
+    .herramientas-section {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .herramientas-section h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
     
-    .mobile-lang-buttons {
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    
-    .mobile-lang-btn {
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      cursor: pointer;
+    .herramientas-section p {
+      color: rgba(255,255,255,0.8);
       font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      min-width: 50px;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    @keyframes modalZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     
-    .mobile-lang-btn:hover,
-    .mobile-lang-btn.active {
-      background: linear-gradient(90deg, #d32f2f 60%, #b71c1c 100%);
-      color: #fff;
-      transform: scale(1.05);
+    /* Responsive modal sizes */
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 70vw;
+        max-height: 60vh;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .modal-content {
+        max-width: 85vw;
+        max-height: 50vh;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
+    .modal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* Software Section - Compact */
+    .software-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.50);
+    }
+
+    .software-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .software-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+      min-width: 180px;
+    }
+
+    .software-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+      box-shadow: 0 8px 20px rgba(255,85,0,0.2);
+    }
+
+    .software-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .software-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* New Compact Software Section */
+    .software-section-compact {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .software-wrapper-compact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .software-title-compact {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    
+    .software-grid-compact {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .software-item-compact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .software-item-compact:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+    
+    .software-item-compact img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    
+    .software-item-compact span {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .software-info h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 0.25rem 0;
+    }
+
+    .software-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Mobile Software */
+    @media (max-width: 768px) {
+      .software-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .software-grid {
+        gap: 1.5rem;
+        flex-direction: column;
+      }
+      
+      .software-item {
+        min-width: 180px;
+        padding: 0.75rem 1rem;
+      }
+      
+      .software-item img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .software-info h5 {
+        font-size: 1rem;
+      }
+      
+      .software-desc {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .software-grid {
+        gap: 1rem;
+      }
+      
+      .software-item {
+        min-width: 160px;
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .software-item img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    .playlist-title{
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(45deg, #ff5500, #b71c1c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .playlist-desc{
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .soundcloud-embed{
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .soundcloud-embed iframe{
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(255,85,0,0.20);
+    }
+
+    /* Compact Contact Section */
+    .contact-section-compact {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-title-compact {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.9;
+    }
+    
+    .contact-email-compact {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.6rem 1.5rem;
+      background: rgba(255,85,0,0.1);
+      border-radius: 30px;
+      border: 1px solid rgba(255,85,0,0.3);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .contact-email-compact:hover {
+      background: rgba(255,85,0,0.2);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    /* Old Contact styles - kept for compatibility */
+    .contact-content {
+      text-align: center;
+      margin-top: 0.5rem;
+      padding: 1rem;
+    }
+
+    .contact-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: #ff5500;
+    }
+
+    /* Modern Mobile Responsive - Completely Different Structure */
+    @media (max-width: 480px) {
+      :root{
+        --spacing-xs:0.5rem;
+        --spacing-sm:1rem;
+        --spacing-md:1.5rem;
+        --spacing-lg:2rem;
+        --spacing-xl:2.5rem;
+        --border-radius:16px;
+        --border-radius-sm:12px;
+      }
+      
+      html{
+        font-size:16px;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      body{
+        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('images/ROSDJ_foto.webp') center center/cover no-repeat fixed;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+        touch-action: pan-y;
+        padding-top: 70px;
+        min-height: 100vh;
+      }
+      
+      /* Disable all animations on mobile */
+      * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      
+      .seccion {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .home-panel {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .tool-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      .gallery-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      /* Hide desktop navigation completely */
+      .fixed-nav {
+        display: none !important;
+      }
+      
+      /* Removed mobile header styles */
+      
+      /* Removed menu toggle styles - no longer needed */
+      
+      /* Removed Full Screen Mobile Navigation styles */
+      
+      /* Mobile Sections - Card Based Layout */
+      .seccion{
+        min-height: auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-md) 0;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: var(--border-radius);
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      }
+      
+      /* Mobile Clean Home Section */
+      .home-section {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .home-content {
+        top: 20px;
+        left: 10px;
+      }
+      
+      .main-logo {
+        max-width: 350px;
+      }
+      
+      /* Removed mobile home-cta styles */
+      
+      /* Mobile Social Links - Horizontal Scroll */
+      .social-links-grid {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        padding: var(--spacing-md) 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      .social-links-grid::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .social-link-item {
+        min-width: 100px;
+        padding: var(--spacing-md);
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: var(--border-radius-sm);
+      }
+      
+      /* Mobile Gallery - Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+        padding: 0;
+      }
+      
+      .gallery-item {
+        width: 100%;
+        height: 150px;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+      }
+      
+      .gallery-item img {
+        height: 120px;
+      }
+      
+      /* Mobile Tools - Vertical Cards */
+      .dj-tools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .tool-card {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.15);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+      }
+      
+      /* Disable hover effects on touch devices */
+      @media (hover: none) and (pointer: coarse){
+        .nav-link:hover::after,
+        .nav-link.active::after{
+          width:0;
+        }
+        
+        #logo:hover{
+          transform:none;
+        }
+        
+        .home-panel a:hover{
+          transform:none;
+        }
+      }
+    }
+
+    /* Mobile Compact Contact */
+    .contact-section-compact {
+      max-width: 90%;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    
+    .contact-title-compact {
+      font-size: 1rem;
+    }
+    
+    .contact-email-compact {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+    
+    .contact-item{
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover{
+      background: rgba(255,85,0,0.1);
+      border-color: rgba(255,85,0,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .contact-link{
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-link:hover{
+      color: var(--primary);
+    }
+    footer{
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .footer-social h4{
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .footer-social-links{
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social-links a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 1rem;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      min-width: 120px;
+    }
+
+    .footer-social-links a:hover{
+      color: #ff5500;
+      transform: translateY(-2px);
+      background: rgba(255, 85, 0, 0.05);
+      border-color: rgba(255, 85, 0, 0.2);
+    }
+
+    .footer-social-links svg{
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      transition: all 0.3s ease;
+    }
+    
+    /* Dark Footer Section */
+    .footer-section {
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.85);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .footer-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .footer-social h4 {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    
+    .footer-social-links.compact {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+    
+    .footer-social-links.compact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 25px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      min-width: auto;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .footer-social-links.compact a:hover {
+      background: rgba(255,85,0,0.2);
+      border-color: var(--primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    
+    .footer-social-links.compact svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
+    .footer-social-links a:hover svg{
+      transform: scale(1.1);
+    }
+
+    .footer-bottom{
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .footer-text{
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      margin: 0.4rem 0;
+    }
+    
+    .footer-text a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .footer-text a:hover{
+      color: #ff5500;
+    }
+
+    /* Mobile Footer */
+    @media (max-width: 768px) {
+      .footer-social-links{
+        gap: 1rem;
+      }
+      
+      .footer-social-links a{
+        min-width: 100px;
+        padding: 0.75rem;
+      }
+      
+      .footer-social-links svg{
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+  </style>
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Offset for fixed header */
+    html {
+      scroll-padding-top: 80px;
+    }
+    
+    /* Force initial scroll position */
+    body {
+      overflow-x: hidden;
     }
     
     /* Ensure page starts at top */
     html, body {
       scroll-behavior: auto;
     }
-    
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      
-      .nav-container {
-        justify-content: space-between;
-        padding: 0.8rem 1.5rem;
-      }
-    }
   </style>
+<body>
 
-  <!-- ... -->
+  <!-- Desktop Navigation (Hidden on Mobile) -->
+  <nav class="fixed-nav" id="fixedNav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#home" class="nav-link" data-lang="nav-home">Home</a>
+        <a href="#about" class="nav-link" data-lang="nav-about">About</a>
+        <a href="#sound" class="nav-link" data-lang="nav-sound">Music</a>
+        <a href="#gallery" class="nav-link" data-lang="nav-gallery">Gallery</a>
+        <a href="#contact" class="nav-link" data-lang="nav-contact">Contact</a>
+        <a href="#dj-tools" class="nav-link" data-lang="nav-herramientas">Herramientas para DJ</a>
+        <div class="language-selector">
+          <button class="lang-btn" data-lang="uk">UA</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="es">ES</button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-    <div class="mobile-menu-content">
-      <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
-      <nav class="mobile-nav">
-        <a href="#home" class="mobile-nav-link" data-lang="nav-home">Home</a>
-        <a href="#about" class="mobile-nav-link" data-lang="nav-about">About</a>
-        <a href="#sound" class="mobile-nav-link" data-lang="nav-sound">Music</a>
-        <a href="#gallery" class="mobile-nav-link" data-lang="nav-gallery">Gallery</a>
-        <a href="#contact" class="mobile-nav-link" data-lang="nav-contact">Contact</a>
-        <a href="#dj-tools" class="mobile-nav-link" data-lang="nav-herramientas">Herramientas para DJ</a>
-        <div class="mobile-language-selector">
-          <div class="mobile-lang-label" data-lang="language">Language:</div>
-          <div class="mobile-lang-buttons">
-            <button class="mobile-lang-btn" data-lang="uk">UA</button>
-            <button class="mobile-lang-btn" data-lang="en">EN</button>
-            <button class="mobile-lang-btn active" data-lang="es">ES</button>
+  <!-- Clean Home Section -->
+  <section id="home" class="home-section">
+    <div class="home-content">
+      <div class="logo-container">
+        <img src="logo.png" 
+             alt="ROS DJ - Professional Ukrainian DJ Logo" 
+             class="main-logo"
+             width="900" 
+             height="600"
+             loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="about-title">Sobre ROS DJ</h2>
+      <p class="section-subtitle" data-lang="about-subtitle">Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos</p>
+      <div class="about-content">
+        <h3 data-lang="about-name">Rostyslav Dabizha</h3>
+        <p data-lang="about-description">Український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House та Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію по всьому світу унікальним підбором треків та стилем мікшування.</p>
+        <p><strong data-lang="about-genres">Géneros: Organic House · Deep House · Melodic House</strong></p>
+        <p><strong data-lang="about-location">Base: España | Disponible: Reservas en todo el mundo</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJ Tools Section -->
+  <section id="dj-tools" class="seccion" style="padding: 2rem 1rem;">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="dj-tools-title" style="margin-bottom: 0.5rem;">Herramientas de DJ</h2>
+      <p class="section-subtitle" data-lang="dj-tools-subtitle" style="margin-bottom: 1.5rem; font-size: 1rem;">Herramientas esenciales para mezclas armónicas profesionales</p>
+      <div class="dj-tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+        <div class="tool-card" style="padding: 1.2rem; background: rgba(255,255,255,0.03); border-radius: 12px; transition: all 0.3s ease;">
+          <h3 data-lang="camelot-title" style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5500;">🎵 Rueda Camelot</h3>
+          <div style="width: 100%; max-width: 250px; margin: 0 auto 0.8rem; text-align: center;">
+            <img src="camelot-wheel.png" alt="Camelot Wheel - Herramienta de mezcla armónica" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(255,85,0,0.15);" />
+          </div>
+          <p data-lang="camelot-description">La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.</p>
+          <div class="camelot-info">
+            <h4 data-lang="camelot-compatibility">Compatibilidad de tonalidad:</h4>
+            <ul>
+              <li data-lang="camelot-same"><strong>Mismo número:</strong> Mezcla perfecta</li>
+              <li data-lang="camelot-energy"><strong>±1 número:</strong> Cambio de energía</li>
+              <li data-lang="camelot-relative"><strong>Misma letra:</strong> Menor/mayor relativo</li>
+            </ul>
           </div>
         </div>
-      </nav>
+        <div class="tool-card">
+          <h3 data-lang="bpm-title">🎧 Análisis BPM</h3>
+          <p data-lang="bpm-description">Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.</p>
+          <div class="bpm-info">
+            <h4 data-lang="bpm-range">Rango de Organic House:</h4>
+            <ul>
+              <li data-lang="bpm-deep"><strong>Deep:</strong> 110-122 BPM</li>
+              <li data-lang="bpm-melodic"><strong>Melodic:</strong> 118-124 BPM</li>
+              <li data-lang="bpm-progressive"><strong>Progressive:</strong> 122-128 BPM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-card" style="padding: 1.2rem; background: rgba(255,255,255,0.03); border-radius: 12px; transition: all 0.3s ease;">
+          <h3 data-lang="in-kay-title" style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #4a90e2;">🎹 In-Kay Detector</h3>
+          <p data-lang="in-kay-description" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem;">Herramienta profesional para detectar tonalidades musicales y crear mezclas perfectamente armónicas.</p>
+          <div class="in-kay-info">
+            <h4 data-lang="in-kay-features" style="font-size: 1rem; margin: 0.8rem 0 0.5rem; color: #ddd;">Funciones:</h4>
+            <ul style="margin: 0.6rem 0 0.8rem 1.2rem; font-size: 0.85rem; line-height: 1.5;">
+              <li data-lang="in-kay-feature-1"><strong>Precisión:</strong> Detección avanzada de tonalidad</li>
+              <li data-lang="in-kay-feature-2"><strong>Universal:</strong> Soporta todos los formatos</li>
+              <li data-lang="in-kay-feature-3"><strong>Integración:</strong> Conecta con tu software de DJ</li>
+            </ul>
+          </div>
+          <p data-lang="in-kay-export" style="font-size: 0.8rem; color: #aaa; margin: 0.5rem 0 0.8rem 0;"><strong>Exporta en:</strong> Camelot y notación musical</p>
+          <a href="#" class="btn" data-lang="in-kay-button" style="display: inline-block; background: linear-gradient(90deg, #4a90e2, #2a5cb3); color: white; padding: 0.4rem 0.9rem; border-radius: 18px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;">Abrir In-Kay</a>
+        </div>
+        <div class="tool-card">
+          <h3 data-lang="camelot-title">🎵 Rueda Camelot</h3>
+          <div style="width: 100%; max-width: 300px; margin: 1rem auto; display: block; text-align: center;">
+            <img src="camelot-wheel.png" alt="Camelot Wheel - Harmonic Mixing Tool for DJs" loading="lazy" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(255,85,0,0.2);" />
+          </div>
+          <p data-lang="camelot-description">La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.</p>
+          <div class="camelot-info">
+            <h4 data-lang="camelot-compatibility">Compatibilidad de tonalidad:</h4>
+            <ul>
+              <li data-lang="camelot-same"><strong>Mismo número:</strong> Mezcla perfecta</li>
+              <li data-lang="camelot-energy"><strong>±1 número:</strong> Cambio de energía</li>
+              <li data-lang="camelot-relative"><strong>Misma letra:</strong> Menor/mayor relativo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-card">
+          <h3 data-lang="bpm-title">🎧 Análisis BPM</h3>
+          <p data-lang="bpm-description">Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.</p>
+          <div class="bpm-info">
+            <h4 data-lang="bpm-range">Rango de Organic House:</h4>
+            <ul>
+              <li data-lang="bpm-deep"><strong>Deep:</strong> 110-122 BPM</li>
+              <li data-lang="bpm-melodic"><strong>Melodic:</strong> 118-124 BPM</li>
+              <li data-lang="bpm-progressive"><strong>Progressive:</strong> 122-128 BPM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-card">
+          <h3 data-lang="in-kay-title">🎹 Detección de tonalidad In-Kay</h3>
+          <p data-lang="in-kay-description">Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión. Esencial para la producción moderna de música electrónica.</p>
+          <div class="in-kay-info">
+            <h4 data-lang="in-kay-features">Funciones:</h4>
+            <ul>
+              <li data-lang="in-kay-accurate"><strong>Detección precisa:</strong> Análisis de algoritmo avanzado</li>
+              <li data-lang="in-kay-formats"><strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC</li>
+              <li data-lang="in-kay-export"><strong>Opciones de exportación:</strong> Notación Camelot y musical</li>
+            </ul>
+            <button class="btn btn-primary" data-lang="in-kay-button">Abrir In-Kay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound Section -->
+  <section id="sound" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="sound-title">Música</h2>
+      <div class="featured-playlist">
+        <div class="playlist-header">
+          <h3 class="playlist-title" data-lang="playlist-title">Etapa De Potencia by Dj ROS (parte 2)</h3>
+          <p class="playlist-desc" data-lang="playlist-desc">Etapa de potencia no es solo música, es un estado del alma.</p>
+        </div>
+        <div class="soundcloud-embed">
+          <iframe src="https://embed.beatport.com/?id=869295&type=chart" width="100%" height="600" frameborder="0" scrolling="no" style="max-width:1200px; width:100%; height:600px;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="seccion">
+    <div class="pagewrapper">
+      <h2 class="section-title" data-lang="gallery-title">Galería</h2>
+      <p class="section-subtitle" data-lang="gallery-subtitle">Capturando la esencia de las actuaciones de música electrónica</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj1.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ performing live DJ set at electronic music festival in Spain" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Live Performance - Electronic Music Festival Spain" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-1">Ukrainian DJ - Live Performance</div>
+        </div>
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/rosdj2.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ mixing organic house and deep house music at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Electronic Music Festival Performance - Organic House Set" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-2">Ukrainian DJ - Organic House Set</div>
+        </div>
+        <div class="gallery-item" data-copyright="© 2024 ROS DJ. All rights reserved.">
+          <img src="images/DJROS.webp" 
+               alt="ROS DJ Rostyslav Dabizha Ukrainian DJ brand logo and professional DJ setup at electronic music festival" 
+               loading="lazy" 
+               width="1200" 
+               height="900" 
+               title="ROS DJ Ukrainian DJ Professional Setup - Electronic Music Festival Equipment" 
+               itemprop="image"
+               data-credit="Rostyslav Dabizha"
+               data-copyright="© 2024 ROS DJ. All rights reserved."
+               data-creator="ROS DJ">
+          <div class="gallery-caption" data-lang="gallery-caption-3">Ukrainian DJ - Professional Setup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section-compact">
+    <div class="contact-wrapper">
+      <h3 class="contact-title-compact" data-lang="contact-title">Contact</h3>
+      <a href="mailto:r.dabizha@icloud.com" class="contact-email-compact">r.dabizha@icloud.com</a>
+    </div>
+  </section>
+
+  <!-- Compact Software Section -->
+  <section id="software" class="software-section-compact">
+    <div class="software-wrapper-compact">
+      <h4 class="software-title-compact" data-lang="daw-pro">Software</h4>
+      <div class="software-grid-compact">
+        <div class="software-item-compact">
+          <img src="Flstudio.png" alt="FL Studio" loading="lazy" width="40" height="40">
+          <span>FL Studio</span>
+        </div>
+        <div class="software-item-compact">
+          <img src="Rekordbox_Logo.png" alt="Rekordbox" loading="lazy" width="40" height="40">
+          <span>Rekordbox</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-container">
+      <div class="footer-social">
+        <h4 data-lang="follow-social">Follow me on social media</h4>
+        <div class="footer-social-links compact">
+          <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.5 6.5h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0H7.5v7H8.5v-7z"/>
+            </svg>
+            SoundCloud
+          </a>
+          <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            YouTube
+          </a>
+          <a href="https://www.mixcloud.com/rosthedj/" target="_blank" rel="noopener noreferrer" aria-label="Mixcloud Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 6.502v10.996h24V6.502H0zm9.114 1.406h1.588v8.184H9.114V7.908zm3.176 0h1.588v8.184h-1.588V7.908zM4.76 7.908h1.588v8.184H4.76V7.908zm12.475 0h1.588v8.184h-1.588V7.908z"/>
+            </svg>
+            Mixcloud
+          </a>
+          <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 18.75l7.437-13.5h2.77L2.77 18.75H0zm11.413 0l7.437-13.5h2.77L14.183 18.75h-2.77z"/>
+            </svg>
+            Bandcamp
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">© 2024 ROS DJ. All rights reserved.</p>
+        <p class="footer-text"><a href="sitemap.html" style="color: #ff5500; text-decoration: none;">Карта сайту</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+      </div>
     </div>
   </div>
 
-  <!-- ... -->
-
+  <!-- Modern JavaScript -->
   <script>
-    (function(){
+    // Modern IIFE with better performance
+    (()=>{
+      'use strict';
+      
       // Cache DOM elements
       const cache = {
-        mobileMenuToggle: document.getElementById('mobileMenuToggle'),
-        mobileMenuOverlay: document.getElementById('mobileMenuOverlay'),
-        mobileMenuClose: document.getElementById('mobileMenuClose'),
+        body: document.body,
+        nav: document.getElementById('fixedNav'),
+        menuToggle: document.getElementById('menuToggle'),
+        navLinks: document.querySelectorAll('.nav-link'),
+        mobileNavItems: document.querySelectorAll('.mobile-nav-item'),
+        langButtons: document.querySelectorAll('.lang-btn'),
+        mobileLangButtons: document.querySelectorAll('.mobile-lang-btn'),
+        dataLangElements: document.querySelectorAll('[data-lang]'),
+        homePanel: document.querySelector('.home-panel'),
+        logo: document.getElementById('logo'),
+        modal: document.getElementById('galleryModal'),
+        modalImg: document.getElementById('modalImage'),
+        modalClose: document.getElementById('modalClose'),
+        galleryItems: document.querySelectorAll('.gallery-item'),
+        sections: document.querySelectorAll('.seccion')
       };
       
-      // Toggle mobile menu
-      cache.mobileMenuToggle.addEventListener('click', () => {
-        cache.mobileMenuOverlay.classList.toggle('active');
+      // State management
+      const state = {
+        lastScrollY: window.scrollY,
+        ticking: false,
+        currentLang: localStorage.getItem('selectedLanguage') || 'es',
+        isMobile: window.innerWidth <= 768
+      };
+      
+      // Translations object
+      const translations = {
+        uk: {
+          'nav-home': 'Головна',
+          'nav-about': 'Про мене', 
+          'nav-sound': 'Музика',
+          'nav-gallery': 'Фото',
+          'nav-contact': 'Контакт',
+          'nav-herramientas': 'Інструменти DJ',
+          'home-description': 'Професійний український DJ | Organic House, Deep House & Melodic | Іспанія | Бронювання по світу',
+          'about-title': 'Про ROS DJ',
+          'about-subtitle': 'Створення захоплюючих музичних подорожей через глибокі, мелодійні та атмосферні органик хаус сети',
+          'about-name': 'Ростислав Дабіжа',
+          'about-description': 'Професійний український DJ та музичний продюсер, що спеціалізується на Organic House, Deep House та Melodic музиці. З початку війни в Україні я переїхав до Іспанії і продовжую захоплювати аудиторію по всьому світу унікальним підбором треків та стилем мікшування.',
+          'festival-performances': '🎵 <strong>Музична подорож:</strong> Створюю унікальні DJ сети для клубів, приватних подій та онлайн-платформ. Працюю над створенням атмосферних сетів, що поєднують глибокі мелодії та сучасні електронні ритми.',
+          'about-genres': '<strong>Жанри:</strong> Organic House · Deep House · Melodic House',
+          'about-location': '<strong>Базується:</strong> Іспанія | <strong>Доступний:</strong> Бронювання по всьому світу',
+          'dj-tools-title': 'Інструменти DJ',
+          'dj-tools-subtitle': 'Необхідні інструменти для гармонійного мікшування та професійних DJ виступів',
+          'herramientas-title': 'Інструменти DJ',
+          'herramientas-desc': 'Досліджуйте професійні DJ інструменти та підніміть свій музичний продакшн на новий рівень.',
+          'herramientas-link': 'Інструменти DJ →',
+          'camelot-title': '🎵 Колесо Кемелота',
+          'camelot-description': 'Колесо Кемелота є необхідним для гармонійного мікшування в DJ сетах. Воно допомагає DJ мікшувати треки в тій самій тональності або сумісних тональностях, створюючи плавні переходи та підтримуючи музичний потік протягом усього виступу.',
+          'camelot-compatibility': 'Сумісність тональностей:',
+          'camelot-same': '<strong>Однаковий номер:</strong> Ідеальний мікс',
+          'camelot-energy': '<strong>±1 номер:</strong> Зміна енергії',
+          'camelot-relative': '<strong>Однакова літера:</strong> Відносна мінор/мажор',
+          'bpm-title': '🎧 BPM Аналіз',
+          'bpm-description': 'Розуміння BPM (ударів за хвилину) є важливим для створення безшовних переходів. Підбирайте темпи або використовуйте креативні зміни темпу для покращення ваших DJ сетів.',
+          'bpm-range': 'Діапазон Organic House:',
+          'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
+          'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
+          'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
+          'in-kay-title': '🎹 In-Kay Визначення тональності',
+          'in-kay-description': 'Професійний інструмент для визначення тональності для DJ та продюсерів. In-Kay допомагає ідентифікувати музичні тональності, знаходити сумісні треки та створювати гармонійні мікси з точністю.',
+          'in-kay-features': 'Функції:',
+          'in-kay-accurate': '<strong>Точне визначення:</strong> Аналіз просунутого алгоритму',
+          'in-kay-formats': '<strong>Кілька форматів:</strong> Підтримка MP3, WAV, FLAC',
+          'in-kay-export': '<strong>Опції експорту:</strong> Нотація Кемелота та музична',
+          'in-kay-button': 'Відкрити In-Kay',
+          'sound-title': 'Музика',
+          'playlist-title': 'Etapa De Potencia by Dj ROS (частина 2)',
+          'playlist-desc': 'Etapa de potencia - це не просто музика, це стан душі.',
+          'gallery-title': 'Фото',
+          'gallery-subtitle': 'Фото з DJ виступів та студійних сесій',
+          'daw-pro': 'Професійне ПЗ що я використовую',
+          'contact-title': 'Контакт',
+          'contact-subtitle': 'Зв\'яжіться зі мною',
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'follow-dj': 'Слідкуй за Dj Ros',
+          'gallery-caption-1': 'Український DJ - Live Виступ',
+          'gallery-caption-2': 'Український DJ - Organic House Сет',
+          'gallery-caption-3': 'Український DJ - Професійне Обладнання',
+          'follow-social': 'Слідкуй за мною в соціальних мережах'
+        },
+        en: {
+          'nav-home': 'Home',
+          'nav-about': 'About',
+          'nav-sound': 'Music', 
+          'nav-gallery': 'Photos',
+          'nav-contact': 'Contact',
+          'nav-herramientas': 'DJ Tools',
+          'home-description': 'Professional Ukrainian DJ | Organic House, Deep House & Melodic | Spain | Worldwide bookings',
+          'about-title': 'About ROS DJ',
+          'about-subtitle': 'Crafting immersive musical journeys through deep, melodic, and atmospheric organic house sets',
+          'about-name': 'Rostyslav Dabizha',
+          'about-description': 'Professional Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music. Since the beginning of the war in Ukraine, I relocated to Spain and continue to captivate audiences worldwide with unique track selection and mixing style.',
+          'festival-performances': '🎵 <strong>Musical Journey:</strong> Creating unique DJ sets for clubs, private events and online platforms. Working on crafting atmospheric sets that combine deep melodies with modern electronic rhythms.',
+          'about-genres': '<strong>Genres:</strong> Organic House · Deep House · Melodic House',
+          'about-location': '<strong>Based:</strong> Spain | <strong>Available:</strong> Worldwide Bookings',
+          'dj-tools-title': 'DJ Tools',
+          'dj-tools-subtitle': 'Essential tools for harmonic mixing and professional DJ performance',
+          'herramientas-title': 'DJ Tools',
+          'herramientas-desc': 'Explore professional DJ tools and elevate your music production to the next level.',
+          'herramientas-link': 'DJ Tools →',
+          'camelot-title': '🎵 Camelot Wheel',
+          'camelot-description': 'The Camelot Wheel is essential for harmonic mixing in DJ sets. It helps DJs mix tracks in the same key or compatible keys, creating smooth transitions and maintaining musical flow throughout the performance.',
+          'camelot-compatibility': 'Key Compatibility:',
+          'camelot-same': '<strong>Same number:</strong> Perfect mix',
+          'camelot-energy': '<strong>±1 number:</strong> Energy change',
+          'camelot-relative': '<strong>Same letter:</strong> Relative minor/major',
+          'bpm-title': '🎧 BPM Analysis',
+          'bpm-description': 'Understanding BPM (Beats Per Minute) is crucial for creating seamless transitions. Match tempos or use creative tempo changes to enhance your DJ sets.',
+          'bpm-range': 'Organic House Range:',
+          'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
+          'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
+          'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
+          'in-kay-title': '🎹 In-Kay Key Detection',
+          'in-kay-description': 'Professional key detection tool for DJs and producers. In-Kay helps you identify musical keys, find compatible tracks, and create harmonic mixes with precision.',
+          'in-kay-features': 'Features:',
+          'in-kay-accurate': '<strong>Accurate Detection:</strong> Advanced algorithm analysis',
+          'in-kay-formats': '<strong>Multiple Formats:</strong> MP3, WAV, FLAC support',
+          'in-kay-export': '<strong>Export Options:</strong> Camelot & Soundal notation',
+          'in-kay-button': 'Open In-Kay',
+          'sound-title': 'Music',
+          'playlist-title': 'Etapa De Potencia by Dj ROS (Part 2)',
+          'playlist-desc': 'Etapa de potencia is not just music, it is a state of mind.',
+          'gallery-title': 'Photos',
+          'gallery-subtitle': 'Photos from DJ performances and studio sessions',
+          'daw-pro': 'Professional Software I Use',
+          'contact-title': 'Contact',
+          'contact-subtitle': 'Get in touch',
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'follow-dj': 'Follow Dj Ros',
+          'gallery-caption-1': 'Ukrainian DJ - Live Performance',
+          'gallery-caption-2': 'Ukrainian DJ - Organic House Set',
+          'gallery-caption-3': 'Ukrainian DJ - Professional Setup',
+          'follow-social': 'Follow me on social media'
+        },
+        es: {
+          'nav-home': 'Inicio',
+          'nav-about': 'Sobre mí',
+          'nav-sound': 'Música',
+          'nav-gallery': 'Fotos',
+          'nav-contact': 'Contacto',
+          'nav-herramientas': 'Herramientas para DJ',
+          'home-description': 'DJ ucraniano profesional | Organic House, Deep House & Melodic | España | Reservas mundiales',
+          'about-title': 'Sobre ROS DJ',
+          'about-subtitle': 'Creando viajes musicales envolventes a través de sets de organic house profundos, melódicos y atmosféricos',
+          'about-name': 'Rostyslav Dabizha',
+          'about-description': 'DJ y productor musical ucraniano profesional especializado en Organic House, Deep House y música Melódica. Desde el comienzo de la guerra en Ucrania, me mudé a España y sigo cautivando al público de todo el mundo con una selección de pistas y un estilo de mezcla únicos.',
+          'festival-performances': '🎵 <strong>Viaje Musical:</strong> Creando sets de DJ únicos para clubes, eventos privados y plataformas online. Trabajando en crear sets atmosféricos que combinan melodías profundas con ritmos electrónicos modernos.',
+          'about-genres': '<strong>Géneros:</strong> Organic House · Deep House · Melodic House',
+          'about-location': '<strong>Base:</strong> España | <strong>Disponible:</strong> Reservas en todo el mundo',
+          'dj-tools-title': 'Herramientas de DJ',
+          'dj-tools-subtitle': 'Herramientas esenciales para mezclas armónicas y actuaciones profesionales de DJ',
+          'herramientas-title': 'Herramientas para DJ',
+          'herramientas-desc': 'Explora herramientas de DJ profesionales y eleva tu producción musical al siguiente nivel.',
+          'herramientas-link': 'Herramientas para DJ →',
+          'camelot-title': '🎵 Rueda Camelot',
+          'camelot-description': 'La Rueda Camelot es esencial para mezclar armónicamente en sets de DJ. Ayuda a los DJs a mezclar pistas en la misma tonalidad o en tonalidades compatibles, creando transiciones suaves y manteniendo el flujo musical durante la actuación.',
+          'camelot-compatibility': 'Compatibilidad de tonalidad:',
+          'camelot-same': '<strong>Mismo número:</strong> Mezcla perfecta',
+          'camelot-energy': '<strong>±1 número:</strong> Cambio de energía',
+          'camelot-relative': '<strong>Misma letra:</strong> Menor/mayor relativo',
+          'bpm-title': '🎧 Análisis BPM',
+          'bpm-description': 'Comprender los BPM (pulsos por minuto) es crucial para crear transiciones perfectas. Igualar tempos o usar cambios creativos de tempo para mejorar tus sets de DJ.',
+          'bpm-range': 'Rango de Organic House:',
+          'bpm-deep': '<strong>Deep:</strong> 110-122 BPM',
+          'bpm-melodic': '<strong>Melodic:</strong> 118-124 BPM',
+          'bpm-progressive': '<strong>Progressive:</strong> 122-128 BPM',
+          'in-kay-title': '🎹 Detección de tonalidad In-Kay',
+          'in-kay-description': 'Herramienta profesional de detección de tonalidad para DJs y productores. In-Kay te ayuda a identificar tonalidades musicales, encontrar pistas compatibles y crear mezclas armónicas con precisión.',
+          'in-kay-features': 'Funciones:',
+          'in-kay-accurate': '<strong>Detección precisa:</strong> Análisis de algoritmo avanzado',
+          'in-kay-formats': '<strong>Múltiples formatos:</strong> Soporte MP3, WAV, FLAC',
+          'in-kay-export': '<strong>Opciones de exportación:</strong> Notación Camelot y musical',
+          'in-kay-button': 'Abrir In-Kay',
+          'sound-title': 'Música',
+          'playlist-title': 'Etapa De Potencia by Dj ROS (parte 2)',
+          'playlist-desc': 'Etapa de potencia no es solo música, es un estado del alma.',
+          'gallery-title': 'Fotos',
+          'gallery-subtitle': 'Fotos de actuaciones de DJ y sesiones de estudio',
+          'daw-pro': 'Software profesional que uso',
+          'contact-title': 'Contacto',
+          'contact-subtitle': 'Póngase en contacto',
+          'contact-email': 'Email: r.dabizha@icloud.com',
+          'follow-dj': 'Sigue a Dj Ros',
+          'gallery-caption-1': 'DJ Ucraniano - Presentación en Vivo',
+          'gallery-caption-2': 'DJ Ucraniano - Set de Organic House',
+          'gallery-caption-3': 'DJ Ucraniano - Equipo Profesional',
+          'follow-social': 'Sígueme en redes sociales'
+        }
+      };
+      
+      // Utility functions
+      const utils = {
+        debounce: (func, wait) => {
+          let timeout;
+          return function executedFunction(...args) {
+            const later = () => {
+              clearTimeout(timeout);
+              func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+          };
+        },
+        
+        throttle: (func, limit) => {
+          let inThrottle;
+          return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+              func.apply(context, args);
+              inThrottle = true;
+              setTimeout(() => inThrottle = false, limit);
+            }
+          };
+        },
+        
+        animateValue: (element, start, end, duration) => {
+          const range = end - start;
+          const startTime = performance.now();
+          
+          const updateValue = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(progress * range + start);
+            element.textContent = value;
+            
+            if (progress < 1) {
+              requestAnimationFrame(updateValue);
+            }
+          };
+          
+          requestAnimationFrame(updateValue);
+        }
+      };
+      
+      // Language system
+      const languageSystem = {
+        update: (lang) => {
+          if (!translations[lang]) {
+            console.warn('Language not found:', lang);
+            return;
+          }
+          
+          state.currentLang = lang;
+          let updatedCount = 0;
+          
+          cache.dataLangElements.forEach(element => {
+            const key = element.getAttribute('data-lang');
+            if (translations[lang][key]) {
+              try {
+                if (translations[lang][key].includes('<')) {
+                  element.innerHTML = translations[lang][key];
+                } else {
+                  element.textContent = translations[lang][key];
+                }
+                updatedCount++;
+              } catch (error) {
+                console.error('Error updating element:', key, error);
+              }
+            }
+          });
+          
+          // Update desktop button states
+          cache.langButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
+            }
+          });
+          
+          // Update mobile button states
+          cache.mobileLangButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
+            }
+          });
+          
+          // Save preference
+          localStorage.setItem('selectedLanguage', lang);
+          document.documentElement.setAttribute('data-current-lang', lang);
+          document.documentElement.lang = lang;
+          
+          console.log(`Language updated to ${lang}: ${updatedCount} elements`);
+        },
+        
+        init: () => {
+          // Desktop language buttons
+          cache.langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+              languageSystem.update(btn.getAttribute('data-lang'));
+            });
+          });
+          
+          // Mobile language buttons
+          cache.mobileLangButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+              languageSystem.update(btn.getAttribute('data-lang'));
+            });
+          });
+          
+          // Load saved language
+          languageSystem.update(state.currentLang);
+        }
+      };
+      
+      // Removed mobile navigation system - no longer needed
+      
+      // Navigation system
+      const navigationSystem = {
+        updateNav: () => {
+          const scrollY = window.scrollY;
+          
+          // Only hide/show navigation on desktop
+          if (window.innerWidth > 768) {
+            if (scrollY > state.lastScrollY && scrollY > 100) {
+              cache.nav.classList.add('hidden');
+              // Removed the landing.classList.add('hidden') - landing should always be visible
+            } else {
+              cache.nav.classList.remove('hidden');
+              // Removed the landing.classList.remove('hidden') - landing should always be visible
+            }
+          }
+          
+          state.lastScrollY = scrollY;
+        },
+        
+        updateActiveLink: () => {
+          const scrollPosition = window.scrollY + window.innerHeight / 2;
+          let current = 'home'; // Default to home section
+          
+          cache.sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= (sectionTop - 100)) {
+              current = section.getAttribute('id');
+            }
+          });
+          
+          cache.navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`nav a[href="#${current}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        },
+        
+        smoothScroll: (e) => {
+          e.preventDefault();
+          const targetId = e.target.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        },
+        
+        init: () => {
+          // Scroll events with throttling
+          const throttledUpdateNav = utils.throttle(navigationSystem.updateNav, 16);
+          const throttledUpdateActiveLink = utils.throttle(navigationSystem.updateActiveLink, 100);
+          
+          window.addEventListener('scroll', throttledUpdateNav);
+          window.addEventListener('scroll', throttledUpdateActiveLink);
+          
+          // Navigation click events
+          cache.navLinks.forEach(link => {
+            link.addEventListener('click', navigationSystem.smoothScroll);
+          });
+          
+          // Initial call
+          navigationSystem.updateActiveLink();
+        }
+      };
+      
+      // Gallery system
+      const gallerySystem = {
+        openModal: (img) => {
+          cache.modalImg.src = img.src;
+          cache.modalImg.alt = img.alt;
+          cache.modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        },
+        
+        closeModal: () => {
+          cache.modal.classList.remove('active');
+          document.body.style.overflow = '';
+        },
+        
+        init: () => {
+          cache.galleryItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const img = item.querySelector('img');
+              gallerySystem.openModal(img);
+            });
+          });
+          
+          cache.modalClose.addEventListener('click', gallerySystem.closeModal);
+          cache.modal.addEventListener('click', (e) => {
+            if (e.target === cache.modal) {
+              gallerySystem.closeModal();
+            }
+          });
+          
+          // Prevent scroll propagation in gallery
+          cache.galleryItems.forEach(item => {
+            item.addEventListener('wheel', (e) => {
+              e.stopPropagation();
+            }, { passive: false });
+          });
+        }
+      };
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cache.modal.classList.contains('active')) {
+          gallerySystem.closeModal();
+        }
       });
       
-      // Close mobile menu
-      cache.mobileMenuClose.addEventListener('click', () => {
-        cache.mobileMenuOverlay.classList.remove('active');
-      });
+      // Performance monitoring
+      const performanceMonitor = {
+        init: () => {
+          // Log page load performance
+          window.addEventListener('load', () => {
+            const loadTime = performance.now();
+            console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+          });
+          
+          // Monitor scroll performance
+          let scrollCount = 0;
+          window.addEventListener('scroll', () => {
+            scrollCount++;
+            if (scrollCount % 100 === 0) {
+              console.log(`Scroll events: ${scrollCount}`);
+            }
+          });
+        }
+      };
       
-      // Initialize website
-      function init() {
+      // Initialize everything
+      const init = () => {
+        console.log('🚀 Initializing ROS DJ website...');
+        
+        // Set Home as active on page load
+        const homeLink = document.querySelector('nav a[href="#home"]');
+        if (homeLink) {
+          homeLink.classList.add('active');
+        }
+        
+        // Scroll to top on page load
+        window.scrollTo(0, 0);
+        
+        // Initialize all systems
+        languageSystem.init();
+        navigationSystem.init();
+        gallerySystem.init();
+        performanceMonitor.init();
+        
+        // In-Kay button
+        const inKayButton = document.querySelector('.in-kay-info .btn-primary');
+        if (inKayButton) {
+          inKayButton.addEventListener('click', () => {
+            window.open('https://in-kay.pages.dev', '_blank');
+          });
+        }
+        
         console.log('✅ Website initialized successfully');
       };
       
@@ -894,6 +2777,7 @@
       } else {
         init();
       }
+      
     })();
   </script>
 
