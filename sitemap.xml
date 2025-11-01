@@ -49,6 +49,14 @@
     <loc>https://rosdj.es/#contacts</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Social Networks Section -->
+  <url>
+    <loc>https://rosdj.es/#social-networks</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
