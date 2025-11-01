@@ -13,69 +13,91 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "ROS DJ",
-    "alternateName": "Rostyslav Dabizha",
-    "description": "Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
-    "url": "https://rosdj.com",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://rosdj.com/ROSDJ_foto.webp",
-      "creditText": "Rostyslav Dabizha",
-      "creator": {
+    "@graph": [
+      {
         "@type": "Person",
-        "name": "ROS DJ"
-      },
-      "copyrightNotice": "© 2024 ROS DJ. All rights reserved."
-    },
-    "sameAs": [
-      "https://www.instagram.com/rosthedj/",
-      "https://soundcloud.com/rosthedj",
-      "https://www.youtube.com/@rosthedj",
-      "https://rosdj.bandcamp.com"
-    ],
-    "jobTitle": "Ukrainian DJ",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "ROS DJ Music"
-    },
-    "knowsAbout": [
-      "Electronic Music",
-      "Organic House",
-      "Deep House",
-      "DJ Performance",
-      "Music Production"
-    ],
-    "nationality": "Ukrainian",
-    "gender": "Male",
-    "birthPlace": "Ukraine",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Spain"
-    },
-    "email": "r.dabizha@icloud.com",
-    "telephone": "+34-XXXXXXXXX",
-    "availableForHire": true,
-    "seeks": {
-      "@type": "JobPosting",
-      "title": "DJ Performances Worldwide",
-      "description": "Available for club performances, private events, and festivals worldwide",
-      "datePosted": "2024-01-01",
-      "jobLocation": {
-        "@type": "Place",
+        "@id": "https://rosdj.es/#person",
+        "name": "ROS DJ",
+        "alternateName": "Rostyslav Dabizha",
+        "description": "Ukrainian DJ specializing in Organic House, Deep House & Melodic electronic music",
+        "url": "https://rosdj.es",
+        "image": {
+          "@id": "https://rosdj.es/images/ROSDJ_foto.webp#image"
+        },
+        "jobTitle": "Ukrainian DJ",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "ROS DJ Music"
+        },
+        "knowsAbout": [
+          "Electronic Music",
+          "Organic House",
+          "Deep House",
+          "DJ Performance",
+          "Music Production"
+        ],
+        "nationality": "Ukrainian",
+        "gender": "Male",
+        "birthPlace": "Ukraine",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "Worldwide"
-        }
+          "addressCountry": "Spain"
+        },
+        "email": "r.dabizha@icloud.com",
+        "telephone": "+34-XXXXXXXXX",
+        "availableForHire": true,
+        "sameAs": [
+          "https://www.instagram.com/rosthedj/",
+          "https://soundcloud.com/rosthedj",
+          "https://www.youtube.com/@rosthedj",
+          "https://rosdj.bandcamp.com"
+        ]
       },
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "ROS DJ Music",
-        "url": "https://rosdj.com"
+      {
+        "@type": "ImageObject",
+        "@id": "https://rosdj.es/images/ROSDJ_foto.webp#image",
+        "name": "ROS DJ Photo",
+        "description": "Ukrainian DJ Rostyslav Dabizha",
+        "url": "https://rosdj.es/images/ROSDJ_foto.webp",
+        "contentUrl": "https://rosdj.es/images/ROSDJ_foto.webp",
+        "thumbnailUrl": "https://rosdj.es/images/ROSDJ_foto_thumb.webp",
+        "width": "1200",
+        "height": "630",
+        "encodingFormat": "image/webp",
+        "caption": "ROS DJ - Ukrainian DJ",
+        "copyrightNotice": "© 2024 ROS DJ. All rights reserved.",
+        "creator": {
+          "@id": "https://rosdj.es/#person"
+        },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "acquireLicensePage": "https://rosdj.es/contact"
       },
-      "employmentType": "Freelance",
-      "validThrough": "2025-12-31"
-    }
+      {
+        "@type": "JobPosting",
+        "title": "DJ Performances Worldwide",
+        "description": "Available for club performances, private events, and festivals worldwide",
+        "datePosted": "2024-01-01",
+        "validThrough": "2025-12-31",
+        "employmentType": "Freelance",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Worldwide"
+          }
+        },
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "ROS DJ Music",
+          "url": "https://rosdj.es"
+        },
+        "applicantLocationRequirements": {
+          "@type": "Country",
+          "name": "Worldwide"
+        },
+        "jobLocationType": "TELECOMMUTE"
+      }
+    ]
   }
   </script>
   <meta name="msapplication-TileColor" content="#000000">
@@ -96,7 +118,7 @@
   <meta name="google-site-verification" content="your-verification-code">
   <meta name="yandex-verification" content="your-yandex-code">
   <meta name="msvalidate.01" content="your-bing-code">
-  <link rel="canonical" href="https://rosdj.com/">
+  <link rel="canonical" href="https://rosdj.es/">
   <meta name="citation_title" content="ROS DJ">
   <meta name="citation_author" content="Rostyslav Dabizha">
   <meta name="citation_publication_date" content="2024">
@@ -134,14 +156,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="https://rosdj.es/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rosdj.es/">
+  <meta property="og:url" content="https://rosdj.es">
   <meta property="og:title" content="ROS DJ - Ukrainian DJ | Organic House & Deep House | Spain">
-  <meta property="og:description" content="🎵Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta property="og:description" content=" Professional Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
   <meta property="og:image" content="https://rosdj.es/images/ROSDJ_foto.webp">
   <meta property="og:image:secure_url" content="https://rosdj.es/images/ROSDJ_foto.webp">
   <meta property="og:image:width" content="1200">
@@ -158,7 +180,7 @@
   <meta name="twitter:site" content="@rosthedj">
   <meta name="twitter:creator" content="@rosthedj">
   <meta name="twitter:title" content="ROS DJ - Ukrainian DJ | Organic House & Deep House">
-  <meta name="twitter:description" content="🎵Ukrainian DJ specializing in Organic House, Deep House & Melodic music. Based in Spain, available for worldwide bookings.">
+  <meta name="twitter:description" content="Ukrainian DJ Rostyslav Dabizha specializing in Organic House, Deep House & Melodic electronic music. Based in Spain, available for worldwide bookings.">
   <meta name="twitter:image" content="https://rosdj.es/images/ROSDJ_foto.webp">
   <meta name="twitter:image:alt" content="ROS DJ - Ukrainian DJ">
   
@@ -166,8 +188,7 @@
   <meta name="music:musician" content="https://soundcloud.com/rosthedj">
   <meta property="music:musician" content="https://soundcloud.com/rosthedj">
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://rosdj.es/" />
+  <!-- Canonical URL (already defined above) -->
   
   <!-- Alternate language versions -->
   <link rel="alternate" hreflang="en" href="https://rosdj.es/" />
@@ -186,68 +207,6 @@
   <link rel="dns-prefetch" href="https://www.youtube.com">
   <link rel="dns-prefetch" href="https://www.mixcloud.com">
   
-  <!-- Structured Data for Images -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ImageObject",
-    "name": "ROS DJ Photo",
-    "description": "Ukrainian DJ Rostyslav Dabizha",
-    "url": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "contentUrl": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "thumbnailUrl": "https://rosdj.es/images/ROSDJ_foto.webp",
-    "width": "1200",
-    "height": "630",
-    "encodingFormat": "image/webp",
-    "caption": "ROS DJ - Ukrainian DJ",
-    "author": {
-      "@type": "Person",
-      "name": "Rostyslav Dabizha"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ROS DJ",
-      "url": "https://rosdj.es"
-    },
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "acquireLicensePage": "https://rosdj.es/contact"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rostyslav Dabizha",
-    "alternateName": "ROS DJ",
-    "url": "https://rosdj.es",
-    "image": "images/ROSDJ_foto.webp",
-    "jobTitle": "Ukrainian DJ",
-    "description": "Ukrainian DJ and music producer specializing in Organic House, Deep House & Melodic music",
-    "nationality": {
-      "@type": "Country",
-      "name": "Ukraine"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Spain"
-    },
-    "sameAs": [
-      "https://soundcloud.com/rosthedj",
-      "https://www.instagram.com/rosthedj/",
-      "https://www.youtube.com/@rosthedj",
-      "https://www.mixcloud.com/rosthedj/"
-    ],
-    "knowsAbout": ["Organic House", "Deep House", "Melodic House", "DJ Mixing", "Sound Production"],
-    "offers": {
-      "@type": "Offer",
-      "itemOffered": "DJ Services",
-      "availableAtOrFrom": {
-        "@type": "Place",
-        "addressCountry": "Worldwide"
-      }
-    }
-  }
-  </script>
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
