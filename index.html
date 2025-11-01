@@ -2058,6 +2058,7 @@
       .home-section {
         padding: 3rem 0;
         min-height: auto;
+        background-size: 130% !important; /* Reduce zoom level on mobile */
       }
       
       .home-content {
@@ -2179,7 +2180,7 @@
   </nav>
 
   <!-- Clean Home Section with Background Image -->
-  <section id="home" class="home-section" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: #000 url('ROSDJ_foto.jpg') no-repeat center center; background-size: cover; background-attachment: fixed;">
+  <section id="home" class="home-section" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: #000 url('ROSDJ_foto.jpg') no-repeat center center; background-size: 130%; background-position: center; background-attachment: fixed; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
     <!-- Dark overlay for better text visibility -->
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
     <div class="home-content" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; position: relative; z-index: 2;">
@@ -2263,8 +2264,7 @@
               <li data-lang="in-kay-feature-3"><strong>Integración:</strong> Conecta con tu software de DJ</li>
             </ul>
           </div>
-          <p data-lang="in-kay-export" style="font-size: 0.8rem; color: #aaa; margin: 0.5rem 0 0.8rem 0;"><strong>Exporta en:</strong> Camelot y notación musical</p>
-          <a href="#" class="btn" data-lang="in-kay-button" style="display: inline-block; background: linear-gradient(90deg, #4a90e2, #2a5cb3); color: white; padding: 0.4rem 0.9rem; border-radius: 18px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;">Abrir In-Kay</a>
+          <a href="in-kay.pages" class="btn" data-lang="in-kay-button" style="display: inline-block; background: linear-gradient(90deg, #4a90e2, #2a5cb3); color: white; padding: 0.4rem 0.9rem; border-radius: 18px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease; margin-top: 0.8rem;">Відкрити In-Kay</a>
         </div>
       </div>
     </div>
@@ -2361,39 +2361,39 @@
   </section>
 
   <!-- Social Networks Section -->
-  <section id="social-networks" class="social-section seccion" style="background: #000; padding: 3rem 0; text-align: center;">
+  <section id="social-networks" class="social-section seccion" style="background: #000; padding: 2rem 0; text-align: center;">
     <div class="pagewrapper">
-      <h2 class="section-title" style="color: #fff; margin-bottom: 2rem;" data-lang="social-networks-title">Соціальні мережі</h2>
-      <div class="footer-social-links" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-        <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.5rem;">
+      <h2 class="section-title" style="color: #fff; margin-bottom: 1.5rem;" data-lang="social-networks-title">Соціальні мережі</h2>
+      <div class="footer-social-links" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="https://soundcloud.com/rosthedj" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud Profile" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.3rem;">
             <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.5 6.5h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0h-2v7h2v-7zm-3 0H7.5v7H8.5v-7z"/>
           </svg>
-          <span style="font-size: 0.9rem;">SoundCloud</span>
+          <span style="font-size: 0.8rem;">SoundCloud</span>
         </a>
         <a href="https://www.instagram.com/rosthedj/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.3rem;">
             <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/>
           </svg>
-          <span style="font-size: 0.9rem;">Instagram</span>
+          <span style="font-size: 0.8rem;">Instagram</span>
         </a>
         <a href="https://www.youtube.com/@rosthedj" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.3rem;">
             <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
-          <span style="font-size: 0.9rem;">YouTube</span>
+          <span style="font-size: 0.8rem;">YouTube</span>
         </a>
         <a href="https://www.mixcloud.com/rosthedj/" target="_blank" rel="noopener noreferrer" aria-label="Mixcloud Profile" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.3rem;">
             <path fill="currentColor" d="M0 6.502v10.996h24V6.502H0zm9.114 1.406h1.588v8.184H9.114V7.908zm3.176 0h1.588v8.184h-1.588V7.908zM4.76 7.908h1.588v8.184H4.76V7.908zm12.475 0h1.588v8.184h-1.588V7.908z"/>
           </svg>
-          <span style="font-size: 0.9rem;">Mixcloud</span>
+          <span style="font-size: 0.8rem;">Mixcloud</span>
         </a>
         <a href="https://rosdj.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp Profile" class="social-icon" style="color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.3rem;">
             <path fill="currentColor" d="M0 18.75l7.437-13.5h2.77L2.77 18.75H0zm11.413 0l7.437-13.5h2.77L14.183 18.75h-2.77z"/>
           </svg>
-          <span style="font-size: 0.9rem;">Bandcamp</span>
+          <span style="font-size: 0.8rem;">Bandcamp</span>
         </a>
       </div>
     </div>
@@ -2494,7 +2494,6 @@
           'in-kay-features': 'Функції:',
           'in-kay-accurate': '<strong>Точне визначення:</strong> Аналіз просунутого алгоритму',
           'in-kay-formats': '<strong>Кілька форматів:</strong> Підтримка MP3, WAV, FLAC',
-          'in-kay-export': '<strong>Опції експорту:</strong> Нотація Кемелота та музична',
           'in-kay-button': 'Відкрити In-Kay',
           'sound-title': 'Музика',
           'playlist-title': 'Etapa De Potencia by Dj ROS (частина 2)',

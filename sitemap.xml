@@ -6,7 +6,7 @@
 
   <!-- Main Page -->
   <url>
-    <loc>https://rosdj.es/</loc>
+    <loc>index.html</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- About Section -->
   <url>
-    <loc>https://rosdj.es/#about</loc>
+    <loc>index.html#about</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- DJ Tools Section -->
   <url>
-    <loc>https://rosdj.es/#dj-tools</loc>
+    <loc>index.html#dj-tools</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
   <!-- Sound Section -->
   <url>
-    <loc>https://rosdj.es/#sound</loc>
+    <loc>index.html#sound</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
   <!-- Gallery Section -->
   <url>
-    <loc>https://rosdj.es/#gallery</loc>
+    <loc>index.html#gallery</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -46,7 +46,7 @@
 
   <!-- Contacts Section -->
   <url>
-    <loc>https://rosdj.es/#contacts</loc>
+    <loc>index.html#contacts</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -54,7 +54,7 @@
 
   <!-- Social Networks Section -->
   <url>
-    <loc>https://rosdj.es/#social-networks</loc>
+    <loc>index.html#social-networks</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
