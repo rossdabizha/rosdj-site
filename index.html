@@ -343,6 +343,39 @@
   
   <!-- Critical CSS -->
   <style>
+    /* Global Background */
+    body {
+      background: url("ROSDJ_foto.jpg") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Semi-transparent overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2); /* 20% dark overlay for desktop */
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Site content above overlay */
+    main, header, footer, section, div {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Mobile version: 40% dark overlay */
+    @media (max-width: 768px) {
+      body::before {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+    
     /* CSS Reset & Modern Base */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0;font:inherit}
     :root{
@@ -2180,10 +2213,10 @@
   </nav>
 
   <!-- Clean Home Section with Background Image -->
-  <section id="home" class="home-section" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: #000 url('ROSDJ_foto.jpg') no-repeat center center; background-size: 130%; background-position: center; background-attachment: fixed; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
-    <!-- Dark overlay for better text visibility -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
-    <div class="home-content" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; position: relative; z-index: 2;">
+  <section id="home" class="home-section" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: #000 url('ROSDJ_foto.jpg') no-repeat center center; background-size: cover; background-position: center; background-attachment: fixed;">
+    <!-- 40% dark overlay -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+    <div class="home-content" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; position: relative; z-index: 2; text-align: center;">
       <div class="logo-container">
         <img src="logo.png" 
              alt="ROS DJ - Professional Ukrainian DJ Logo" 
@@ -2193,11 +2226,6 @@
              width="900"
              height="600">
       </div>
-      
-      <!-- Scroll to Social Button -->
-      <div class="scroll-to-social">
-        <a href="#social-networks" class="scroll-button" style="display: inline-flex; align-items: center; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #fff; border-radius: 30px; transition: all 0.3s ease; background: rgba(0,0,0,0.3);">
-          <span>Соціальні мережі</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;">
             <path d="M6 9l6 6 6-6"/>
           </svg>
