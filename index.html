@@ -344,6 +344,7 @@
   <!-- Critical CSS -->
   <style>
     /* === ROS DJ Global Background & Mobile Optimization === */
+    /* Desktop Background */
     body {
       background: url("images/bg.webp") no-repeat center center fixed;
       background-size: cover;
@@ -376,26 +377,40 @@
     
     /* Mobile adjustments */
     @media (max-width: 768px) {
+      /* Reset desktop background */
       body {
-        background-attachment: scroll;      /* Prevents pixelation and stretching on mobile */
-        background-size: contain;           /* Maintains correct proportions */
-        background-repeat: no-repeat;
-        background-position: top center;
+        background: none;
       }
-    
+      
+      /* Mobile-specific background */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("/images/ROSDJ_foto.webp") no-repeat center top;
+        background-size: 100% auto; /* Maintain original width, adjust height proportionally */
+        background-attachment: scroll;
+        z-index: -2; /* Behind the overlay */
+      }
+      
+      /* Darker overlay for mobile */
       body::before {
-        background-color: rgba(0, 0, 0, 0.4); /* 40% darker overlay for mobile */
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: -1;
       }
       
       /* Ensure content is properly spaced on mobile */
       .pagewrapper {
         padding-top: 60px; /* Space for fixed header */
       }
-    }
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2); /* 20% dark overlay for desktop */
-      pointer-events: none;
-      z-index: -1;
+      
+      /* Ensure content fills the viewport */
+      html, body {
+        min-height: 100%;
+      }
     }
 
     /* Site content above overlay */
@@ -2781,13 +2796,28 @@
       };
       
       // Mobile Language Selector - Set initial language to Spanish
-    const mobileLangBtn = document.getElementById('mobileLangBtn');
-    const mobileLangSelector = document.getElementById('mobileLangSelector');
-    if (mobileLangBtn) mobileLangBtn.textContent = 'ES';
+      const mobileLangBtn = document.getElementById('mobileLangBtn');
+      const mobileLangSelector = document.getElementById('mobileLangSelector');
       const langOptions = document.querySelectorAll('.lang-option');
       
+      // Initialize mobile language button text
+      const updateMobileButtonText = (lang) => {
+        if (mobileLangBtn) {
+          const langText = {
+            'uk': 'UA',
+            'en': 'EN',
+            'es': 'ES'
+          };
+          mobileLangBtn.textContent = langText[lang] || 'ES';
+        }
+      };
+      
       // Toggle language dropdown
-      if (mobileLangBtn) {
+      if (mobileLangBtn && mobileLangSelector) {
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        updateMobileButtonText(savedLang);
+        
         mobileLangBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           mobileLangSelector.classList.toggle('open');
@@ -2804,9 +2834,17 @@
         langOptions.forEach(option => {
           option.addEventListener('click', (e) => {
             const lang = e.target.getAttribute('data-lang');
-            languageSystem.update(lang);
-            mobileLangSelector.classList.remove('open');
+            if (lang) {
+              languageSystem.update(lang);
+              updateMobileButtonText(lang);
+              mobileLangSelector.classList.remove('open');
+            }
           });
+          
+          // Set active state for current language
+          if (option.getAttribute('data-lang') === (localStorage.getItem('preferredLanguage') || 'es')) {
+            option.classList.add('active');
+          }
         });
       }
       
