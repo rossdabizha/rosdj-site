@@ -4,36 +4,69 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Main English homepage - highest priority -->
+  <!-- Main Pages -->
   <url>
     <loc>https://rosdj.es/</loc>
-    <lastmod>2024-10-29</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Spanish version - second highest priority -->
   <url>
-    <loc>https://rosdj.es/es/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Ukrainian version - third priority -->
-  <url>
-    <loc>https://rosdj.es/uk/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- HTML Sitemap page -->
-  <url>
-    <loc>https://rosdj.es/sitemap.html</loc>
-    <lastmod>2024-10-29</lastmod>
+    <loc>https://rosdj.es/about</loc>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rosdj.es/dj-tools</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rosdj.es/sound</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Social Media -->
+  <url>
+    <loc>https://soundcloud.com/rosthedj</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.instagram.com/rosthedj/</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.youtube.com/@rosthedj</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mixcloud.com/rosthedj/</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rosdj.bandcamp.com</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
