@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main page images -->
+  <url>
+    <loc>https://rosdj.es/</loc>
+    <image:image>
+      <image:loc>https://rosdj.es/images/rosdj1.webp</image:loc>
+      <image:title>ROS DJ - Live Performance</image:title>
+      <image:caption>ROS DJ Rostyslav Dabizha - Ukrainian DJ performing live DJ set</image:caption>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://rosdj.es/images/rosdj2.webp</image:loc>
+      <image:title>ROS DJ - Electronic Music Festival Performance</image:title>
+      <image:caption>ROS DJ Rostyslav Dabizha - Ukrainian DJ mixing organic house and deep house music at electronic music festival</image:caption>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://rosdj.es/images/DJROS.webp</image:loc>
+      <image:title>ROS DJ - Professional DJ Setup</image:title>
+      <image:caption>ROS DJ Rostyslav Dabizha - Ukrainian DJ brand logo and professional DJ setup at electronic music festival</image:caption>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+  </url>
+
+</urlset>

@@ -16,6 +16,7 @@ Sitemap: https://rosdj.es/sitemap-index.xml
 Sitemap: https://rosdj.es/sitemap.xml
 Sitemap: https://rosdj.es/sitemap.html
 Sitemap: https://rosdj.es/sitemap.txt
+Sitemap: https://rosdj.es/sitemap-images.xml
 
 # Crawl-delay: 10
 
